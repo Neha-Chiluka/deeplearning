@@ -1,29 +1,19 @@
 
 
-How to Train a Classification Model with TensorFlow in 10 Minutes {#how-to-train-a-classification-model-with-tensorflow-in-10-minutes .post-title}
+How to Train a Classification Model with TensorFlow in 10 Minutes 
 =================================================================
-:::
 
-::: {.image-box}
-![How to Train a Classification Model with TensorFlow in 10
-Minutes](./Lab_2_files/thumbnail_43-1.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### From data gathering and preparation to model training and evaluation --- Source code included {#from-data-gathering-and-preparation-to-model-training-and-evaluation-%E2%80%94-source-code-included}
+
+
+#### From data gathering and preparation to model training and evaluation --- Source code included 
 
 Deep learning is everywhere. From sales forecasting to segmenting skin
 diseases on image data --- there's nothing deep learning algorithms
 can't do, given quality data.
 
 If deep learning and TensorFlow are new to you, you're in the right
-place. This article will show you the entire process of building a
+place. This lab will show you the entire process of building a
 classification model on tabular data. You'll go from data gathering and
 preparation to training and evaluating neural network models in just one
 sitting. Let's start.
@@ -31,13 +21,12 @@ sitting. Let's start.
 You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
 installed to follow along.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
+
+
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -49,10 +38,7 @@ Let's avoid unnecessary headaches and stick to simple datasets. The
 dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
 Kaggle will be good enough for today:
 
-![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./Lab_2_files/1-2.png){.kg-image width="2000" height="1125"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-2.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-2.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-2.png 2400w"}
+![](./images/1-2.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
@@ -81,9 +67,7 @@ df.sample(5)
 Here's how the dataset looks like:
 
 ![Image 2 --- Wine quality dataset (image by
-author)](./Lab_2_files/2-2.png){.kg-image width="2000" height="318"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-2.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-2.png 1600w, https://betterdatascience.com/content/images/2021/12/2-2.png 2076w"}
+author)](./images/2-2.png)
 
 It's mostly clean, but there's still some work to do.
 
@@ -93,7 +77,7 @@ The dataset has some missing values, but the number isn't significant,
 as there are 6497 rows in total:
 
 ![Image 3 --- Missing value counts (image by
-author)](./Lab_2_files/3-2.png){.kg-image width="428" height="496"}
+author)](./images/3-2.png)
 
 Run the following code to get rid of them:
 
@@ -119,7 +103,7 @@ The wines are graded from 3 to 9, assuming higher is better. Here are
 the value counts:
 
 ![Image 4 --- Target variable value counts (image by
-author)](./Lab_2_files/4-2.png){.kg-image width="462" height="284"}
+author)](./images/4-2.png)
 
 To keep things extra simple, we'll convert it into a binary variable.
 We'll classify any wine with a grade of 6 and above as *good* (1), and
@@ -137,9 +121,7 @@ df.head()
 And here's how the dataset looks like now:
 
 ![Image 5 --- Dataset after preparation (image by
-author)](./Lab_2_files/5-2.png){.kg-image width="2000" height="297"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-2.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/5-2.png 1600w, https://betterdatascience.com/content/images/2021/12/5-2.png 2220w"}
+author)](./images/5-2.png)
 
 You now have 4091 good wines and 2372 bad wines. The classes are
 imbalanced, but we can work with that. Let's split the dataset into
@@ -189,9 +171,8 @@ X_test_scaled = scaler.transform(X_test)
 Here's how the first three scaled rows look like:
 
 ![Image 6 --- Scaled training set (image by
-author)](./Lab_2_files/6-2.png){.kg-image width="1168" height="322"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6-2.png 1000w, https://betterdatascience.com/content/images/2021/12/6-2.png 1168w"}
+author)](./images/6-2.png)
+
 
 The value range is much tighter now, so a neural network should do a
 better job. Let's train the model and see if we can get something
@@ -256,9 +237,7 @@ This will initiate the training process. A single epoch takes around 1
 second on my machine (M1 MBP):
 
 ![Image 7 --- Model training (image by
-author)](./Lab_2_files/7-2.png){.kg-image width="2000" height="327"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-2.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/7-2.png 1600w, https://betterdatascience.com/content/images/2021/12/7-2.png 2004w"}
+author)](./images/7-2.png)
 
 We kept track of loss, accuracy, precision, and recall during training,
 and saved them to `history`. We can now visualize these metrics to get a
@@ -308,9 +287,7 @@ plt.legend();
 Let's take a look:
 
 ![Image 8 --- Model performance during training (image by
-author)](./Lab_2_files/8-2.png){.kg-image width="2000" height="969"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8-2.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8-2.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8-2.png 1600w, https://betterdatascience.com/content/images/2021/12/8-2.png 2088w"}
+author)](./images/8-2.png)
 
 Accuracy, precision, and recall increase slightly as we train the model,
 while loss decreases. All have occasional spikes, which would hopefully
@@ -331,7 +308,7 @@ on the scaled test data:
 Here's how they look like:
 
 ![Image 9 --- Prediction probabilities (image by
-author)](./Lab_2_files/9-2.png){.kg-image width="590" height="244"}
+author)](./images/9-2.png)
 
 You'll have to convert them to classes before evaluation. The logic is
 simple --- if the probability is greater than 0.5 we assign 1 (good
@@ -346,9 +323,7 @@ prediction_classes = [
 Here's how the first 20 look like:
 
 ![Image 10 --- Prediction classes (image by
-author)](./Lab_2_files/10-1.png){.kg-image width="958" height="46"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10-1.png 600w, https://betterdatascience.com/content/images/2021/12/10-1.png 958w"}
+author)](./images/10-1.png)
 
 That's all we need --- let's evaluate the model next.
 
@@ -363,7 +338,7 @@ print(confusion_matrix(y_test, prediction_classes))
 ```
 
 ![Image 11 --- Confusion matrix (image by
-author)](./Lab_2_files/11-1.png){.kg-image width="204" height="76"}
+author)](./images/11-1.png)
 
 There are more false negatives (214) than false positives (99), so the
 recall value on the test set will be lower than precision.
@@ -381,7 +356,7 @@ print(f'Recall: {recall_score(y_test, prediction_classes):.2f}')
 ```
 
 ![Image 12 --- Accuracy, precision, and recall on the test set (image by
-author)](./Lab_2_files/12-1.png){.kg-image width="268" height="114"}
+author)](./images/12-1.png)
 
 All values are somewhat lower when compared to train set evaluation:
 
@@ -391,7 +366,7 @@ All values are somewhat lower when compared to train set evaluation:
 
 The model is overfitting slightly, but it's still decent work for a
 couple of minutes. We'll go over the optimization in the following
-article.
+lab.
 
 ------------------------------------------------------------------------
 
@@ -409,9 +384,6 @@ activation functions, select a different optimizer, add dropout layers,
 and much more. The possibilities are almost endless, so it all boils
 down to experimentation.
 
-The following article will cover optimization --- you'll learn how to
+The following lab will cover optimization --- you'll learn how to
 find the optimal learning rate and neural network architecture
 automatically, so stay tuned if you want to learn more.
-
-Thanks for reading.
-

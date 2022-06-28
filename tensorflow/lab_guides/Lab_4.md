@@ -1,22 +1,10 @@
 
 
-How to Find Optimal Neural Network Architecture with TensorFlow --- The Easy Way {#how-to-find-optimal-neural-network-architecture-with-tensorflow-the-easy-way .post-title}
+How to Find Optimal Neural Network Architecture with TensorFlow --- The Easy Way 
 ================================================================================
-:::
 
-::: {.image-box}
-![How to Find Optimal Neural Network Architecture with
-TensorFlow --- The Easy
-Way](./Lab_4_files/thumbnail_43-4.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
+
 #### Your go-to guide for optimizing feed-forward neural network models on any dataset
 
 Deep learning boils down to experimentation. Training hundreds of models
@@ -28,18 +16,14 @@ neural network. Where do you start? How many layers? How many nodes per
 layer? What about the activation functions? There are just too many
 moving parts.
 
-You can automate this process to a degree, and this article will show
+You can automate this process to a degree, and this lab will show
 you how. After reading, you'll have one function for generating neural
 network architectures given specific parameters and the other one for
 finding the optimal architecture.
 
-Don't feel like reading? Watch my video instead:‌
-
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).‌
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).‌
 
 ------------------------------------------------------------------------
 
@@ -47,14 +31,13 @@ Dataset used and data preprocessing
 -----------------------------------
 
 I don't plan to spend much time here. We'll use the same dataset as in
-the [previous
-article](https://betterdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes/) --- the
+the [previous lab] --- the
 [wine quality
 dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
 Kaggle:‌
 
 ![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./Lab_4_files/1-4.png){.kg-image}
+author)](./images/1-4.png)
 
 You can use the following code to import it to Python and print a random
 couple of rows:‌
@@ -83,7 +66,7 @@ level just so we don't get overwhelmed with the output.
 Here's how the dataset looks like:‌
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
-author)](./Lab_4_files/2-4.png){.kg-image}
+author)](./images/2-4.png)
 
 ‌The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
@@ -127,10 +110,6 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-Once again, please refer to the [previous
-article](https://betterdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes/)
-if you want more detailed insights into the logic behind data
-preprocessing.
 
 With that out of the way, let's see how to approach optimizing neural
 network architectures.
@@ -166,7 +145,7 @@ node_options = list(range(
 Here's what you'll see:‌
 
 ![Image 3 --- Node number possibilities (image by
-author)](./Lab_4_files/3-5.png){.kg-image}
+author)](./images/3-5.png)
 
 ‌Taking this logic to two hidden layers, you end up with the following
 possibilities:‌
@@ -178,7 +157,7 @@ two_layer_possibilities = [node_options, node_options]
 Or visually:‌
 
 ![Image 4 --- Node number possibilities for two hidden layers (image by
-author)](./Lab_4_files/4-4.png){.kg-image}
+author)](./images/4-4.png)
 
 ‌To get every possible permutation of the options among two layers, you
 can use the `product()` function from `itertools`:‌
@@ -190,8 +169,7 @@ list(itertools.product(*two_layer_possibilities))
 Here's the output:‌
 
 ![Image 5 --- Two layer deep neural network architecture permutations
-(image by author)](./Lab_4_files/5-5.png){.kg-image width="294"
-height="728"}
+(image by author)](./images/5-5.png)
 
 The goal is to optimize a 3-layer-deep neural network, so we'll end up
 with a bit more permutations. You can declare the possibilities by first
@@ -221,7 +199,7 @@ The second print statement is here just to make a gap between models, so
 don't think too much of it. Here's the output:‌
 
 ![Image 6 --- Number of nodes at each layer (image by
-author)](./Lab_4_files/6-4.png){.kg-image width="118" height="322"}
+author)](./images/6-4.png)
 
 We'll create a new `tf.keras.Sequential` model at each iteration and add
 a `tf.keras.layers.InputLayer` to it with a shape of a single training
@@ -261,9 +239,7 @@ models[0].summary()
 ```
 
 ![Image 7 --- Single model architecture (image by
-author)](./Lab_4_files/7-4.png){.kg-image width="1370" height="676"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-4.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-4.png 1000w, https://betterdatascience.com/content/images/2021/12/7-4.png 1370w"}
+author)](./images/7-4.png)
 
 That's the logic we'll go with. There's a way to improve it, though, as
 it's not convenient to run dozens of notebook cells every time you want
@@ -422,9 +398,7 @@ The optimization ran for 34 minutes on my machine (M1 MacBook Pro) and
 printed the following:‌
 
 ![Image 8 --- Optimization output (image by
-author)](./Lab_4_files/8-4.png){.kg-image width="2000" height="440"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8-4.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8-4.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8-4.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/8-4.png 2400w"}
+author)](./images/8-4.png)
 
 You're seeing this output because of the `print()` statement in the
 `optimize()` function. It's there to give you a sense of the progress.
@@ -438,9 +412,7 @@ optimization_results.sort_values(by='test_accuracy', ascending=False)
 ```
 
 ![Image 9 --- Model optimization results (image by
-author)](./Lab_4_files/9-5.png){.kg-image width="1464" height="450"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9-5.png 1000w, https://betterdatascience.com/content/images/2021/12/9-5.png 1464w"}
+author)](./images/9-5.png)
 
 It looks like the simplest model resulted in the best accuracy. You
 could also test the optimization for models with two and four hidden
@@ -462,13 +434,11 @@ functions you've seen today can save you some time. You still need to
 wait for the models to train, but the entire process is fast on this
 dataset.
 
-A good way to proceed from here is to pick an architecture you find best
-and [tune the learning
-rate](https://betterdatascience.com/optimize-learning-rate-with-tensorflow/).
+A good way to proceed from here is to pick an architecture you find best and [tune the learning rate].
 
 Things get a lot more complicated and the training times get longer if
 you're dealing with image data and convolutional layers. That's what the
-next article will cover --- we'll start diving into computer vision and
+next lab will cover --- we'll start diving into computer vision and
 train a simple convolutional neural network. Don't worry, it won't be on
 the MNIST dataset.
 

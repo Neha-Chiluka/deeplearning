@@ -1,21 +1,10 @@
 
 
-TensorFlow Callbacks --- How to Monitor Neural Network Training Like a Pro {#tensorflow-callbacks-how-to-monitor-neural-network-training-like-a-pro .post-title}
+TensorFlow Callbacks --- How to Monitor Neural Network Training Like a Pro 
 ==========================================================================
-:::
 
-::: {.image-box}
-![TensorFlow Callbacks --- How to Monitor Neural Network Training Like a
-Pro](./Lab_5_files/thumbnail_43-5.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
+
 #### Top 4 TensorFlow callbacks to implement in your next deep learning project
 
 Training deep learning models can take days or weeks, but how long is
@@ -33,13 +22,12 @@ named *callbacks* and represents special functions executed **during**
 model training. You can use them to save models, save training logs,
 reduce the learning rate if the model is stuck, and much more.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
+
+
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -47,14 +35,12 @@ Dataset used and data preprocessing
 -----------------------------------
 
 I don't plan to spend much dealing with data today. We'll use the same
-dataset as in the previous articles --- the [wine quality
+dataset as in the previous labs --- the [wine quality
 dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
 Kaggle:
 
 ![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./Lab_5_files/1-5.png){.kg-image width="2000" height="1125"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-5.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-5.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-5.png 2400w"}
+author)](./images/1-5.png)
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -77,9 +63,7 @@ level just so we don't get overwhelmed with the output.
 Here's how the dataset looks like:
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
-author)](./Lab_5_files/2-5.png){.kg-image width="2000" height="308"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-5.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-5.png 1600w, https://betterdatascience.com/content/images/2021/12/2-5.png 2348w"}
+author)](./images/2-5.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
@@ -123,18 +107,12 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-Once again, please refer to the [previous
-article](https://betterdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes/)
-if you want more detailed insights into the logic behind data
-preprocessing.
-
 With that out of the way, let's see how to approach declaring callbacks
 in TensorFlow.
 
 ### Declaring callbacks with TensorFlow
 
-If you've read my previous article on [optimizing the learning rate with
-TensorFlow](https://betterdatascience.com/optimize-learning-rate-with-tensorflow/),
+If you've read my previous lab on [optimizing the learning rate with TensorFlow],
 you already know how callbacks work. Basically, you'll include them in
 the `fit()` function. There's no one stopping you from declaring a list
 of callbacks beforehand, just to keep the training function extra clean.
@@ -280,9 +258,7 @@ The model training will start now, and you'll see something similar
 printed out:
 
 ![Image 3 --- Starting the training process (image by
-author)](./Lab_5_files/3-6.png){.kg-image width="2000" height="247"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/3-6.png 1600w, https://betterdatascience.com/content/images/2021/12/3-6.png 2392w"}
+author)](./images/3-6.png)
 
 The output is a bit more detailed than before, due to callbacks. You can
 see the `ModelCheckpoint` callback doing its job, and saving the model
@@ -293,9 +269,7 @@ The `EarlyStopping` callback will kill the training process around epoch
 35:
 
 ![Image 4 --- Finishing the training process (image by
-author)](./Lab_5_files/4-5.png){.kg-image width="2000" height="468"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-5.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/4-5.png 1600w, https://betterdatascience.com/content/images/2021/12/4-5.png 2386w"}
+author)](./images/4-5.png)
 
 And that's it --- why waste time training for 965 epochs more if the
 model is already stuck here. It's maybe not a huge time saver for simple
@@ -306,10 +280,7 @@ Yours `checkpoints/` folder should look similar to mine after the
 training finishes:
 
 ![Image 5 --- Checkpoints folder (image by
-author)](./Lab_5_files/5-6.png){.kg-image width="2000" height="1062"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/5-6.png 1600w, https://betterdatascience.com/content/images/2021/12/5-6.png 2064w"}
-
+author)](./images/5-6.png)
 You should always choose the one with the highest epoch number for
 further tweaks or evaluation. Don't let the accuracy of 0.80 on the last
 two models confuse you --- it's only rounded to two decimal places.
@@ -326,10 +297,7 @@ would --- no need to cover that today.
 If you wonder about the contents of the `training_log.csv`, here's how
 it looks on my machine:
 
-![Image 6 --- Training log CSV file (image by
-author)](./Lab_5_files/6-5.png){.kg-image width="1594" height="2006"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6-5.png 1000w, https://betterdatascience.com/content/images/2021/12/6-5.png 1594w"}
+![](./images/6-5.png)
 
 You can see how both loss and accuracy were tracked on training and
 validation sets, and how learning rate decreased over time thanks to the
@@ -351,6 +319,6 @@ for the rest, please visit the [official
 documentation.](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks)
 
 Stay tuned if you want to learn more about custom callbacks, and also
-stay tuned for the upcoming convolutional neural network articles. I'll
+stay tuned for the upcoming convolutional neural network labs. I'll
 cover everything you need to know to get hired as a machine learning
 engineer.

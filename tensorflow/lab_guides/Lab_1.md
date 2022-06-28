@@ -1,22 +1,12 @@
 
 
-Regression Modelling with TensorFlow Made Easy --- Train Your First Model in 10 Minutes {#regression-modelling-with-tensorflow-made-easy-train-your-first-model-in-10-minutes .post-title}
+Regression Modelling with TensorFlow Made Easy --- Train Your First Model in 10 Minutes 
 =======================================================================================
-:::
 
-::: {.image-box}
-![Regression Modelling with TensorFlow Made Easy --- Train Your First
-Model in 10 Minutes](./Lab_1_files/thumbnail_43.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### From data gathering and preparation to model training and evaluation --- Source code included. {#from-data-gathering-and-preparation-to-model-training-and-evaluation-%E2%80%94-source-code-included}
+
+
+#### From data gathering and preparation to model training and evaluation --- Source code included. 
 
 Deep learning is kind of a big deal these days. Heck, it's even a
 requirement for most data science jobs, even entry-level ones. There's
@@ -24,17 +14,14 @@ no better introductory lecture than regression. You already know the
 concepts from basic statistics and machine learning, and now it's time
 to bring neural networks into the mix.
 
-This article will show you how. By the end, you'll have a fully
+This lab will show you how. By the end, you'll have a fully
 functional model for predicting housing prices which you can attach to
 your portfolio --- after some modifications, preferred.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -45,9 +32,7 @@ Let's keep things simple today and stick with a well-known [Housing
 prices dataset](https://www.kaggle.com/shree1992/housedata):
 
 ![Image 1 --- Housing prices dataset from Kaggle (image by
-author)](./Lab_1_files/1-1.png){.kg-image width="2000" height="1089"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-1.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-1.png 2400w"}
+author)](./images/1-1.png)
 
 It has a bunch of features that are initially unusable with the neural
 network model, so you'll have to spend some time dealing with them.
@@ -76,9 +61,7 @@ df.sample(5)
 Here's how the dataset looks like:
 
 ![Image 2 --- Housing prices dataset (image by
-author)](./Lab_1_files/2-1.png){.kg-image width="2000" height="238"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-1.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/2-1.png 2400w"}
+author)](./images/2-1.png)
 
 You definitely can't pass it to a neural network in this format.
 
@@ -98,9 +81,7 @@ df.head()
 Here's how it should look like now:
 
 ![Image 3 --- Dataset after removing most of the string columns (image
-by author)](./Lab_1_files/3-1.png){.kg-image width="2000" height="325"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/3-1.png 1600w, https://betterdatascience.com/content/images/2021/12/3-1.png 2046w"}
+by author)](./images/3-1.png)
 
 You definitely could keep all columns and do some feature engineering
 with them. It would likely increase the performance of the model. But
@@ -136,9 +117,7 @@ df.head()
 Here's how the dataset looks now:
 
 ![Image 4 --- Dataset after feature engineering (1) (image by
-author)](./Lab_1_files/4-1.png){.kg-image width="2000" height="256"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/4-1.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/4-1.png 2400w"}
+author)](./images/4-1.png)
 
 Let's handle the `city` column next. Many cities have only a couple of
 houses listed, so you can declare a function that will get rid of all
@@ -160,9 +139,7 @@ Let's test the function --- the city of *Seattle* has many houses
 listed, while *Fall City* has only 11:
 
 ![Image 5 --- Remapping city values (image by
-author)](./Lab_1_files/5-1.png){.kg-image width="748" height="288"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-1.png 600w, https://betterdatascience.com/content/images/2021/12/5-1.png 748w"}
+author)](./images/5-1.png)
 
 Let's apply this function to all cities and print a sample of 10 rows:
 
@@ -174,9 +151,7 @@ df.sample(10)
 ```
 
 ![Image 6 --- Dataset after feature engineering (2) (image by
-author)](./Lab_1_files/6-1.png){.kg-image width="2000" height="427"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/6-1.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/6-1.png 2400w"}
+author)](./images/6-1.png)
 
 Everything looks as it should, so let's continue.
 
@@ -200,10 +175,7 @@ plt.hist(df['price'], bins=100);
 Here's how it looks like:
 
 ![Image 7 --- Target variable histogram (1) (image by
-author)](./Lab_1_files/7-1.png){.kg-image width="1902" height="738"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/7-1.png 1600w, https://betterdatascience.com/content/images/2021/12/7-1.png 1902w"}
-
+author)](./images/7-1.png)
 Outliers are definitely present, so let's handle them next. The pretty
 common thing to do is to calculate Z-scores. They let you know how many
 standard deviations a value is located from the mean. In the case of a
@@ -241,9 +213,7 @@ plt.hist(df['price'], bins=100);
 Here's how the distribution looks like now:
 
 ![Image 8 --- Target variable histogram (2) (image by
-author)](./Lab_1_files/8-1.png){.kg-image width="1880" height="748"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8-1.png 1600w, https://betterdatascience.com/content/images/2021/12/8-1.png 1880w"}
+author)](./images/8-1.png)
 
 There's still a bit of skew present, but let's declare it *good enough*.
 
@@ -312,9 +282,7 @@ You won't be able to inspect `X_train` and `X_test` directly, as they're
 now stored as a sparse matrix:
 
 ![Image 9 --- Sparse matrix (image by
-author)](./Lab_1_files/9-1.png){.kg-image width="1080" height="94"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9-1.png 1000w, https://betterdatascience.com/content/images/2021/12/9-1.png 1080w"}
+author)](./images/9-1.png)
 
 TensorFlow won't be able to read that format, so you'll have to convert
 it to a multidimensional Numpy array. You can use the `toarray()`
@@ -325,9 +293,7 @@ X_train.toarray()
 ```
 
 ![Image 10 --- Sparse matrix to Numpy array (image by
-author)](./Lab_1_files/10.png){.kg-image width="1170" height="542"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/10.png 1000w, https://betterdatascience.com/content/images/2021/12/10.png 1170w"}
+author)](./images/10.png)
 
 Convert both feature sets to a Numpy array, and you're good to go:
 
@@ -406,9 +372,7 @@ The training should finish in a minute or so, depending on the hardware
 behind:
 
 ![Image 11 --- Regression model training with TensorFlow (image by
-author)](./Lab_1_files/11.png){.kg-image width="1528" height="394"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/11.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/11.png 1000w, https://betterdatascience.com/content/images/2021/12/11.png 1528w"}
+author)](./images/11.png)
 
 The final RMSE value on the training set is just above 192000, which
 means that for an average house, the model is wrong in the price
@@ -426,7 +390,7 @@ predictions[:5]
 Here's how the first five predictions look like:
 
 ![Image 12 --- First 5 predictions (image by
-author)](./Lab_1_files/12.png){.kg-image width="586" height="196"}
+author)](./images/12.png)
 
 You'll have to convert these to a 1-dimensional array if you want to
 calculate any metrics. You can use the `ravel()` function from Numpy to
@@ -440,9 +404,7 @@ predictions[:5]
 Here are the results:
 
 ![Image 13 --- First 5 predictions as a 1D array (image by
-author)](./Lab_1_files/13.png){.kg-image width="1066" height="84"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/13.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/13.png 1000w, https://betterdatascience.com/content/images/2021/12/13.png 1066w"}
+author)](./images/13.png)
 
 ### Model evaluation
 
@@ -467,15 +429,13 @@ For example, you could spend much more time preparing the data. We
 deleted the date-time feature, the street information, the zip code and
 so on, which could be valuable for the model performance. The thing
 is --- those would take too much time to prepare, and I want to keep
-these articles somewhat short.
+these labs somewhat short.
 
 You could also add additional layers to the network, increase the number
 of neurons, choose different activation functions, select a different
 optimizer, add dropout layers, and much more. The possibilities are
 almost endless, so it all boils down to experimentation.
 
-The following article will cover how to build a classification model
+The following lab will cover how to build a classification model
 using TensorFlow, so stay tuned if you want to learn more.
-
-Thanks for reading.
 

@@ -1,25 +1,13 @@
 
 
-How to Write Custom TensorFlow Callbacks --- The Easy Way {#how-to-write-custom-tensorflow-callbacks-the-easy-way .post-title}
+How to Write Custom TensorFlow Callbacks --- The Easy Way 
 =========================================================
-:::
 
-::: {.image-box}
-![How to Write Custom TensorFlow Callbacks --- The Easy
-Way](./Lab_6_files/thumbnail_43-6.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### Do you find built-in TensorFlow callbacks limiting? Here's a solution you've been looking for {#do-you-find-built-in-tensorflow-callbacks-limiting-here%E2%80%99s-a-solution-you%E2%80%99ve-been-looking-for}
 
-Do you find [built-in TensorFlow
-callbacks](https://betterdatascience.com/tensorflow-callbacks-how-to-monitor-neural-network-training/)
+#### Do you find built-in TensorFlow callbacks limiting? Here's a solution you've been looking for 
+
+Do you find [built-in TensorFlow callbacks]
 limiting? You're in luck, as today you'll learn how to write custom
 TensorFlow callbacks from scratch! It might come in handy when you want
 to modify how the default callbacks work or if you want to do something
@@ -30,28 +18,25 @@ prints evaluation metrics on the test set after the training is
 complete, and also plots training loss vs. validation loss and training
 accuracy vs. validation accuracy at each epoch.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
+
+
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
 ### Dataset used and data preprocessing
 
 I don't plan to spend much dealing with data today. We'll use the same
-dataset as in the previous articles --- the [wine quality
+dataset as in the previous labs --- the [wine quality
 dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
 Kaggle. It's an open source dataset licensed under Database Contents
 License:
 
 ![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./Lab_6_files/1-6.png){.kg-image width="2000" height="1125"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-6.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-6.png 2400w"}
+author)](./images/1-6.png)
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -74,9 +59,7 @@ level just so we don't get overwhelmed with the output.
 Here's how the dataset looks like:
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
-author)](./Lab_6_files/2-6.png){.kg-image width="2000" height="314"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-6.png 1600w, https://betterdatascience.com/content/images/2021/12/2-6.png 2354w"}
+author)](./images/2-6.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
@@ -120,10 +103,6 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-Once again, please refer to the [previous
-article](https://betterdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes/)
-if you want more detailed insights into the logic behind data
-preprocessing.
 
 With that out of the way, let's see how to approach declaring callbacks
 in TensorFlow.
@@ -238,9 +217,7 @@ model = build_and_train(
 Here's the output you'll see:
 
 ![Image 3 --- Custom TensorFlow callback v1 (image by
-author)](./Lab_6_files/3-7.png){.kg-image width="1356" height="316"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-7.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-7.png 1000w, https://betterdatascience.com/content/images/2021/12/3-7.png 1356w"}
+author)](./images/3-7.png)
 
 It's a decent start, but we don't see what happens at each epoch. Let's
 change that next.
@@ -316,9 +293,7 @@ model = build_and_train(
 Here's the output:
 
 ![Image 4 --- Custom TensorFlow callback v2 (image by
-author)](./Lab_6_files/4-6.png){.kg-image width="2000" height="447"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/4-6.png 1600w, https://betterdatascience.com/content/images/2021/12/4-6.png 2256w"}
+author)](./images/4-6.png)
 
 Neat, right? The story doesn't end here. Let's see how to visualize the
 model performance after the training completes next.
@@ -421,8 +396,7 @@ model = build_and_train(
 Here's what you'll see after the training finishes:
 
 ![Image 5 --- Custom TensorFlow callback v3 (image by
-author)](./Lab_6_files/5-7.png){.kg-image width="2000" height="742"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-7.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-7.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/5-7.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/5-7.png 2400w"}
+author)](./images/5-7.png)
 
 In a nutshell, training the model with the current architecture and
 parameters for 50 epochs doesn't make sense. The validation loss starts
@@ -445,13 +419,9 @@ examples on writing custom *early stopping* and *learning rate
 scheduler* callbacks.
 
 Before you go all-in with writing custom callbacks from scratch, make
-sure the functionality you need isn't already built into TensorFlow. You
-can check my [previous
-article](https://betterdatascience.com/tensorflow-callbacks-how-to-monitor-neural-network-training/)
-on four built-in callbacks I use on every deep learning project to get
-you started.
+sure the functionality you need isn't already built into TensorFlow. 
 
-Stay tuned for the upcoming articles, as we're starting a deep dive and
+Stay tuned for the upcoming labs, as we're starting a deep dive and
 computer vision and convolutional neural networks with TensorFlow from
-the following article.
+the following lab.
 

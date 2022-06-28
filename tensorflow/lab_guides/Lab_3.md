@@ -1,27 +1,16 @@
 
-How to Optimize Learning Rate with TensorFlow --- It's Easier Than You Think {#how-to-optimize-learning-rate-with-tensorflow-its-easier-than-you-think .post-title}
+How to Optimize Learning Rate with TensorFlow --- It's Easier Than You Think 
 ============================================================================
-:::
 
-::: {.image-box}
-![How to Optimize Learning Rate with TensorFlow --- It's Easier Than You
-Think](./Lab_3_files/thumbnail_43-2.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### Significantly improving your models doesn't take much time --- Here's how to get started {#significantly-improving-your-models-doesn%E2%80%99t-take-much-time-%E2%80%94-here%E2%80%99s-how-to-get-started}
+
+#### Significantly improving your models doesn't take much time --- Here's how to get started 
 
 Tuning neural network models is no joke. There are so many
 hyperparameters to tune, and tuning all of them at once using a grid
 search approach could take weeks, even months. *Learning rate* is a
 hyperparameter you can tune in a couple of minutes, provided you know
-how. This article will teach you how.
+how. This lab will teach you how.
 
 The learning rate controls how much the weights are updated according to
 the estimated error. Choose too small of a value and your model will
@@ -31,13 +20,12 @@ and your model might *skip* the optimal set of weights during training.
 You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
 installed to follow along.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
+
+
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -45,16 +33,12 @@ Dataset used and data preprocessing
 -----------------------------------
 
 I don't plan to spend much time here. We'll use the same dataset as in
-the [previous
-article](https://betterdatascience.com/regression-modelling-with-tensorflow-made-easy-train-your-first-model-in-10-minutes/) --- the
-[wine quality
-dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
+the [previous lab] --- the
+[wine quality dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
 Kaggle:
 
 ![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./Lab_3_files/1-3.png){.kg-image width="2000" height="1125"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-3.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-3.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-3.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-3.png 2400w"}
+author)](./images/1-3.png)
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -77,9 +61,7 @@ level just so we don't get overwhelmed with the output.
 Here's how the dataset looks like:
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
-author)](./Lab_3_files/2-3.png){.kg-image width="2000" height="318"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-3.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-3.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-3.png 1600w, https://betterdatascience.com/content/images/2021/12/2-3.png 2076w"}
+author)](./images/2-3.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
@@ -131,14 +113,8 @@ X_test_scaled = scaler.transform(X_test)
 And here's how the first couple of scaled rows look like:
 
 ![Image 3 --- Scaled training set (image by
-author)](./Lab_3_files/3-3.png){.kg-image width="1410" height="376"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-3.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-3.png 1000w, https://betterdatascience.com/content/images/2021/12/3-3.png 1410w"}
+author)](./images/3-3.png)
 
-Once again, please refer to the [previous
-article](https://betterdatascience.com/regression-modelling-with-tensorflow-made-easy-train-your-first-model-in-10-minutes/)
-if you want more detailed insights into the logic behind data
-preprocessing.
 
 With that out of the way, let's see how to optimize the learning rate.
 
@@ -163,9 +139,7 @@ We'll train the model for 100 epochs to test 100 different loss/learning
 rate combinations. Here's the range for the learning rate values:
 
 ![Image 4 --- Range of learning rate values (image by
-author)](./Lab_3_files/4-3.png){.kg-image width="900" height="172"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-3.png 600w, https://betterdatascience.com/content/images/2021/12/4-3.png 900w"}
+author)](./images/4-3.png)
 
 A learning rate of 0.001 is the default one for, let's say, Adam
 optimizer, and 2.15 is definitely too large.
@@ -211,9 +185,7 @@ epochs because the learning rate became too large. After 100 epochs, the
 `initial_model` had around 60% accuracy:
 
 ![Image 5 --- Initial model training log (image by
-author)](./Lab_3_files/5-3.png){.kg-image width="1696" height="334"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-3.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-3.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/5-3.png 1600w, https://betterdatascience.com/content/images/2021/12/5-3.png 1696w"}
+author)](./images/5-3.png)
 
 The `initial_history` variable now has information on loss, accuracy,
 and learning rate. Let's plot all of them:
@@ -248,9 +220,7 @@ plt.legend();
 Here's the chart:
 
 ![Image 6 --- Loss vs. accuracy vs. learning rate (image by
-author)](./Lab_3_files/6.jpg){.kg-image width="2000" height="963"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/6.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/6.jpg 2400w"}
+author)](./images/6.jpg)
 
 The accuracy dipped significantly around epoch 50 and flattened for a
 while, before starting to dip further. The exact opposite happened to
@@ -274,9 +244,7 @@ plt.ylabel('Loss', size=14);
 Here's the chart:
 
 ![Image 7 --- Learning rate vs. loss (image by
-author)](./Lab_3_files/7.jpg){.kg-image width="2000" height="948"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/7.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/7.jpg 2400w"}
+author)](./images/7.jpg)
 
 You'll generally want to select a learning rate that achieves the lowest
 loss, provided that the values around it aren't too volatile. Keep in
@@ -284,9 +252,7 @@ mind that the X-axis is on a logarithmic scale. The optimal learning
 rate is around 0.007:
 
 ![Image 8 --- Optimal learning rate (image by
-author)](./Lab_3_files/8.jpg){.kg-image width="2000" height="948"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/8.jpg 2400w"}
+author)](./images/8.jpg)
 
 So let's train a model with a supposedly optimal learning rate and see
 if we can outperform the default one.
@@ -320,16 +286,13 @@ history_optimized = model_optimized.fit(
 )
 ```
 
-We got 76% accuracy with the default learning rate in the [previous
-article](https://towardsdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes-fd2b7cfba86),
+We got 76% accuracy with the default learning rate in the [previous lab](https://towardsdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes-fd2b7cfba86),
 so it'll be interesting to see if learning rate optimization can
 increase it. The reported accuracy on the train set looks too good to be
 true, so it's likely our model is overfitting:
 
 ![Image 9 --- Optimized model training log (image by
-author)](./Lab_3_files/9-3.png){.kg-image width="1676" height="326"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9-3.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9-3.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/9-3.png 1600w, https://betterdatascience.com/content/images/2021/12/9-3.png 1676w"}
+author)](./images/9-3.png)
 
 It won't matter too much if we've managed to increase the performance on
 the test set, but you could save yourself some time by training the
@@ -354,9 +317,7 @@ plt.legend()
 ```
 
 ![Image 10 --- Accuracy vs loss on the training set (image by
-author)](./Lab_3_files/10.jpg){.kg-image width="2000" height="969"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/10.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/10.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/10.jpg 2400w"}
+author)](./images/10.jpg)
 
 Let's finally calculate the predictions and evaluate them against the
 test set. Here's the code:
@@ -379,8 +340,7 @@ print(confusion_matrix(y_test, prediction_classes))
 And here's the output:
 
 ![Image 11 --- Test set evaluation metrics (image by
-author)](./Lab_3_files/11-2.png){.kg-image width="604" height="208"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/11-2.png 600w, https://betterdatascience.com/content/images/2021/12/11-2.png 604w"}
+author)](./images/11-2.png)
 
 To summarize, optimizing the learning rate alone managed to increase the
 model accuracy by 3% on the test set. It might not sound huge, but it's
