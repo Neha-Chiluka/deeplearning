@@ -355,8 +355,7 @@ print(f'Precision: {precision_score(y_test, prediction_classes):.2f}')
 print(f'Recall: {recall_score(y_test, prediction_classes):.2f}')
 ```
 
-![Image 12 --- Accuracy, precision, and recall on the test set (image by
-author)](./images/12-1.png)
+![](./images/12-1.png)
 
 All values are somewhat lower when compared to train set evaluation:
 
