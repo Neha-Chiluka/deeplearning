@@ -40,17 +40,11 @@ The examples are small and focused; you can finish this tutorial in
 about 60 minutes.
 
 **Kick-start your project** with my new book [Deep Learning With
-Python](https://machinelearningmastery.com/deep-learning-with-python/),
+Python],
 including *step-by-step tutorials* and the *Python source code* files
 for all examples.
 
 Let's get started.
-
--   **Update Jun/2020**: Updated for changes to the API in TensorFlow
-    2.2.0.
-
-
-![](./images/How-to-Develop-Deep-Learning-Models-With-tf.keras_.jpg)
 
 
 
@@ -118,10 +112,10 @@ about all of the functions that you're using.
 
 **You do not need to know the math first**. Math is a compact way of
 describing how algorithms work, specifically tools from [linear
-algebra](https://machinelearningmastery.com/start-here/#linear_algebra),
-[probability](https://machinelearningmastery.com/start-here/#probability),
+algebra],
+[probability],
 and
-[statistics](https://machinelearningmastery.com/start-here/#statistical_methods).
+[statistics].
 These are not the only tools that you can use to learn how algorithms
 work. You can also use code and explore algorithm behavior with
 different inputs and outputs. Knowing the math will not tell you what
@@ -143,7 +137,7 @@ get started and dive into the details later.
 
 **You do not need to be a deep learning expert**. You can learn about
 the benefits and limitations of various algorithms later, and there are
-plenty of posts that you can read later to brush up on the steps of a
+plenty of labs that you can read later to brush up on the steps of a
 deep learning project and the importance of evaluating model skill using
 cross-validation.
 
@@ -206,94 +200,13 @@ the TensorFlow module is imported and named "*tf*"; then, Keras API
 elements are accessed via calls to *tf.keras*; for example:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+-----------------------------------+-----------------------------------+
-| 
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| 
-| on-num line="urvanov-syntax-highl | 
-| ighter-62ba79b45bc45299757442-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc45299757442-1 .crayon-line} |
-|                                | [\# example of tf.keras python    |
-|                                   | idiom]{.crayon-p}                 |
-| 
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc45299757442-2"} | 
-| 2                                 | ighter-62ba79b45bc45299757442-2 . |
-|                                | crayon-line .crayon-striped-line} |
-|                                   | [import ]{.crayon-e}[tensorflow   |
-| 
-| on-num line="urvanov-syntax-highl | ]{.crayon-h}[tf]{.crayon-i}       |
-| ighter-62ba79b45bc45299757442-3"} |                                |
-| 3                                 |                                   |
-|                                | 
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-| 
-| ed-num line="urvanov-syntax-highl | [\# use keras API]{.crayon-p}     |
-| ighter-62ba79b45bc45299757442-4"} |                                |
-| 4                                 |                                   |
-|                                | 
-|                                   | ighter-62ba79b45bc45299757442-4 . |
-| 
-| on-num line="urvanov-syntax-highl | [model]{.crayon-v}[               |
-| ighter-62ba79b45bc45299757442-5"} | ]{.crayon-h}[=]{.crayon-o}[       |
-| 5                                 | ]{.crayon-h}[tf]{.crayon-v}[.     |
-|                                | ]{.crayon-sy}[keras]{.crayon-v}[. |
-|                                | ]{.crayon-sy}[Sequential]{.crayon |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   |                                |
-|                                   |                                   |
-|                                   | 
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc45299757442-5 .crayon-line} |
-|                                   | [.]{.crayon-                      |
-|                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-|                                   |                                |
-|                                   |                                |
-+-----------------------------------+-----------------------------------+
-
-
+```
+# example of tf.keras python idiom
+import tensorflow as tf
+# use keras API
+model = tf.keras.Sequential()
+...
+```
 
 I generally don't use this idiom myself; I don't think it reads cleanly.
 
@@ -324,7 +237,7 @@ If you don't have Python installed, you can install it using Anaconda.
 This tutorial will show you how:
 
 -   [How to Setup Your Python Environment for Machine Learning With
-    Anaconda](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
+    Anaconda]
 
 There are many ways to install the TensorFlow open-source deep learning
 library.
@@ -496,7 +409,7 @@ code into the file.
 
 
 Save the file, then open your [command
-line](https://machinelearningmastery.com/faq/single-faq/how-do-i-run-a-script-from-the-command-line)
+line]
 and change directory to where you saved the file.
 
 Then type:
@@ -626,7 +539,7 @@ Post your output in the comments below.
 This also shows you how to run a Python script from the command line. I
 recommend running all code from the command line in this manner, and
 [not from a notebook or an
-IDE](https://machinelearningmastery.com/faq/single-faq/why-dont-use-or-recommend-notebooks).
+IDE].
 
 
 
@@ -1247,7 +1160,7 @@ For help on how to choose the batch size, see this tutorial:
 
 -   [How to Control the Stability of Training Neural Networks With the
     Batch
-    Size](https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/)
+    Size]
 
 While fitting the model, a progress bar will summarize the status of
 each epoch and the overall training process. This can be simplified to a
@@ -2319,14 +2232,14 @@ problem of vanishing gradients when training deep neural network models.
 For more on ReLU, see the tutorial:
 
 -   [A Gentle Introduction to the Rectified Linear Unit
-    (ReLU)](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
+    (ReLU)]
 
 The model predicts the probability of class 1 and uses the sigmoid
 activation function. The model is optimized using the [adam version of
 stochastic gradient
-descent](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+descent]
 and seeks to minimize the [cross-entropy
-loss](https://machinelearningmastery.com/cross-entropy-for-machine-learning/).
+loss].
 
 The complete example is listed below.
 
@@ -2834,7 +2747,7 @@ the model and evaluates it on the test dataset. Finally, a prediction is
 made for a single row of data.
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -3422,7 +3335,7 @@ the model and evaluates it on the test dataset. Finally, a prediction is
 made for a single row of data.
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -3537,7 +3450,7 @@ cannot calculate classification accuracy. For more on this, see the
 tutorial:
 
 -   [Difference Between Classification and Regression in Machine
-    Learning](https://machinelearningmastery.com/classification-versus-regression-in-machine-learning/)
+    Learning]
 
 The complete example of fitting and evaluating an MLP on the Boston
 housing dataset is listed below.
@@ -3973,7 +3886,7 @@ model and evaluates it on the test dataset. Finally, a prediction is
 made for a single row of data.
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -4065,9 +3978,9 @@ Convolutional Neural Networks, or CNNs for short, are a type of network
 designed for image input.
 
 They are comprised of models with [convolutional
-layers](https://machinelearningmastery.com/convolutional-layers-for-deep-learning-neural-networks/)
+layers]
 that extract features (called feature maps) and [pooling
-layers](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)
+layers]
 that distill features down to the most salient elements.
 
 CNNs are most well-suited to image classification tasks, although they
@@ -4372,12 +4285,7 @@ in the training dataset.
 
 
 ![Plot of Handwritten Digits From the MNIST
-dataset](./images/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.webp){.size-full
-.wp-image-9897 width="1280" height="960"
-sizes="(max-width: 1280px) 100vw, 1280px"
-srcset="https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.png 1280w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-300x225.png 300w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-1024x768.png 1024w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-768x576.png 768w"}
-
-Plot of Handwritten Digits From the MNIST dataset
+dataset](./images/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.webp)
 
 
 We can train a CNN model to classify the images in the MNIST dataset.
@@ -4386,7 +4294,7 @@ Note that the images are arrays of grayscale pixel data; therefore, we
 must add a channel dimension to the data before we can use the images as
 input to the model. The reason is that CNN models expect images in a
 [channels-last
-format](https://machinelearningmastery.com/a-gentle-introduction-to-channels-first-and-channels-last-image-formats-for-deep-learning/),
+format],
 that is each example to the network has the dimensions \[rows, columns,
 channels\], where channels represent the color channels of the image
 data.
@@ -4396,7 +4304,7 @@ of 0-255 to 0-1 when training a CNN. For more on scaling pixel values,
 see the tutorial:
 
 -   [How to Manually Scale Image Pixel Data for Deep
-    Learning](https://machinelearningmastery.com/how-to-manually-scale-image-pixel-data-for-deep-learning/)
+    Learning]
 
 The complete example of fitting and evaluating a CNN model on the MNIST
 dataset is listed below.
@@ -4952,7 +4860,7 @@ the model and evaluates it on the test dataset. Finally, a prediction is
 made for a single image.
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -5075,7 +4983,7 @@ data to predict the current month's data.
 
 To achieve this, we will define a new function named *split\_sequence()*
 that will [split the input sequence into
-windows](https://machinelearningmastery.com/time-series-forecasting-supervised-learning/)
+windows]
 of data appropriate for fitting a supervised learning model, like an
 LSTM.
 
@@ -5925,7 +5833,7 @@ the model and evaluates it on the test dataset. Finally, a prediction is
 made for a single example.
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -6016,7 +5924,7 @@ order to achieve better performance. For more on preparing time series
 data for modeling, see the tutorial:
 
 -   [4 Common Machine Learning Data Transforms for Time Series
-    Forecasting](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
+    Forecasting]
 
 
 
@@ -6341,13 +6249,13 @@ For a gentle introduction to learning curves and how to use them to
 diagnose learning dynamics of models, see the tutorial:
 
 -   [How to use Learning Curves to Diagnose Machine Learning Model
-    Performance](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+    Performance]
 
 You can easily create learning curves for your deep learning models.
 
 First, you must update your call to the fit function to include
 reference to a [validation
-dataset](https://machinelearningmastery.com/difference-test-validation-datasets/).
+dataset].
 This is a portion of the training set not used to fit the model, and is
 instead used to evaluate the performance of the model during training.
 
@@ -6369,7 +6277,7 @@ using the [Matplotlib](https://matplotlib.org/) library.
 The example below fits a small neural network on a synthetic binary
 classification problem. A validation split of 30 percent is used to
 evaluate the model during training and the [cross-entropy
-loss](https://machinelearningmastery.com/cross-entropy-for-machine-learning/)
+loss]
 on the train and validation datasets are then graphed using a line plot.
 
 
@@ -6622,7 +6530,7 @@ responsibility for the inputs.
 For more on how dropout works, see this tutorial:
 
 -   [A Gentle Introduction to Dropout for Regularizing Deep Neural
-    Networks](https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/)
+    Networks]
 
 You can add dropout to your models as a new layer prior to the layer
 that you want to have input connections dropped-out.
@@ -6702,7 +6610,7 @@ reducing the number of training epochs required to train deep networks.
 For more on how batch normalization works, see this tutorial:
 
 -   [A Gentle Introduction to Batch Normalization for Deep Neural
-    Networks](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)
+    Networks]
 
 You can use batch normalization in your network by adding a batch
 normalization layer prior to the layer that you wish to have
@@ -6783,11 +6691,11 @@ For more on early stopping, see the tutorial:
 
 -   [A Gentle Introduction to Early Stopping to Avoid Overtraining
     Neural
-    Networks](https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/)
+    Networks]
 
 Early stopping can be used with your model by first ensuring that you
 have a [validation
-dataset](https://machinelearningmastery.com/difference-test-validation-datasets/).
+dataset].
 You can define the validation dataset manually via the
 *validation\_data* argument to the *fit()* function, or you can use the
 *validation\_split* and specify the amount of the training dataset to
@@ -7104,24 +7012,24 @@ go deeper.
 
 -   [How to Control the Stability of Training Neural Networks With the
     Batch
-    Size](https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/)
+    Size]
 -   [A Gentle Introduction to the Rectified Linear Unit
-    (ReLU)](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
+    (ReLU)]
 -   [Difference Between Classification and Regression in Machine
-    Learning](https://machinelearningmastery.com/classification-versus-regression-in-machine-learning/)
+    Learning]
 -   [How to Manually Scale Image Pixel Data for Deep
-    Learning](https://machinelearningmastery.com/how-to-manually-scale-image-pixel-data-for-deep-learning/)
+    Learning]
 -   [4 Common Machine Learning Data Transforms for Time Series
-    Forecasting](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
+    Forecasting]
 -   [How to use Learning Curves to Diagnose Machine Learning Model
-    Performance](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+    Performance]
 -   [A Gentle Introduction to Dropout for Regularizing Deep Neural
-    Networks](https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/)
+    Networks]
 -   [A Gentle Introduction to Batch Normalization for Deep Neural
-    Networks](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)
+    Networks]
 -   [A Gentle Introduction to Early Stopping to Avoid Overtraining
     Neural
-    Networks](https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/)
+    Networks]
 
 ### Guides
 

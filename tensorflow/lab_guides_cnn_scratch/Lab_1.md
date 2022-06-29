@@ -12,7 +12,7 @@ how they improve model performance when compared to vanilla artificial
 neural networks. But what a convolution actually does to an image?
 That's what you'll learn today.
 
-After reading, you'll know how to write your convolution function from
+After completing, you'll know how to write your convolution function from
 scratch with Numpy. You'll apply filters such as blurring, sharpening,
 and outlining to images, and you'll also learn the role of *padding* in
 convolutional layers.

@@ -17,7 +17,7 @@ layer? What about the activation functions? There are just too many
 moving parts.
 
 You can automate this process to a degree, and this lab will show
-you how. After reading, you'll have one function for generating neural
+you how. After completing, you'll have one function for generating neural
 network architectures given specific parameters and the other one for
 finding the optimal architecture.
 

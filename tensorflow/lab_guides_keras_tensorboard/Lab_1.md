@@ -9,11 +9,11 @@ The reason is that neural networks are notoriously difficult to
 configure and there are a lot of parameters that need to be set. On top
 of that, individual models can be very slow to train.
 
-In this post you will discover how you can use the grid search
+In this lab you will discover how you can use the grid search
 capability from the scikit-learn python machine learning library to tune
 the hyperparameters of Keras deep learning models.
 
-After reading this post you will know:
+After completing this lab, you will know:
 
 -   How to wrap Keras models for use in scikit-learn and how to use grid
     search.
@@ -24,26 +24,11 @@ After reading this post you will know:
 
 Let's get started.
 
--   **Update Nov/2016**: Fixed minor issue in displaying grid search
-    results in code examples.
--   **Update Oct/2016**: Updated examples for Keras 1.1.0, TensorFlow
-    0.10.0 and scikit-learn v0.18.
--   **Update Mar/2017**: Updated example for Keras 2.0.2, TensorFlow
-    1.0.1 and Theano 0.9.0.
--   **Update Sept/2017**: Updated example to use Keras 2 "epochs"
-    instead of Keras 1 "nb\_epochs".
--   **Update March/2018**: Added alternate link to download the dataset.
--   **Update Oct/2019**: Updated for Keras 2.3.0 API.
-
-
-![](./images/How-to-Grid-Search-Hyperparameters-for-Deep-Learning-Models-in-Python-With-Keras.jpg)
-
-
 
 Overview
 --------
 
-In this post, I want to show you both how you can use the scikit-learn
+In this lab, I want to show you both how you can use the scikit-learn
 grid search capability and give you a suite of examples that you can
 copy-and-paste into your own project as a starting point.
 
@@ -61,12 +46,6 @@ Below is a list of the topics we are going to cover:
 
 
 
-
-[AD]{style="display:block;background:rgba(255, 255, 255, 0.7);height:fit-content;width:fit-content;top:0;left:0;color:#444;font-size:10px;font-weight:bold;font-family:sans-serif;line-height:normal;text-decoration:none;margin:0px;padding:6px;border-radius:0 0 5px 0;"}
-
-
-
-
 How to Use Keras Models in scikit-learn
 ---------------------------------------
 
@@ -79,16 +58,28 @@ returns your Keras sequential model, then pass this function to the
 
 For example:
 
+```
+def create_model():
+	...
+	return model
 
+model = KerasClassifier(build_fn=create_model)
+```
 
 
 The constructor for the **KerasClassifier** class can take default
 arguments that are passed on to the calls to **model.fit()**, such as
-the number of epochs and the [batch
-size](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/).
+the number of epochs and the [batch size].
 
 For example:
 
+```
+def create_model():
+	...
+	return model
+ 
+model = KerasClassifier(build_fn=create_model, epochs=10)
+```
 
 
 The constructor for the **KerasClassifier** class can also take new
@@ -274,7 +265,7 @@ work with.
     **pima-indians-diabetes.csv **(update: [download from
     here](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)).
 
-As we proceed through the examples in this post, we will aggregate the
+As we proceed through the examples in this lab, we will aggregate the
 best parameters. This is not the best way to grid search because
 parameters can interact, but it is good for demonstration purposes.
 
@@ -886,7 +877,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -1603,7 +1594,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -2279,7 +2270,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -3105,7 +3096,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -3748,7 +3739,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -3885,7 +3876,7 @@ How to Tune Dropout Regularization
 ----------------------------------
 
 In this example, we will look at tuning the [dropout rate for
-regularization](https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/)
+regularization]
 in an effort to limit overfitting and improve the model's ability to
 generalize.
 
@@ -3893,10 +3884,10 @@ To get good results, dropout is best combined with a weight constraint
 such as the max norm constraint.
 
 For more on using dropout in deep learning models with Keras see the
-post:
+lab:
 
 -   [Dropout Regularization in Deep Learning Models With
-    Keras](https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/)
+    Keras]
 
 This involves fitting both the dropout percentage and the weight
 constraint. We will try dropout percentages between 0.0 and 0.9 (1.0
@@ -4457,7 +4448,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -5472,7 +5463,7 @@ The full code listing is provided below.
 
 
 **Note**: Your [results may
-vary](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+vary]
 given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
@@ -5604,7 +5595,7 @@ This section lists some handy tips to consider when tuning
 hyperparameters of your neural network.
 
 -   **k-fold Cross Validation**. You can see that the results from the
-    examples in this post show some variance. A default cross-validation
+    examples in this lab show some variance. A default cross-validation
     of 3 was used, but perhaps k=5 or k=10 would be more stable.
     Carefully choose your cross validation configuration to ensure your
     results are stable.
@@ -5614,7 +5605,7 @@ hyperparameters of your neural network.
 -   **Parallelize**. Use all your cores if you can, neural networks are
     slow to train and we often want to try a lot of different
     parameters. Consider spinning up a lot of [AWS
-    instances](https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/).
+    instances].
 -   **Use a Sample of Your Dataset**. Because networks are slow to
     train, try training them on a smaller sample of your training
     dataset, just to get an idea of general directions of parameters
@@ -5629,12 +5620,12 @@ hyperparameters of your neural network.
 -   **Reproducibility is a Problem**. Although we set the seed for the
     random number generator in NumPy, the results are not 100%
     reproducible. There is more to reproducibility when grid searching
-    wrapped Keras models than is presented in this post.
+    wrapped Keras models than is presented in this lab.
 
 Summary
 -------
 
-In this post, you discovered how you can tune the hyperparameters of
+In this lab, you discovered how you can tune the hyperparameters of
 your deep learning networks in Python using Keras and scikit-learn.
 
 Specifically, you learned:

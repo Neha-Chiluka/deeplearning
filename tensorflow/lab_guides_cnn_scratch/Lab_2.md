@@ -14,7 +14,7 @@ time to discuss pooling, a downscaling operation that usually follows a
 convolutional layer. You want to know a secret? It's not rocket science
 to implement from scratch.
 
-After reading, you'll know what pooling and strides are and how to write
+After completing, you'll know what pooling and strides are and how to write
 them from scratch in Numpy. You'll get an intuitive understanding first,
 and then apply it in Python. When that's out of the way, you'll apply
 pooling to a real image and compare results with TensorFlow's pooling
