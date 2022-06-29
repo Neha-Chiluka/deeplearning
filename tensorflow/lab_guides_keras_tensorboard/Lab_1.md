@@ -152,8 +152,7 @@ dataset]
 This is a small dataset with all numerical attributes that is easy to
 work with.
 
-1.  [Download the
-    dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+1.  [Download the dataset](https://github.com/fenago/deeplearning/blob/main/tensorflow/data/pima-indians-diabetes.csv)
 
 
 As we proceed through the examples in this lab, we will aggregate the
@@ -202,9 +201,9 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the batch size and epochs
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 # Function to create model, required for KerasClassifier
 def create_model():
 	# create model
@@ -239,9 +238,7 @@ for mean, stdev, param in zip(means, stds, params):
     print("%f (%f) with: %r" % (mean, stdev, param))
 ```
 
-**Note**: Your [results may
-vary]
-given the stochastic nature of the algorithm or evaluation procedure, or
+**Note**: Your [results may vary] given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
 
@@ -295,9 +292,9 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the batch size and epochs
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 # Function to create model, required for KerasClassifier
 def create_model(optimizer='adam'):
 	# create model
@@ -331,9 +328,7 @@ for mean, stdev, param in zip(means, stds, params):
     print("%f (%f) with: %r" % (mean, stdev, param))
 ```
 
-**Note**: Your [results may
-vary]
-given the stochastic nature of the algorithm or evaluation procedure, or
+**Note**: Your [results may vary] given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
 
@@ -384,10 +379,10 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the learning rate and momentum
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
-from keras.optimizers import SGD
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.optimizers import SGD
 # Function to create model, required for KerasClassifier
 def create_model(learn_rate=0.01, momentum=0):
 	# create model
@@ -494,9 +489,9 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the weight initialization
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 # Function to create model, required for KerasClassifier
 def create_model(init_mode='uniform'):
 	# create model
@@ -577,9 +572,9 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the activation function
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 # Function to create model, required for KerasClassifier
 def create_model(activation='relu'):
 	# create model
@@ -666,11 +661,11 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the dropout rate
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
-from keras.wrappers.scikit_learn import KerasClassifier
-from keras.constraints import maxnorm
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.constraints import maxnorm
 # Function to create model, required for KerasClassifier
 def create_model(dropout_rate=0.0, weight_constraint=0):
 	# create model
@@ -796,11 +791,11 @@ The full code listing is provided below.
 # Use scikit-learn to grid search the number of neurons
 import numpy
 from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
-from keras.wrappers.scikit_learn import KerasClassifier
-from keras.constraints import maxnorm
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.constraints import maxnorm
 # Function to create model, required for KerasClassifier
 def create_model(neurons=1):
 	# create model
