@@ -1,25 +1,12 @@
 
-TensorFlow for Computer Vision --- How to Train Image Classifier with Convolutional Neural Networks {#tensorflow-for-computer-vision-how-to-train-image-classifier-with-convolutional-neural-networks .post-title}
+TensorFlow for Computer Vision --- How to Train Image Classifier with Convolutional Neural Networks
 ===================================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision --- How to Train Image Classifier with
-Convolutional Neural
-Networks](./Lab_3_files/thumbnail_43-9.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
 #### Combine Convolutions and Pooling if you want a decent from-scratch image classifier
 
 You saw [last
-week](https://betterdatascience.com/train-image-classifier-with-artificial-neural-networks/)
+week]
 that vanilla Artificial neural networks are terrible for classifying
 images. And that's expected, as they have no idea about 2D relationships
 between pixels. That's where convolutions come in --- a go-to approach
@@ -30,14 +17,9 @@ convolutional and pooling layers, and you'll also train and evaluate
 your first *real* image classifier. It's gonna be a long one. A cup of
 strong coffee is recommended.
 
-As always, we'll keep the theory light and hands-on parts strong. Feel
-free to watch my video if you don't feel like reading:
-
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -72,25 +54,18 @@ image and a 3x3 filter. The filter *slides* (convolves) over every 3x3
 set of pixels in the image, and calculates an element-wise
 multiplication. The multiplication results are then summed:
 
-![Image 1 --- Convolution operation (1) (image by
-author)](./Lab_3_files/1.PNG){.kg-image width="2000" height="447"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1.PNG 2400w"}
+![](./images/1.PNG)
 
 The process is repeated for every set of 3x3 pixels. Here's the
 calculation for the following set:
 
 ![Image 2 --- Convolution operation (2) (image by
-author)](./Lab_3_files/2-1.PNG){.kg-image width="2000" height="441"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-1.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/2-1.PNG 2400w"}
+author)](./images/2-1.PNG)
 
 The process is repeated until the final set of 3x3 pixels is reached:
 
 ![Image 3 --- Convolution operation (3) (image by
-author)](./Lab_3_files/3-1.PNG){.kg-image width="2000" height="441"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/3-1.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/3-1.PNG 2400w"}
+author)](./images/3-1.PNG)
 
 From here, you can flatten the result, pass it into another
 convolutional layer, or, most commonly, pass it through a **pooling**
@@ -113,9 +88,7 @@ looking at a small matrix of 2x2 pixels at a time and keeping the
 largest value only. Here's an example:
 
 ![Image 4 --- Max Pooling operation (image by
-author)](./Lab_3_files/4-1.PNG){.kg-image width="758" height="427"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-1.PNG 600w, https://betterdatascience.com/content/images/2021/12/4-1.PNG 758w"}
+author)](./images/4-1.PNG)
 
 Simple, isn't it? You don't have to take the maximum value. Another
 common type of pooling is *Average Pooling*, and it does what the name
@@ -139,9 +112,7 @@ from Kaggle. It's licensed under the Creative Commons License, which
 means you can use it for free:
 
 ![Image 5 --- Dogs vs. Cats dataset (image by
-author)](./Lab_3_files/5-1.PNG){.kg-image width="2000" height="1138"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/5-1.PNG 1600w, https://betterdatascience.com/content/images/2021/12/5-1.PNG 2226w"}
+author)](./images/5-1.PNG)
 
 The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
@@ -150,7 +121,7 @@ not structured for deep learning out of the box. You can follow my
 previous article to create a proper directory structure, and split it
 into train, test, and validation sets:
 
-![](./Lab_3_files/favicon.png){.kg-bookmark-icon}
+
 
 Before proceeding, please **delete** the following images:
 
@@ -192,8 +163,7 @@ display(img1)
 ```
 
 ![Image 6 --- Sample cat image (image by
-author)](./Lab_3_files/6-1.PNG){.kg-image width="670" height="630"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-1.PNG 600w, https://betterdatascience.com/content/images/2021/12/6-1.PNG 670w"}
+author)](./images/6-1.PNG)
 
 The above cat image is 281 pixels tall, 300 pixels wide, and has three
 color channels. Does the same hold for a random dog image?
@@ -205,9 +175,7 @@ display(img2)
 ```
 
 ![Image 7 --- Sample dog image (image by
-author)](./Lab_3_files/7-1.PNG){.kg-image width="1109" height="835"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-1.PNG 1000w, https://betterdatascience.com/content/images/2021/12/7-1.PNG 1109w"}
+author)](./images/7-1.PNG)
 
 The dog image is 375 pixels tall, 500 pixels wide, and has 3 color
 channels. It's larger than the first image, and a neural network won't
@@ -218,15 +186,13 @@ There's a more urgent issue to address. The pixel values range from 0 to
 255 (`np.array(img2)`):
 
 ![Image 8 --- Image converted to array (image by
-author)](./Lab_3_files/8-1.PNG){.kg-image width="507" height="444"}
+author)](./images/8-1.PNG)
 
 Neural networks prefer a range between 0 and 1. You can translate an
 image to that range by dividing each element with 255.0:
 
 ![Image 9 --- Image converted to an array and normalized (image by
-author)](./Lab_3_files/9-1.PNG){.kg-image width="779" height="453"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9-1.PNG 600w, https://betterdatascience.com/content/images/2021/12/9-1.PNG 779w"}
+author)](./images/9-1.PNG)
 
 You can do this step automatically with data loaders.
 
@@ -267,8 +233,7 @@ train_data = train_datagen.flow_from_directory(
 Here's the output you should see:
 
 ![Image 10 --- Number of images found in the training directory (image
-by author)](./Lab_3_files/10-1.PNG){.kg-image width="689" height="52"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10-1.PNG 600w, https://betterdatascience.com/content/images/2021/12/10-1.PNG 689w"}
+by author)](./images/10-1.PNG)
 
 There are 20,030 images in the training folder divided into two classes.
 The `train_data` variable is a Python generator object, which means you
@@ -285,7 +250,7 @@ first_batch[0].shape, first_batch[1].shape
 ```
 
 ![Image 11 --- Shapes of batch images and labels (image by
-author)](./Lab_3_files/11-1.PNG){.kg-image width="478" height="65"}
+author)](./images/11-1.PNG)
 
 A single batch contains 64 images, each being 224 pixels wide and tall
 and having 3 color channels. There are 64 corresponding labels. Each is
@@ -323,9 +288,7 @@ visualize_batch(batch=first_batch)
 ```
 
 ![Image 12 --- A single batch of images (image by
-author)](./Lab_3_files/12.jpg){.kg-image width="2000" height="1995"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/12.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/12.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/12.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/12.jpg 2400w"}
+author)](./images/12.jpg)
 
 Some of these look a bit weird due to changes in the aspect ratio, but
 it shouldn't be an issue. All images are now 224 pixels tall and wide,
@@ -396,14 +359,11 @@ history_1 = model_1.fit(
 )
 ```
 
-![Image 13 --- Model 1 training log (image by
-author)](./Lab_3_files/13-1.PNG){.kg-image width="2000" height="724"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/13-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/13-1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/13-1.PNG 1600w, https://betterdatascience.com/content/images/2021/12/13-1.PNG 2091w"}
+![](./images/13-1.PNG)
 
 Even a simple convolutional model outperforms a [model with only
 fully-connected
-layers](https://betterdatascience.com/train-image-classifier-with-artificial-neural-networks/).
+layers].
 Does doubling the number of filters make a difference?
 
 ``` {.language-python}
@@ -429,9 +389,7 @@ history_2 = model_2.fit(
 ```
 
 ![Image 14 --- Model 2 training log (image by
-author)](./Lab_3_files/14-1.PNG){.kg-image width="2000" height="732"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/14-1.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/14-1.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/14-1.PNG 1600w, https://betterdatascience.com/content/images/2021/12/14-1.PNG 2082w"}
+author)](./images/14-1.PNG)
 
 Maybe, but the model doesn't look like it's learning. Let's add a second
 Convolutional layer:
@@ -461,9 +419,7 @@ history_3 = model_3.fit(
 ```
 
 ![Image 15 --- Model 3 training log (image by
-author)](./Lab_3_files/15.PNG){.kg-image width="2000" height="718"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/15.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/15.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/15.PNG 1600w, https://betterdatascience.com/content/images/2021/12/15.PNG 2093w"}
+author)](./images/15.PNG)
 
 That does it --- 75% accuracy on the validation set. Feel free to
 experiment further on your own. The following section uses `model_3` to
@@ -496,9 +452,7 @@ single_prediction
 ```
 
 ![Image 16 --- Prediction probabilities for each class (image by
-author)](./Lab_3_files/16.PNG){.kg-image width="820" height="80"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/16.PNG 600w, https://betterdatascience.com/content/images/2021/12/16.PNG 820w"}
+author)](./images/16.PNG)
 
 The model is almost 100% certain this is a cat image (0 = cat, 1 = dog).
 You can use the `argmax()` function to get the index where the value of
@@ -540,16 +494,16 @@ for img_path in pathlib.Path.cwd().joinpath('data/test/dog').iterdir():
 Here are the results for cats:
 
 ![Image 17 --- Model accuracy for cats (image by
-author)](./Lab_3_files/17.PNG){.kg-image width="548" height="320"}
+author)](./images/17.PNG)
 
 And here are for dogs:
 
 ![Image 18 --- Model accuracy for dogs (image by
-author)](./Lab_3_files/18.PNG){.kg-image width="536" height="307"}
+author)](./images/18.PNG)
 
 Overall, we have a much more accurate model than [when we were only
 using Dense
-layers](https://betterdatascience.com/train-image-classifier-with-artificial-neural-networks/).
+layers].
 This is just the tip of the iceberg, as we haven't explored data
 augmentation and transfer learning yet.
 

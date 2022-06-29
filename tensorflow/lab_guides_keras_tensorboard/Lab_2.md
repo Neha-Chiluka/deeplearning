@@ -1,5 +1,5 @@
 
-TensorFlow 2 Tutorial: Get Started in Deep Learning With tf.keras {#tensorflow-2-tutorial-get-started-in-deep-learning-with-tf.keras .title .entry-title}
+TensorFlow 2 Tutorial: Get Started in Deep Learning With tf.keras
 =================================================================
 
 
@@ -49,18 +49,10 @@ Let's get started.
 -   **Update Jun/2020**: Updated for changes to the API in TensorFlow
     2.2.0.
 
-::: {#attachment_9900 .wp-caption .aligncenter style="width: 809px"}
-![How to Develop Deep Learning Models With
-tf.keras](./Lab_2_files/How-to-Develop-Deep-Learning-Models-With-tf.keras_.jpg){.size-full
-.wp-image-9900 width="799" height="533"
-sizes="(max-width: 799px) 100vw, 799px"
-srcset="https://machinelearningmastery.com/wp-content/uploads/2019/12/How-to-Develop-Deep-Learning-Models-With-tf.keras_.jpg 799w, https://machinelearningmastery.com/wp-content/uploads/2019/12/How-to-Develop-Deep-Learning-Models-With-tf.keras_-300x200.jpg 300w, https://machinelearningmastery.com/wp-content/uploads/2019/12/How-to-Develop-Deep-Learning-Models-With-tf.keras_-768x512.jpg 768w"}
 
-How to Develop Deep Learning Models With tf.keras\
-Photo by [Stephen
-Harlan](https://flickr.com/photos/gogostevie/4148516651/), some rights
-reserved.
-:::
+![](./images/How-to-Develop-Deep-Learning-Models-With-tf.keras_.jpg)
+
+
 
 TensorFlow Tutorial Overview
 ----------------------------
@@ -106,13 +98,13 @@ are:
     2.  How to Accelerate Training With Batch Normalization
     3.  How to Halt Training at the Right Time With Early Stopping
 
-::: {#AdThrive_Content_1_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls .up-show style="min-height: 250px;" google-query-id="COGowrn60fgCFW1HHQkdbj8KWQ"}
-::: {.default-creative-container style="height: 90px; width: max-content !important; position: relative; z-index: 0; margin: 0px auto; display: block;"}
-::: {.upo-label style="text-align: left; padding: 0px; margin: 0px; position: absolute; top: 0px; left: 0px; z-index: 10000; transition: opacity 1s ease-out 0s; opacity: 1; cursor: pointer;"}
+
+
+
 [AD]{style="display:block;background:rgba(255, 255, 255, 0.7);height:fit-content;width:fit-content;top:0;left:0;color:#444;font-size:10px;font-weight:bold;font-family:sans-serif;line-height:normal;text-decoration:none;margin:0px;padding:6px;border-radius:0 0 5px 0;"}
-:::
-:::
-:::
+
+
+
 
 ### You Can Do Deep Learning in Python!
 
@@ -155,10 +147,10 @@ plenty of posts that you can read later to brush up on the steps of a
 deep learning project and the importance of evaluating model skill using
 cross-validation.
 
-::: {#AdThrive_Content_2_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_2/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 1. Install TensorFlow and tf.keras
 ----------------------------------
@@ -213,98 +205,95 @@ because this is the Python idiom used when referencing the API. First,
 the TensorFlow module is imported and named "*tf*"; then, Keras API
 elements are accessed via calls to *tf.keras*; for example:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc45299757442 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc45299757442-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc45299757442-1 .crayon-line} |
-| :::                               | [\# example of tf.keras python    |
+|                                | [\# example of tf.keras python    |
 |                                   | idiom]{.crayon-p}                 |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc45299757442-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc45299757442-2"} | 
 | 2                                 | ighter-62ba79b45bc45299757442-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [import ]{.crayon-e}[tensorflow   |
-| ::: {.cray                        | ]{.crayon-e}[as]{.crayon-st}[     |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-h}[tf]{.crayon-i}       |
-| ighter-62ba79b45bc45299757442-3"} | :::                               |
+| ighter-62ba79b45bc45299757442-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc45299757442-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [\# use keras API]{.crayon-p}     |
-| ighter-62ba79b45bc45299757442-4"} | :::                               |
+| ighter-62ba79b45bc45299757442-4"} |                                |
 | 4                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc45299757442-4 . |
-| ::: {.cray                        | crayon-line .crayon-striped-line} |
+| 
 | on-num line="urvanov-syntax-highl | [model]{.crayon-v}[               |
 | ighter-62ba79b45bc45299757442-5"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 5                                 | ]{.crayon-h}[tf]{.crayon-v}[.     |
-| :::                               | ]{.crayon-sy}[keras]{.crayon-v}[. |
-| :::                               | ]{.crayon-sy}[Sequential]{.crayon |
+|                                | ]{.crayon-sy}[keras]{.crayon-v}[. |
+|                                | ]{.crayon-sy}[Sequential]{.crayon |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {                             |
+|                                   | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc45299757442-5 .crayon-line} |
 |                                   | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 I generally don't use this idiom myself; I don't think it reads cleanly.
 
@@ -321,10 +310,10 @@ API.
 
 --- [Keras Project Homepage](https://keras.io/), Accessed December 2019.
 
-::: {#AdThrive_Content_3_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;" google-query-id="CKGE07n60fgCFfNCHQkdVJAN3Q"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_3/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 ### 1.2 How to Install TensorFlow
 
@@ -345,65 +334,62 @@ your workstation is by using *pip*.
 
 For example, on the command line, you can type:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc4f856309399 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc4f856309399-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc4f856309399-1 .crayon-line} |
-| :::                               | sudo pip install tensorflow       |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | sudo pip install tensorflow       |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 If you prefer to use an installation method more specific to your
 platform or package manager, you can see a complete list of installation
@@ -417,10 +403,10 @@ All examples in this tutorial will work just fine on a modern CPU. If
 you want to configure TensorFlow for your GPU, you can do that after
 completing this tutorial. Don't get distracted!
 
-::: {#AdThrive_Content_4_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_4/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 ### 1.3 How to Confirm TensorFlow Is Installed
 
@@ -435,82 +421,79 @@ step, you won't be able to run the examples later.
 Create a new file called *versions.py* and copy and paste the following
 code into the file.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc51158104422 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc51158104422-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc51158104422-1 .crayon-line} |
-| :::                               | [\# check version]{.crayon-p}     |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | [\# check version]{.crayon-p}     |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc51158104422-2"} | ighter-62ba79b45bc51158104422-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | [import                           |
+|                                | [import                           |
 |                                   | ]{                                |
-| ::: {.cray                        | .crayon-e}[tensorflow]{.crayon-e} |
-| on-num line="urvanov-syntax-highl | :::                               |
+| 
+| on-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc51158104422-3"} |                                   |
-| 3                                 | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc51158104422-3 .crayon-line} |
+| 3                                 | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
+|                                | 9b45bc51158104422-3 .crayon-line} |
 |                                   | [print]{.crayon                   |
 |                                   | -e}[(]{.crayon-sy}[tensorflow]{.c |
 |                                   | rayon-v}[.]{.crayon-sy}[\_\_versi |
 |                                   | on\_\_]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Save the file, then open your [command
 line](https://machinelearningmastery.com/faq/single-faq/how-do-i-run-a-script-from-the-command-line)
@@ -518,127 +501,121 @@ and change directory to where you saved the file.
 
 Then type:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc52590603863 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc52590603863-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc52590603863-1 .crayon-line} |
-| :::                               | python versions.py                |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | python versions.py                |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 You should then see output like the following:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc53932976823 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc53932976823-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc53932976823-1 .crayon-line} |
-| :::                               | 2.2.0                             |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | 2.2.0                             |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 This confirms that TensorFlow is installed correctly and that we are all
 using the same version.
@@ -651,10 +628,10 @@ recommend running all code from the command line in this manner, and
 [not from a notebook or an
 IDE](https://machinelearningmastery.com/faq/single-faq/why-dont-use-or-recommend-notebooks).
 
-::: {#AdThrive_Content_5_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_5/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 #### If You Get Warning Messages
 
@@ -665,82 +642,79 @@ your TensorFlow installation was not configured to use.
 
 Some examples on my workstation include:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc54350394270 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc54350394270-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc54350394270-1 .crayon-line} |
-| :::                               | Your CPU supports instructions    |
+|                                | Your CPU supports instructions    |
 |                                   | that this TensorFlow binary was   |
-| ::: {.crayon-num .crayon-strip    | not compiled to use: AVX2 FMA     |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc54350394270-2"} |                                   |
-| 2                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc54350394270-2 . |
+| 2                                 | 
+|                                | ighter-62ba79b45bc54350394270-2 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | XLA service 0x7fde3f2e6180        |
+| 
 | on-num line="urvanov-syntax-highl | executing computations on         |
 | ighter-62ba79b45bc54350394270-3"} | platform Host. Devices:           |
-| 3                                 | :::                               |
-| :::                               |                                   |
-| :::                               | ::: {                             |
+| 3                                 |                                |
+|                                |                                   |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc54350394270-3 .crayon-line} |
 |                                   | StreamExecutor device (0): Host,  |
 |                                   | Default Version                   |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 They are not your fault. **You did nothing wrong**.
 
@@ -756,10 +730,10 @@ Now that you know what tf.keras is, how to install TensorFlow, and how
 to confirm your development environment is working, let's look at the
 life-cycle of deep learning models in TensorFlow.
 
-::: {#AdThrive_Content_6_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_6/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 2. Deep Learning Model Life-Cycle
 ---------------------------------
@@ -794,86 +768,83 @@ and connecting the layers together into a cohesive model.
 Models can be defined either with the Sequential API or the Functional
 API, and we will take a look at this in the next section.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc56046804124 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc56046804124-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc56046804124-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc56046804124-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc56046804124-2"} | 
 | 2                                 | ighter-62ba79b45bc56046804124-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# define the model]{.crayon-p}  |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc56046804124-3"} | ::: {                             |
+| ighter-62ba79b45bc56046804124-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc56046804124-3 .crayon-line} |
-| :::                               | [model]{.crayon-v}[               |
+|                                | 9b45bc56046804124-3 .crayon-line} |
+|                                | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[.]{.crayon-          |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_7_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_7/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### Compile the Model
 
@@ -899,84 +870,81 @@ For a list of supported optimizers, see this:
 -   [tf.keras
     Optimizers](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers)
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc58390949004 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc58390949004-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc58390949004-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc58390949004-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc58390949004-2"} | 
 | 2                                 | ighter-62ba79b45bc58390949004-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc58390949004-3"} | ::: {                             |
+| ighter-62ba79b45bc58390949004-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc58390949004-3 .crayon-line} |
+|                                | 9b45bc58390949004-3 .crayon-line} |
 |                                   | [opt]{.crayon-v}[                 |
-| ::: {.crayon-num .crayon-strip    | ]{.crayon-h}[=]{.crayon-o}[       |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.crayon-h}[SGD]{.               |
 | ighter-62ba79b45bc58390949004-4"} | crayon-e}[(]{.crayon-sy}[learning |
 | 4                                 | \_rate]{.crayon-v}[=]{.crayon-o}[ |
-| :::                               | 0.01]{.crayon-cn}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[                     |
+|                                | 0.01]{.crayon-cn}[,]{.crayon-sy}[ |
+|                                | ]{.crayon-h}[                     |
 |                                   | momentum]{.crayon-v}[=]{.crayon-o |
 |                                   | }[0.9]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
+|                                   | 
 |                                   | ighter-62ba79b45bc58390949004-4 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [mod                              |
@@ -987,11 +955,11 @@ For a list of supported optimizers, see this:
 |                                   | ]{.crayon-h}[loss]{.crayon-v}     |
 |                                   | [=]{.crayon-o}[\'binary\_crossent |
 |                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 The three most common loss functions are:
 
@@ -1000,73 +968,70 @@ The three most common loss functions are:
     classification.
 -   '*mse*' (mean squared error) for regression.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc59526945989 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc59526945989-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc59526945989-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc59526945989-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc59526945989-2"} | 
 | 2                                 | ighter-62ba79b45bc59526945989-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc59526945989-3"} | ::: {                             |
+| ighter-62ba79b45bc59526945989-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc59526945989-3 .crayon-line} |
-| :::                               | [model]{                          |
+|                                | 9b45bc59526945989-3 .crayon-line} |
+|                                | [model]{                          |
 |                                   | .crayon-v}[.]{.crayon-sy}[compile |
 |                                   | ]{.crayon-e}[(]{.crayon-sy}[optim |
 |                                   | izer]{.crayon-v}[=]{.crayon-o}[\' |
@@ -1074,11 +1039,11 @@ The three most common loss functions are:
 |                                   | ]{.crayon-h}                      |
 |                                   | [loss]{.crayon-v}[=]{.crayon-o}[\ |
 |                                   | 'mse\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 For a list of supported loss functions, see:
 
@@ -1093,73 +1058,70 @@ For a list of supported metrics, see:
 -   [tf.keras
     Metrics](https://www.tensorflow.org/api_docs/python/tf/keras/metrics)
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc5a942756483 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc5a942756483-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc5a942756483-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5a942756483-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc5a942756483-2"} | 
 | 2                                 | ighter-62ba79b45bc5a942756483-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5a942756483-3"} | ::: {                             |
+| ighter-62ba79b45bc5a942756483-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc5a942756483-3 .crayon-line} |
-| :::                               | [model]{                          |
+|                                | 9b45bc5a942756483-3 .crayon-line} |
+|                                | [model]{                          |
 |                                   | .crayon-v}[.]{.crayon-sy}[compile |
 |                                   | ]{.crayon-e}[(]{.crayon-sy}[optim |
 |                                   | izer]{.crayon-v}[=]{.crayon-o}[\' |
@@ -1171,16 +1133,16 @@ For a list of supported metrics, see:
 |                                   | s]{.crayon-v}[=]{.crayon-o}[\[]{. |
 |                                   | crayon-sy}[\'accuracy\']{.crayon- |
 |                                   | s}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_8_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_8/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### Fit the Model
 
@@ -1201,73 +1163,70 @@ From an API perspective, this involves calling a function to perform the
 training process. This function will block (not return) until the
 training process has finished.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc5b278743097 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc5b278743097-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc5b278743097-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5b278743097-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc5b278743097-2"} | 
 | 2                                 | ighter-62ba79b45bc5b278743097-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5b278743097-3"} | ::: {                             |
+| ighter-62ba79b45bc5b278743097-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc5b278743097-3 .crayon-line} |
-| :::                               | [model]{.crayon-v}[.]{.crayo      |
+|                                | 9b45bc5b278743097-3 .crayon-line} |
+|                                | [model]{.crayon-v}[.]{.crayo      |
 |                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon                         |
@@ -1278,11 +1237,11 @@ training process has finished.
 |                                   | ]{.crayon-h}[ba                   |
 |                                   | tch\_size]{.crayon-v}[=]{.crayon- |
 |                                   | o}[32]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 For help on how to choose the batch size, see this tutorial:
 
@@ -1296,73 +1255,70 @@ simple report of model performance each epoch by setting the "*verbose*"
 argument to 2. All output can be turned off during training by setting
 "*verbose*" to 0.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc5c488460921 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc5c488460921-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc5c488460921-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5c488460921-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc5c488460921-2"} | 
 | 2                                 | ighter-62ba79b45bc5c488460921-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5c488460921-3"} | ::: {                             |
+| ighter-62ba79b45bc5c488460921-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc5c488460921-3 .crayon-line} |
-| :::                               | [model]{.crayon-v}[.]{.crayo      |
+|                                | 9b45bc5c488460921-3 .crayon-line} |
+|                                | [model]{.crayon-v}[.]{.crayo      |
 |                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon                         |
@@ -1376,16 +1332,16 @@ argument to 2. All output can be turned off during training by setting
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_9_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content_9/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### Evaluate the Model
 
@@ -1402,73 +1358,70 @@ From an API perspective, this involves calling a function with the
 holdout dataset and getting a loss and perhaps other metrics that can be
 reported.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc5d780378100 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc5d780378100-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc5d780378100-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5d780378100-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc5d780378100-2"} | 
 | 2                                 | ighter-62ba79b45bc5d780378100-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# evaluate the                  |
-| ::: {.cray                        | model]{.crayon-p}                 |
-| on-num line="urvanov-syntax-highl | :::                               |
+| 
+| on-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc5d780378100-3"} |                                   |
-| 3                                 | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc5d780378100-3 .crayon-line} |
+| 3                                 | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
+|                                | 9b45bc5d780378100-3 .crayon-line} |
 |                                   | [loss]{.crayon-v}[                |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}                      |
@@ -1480,11 +1433,11 @@ reported.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 #### Make a Prediction
 
@@ -1506,88 +1459,85 @@ Now that we are familiar with the model life-cycle, let's take a look at
 the two main ways to use the tf.keras API to build models: sequential
 and functional.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc5e272467202 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc5e272467202-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc5e272467202-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5e272467202-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc5e272467202-2"} | 
 | 2                                 | ighter-62ba79b45bc5e272467202-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc5e272467202-3"} | ::: {                             |
+| ighter-62ba79b45bc5e272467202-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc5e272467202-3 .crayon-line} |
-| :::                               | [yhat]{.crayon-v}[                |
+|                                | 9b45bc5e272467202-3 .crayon-line} |
+|                                | [yhat]{.crayon-v}[                |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-                        |
 |                                   | h}[model]{.crayon-v}[.]{.crayon-s |
 |                                   | y}[predict]{.crayon-e}[(]{.crayon |
 |                                   | -sy}[X]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_10_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_0__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 ### 2.2 Sequential Model API (Simple)
 
@@ -1604,102 +1554,99 @@ The example below defines a Sequential MLP model that accepts eight
 inputs, has one hidden layer with 10 nodes and then an output layer with
 one node to predict a numerical value.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc60072032113 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc60072032113-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc60072032113-1 .crayon-line} |
-| :::                               | [\# example of a model defined    |
+|                                | [\# example of a model defined    |
 |                                   | with the sequential               |
-| ::: {.crayon-num .crayon-strip    | api]{.crayon-p}                   |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc60072032113-2"} |                                   |
-| 2                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc60072032113-2 . |
+| 2                                 | 
+|                                | ighter-62ba79b45bc60072032113-2 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc60072032113-3"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 3                                 | ]{.crayon-e}[import               |
-| :::                               | ]{                                |
+|                                | ]{                                |
 |                                   | .crayon-e}[Sequential]{.crayon-e} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc60072032113-4"} | ::: {                             |
+| ighter-62ba79b45bc60072032113-4"} | 
 | 4                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc60072032113-3 .crayon-line} |
+|                                | 9b45bc60072032113-3 .crayon-line} |
 |                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow]          |
+| 
 | on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[keras] |
 | ighter-62ba79b45bc60072032113-5"} | {.crayon-v}[.]{.crayon-sy}[layers |
 | 5                                 | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Dense]{.crayon-i}    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | ]{.crayon-e}[Dense]{.crayon-i}    |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc60072032113-6"} | ighter-62ba79b45bc60072032113-4 . |
 | 6                                 | crayon-line .crayon-striped-line} |
-| :::                               | [\# define the model]{.crayon-p}  |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | [\# define the model]{.crayon-p}  |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc60072032113-7"} | #urvanov-syntax-highlighter-62ba7 |
 | 7                                 | 9b45bc60072032113-5 .crayon-line} |
-| :::                               | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | [model]{.crayon-v}[               |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
+|                                   | 
 |                                   | ighter-62ba79b45bc60072032113-6 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -1711,9 +1658,9 @@ one node to predict a numerical value.
 |                                   | crayon-o}[(]{.crayon-sy}[8]{.cray |
 |                                   | on-cn}[,]{.crayon-sy}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {                             |
+|                                   | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc60072032113-7 .crayon-line} |
 |                                   | [model]{.c                        |
@@ -1721,11 +1668,11 @@ one node to predict a numerical value.
 |                                   | yon-e}[(]{.crayon-sy}[Dense]{.cra |
 |                                   | yon-e}[(]{.crayon-sy}[1]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Note that the visible layer of the network is defined by the
 "*input\_shape*" argument on the first hidden layer. That means in the
@@ -1737,126 +1684,123 @@ until you have added all of your layers.
 
 For example, here is a deep MLP with five hidden layers.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc61785997507 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc61785997507-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc61785997507-1 .crayon-line} |
-| :::                               | [\# example of a model defined    |
+|                                | [\# example of a model defined    |
 |                                   | with the sequential               |
-| ::: {.crayon-num .crayon-strip    | api]{.crayon-p}                   |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc61785997507-2"} |                                   |
-| 2                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc61785997507-2 . |
+| 2                                 | 
+|                                | ighter-62ba79b45bc61785997507-2 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc61785997507-3"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 3                                 | ]{.crayon-e}[import               |
-| :::                               | ]{                                |
+|                                | ]{                                |
 |                                   | .crayon-e}[Sequential]{.crayon-e} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc61785997507-4"} | ::: {                             |
+| ighter-62ba79b45bc61785997507-4"} | 
 | 4                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc61785997507-3 .crayon-line} |
+|                                | 9b45bc61785997507-3 .crayon-line} |
 |                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow]          |
+| 
 | on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[keras] |
 | ighter-62ba79b45bc61785997507-5"} | {.crayon-v}[.]{.crayon-sy}[layers |
 | 5                                 | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Dense]{.crayon-i}    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | ]{.crayon-e}[Dense]{.crayon-i}    |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc61785997507-6"} | ighter-62ba79b45bc61785997507-4 . |
 | 6                                 | crayon-line .crayon-striped-line} |
-| :::                               | [\# define the model]{.crayon-p}  |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | [\# define the model]{.crayon-p}  |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc61785997507-7"} | #urvanov-syntax-highlighter-62ba7 |
 | 7                                 | 9b45bc61785997507-5 .crayon-line} |
-| :::                               | [model]{.crayon-v}[               |
+|                                | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-strip    | ]{.crayon-h}[Sequential]{.crayon  |
+| 
 | ed-num line="urvanov-syntax-highl | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| ighter-62ba79b45bc61785997507-8"} | :::                               |
+| ighter-62ba79b45bc61785997507-8"} |                                |
 | 8                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc61785997507-6 . |
-| ::: {.cray                        | crayon-line .crayon-striped-line} |
+| 
 | on-num line="urvanov-syntax-highl | [model]{.crayon-v}[.]{.crayon-s   |
 | ighter-62ba79b45bc61785997507-9"} | y}[add]{.crayon-e}[(]{.crayon-sy} |
 | 9                                 | [Dense]{.crayon-e}[(]{.crayon-sy} |
-| :::                               | [100]{.crayon-cn}[,]{.crayon-sy}[ |
+|                                | [100]{.crayon-cn}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon                         |
-| ::: {.crayon-num .crayon-stripe   | -h}[input\_shape]{.crayon-v}[=]{. |
+| 
 | d-num line="urvanov-syntax-highli | crayon-o}[(]{.crayon-sy}[8]{.cray |
 | ghter-62ba79b45bc61785997507-10"} | on-cn}[,]{.crayon-sy}[)]{.crayon- |
 | 10                                | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {                             |
+| 
 | n-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
 | ghter-62ba79b45bc61785997507-11"} | 9b45bc61785997507-7 .crayon-line} |
 | 11                                | [model]{.cr                       |
-| :::                               | ayon-v}[.]{.crayon-sy}[add]{.cray |
-| :::                               | on-e}[(]{.crayon-sy}[Dense]{.cray |
+|                                | ayon-v}[.]{.crayon-sy}[add]{.cray |
+|                                | on-e}[(]{.crayon-sy}[Dense]{.cray |
 |                                   | on-e}[(]{.crayon-sy}[80]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
+|                                   | 
 |                                   | ighter-62ba79b45bc61785997507-8 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.cr                       |
@@ -1864,9 +1808,9 @@ For example, here is a deep MLP with five hidden layers.
 |                                   | on-e}[(]{.crayon-sy}[Dense]{.cray |
 |                                   | on-e}[(]{.crayon-sy}[30]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {                             |
+|                                   | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc61785997507-9 .crayon-line} |
 |                                   | [model]{.cr                       |
@@ -1874,9 +1818,9 @@ For example, here is a deep MLP with five hidden layers.
 |                                   | on-e}[(]{.crayon-sy}[Dense]{.cray |
 |                                   | on-e}[(]{.crayon-sy}[10]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc61785997507-10 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.c                        |
@@ -1884,9 +1828,9 @@ For example, here is a deep MLP with five hidden layers.
 |                                   | yon-e}[(]{.crayon-sy}[Dense]{.cra |
 |                                   | yon-e}[(]{.crayon-sy}[5]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc61785997507-11 .crayon-line} |
 |                                   | [model]{.c                        |
@@ -1894,16 +1838,16 @@ For example, here is a deep MLP with five hidden layers.
 |                                   | yon-e}[(]{.crayon-sy}[Dense]{.cra |
 |                                   | yon-e}[(]{.crayon-sy}[1]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_11_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_1__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 ### 2.3 Functional Model API (Advanced)
 
@@ -1916,347 +1860,335 @@ First, an input layer must be defined via the *Input* class, and the
 shape of an input sample is specified. We must retain a reference to the
 input layer when defining the model.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc62603152749 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc62603152749-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc62603152749-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc62603152749-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc62603152749-2"} | 
 | 2                                 | ighter-62ba79b45bc62603152749-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# define the layers]{.crayon-p} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc62603152749-3"} | ::: {                             |
+| ighter-62ba79b45bc62603152749-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc62603152749-3 .crayon-line} |
-| :::                               | [x\_in]{.crayon-v}[               |
+|                                | 9b45bc62603152749-3 .crayon-line} |
+|                                | [x\_in]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Input]{              |
 |                                   | .crayon-e}[(]{.crayon-sy}[shape]{ |
 |                                   | .crayon-v}[=]{.crayon-o}[(]{.cray |
 |                                   | on-sy}[8]{.crayon-cn}[,]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Next, a fully connected layer can be connected to the input by calling
 the layer and passing the input layer. This will return a reference to
 the output connection in this new layer.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc63178010351 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc63178010351-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc63178010351-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc63178010351-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc63178010351-2"} | 
 | 2                                 | ighter-62ba79b45bc63178010351-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-| :::                               | [x]{.crayon-v}[                   |
+|                                | crayon-line .crayon-striped-line} |
+|                                | [x]{.crayon-v}[                   |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Dense]{.cray         |
 |                                   | on-e}[(]{.crayon-sy}[10]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[(]{.crayon-sy} |
 |                                   | [x\_in]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 We can then connect this to an output layer in the same manner.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc64886505929 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc64886505929-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc64886505929-1 .crayon-line} |
-| :::                               | [.]{.crayon-                      |
+|                                | [.]{.crayon-                      |
 |                                   | sy}[.]{.crayon-sy}[.]{.crayon-sy} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc64886505929-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc64886505929-2"} | 
 | 2                                 | ighter-62ba79b45bc64886505929-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-| :::                               | [x\_out]{.crayon-v}[              |
+|                                | crayon-line .crayon-striped-line} |
+|                                | [x\_out]{.crayon-v}[              |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Dense]{              |
 |                                   | .crayon-e}[(]{.crayon-sy}[1]{.cra |
 |                                   | yon-cn}[)]{.crayon-sy}[(]{.crayon |
 |                                   | -sy}[x]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Once connected, we define a Model object and specify the input and
 output layers. The complete example is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc65343364769 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc65343364769-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc65343364769-1 .crayon-line} |
-| :::                               | [\# example of a model defined    |
+|                                | [\# example of a model defined    |
 |                                   | with the functional               |
-| ::: {.crayon-num .crayon-strip    | api]{.crayon-p}                   |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc65343364769-2"} |                                   |
-| 2                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc65343364769-2 . |
+| 2                                 | 
+|                                | ighter-62ba79b45bc65343364769-2 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc65343364769-3"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 3                                 | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Model]{.crayon-e}    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
+|                                | ]{.crayon-e}[Model]{.crayon-e}    |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc65343364769-4"} | #urvanov-syntax-highlighter-62ba7 |
 | 4                                 | 9b45bc65343364769-3 .crayon-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
 | ighter-62ba79b45bc65343364769-5"} | ]{.crayon-e}[Input]{.crayon-e}    |
-| 5                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.crayon-num .crayon-strip    | ighter-62ba79b45bc65343364769-4 . |
+| 5                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | ed-num line="urvanov-syntax-highl | crayon-line .crayon-striped-line} |
 | ighter-62ba79b45bc65343364769-6"} | [from                             |
 | 6                                 | ]{.crayon-e}[tensorflow]          |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[keras] |
+|                                | {.crayon-v}[.]{.crayon-sy}[keras] |
 |                                   | {.crayon-v}[.]{.crayon-sy}[layers |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[Dense]{.crayon-i}    |
-| ighter-62ba79b45bc65343364769-7"} | :::                               |
+| ighter-62ba79b45bc65343364769-7"} |                                |
 | 7                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc65343364769-5 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [\# define the layers]{.crayon-p} |
-| ighter-62ba79b45bc65343364769-8"} | :::                               |
+| ighter-62ba79b45bc65343364769-8"} |                                |
 | 8                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc65343364769-6 . |
-| ::: {.cray                        | crayon-line .crayon-striped-line} |
+| 
 | on-num line="urvanov-syntax-highl | [x\_in]{.crayon-v}[               |
 | ighter-62ba79b45bc65343364769-9"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 9                                 | ]{.crayon-h}[Input]{              |
-| :::                               | .crayon-e}[(]{.crayon-sy}[shape]{ |
+|                                | .crayon-e}[(]{.crayon-sy}[shape]{ |
 |                                   | .crayon-v}[=]{.crayon-o}[(]{.cray |
-| ::: {.crayon-num .crayon-stripe   | on-sy}[8]{.crayon-cn}[,]{.crayon- |
+| 
 | d-num line="urvanov-syntax-highli | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-| ghter-62ba79b45bc65343364769-10"} | :::                               |
+| ghter-62ba79b45bc65343364769-10"} |                                |
 | 10                                |                                   |
-| :::                               | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
+|                                | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc65343364769-7 .crayon-line} |
 |                                   | [x]{.crayon-v}[                   |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
@@ -2264,9 +2196,9 @@ output layers. The complete example is listed below.
 |                                   | on-e}[(]{.crayon-sy}[10]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[(]{.crayon-sy} |
 |                                   | [x\_in]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
+|                                   | 
 |                                   | ighter-62ba79b45bc65343364769-8 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [x\_out]{.crayon-v}[              |
@@ -2275,15 +2207,15 @@ output layers. The complete example is listed below.
 |                                   | .crayon-e}[(]{.crayon-sy}[1]{.cra |
 |                                   | yon-cn}[)]{.crayon-sy}[(]{.crayon |
 |                                   | -sy}[x]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {                             |
+|                                   | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc65343364769-9 .crayon-line} |
 |                                   | [\# define the model]{.crayon-p}  |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc65343364769-10 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[               |
@@ -2295,11 +2227,11 @@ output layers. The complete example is listed below.
 |                                   | ]{.crayon-h}[o                    |
 |                                   | utputs]{.crayon-v}[=]{.crayon-o}[ |
 |                                   | x\_out]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 As such, it allows for more complicated model designs, such as models
 that may have multiple input paths (separate vectors) and models that
@@ -2316,10 +2248,10 @@ Now that we are familiar with the model life-cycle and the two APIs that
 can be used to define models, let's look at developing some standard
 models.
 
-::: {#AdThrive_Content_12_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_2__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 3. How to Develop Deep Learning Models
 --------------------------------------
@@ -2351,10 +2283,10 @@ Note, the models in this section are effective, but not optimized. See
 if you can improve their performance. Post your findings in the comments
 below.
 
-::: {#AdThrive_Content_13_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_3__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 #### MLP for Binary Classification
 
@@ -2398,291 +2330,288 @@ loss](https://machinelearningmastery.com/cross-entropy-for-machine-learning/).
 
 The complete example is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc66492787756 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc66492787756-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc66492787756-1 .crayon-line} |
-| :::                               | [\# mlp for binary                |
+|                                | [\# mlp for binary                |
 |                                   | classification]{.crayon-p}        |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc66492787756-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc66492787756-2"} | 
 | 2                                 | ighter-62ba79b45bc66492787756-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from ]{.crayon-e}[pandas         |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]                                 |
 | ighter-62ba79b45bc66492787756-3"} | {.crayon-e}[read\_csv]{.crayon-e} |
-| 3                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
+| 3                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | ed-num line="urvanov-syntax-highl | 9b45bc66492787756-3 .crayon-line} |
 | ighter-62ba79b45bc66492787756-4"} | [from                             |
 | 4                                 | ]{.crayon-e}[sklearn]{.crayon-v   |
-| :::                               | }[.]{.crayon-sy}[model\_selection |
+|                                | }[.]{.crayon-sy}[model\_selection |
 |                                   | ]{.crayon-e}[import               |
-| ::: {.cray                        | ]{.crayon-                        |
+| 
 | on-num line="urvanov-syntax-highl | e}[train\_test\_split]{.crayon-e} |
-| ighter-62ba79b45bc66492787756-5"} | :::                               |
+| ighter-62ba79b45bc66492787756-5"} |                                |
 | 5                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc66492787756-4 . |
-| ::: {.crayon-num .crayon-strip    | crayon-line .crayon-striped-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [from                             |
 | ighter-62ba79b45bc66492787756-6"} | ]{.crayon-e}[sklearn]{.crayo      |
 | 6                                 | n-v}[.]{.crayon-sy}[preprocessing |
-| :::                               | ]{.crayon-e}[import               |
+|                                | ]{.crayon-e}[import               |
 |                                   | ]{.c                              |
-| ::: {.cray                        | rayon-e}[LabelEncoder]{.crayon-e} |
-| on-num line="urvanov-syntax-highl | :::                               |
+| 
+| on-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc66492787756-7"} |                                   |
-| 7                                 | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
+| 7                                 | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc66492787756-5 .crayon-line} |
-| ::: {.crayon-num .crayon-strip    | [from                             |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc66492787756-8"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 8                                 | ]{.crayon-e}[import               |
-| :::                               | ]{                                |
+|                                | ]{                                |
 |                                   | .crayon-e}[Sequential]{.crayon-e} |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc66492787756-9"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc66492787756-9"} | 
 | 9                                 | ighter-62ba79b45bc66492787756-6 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from                             |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-e}[tensorflow]          |
+| 
 | d-num line="urvanov-syntax-highli | {.crayon-v}[.]{.crayon-sy}[keras] |
 | ghter-62ba79b45bc66492787756-10"} | {.crayon-v}[.]{.crayon-sy}[layers |
 | 10                                | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Dense]{.crayon-i}    |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {                             |
+|                                | ]{.crayon-e}[Dense]{.crayon-i}    |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc66492787756-11"} | #urvanov-syntax-highlighter-62ba7 |
 | 11                                | 9b45bc66492787756-7 .crayon-line} |
-| :::                               | [\# load the dataset]{.crayon-p}  |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highl        |
+|                                | [\# load the dataset]{.crayon-p}  |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc66492787756-12"} | ighter-62ba79b45bc66492787756-8 . |
 | 12                                | crayon-line .crayon-striped-line} |
-| :::                               | [path]{.crayon-v}[                |
+|                                | [path]{.crayon-v}[                |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayo                       | ]{.c                              |
+| 
 | n-num line="urvanov-syntax-highli | rayon-h}[\'https://raw.githubuser |
 | ghter-62ba79b45bc66492787756-13"} | content.com/jbrownlee/Datasets/ma |
 | 13                                | ster/ionosphere.csv\']{.crayon-s} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {                             |
+| 
 | d-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
 | ghter-62ba79b45bc66492787756-14"} | 9b45bc66492787756-9 .crayon-line} |
 | 14                                | [df]{.crayon-v}[                  |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[rea                  |
-| ::: {.crayo                       | d\_csv]{.crayon-e}[(]{.crayon-sy} |
+| 
 | n-num line="urvanov-syntax-highli | [path]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc66492787756-15"} | ]{.crayon-h                       |
 | 15                                | }[header]{.crayon-v}[=]{.crayon-o |
-| :::                               | }[None]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | }[None]{.crayon-v}[)]{.crayon-sy} |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc66492787756-16"} | ghter-62ba79b45bc66492787756-10 . |
 | 16                                | crayon-line .crayon-striped-line} |
-| :::                               | [\# split into input and output   |
+|                                | [\# split into input and output   |
 |                                   | columns]{.crayon-p}               |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc66492787756-17"} | ::: {#                            |
+| ghter-62ba79b45bc66492787756-17"} | 
 | 17                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc66492787756-11 .crayon-line} |
+|                                | b45bc66492787756-11 .crayon-line} |
 |                                   | [X]{.crayon-v}[,]{.crayon-sy}[    |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[y]{.crayon-v}[       |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc66492787756-18"} | ]{.crayo                          |
 | 18                                | n-h}[df]{.crayon-v}[.]{.crayon-sy |
-| :::                               | }[values]{.crayon-v}[\[]{.crayon- |
+|                                | }[values]{.crayon-v}[\[]{.crayon- |
 |                                   | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[:]{.cray             |
+| 
 | n-num line="urvanov-syntax-highli | on-o}[-]{.crayon-o}[1]{.crayon-cn |
 | ghter-62ba79b45bc66492787756-19"} | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 | 19                                | ]{.crayo                          |
-| :::                               | n-h}[df]{.crayon-v}[.]{.crayon-sy |
+|                                | n-h}[df]{.crayon-v}[.]{.crayon-sy |
 |                                   | }[values]{.crayon-v}[\[]{.crayon- |
-| ::: {.crayon-num .crayon-stripe   | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[-]{.crayon-          |
 | ghter-62ba79b45bc66492787756-20"} | o}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| 20                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayo                       | ghter-62ba79b45bc66492787756-12 . |
+| 20                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | n-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc66492787756-21"} | [\# ensure all data are floating  |
 | 21                                | point values]{.crayon-p}          |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#                            |
+| 
 | d-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc66492787756-22"} | b45bc66492787756-13 .crayon-line} |
 | 22                                | [X]{.crayon-v}[                   |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[X]                   |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[astype |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-e}[(]{.crayon-sy}[\'flo |
 | ghter-62ba79b45bc66492787756-23"} | at32\']{.crayon-s}[)]{.crayon-sy} |
-| 23                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc66492787756-14 . |
+| 23                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc66492787756-24"} | [\# encode strings to             |
 | 24                                | integer]{.crayon-p}               |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#                            |
+| 
 | n-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc66492787756-25"} | b45bc66492787756-15 .crayon-line} |
 | 25                                | [y]{.crayon-v}[                   |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[LabelEnc             |
-| ::: {.crayon-num .crayon-stripe   | oder]{.crayon-e}[(]{.crayon-sy}[) |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-sy}[.]{.crayon-sy}[fit\ |
 | ghter-62ba79b45bc66492787756-26"} | _transform]{.crayon-e}[(]{.crayon |
 | 26                                | -sy}[y]{.crayon-v}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#urvanov-syntax-highli       |
+| 
 | n-num line="urvanov-syntax-highli | ghter-62ba79b45bc66492787756-16 . |
 | ghter-62ba79b45bc66492787756-27"} | crayon-line .crayon-striped-line} |
 | 27                                | [\# split into train and test     |
-| :::                               | datasets]{.crayon-p}              |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#                            |
+|                                | datasets]{.crayon-p}              |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc66492787756-28"} | urvanov-syntax-highlighter-62ba79 |
 | 28                                | b45bc66492787756-17 .crayon-line} |
-| :::                               | [X\_                              |
+|                                | [X\_                              |
 |                                   | train]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[X\                   |
+| 
 | n-num line="urvanov-syntax-highli | _test]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc66492787756-29"} | ]{.crayon-h}[y\_                  |
 | 29                                | train]{.crayon-v}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[y\_test]{.crayon-v}[ |
+|                                | ]{.crayon-h}[y\_test]{.crayon-v}[ |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[train\_te            |
+| 
 | d-num line="urvanov-syntax-highli | st\_split]{.crayon-e}[(]{.crayon- |
 | ghter-62ba79b45bc66492787756-30"} | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
 | 30                                | ]{.crayon                         |
-| :::                               | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[tes                  |
-| ::: {.crayo                       | t\_size]{.crayon-v}[=]{.crayon-o} |
+| 
 | n-num line="urvanov-syntax-highli | [0.33]{.crayon-cn}[)]{.crayon-sy} |
-| ghter-62ba79b45bc66492787756-31"} | :::                               |
+| ghter-62ba79b45bc66492787756-31"} |                                |
 | 31                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc66492787756-18 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [pri                              |
 | ghter-62ba79b45bc66492787756-32"} | nt]{.crayon-e}[(]{.crayon-sy}[X\_ |
 | 32                                | train]{.crayon-v}[.]{.crayon-sy}[ |
-| :::                               | shape]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | shape]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[X\                   |
-| ::: {.crayo                       | _test]{.crayon-v}[.]{.crayon-sy}[ |
+| 
 | n-num line="urvanov-syntax-highli | shape]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc66492787756-33"} | ]{.crayon-h}[y\_                  |
 | 33                                | train]{.crayon-v}[.]{.crayon-sy}[ |
-| :::                               | shape]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | shape]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[y                    |
-| ::: {.crayon-num .crayon-stripe   | \_test]{.crayon-v}[.]{.crayon-sy} |
+| 
 | d-num line="urvanov-syntax-highli | [shape]{.crayon-v}[)]{.crayon-sy} |
-| ghter-62ba79b45bc66492787756-34"} | :::                               |
+| ghter-62ba79b45bc66492787756-34"} |                                |
 | 34                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayo                       | b45bc66492787756-19 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [\# determine the number of input |
 | ghter-62ba79b45bc66492787756-35"} | features]{.crayon-p}              |
-| 35                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc66492787756-20 . |
+| 35                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc66492787756-36"} | [n\_features]{.crayon-v}[         |
 | 36                                | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[X                    |
-| :::                               | \_train]{.crayon-v}[.]{.crayon-sy |
+|                                | ]{.crayon-h}[X                    |
+|                                | \_train]{.crayon-v}[.]{.crayon-sy |
 |                                   | }[shape]{.crayon-v}[\[]{.crayon-s |
 |                                   | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-21 .crayon-line} |
 |                                   | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-22 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-23 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -2701,9 +2630,9 @@ The complete example is listed below.
 |                                   | [(]{.crayon-sy}[n\_features]{.cra |
 |                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-24 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -2717,9 +2646,9 @@ The complete example is listed below.
 |                                   | nel\_initializer]{.crayon-v}[=]{. |
 |                                   | crayon-o}[\'he\_normal\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-25 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -2730,15 +2659,15 @@ The complete example is listed below.
 |                                   | rayon-h}[activation]{.crayon-v}[= |
 |                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-26 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-27 .crayon-line} |
 |                                   | [model]{.                         |
@@ -2753,15 +2682,15 @@ The complete example is listed below.
 |                                   | s]{.crayon-v}[=]{.crayon-o}[\[]{. |
 |                                   | crayon-sy}[\'accuracy\']{.crayon- |
 |                                   | s}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-28 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-29 .crayon-line} |
 |                                   | [m                                |
@@ -2779,16 +2708,16 @@ The complete example is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-30 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# evaluate the                  |
 |                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-31 .crayon-line} |
 |                                   | [loss]{.crayon-v}[,]{.crayon-sy}[ |
@@ -2803,9 +2732,9 @@ The complete example is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-32 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [print]                           |
@@ -2814,15 +2743,15 @@ The complete example is listed below.
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
 |                                   | ]{.crayon-                        |
 |                                   | h}[acc]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-33 .crayon-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-34 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [row]{.crayon-v}[                 |
@@ -2871,9 +2800,9 @@ The complete example is listed below.
 |                                   | {.crayon-sy}[0.18641]{.crayon-cn} |
 |                                   | [,]{.crayon-sy}[-]{.crayon-o}[0.4 |
 |                                   | 5300]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc66492787756-35 .crayon-line} |
 |                                   | [yhat]{.crayon-v}[                |
@@ -2883,9 +2812,9 @@ The complete example is listed below.
 |                                   | }[predict]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[\[]{.crayon-sy}[row]{.crayon- |
 |                                   | v}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc66492787756-36 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [print]{.cray                     |
@@ -2894,11 +2823,11 @@ The complete example is listed below.
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
 |                                   | ]{.crayon-h                       |
 |                                   | }[yhat]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example first reports the shape of the dataset, then fits
 the model and evaluates it on the test dataset. Finally, a prediction is
@@ -2917,82 +2846,79 @@ In this case, we can see that the model achieved a classification
 accuracy of about 94 percent and then predicted a probability of 0.9
 that the one row of data belongs to class 1.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc69425642724 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc69425642724-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc69425642724-1 .crayon-line} |
-| :::                               | (235, 34) (116, 34) (235,) (116,) |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | (235, 34) (116, 34) (235,) (116,) |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc69425642724-2"} | ighter-62ba79b45bc69425642724-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | Test Accuracy: 0.940              |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | Test Accuracy: 0.940              |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc69425642724-3"} | #urvanov-syntax-highlighter-62ba7 |
 | 3                                 | 9b45bc69425642724-3 .crayon-line} |
-| :::                               | Predicted: 0.991                  |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | Predicted: 0.991                  |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_14_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_4__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### MLP for Multiclass Classification
 
@@ -3019,298 +2945,295 @@ encoded class labels (e.g. 0 for one class, 1 for the next class, etc.)
 The complete example of fitting and evaluating an MLP on the iris
 flowers dataset is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc6a458283227 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6a458283227-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc6a458283227-1 .crayon-line} |
-| :::                               | [\# mlp for multiclass            |
+|                                | [\# mlp for multiclass            |
 |                                   | classification]{.crayon-p}        |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc6a458283227-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc6a458283227-2"} | 
 | 2                                 | ighter-62ba79b45bc6a458283227-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from ]{.crayon-e}[numpy          |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[argmax]{.crayon-e}   |
-| ighter-62ba79b45bc6a458283227-3"} | :::                               |
+| ighter-62ba79b45bc6a458283227-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc6a458283227-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [from ]{.crayon-e}[pandas         |
 | ighter-62ba79b45bc6a458283227-4"} | ]{.crayon-e}[import               |
 | 4                                 | ]                                 |
-| :::                               | {.crayon-e}[read\_csv]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | {.crayon-e}[read\_csv]{.crayon-e} |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6a458283227-5"} | ighter-62ba79b45bc6a458283227-4 . |
 | 5                                 | crayon-line .crayon-striped-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[sklearn]{.crayon-v   |
-| ::: {.crayon-num .crayon-strip    | }[.]{.crayon-sy}[model\_selection |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
 | ighter-62ba79b45bc6a458283227-6"} | ]{.crayon-                        |
 | 6                                 | e}[train\_test\_split]{.crayon-e} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {                             |
+| 
 | on-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
 | ighter-62ba79b45bc6a458283227-7"} | 9b45bc6a458283227-5 .crayon-line} |
 | 7                                 | [from                             |
-| :::                               | ]{.crayon-e}[sklearn]{.crayo      |
+|                                | ]{.crayon-e}[sklearn]{.crayo      |
 |                                   | n-v}[.]{.crayon-sy}[preprocessing |
-| ::: {.crayon-num .crayon-strip    | ]{.crayon-e}[import               |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.c                              |
 | ighter-62ba79b45bc6a458283227-8"} | rayon-e}[LabelEncoder]{.crayon-e} |
-| 8                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.cray                        | ighter-62ba79b45bc6a458283227-6 . |
+| 8                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | on-num line="urvanov-syntax-highl | crayon-line .crayon-striped-line} |
 | ighter-62ba79b45bc6a458283227-9"} | [from                             |
 | 9                                 | ]{.crayon-e}[tensorflow           |
-| :::                               | ]{.crayon-v}[.]{.crayon-sy}[keras |
+|                                | ]{.crayon-v}[.]{.crayon-sy}[keras |
 |                                   | ]{.crayon-e}[import               |
-| ::: {.crayon-num .crayon-stripe   | ]{                                |
+| 
 | d-num line="urvanov-syntax-highli | .crayon-e}[Sequential]{.crayon-e} |
-| ghter-62ba79b45bc6a458283227-10"} | :::                               |
+| ghter-62ba79b45bc6a458283227-10"} |                                |
 | 10                                |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayo                       | 9b45bc6a458283227-7 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [from                             |
 | ghter-62ba79b45bc6a458283227-11"} | ]{.crayon-e}[tensorflow]          |
 | 11                                | {.crayon-v}[.]{.crayon-sy}[keras] |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[layers |
+|                                | {.crayon-v}[.]{.crayon-sy}[layers |
 |                                   | ]{.crayon-e}[import               |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-e}[Dense]{.crayon-i}    |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc6a458283227-12"} |                                   |
-| 12                                | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc6a458283227-8 . |
+| 12                                | 
+|                                | ighter-62ba79b45bc6a458283227-8 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayo                       | [\# load the dataset]{.crayon-p}  |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc6a458283227-13"} |                                   |
-| 13                                | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
+| 13                                | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc6a458283227-9 .crayon-line} |
-| ::: {.crayon-num .crayon-stripe   | [path]{.crayon-v}[                |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc6a458283227-14"} | ]{.crayon-h}[\'https://raw.gith   |
 | 14                                | ubusercontent.com/jbrownlee/Datas |
-| :::                               | ets/master/iris.csv\']{.crayon-s} |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | ets/master/iris.csv\']{.crayon-s} |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc6a458283227-15"} | ghter-62ba79b45bc6a458283227-10 . |
 | 15                                | crayon-line .crayon-striped-line} |
-| :::                               | [df]{.crayon-v}[                  |
+|                                | [df]{.crayon-v}[                  |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[rea                  |
+| 
 | d-num line="urvanov-syntax-highli | d\_csv]{.crayon-e}[(]{.crayon-sy} |
 | ghter-62ba79b45bc6a458283227-16"} | [path]{.crayon-v}[,]{.crayon-sy}[ |
 | 16                                | ]{.crayon-h                       |
-| :::                               | }[header]{.crayon-v}[=]{.crayon-o |
+|                                | }[header]{.crayon-v}[=]{.crayon-o |
 |                                   | }[None]{.crayon-v}[)]{.crayon-sy} |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc6a458283227-17"} | ::: {#                            |
+| ghter-62ba79b45bc6a458283227-17"} | 
 | 17                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc6a458283227-11 .crayon-line} |
+|                                | b45bc6a458283227-11 .crayon-line} |
 |                                   | [\# split into input and output   |
-| ::: {.crayon-num .crayon-stripe   | columns]{.crayon-p}               |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc6a458283227-18"} |                                   |
-| 18                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc6a458283227-12 . |
+| 18                                | 
+|                                | ghter-62ba79b45bc6a458283227-12 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayo                       | [X]{.crayon-v}[,]{.crayon-sy}[    |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[y]{.crayon-v}[       |
 | ghter-62ba79b45bc6a458283227-19"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 19                                | ]{.crayo                          |
-| :::                               | n-h}[df]{.crayon-v}[.]{.crayon-sy |
+|                                | n-h}[df]{.crayon-v}[.]{.crayon-sy |
 |                                   | }[values]{.crayon-v}[\[]{.crayon- |
-| ::: {.crayon-num .crayon-stripe   | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[:]{.cray             |
 | ghter-62ba79b45bc6a458283227-20"} | on-o}[-]{.crayon-o}[1]{.crayon-cn |
 | 20                                | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayo                          |
+|                                | ]{.crayo                          |
 |                                   | n-h}[df]{.crayon-v}[.]{.crayon-sy |
-| ::: {.crayo                       | }[values]{.crayon-v}[\[]{.crayon- |
+| 
 | n-num line="urvanov-syntax-highli | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc6a458283227-21"} | ]{.crayon-h}[-]{.crayon-          |
 | 21                                | o}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#                            |
+| 
 | d-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc6a458283227-22"} | b45bc6a458283227-13 .crayon-line} |
 | 22                                | [\# ensure all data are floating  |
-| :::                               | point values]{.crayon-p}          |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | point values]{.crayon-p}          |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc6a458283227-23"} | ghter-62ba79b45bc6a458283227-14 . |
 | 23                                | crayon-line .crayon-striped-line} |
-| :::                               | [X]{.crayon-v}[                   |
+|                                | [X]{.crayon-v}[                   |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[X]                   |
+| 
 | d-num line="urvanov-syntax-highli | {.crayon-v}[.]{.crayon-sy}[astype |
 | ghter-62ba79b45bc6a458283227-24"} | ]{.crayon-e}[(]{.crayon-sy}[\'flo |
 | 24                                | at32\']{.crayon-s}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#                            |
+| 
 | n-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc6a458283227-25"} | b45bc6a458283227-15 .crayon-line} |
 | 25                                | [\# encode strings to             |
-| :::                               | integer]{.crayon-p}               |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | integer]{.crayon-p}               |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc6a458283227-26"} | ghter-62ba79b45bc6a458283227-16 . |
 | 26                                | crayon-line .crayon-striped-line} |
-| :::                               | [y]{.crayon-v}[                   |
+|                                | [y]{.crayon-v}[                   |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayo                       | ]{.crayon-h}[LabelEnc             |
+| 
 | n-num line="urvanov-syntax-highli | oder]{.crayon-e}[(]{.crayon-sy}[) |
 | ghter-62ba79b45bc6a458283227-27"} | ]{.crayon-sy}[.]{.crayon-sy}[fit\ |
 | 27                                | _transform]{.crayon-e}[(]{.crayon |
-| :::                               | -sy}[y]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#                            |
+|                                | -sy}[y]{.crayon-v}[)]{.crayon-sy} |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc6a458283227-28"} | urvanov-syntax-highlighter-62ba79 |
 | 28                                | b45bc6a458283227-17 .crayon-line} |
-| :::                               | [\# split into train and test     |
+|                                | [\# split into train and test     |
 |                                   | datasets]{.crayon-p}              |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc6a458283227-29"} | ::: {#urvanov-syntax-highli       |
+| ghter-62ba79b45bc6a458283227-29"} | 
 | 29                                | ghter-62ba79b45bc6a458283227-18 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [X\_                              |
-| ::: {.crayon-num .crayon-stripe   | train]{.crayon-v}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[X\                   |
 | ghter-62ba79b45bc6a458283227-30"} | _test]{.crayon-v}[,]{.crayon-sy}[ |
 | 30                                | ]{.crayon-h}[y\_                  |
-| :::                               | train]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | train]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[y\_test]{.crayon-v}[ |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[train\_te            |
 | ghter-62ba79b45bc6a458283227-31"} | st\_split]{.crayon-e}[(]{.crayon- |
 | 31                                | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon                         |
+|                                | ]{.crayon                         |
 |                                   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[tes                  |
+| 
 | d-num line="urvanov-syntax-highli | t\_size]{.crayon-v}[=]{.crayon-o} |
 | ghter-62ba79b45bc6a458283227-32"} | [0.33]{.crayon-cn}[)]{.crayon-sy} |
-| 32                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayo                       | urvanov-syntax-highlighter-62ba79 |
+| 32                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | n-num line="urvanov-syntax-highli | b45bc6a458283227-19 .crayon-line} |
 | ghter-62ba79b45bc6a458283227-33"} | [pri                              |
 | 33                                | nt]{.crayon-e}[(]{.crayon-sy}[X\_ |
-| :::                               | train]{.crayon-v}[.]{.crayon-sy}[ |
+|                                | train]{.crayon-v}[.]{.crayon-sy}[ |
 |                                   | shape]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[X\                   |
+| 
 | d-num line="urvanov-syntax-highli | _test]{.crayon-v}[.]{.crayon-sy}[ |
 | ghter-62ba79b45bc6a458283227-34"} | shape]{.crayon-v}[,]{.crayon-sy}[ |
 | 34                                | ]{.crayon-h}[y\_                  |
-| :::                               | train]{.crayon-v}[.]{.crayon-sy}[ |
+|                                | train]{.crayon-v}[.]{.crayon-sy}[ |
 |                                   | shape]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[y                    |
+| 
 | n-num line="urvanov-syntax-highli | \_test]{.crayon-v}[.]{.crayon-sy} |
 | ghter-62ba79b45bc6a458283227-35"} | [shape]{.crayon-v}[)]{.crayon-sy} |
-| 35                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc6a458283227-20 . |
+| 35                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc6a458283227-36"} | [\# determine the number of input |
 | 36                                | features]{.crayon-p}              |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#                            |
+| 
 | n-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc6a458283227-37"} | b45bc6a458283227-21 .crayon-line} |
 | 37                                | [n\_features]{.crayon-v}[         |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[X                    |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[X                    |
 |                                   | \_train]{.crayon-v}[.]{.crayon-sy |
 |                                   | }[shape]{.crayon-v}[\[]{.crayon-s |
 |                                   | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-22 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-23 .crayon-line} |
 |                                   | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-24 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -3329,9 +3252,9 @@ flowers dataset is listed below.
 |                                   | [(]{.crayon-sy}[n\_features]{.cra |
 |                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-25 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -3345,9 +3268,9 @@ flowers dataset is listed below.
 |                                   | nel\_initializer]{.crayon-v}[=]{. |
 |                                   | crayon-o}[\'he\_normal\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-26 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -3358,15 +3281,15 @@ flowers dataset is listed below.
 |                                   | rayon-h}[activation]{.crayon-v}[= |
 |                                   | ]{.crayon-o}[\'softmax\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-27 .crayon-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-28 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.                         |
@@ -3382,15 +3305,15 @@ flowers dataset is listed below.
 |                                   | s]{.crayon-v}[=]{.crayon-o}[\[]{. |
 |                                   | crayon-sy}[\'accuracy\']{.crayon- |
 |                                   | s}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-29 .crayon-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-30 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [m                                |
@@ -3408,16 +3331,16 @@ flowers dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-31 .crayon-line} |
 |                                   | [\# evaluate the                  |
 |                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-32 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [loss]{.crayon-v}[,]{.crayon-sy}[ |
@@ -3432,9 +3355,9 @@ flowers dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-33 .crayon-line} |
 |                                   | [print]                           |
@@ -3443,15 +3366,15 @@ flowers dataset is listed below.
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
 |                                   | ]{.crayon-                        |
 |                                   | h}[acc]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-34 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-35 .crayon-line} |
 |                                   | [row]{.crayon-v}[                 |
@@ -3461,9 +3384,9 @@ flowers dataset is listed below.
 |                                   | y}[3.5]{.crayon-cn}[,]{.crayon-sy |
 |                                   | }[1.4]{.crayon-cn}[,]{.crayon-sy} |
 |                                   | [0.2]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6a458283227-36 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [yhat]{.crayon-v}[                |
@@ -3473,9 +3396,9 @@ flowers dataset is listed below.
 |                                   | }[predict]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[\[]{.crayon-sy}[row]{.crayon- |
 |                                   | v}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6a458283227-37 .crayon-line} |
 |                                   | [print]{.cray                     |
@@ -3488,11 +3411,11 @@ flowers dataset is listed below.
 |                                   | -h}[argmax]{.crayon-e}[(]{.crayon |
 |                                   | -sy}[yhat]{.crayon-v}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example first reports the shape of the dataset, then fits
 the model and evaluates it on the test dataset. Finally, a prediction is
@@ -3512,84 +3435,81 @@ accuracy of about 98 percent and then predicted a probability of a row
 of data belonging to each class, although class 0 has the highest
 probability.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc6b959399862 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6b959399862-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc6b959399862-1 .crayon-line} |
-| :::                               | (100, 4) (50, 4) (100,) (50,)     |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | (100, 4) (50, 4) (100,) (50,)     |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6b959399862-2"} | ighter-62ba79b45bc6b959399862-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | Test Accuracy: 0.980              |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | Test Accuracy: 0.980              |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6b959399862-3"} | #urvanov-syntax-highlighter-62ba7 |
 | 3                                 | 9b45bc6b959399862-3 .crayon-line} |
-| :::                               | Predicted: \[\[0.8680804          |
-| :::                               | 0.12356871 0.00835086\]\]         |
+|                                | Predicted: \[\[0.8680804          |
+|                                | 0.12356871 0.00835086\]\]         |
 |                                   | (class=0)                         |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_15_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_5__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### MLP for Regression
 
@@ -3622,251 +3542,248 @@ tutorial:
 The complete example of fitting and evaluating an MLP on the Boston
 housing dataset is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc6e789668233 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6e789668233-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc6e789668233-1 .crayon-line} |
-| :::                               | [\# mlp for                       |
+|                                | [\# mlp for                       |
 |                                   | regression]{.crayon-p}            |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc6e789668233-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc6e789668233-2"} | 
 | 2                                 | ighter-62ba79b45bc6e789668233-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from ]{.crayon-e}[numpy          |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[sqrt]{.crayon-e}     |
-| ighter-62ba79b45bc6e789668233-3"} | :::                               |
+| ighter-62ba79b45bc6e789668233-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc6e789668233-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [from ]{.crayon-e}[pandas         |
 | ighter-62ba79b45bc6e789668233-4"} | ]{.crayon-e}[import               |
 | 4                                 | ]                                 |
-| :::                               | {.crayon-e}[read\_csv]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | {.crayon-e}[read\_csv]{.crayon-e} |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6e789668233-5"} | ighter-62ba79b45bc6e789668233-4 . |
 | 5                                 | crayon-line .crayon-striped-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[sklearn]{.crayon-v   |
-| ::: {.crayon-num .crayon-strip    | }[.]{.crayon-sy}[model\_selection |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
 | ighter-62ba79b45bc6e789668233-6"} | ]{.crayon-                        |
 | 6                                 | e}[train\_test\_split]{.crayon-e} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {                             |
+| 
 | on-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
 | ighter-62ba79b45bc6e789668233-7"} | 9b45bc6e789668233-5 .crayon-line} |
 | 7                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow           |
+|                                | ]{.crayon-e}[tensorflow           |
 |                                   | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| ::: {.crayon-num .crayon-strip    | ]{.crayon-e}[import               |
+| 
 | ed-num line="urvanov-syntax-highl | ]{                                |
 | ighter-62ba79b45bc6e789668233-8"} | .crayon-e}[Sequential]{.crayon-e} |
-| 8                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.cray                        | ighter-62ba79b45bc6e789668233-6 . |
+| 8                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | on-num line="urvanov-syntax-highl | crayon-line .crayon-striped-line} |
 | ighter-62ba79b45bc6e789668233-9"} | [from                             |
 | 9                                 | ]{.crayon-e}[tensorflow]          |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[keras] |
+|                                | {.crayon-v}[.]{.crayon-sy}[keras] |
 |                                   | {.crayon-v}[.]{.crayon-sy}[layers |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-e}[import               |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-e}[Dense]{.crayon-i}    |
-| ghter-62ba79b45bc6e789668233-10"} | :::                               |
+| ghter-62ba79b45bc6e789668233-10"} |                                |
 | 10                                |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayo                       | 9b45bc6e789668233-7 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [\# load the dataset]{.crayon-p}  |
-| ghter-62ba79b45bc6e789668233-11"} | :::                               |
+| ghter-62ba79b45bc6e789668233-11"} |                                |
 | 11                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc6e789668233-8 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [path]{.crayon-v}[                |
 | ghter-62ba79b45bc6e789668233-12"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 12                                | ]                                 |
-| :::                               | {.crayon-h}[\'https://raw.githubu |
+|                                | {.crayon-h}[\'https://raw.githubu |
 |                                   | sercontent.com/jbrownlee/Datasets |
-| ::: {.crayo                       | /master/housing.csv\']{.crayon-s} |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc6e789668233-13"} |                                   |
-| 13                                | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
+| 13                                | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc6e789668233-9 .crayon-line} |
-| ::: {.crayon-num .crayon-stripe   | [df]{.crayon-v}[                  |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc6e789668233-14"} | ]{.crayon-h}[rea                  |
 | 14                                | d\_csv]{.crayon-e}[(]{.crayon-sy} |
-| :::                               | [path]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | [path]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h                       |
-| ::: {.crayo                       | }[header]{.crayon-v}[=]{.crayon-o |
+| 
 | n-num line="urvanov-syntax-highli | }[None]{.crayon-v}[)]{.crayon-sy} |
-| ghter-62ba79b45bc6e789668233-15"} | :::                               |
+| ghter-62ba79b45bc6e789668233-15"} |                                |
 | 15                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc6e789668233-10 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [\# split into input and output   |
 | ghter-62ba79b45bc6e789668233-16"} | columns]{.crayon-p}               |
-| 16                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayo                       | urvanov-syntax-highlighter-62ba79 |
+| 16                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | n-num line="urvanov-syntax-highli | b45bc6e789668233-11 .crayon-line} |
 | ghter-62ba79b45bc6e789668233-17"} | [X]{.crayon-v}[,]{.crayon-sy}[    |
 | 17                                | ]{.crayon-h}[y]{.crayon-v}[       |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayo                          |
-| ::: {.crayon-num .crayon-stripe   | n-h}[df]{.crayon-v}[.]{.crayon-sy |
+| 
 | d-num line="urvanov-syntax-highli | }[values]{.crayon-v}[\[]{.crayon- |
 | ghter-62ba79b45bc6e789668233-18"} | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
 | 18                                | ]{.crayon-h}[:]{.cray             |
-| :::                               | on-o}[-]{.crayon-o}[1]{.crayon-cn |
+|                                | on-o}[-]{.crayon-o}[1]{.crayon-cn |
 |                                   | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayo                          |
+| 
 | n-num line="urvanov-syntax-highli | n-h}[df]{.crayon-v}[.]{.crayon-sy |
 | ghter-62ba79b45bc6e789668233-19"} | }[values]{.crayon-v}[\[]{.crayon- |
 | 19                                | sy}[:]{.crayon-o}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[-]{.crayon-          |
+|                                | ]{.crayon-h}[-]{.crayon-          |
 |                                   | o}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc6e789668233-20"} | ::: {#urvanov-syntax-highli       |
+| ghter-62ba79b45bc6e789668233-20"} | 
 | 20                                | ghter-62ba79b45bc6e789668233-12 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# split into train and test     |
-| ::: {.crayo                       | datasets]{.crayon-p}              |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc6e789668233-21"} |                                   |
-| 21                                | ::: {#                            |
-| :::                               | urvanov-syntax-highlighter-62ba79 |
+| 21                                | 
+|                                | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-13 .crayon-line} |
-| ::: {.crayon-num .crayon-stripe   | [X\_                              |
+| 
 | d-num line="urvanov-syntax-highli | train]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc6e789668233-22"} | ]{.crayon-h}[X\                   |
 | 22                                | _test]{.crayon-v}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[y\_                  |
+|                                | ]{.crayon-h}[y\_                  |
 |                                   | train]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[y\_test]{.crayon-v}[ |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc6e789668233-23"} | ]{.crayon-h}[train\_te            |
 | 23                                | st\_split]{.crayon-e}[(]{.crayon- |
-| :::                               | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon                         |
-| ::: {.crayon-num .crayon-stripe   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[tes                  |
 | ghter-62ba79b45bc6e789668233-24"} | t\_size]{.crayon-v}[=]{.crayon-o} |
 | 24                                | [0.33]{.crayon-cn}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#urvanov-syntax-highli       |
+| 
 | n-num line="urvanov-syntax-highli | ghter-62ba79b45bc6e789668233-14 . |
 | ghter-62ba79b45bc6e789668233-25"} | crayon-line .crayon-striped-line} |
 | 25                                | [pri                              |
-| :::                               | nt]{.crayon-e}[(]{.crayon-sy}[X\_ |
+|                                | nt]{.crayon-e}[(]{.crayon-sy}[X\_ |
 |                                   | train]{.crayon-v}[.]{.crayon-sy}[ |
-| ::: {.crayon-num .crayon-stripe   | shape]{.crayon-v}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[X\                   |
 | ghter-62ba79b45bc6e789668233-26"} | _test]{.crayon-v}[.]{.crayon-sy}[ |
 | 26                                | shape]{.crayon-v}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[y\_                  |
+|                                | ]{.crayon-h}[y\_                  |
 |                                   | train]{.crayon-v}[.]{.crayon-sy}[ |
-| ::: {.crayo                       | shape]{.crayon-v}[,]{.crayon-sy}[ |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[y                    |
 | ghter-62ba79b45bc6e789668233-27"} | \_test]{.crayon-v}[.]{.crayon-sy} |
 | 27                                | [shape]{.crayon-v}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#                            |
+| 
 | d-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc6e789668233-28"} | b45bc6e789668233-15 .crayon-line} |
 | 28                                | [\# determine the number of input |
-| :::                               | features]{.crayon-p}              |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | features]{.crayon-p}              |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc6e789668233-29"} | ghter-62ba79b45bc6e789668233-16 . |
 | 29                                | crayon-line .crayon-striped-line} |
-| :::                               | [n\_features]{.crayon-v}[         |
+|                                | [n\_features]{.crayon-v}[         |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[X                    |
+| 
 | d-num line="urvanov-syntax-highli | \_train]{.crayon-v}[.]{.crayon-sy |
 | ghter-62ba79b45bc6e789668233-30"} | }[shape]{.crayon-v}[\[]{.crayon-s |
 | 30                                | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#                            |
+| 
 | n-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc6e789668233-31"} | b45bc6e789668233-17 .crayon-line} |
 | 31                                | [\# define model]{.crayon-p}      |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#urvanov-syntax-highli       |
+| 
 | d-num line="urvanov-syntax-highli | ghter-62ba79b45bc6e789668233-18 . |
 | ghter-62ba79b45bc6e789668233-32"} | crayon-line .crayon-striped-line} |
 | 32                                | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[Sequential]{.crayon  |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-19 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -3885,9 +3802,9 @@ housing dataset is listed below.
 |                                   | [(]{.crayon-sy}[n\_features]{.cra |
 |                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-20 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -3901,9 +3818,9 @@ housing dataset is listed below.
 |                                   | nel\_initializer]{.crayon-v}[=]{. |
 |                                   | crayon-o}[\'he\_normal\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-21 .crayon-line} |
 |                                   | [model]{.c                        |
@@ -3911,15 +3828,15 @@ housing dataset is listed below.
 |                                   | yon-e}[(]{.crayon-sy}[Dense]{.cra |
 |                                   | yon-e}[(]{.crayon-sy}[1]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-22 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-23 .crayon-line} |
 |                                   | [model]{.                         |
@@ -3930,15 +3847,15 @@ housing dataset is listed below.
 |                                   | ]{.crayon-h}                      |
 |                                   | [loss]{.crayon-v}[=]{.crayon-o}[\ |
 |                                   | 'mse\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-24 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-25 .crayon-line} |
 |                                   | [m                                |
@@ -3956,16 +3873,16 @@ housing dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-26 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# evaluate the                  |
 |                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-27 .crayon-line} |
 |                                   | [error]{.crayon-v}[               |
@@ -3979,9 +3896,9 @@ housing dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-28 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [print]                           |
@@ -3994,15 +3911,15 @@ housing dataset is listed below.
 |                                   | n-h}[sqrt]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[error]{.crayon-v}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-29 .crayon-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-30 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [row]{.crayon-v}[                 |
@@ -4022,9 +3939,9 @@ housing dataset is listed below.
 |                                   | 30]{.crayon-cn}[,]{.crayon-sy}[39 |
 |                                   | 6.90]{.crayon-cn}[,]{.crayon-sy}[ |
 |                                   | 4.98]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc6e789668233-31 .crayon-line} |
 |                                   | [yhat]{.crayon-v}[                |
@@ -4034,9 +3951,9 @@ housing dataset is listed below.
 |                                   | }[predict]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[\[]{.crayon-sy}[row]{.crayon- |
 |                                   | v}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc6e789668233-32 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [print]{.cray                     |
@@ -4045,11 +3962,11 @@ housing dataset is listed below.
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
 |                                   | ]{.crayon-h                       |
 |                                   | }[yhat]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example first reports the shape of the dataset then fits the
 model and evaluates it on the test dataset. Finally, a prediction is
@@ -4068,82 +3985,79 @@ In this case, we can see that the model achieved an MSE of about 60
 which is an RMSE of about 7 (units are thousands of dollars). A value of
 about 26 is then predicted for the single example.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc6f441031800 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6f441031800-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc6f441031800-1 .crayon-line} |
-| :::                               | (339, 13) (167, 13) (339,) (167,) |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | (339, 13) (167, 13) (339,) (167,) |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6f441031800-2"} | ighter-62ba79b45bc6f441031800-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | MSE: 60.751, RMSE: 7.794          |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | MSE: 60.751, RMSE: 7.794          |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc6f441031800-3"} | #urvanov-syntax-highlighter-62ba7 |
 | 3                                 | 9b45bc6f441031800-3 .crayon-line} |
-| :::                               | Predicted: 26.983                 |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | Predicted: 26.983                 |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_16_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_6__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 ### 3.2 Develop Convolutional Neural Network Models
 
@@ -4169,152 +4083,149 @@ this dataset directly.
 
 The example below loads the dataset and plots the first few images.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc71864935921 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc71864935921-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc71864935921-1 .crayon-line} |
-| :::                               | [\# example of loading and        |
+|                                | [\# example of loading and        |
 |                                   | plotting the mnist                |
-| ::: {.crayon-num .crayon-strip    | dataset]{.crayon-p}               |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc71864935921-2"} |                                   |
-| 2                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc71864935921-2 . |
+| 2                                 | 
+|                                | ighter-62ba79b45bc71864935921-2 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow]{.        |
 | ighter-62ba79b45bc71864935921-3"} | crayon-v}[.]{.crayon-sy}[keras]{. |
 | 3                                 | crayon-v}[.]{.crayon-sy}[datasets |
-| :::                               | ]{.crayon-v}[.]{.crayon-sy}[mnist |
+|                                | ]{.crayon-v}[.]{.crayon-sy}[mnist |
 |                                   | ]{.crayon-e}[import               |
-| ::: {.crayon-num .crayon-strip    | ]{                                |
+| 
 | ed-num line="urvanov-syntax-highl | .crayon-e}[load\_data]{.crayon-e} |
-| ighter-62ba79b45bc71864935921-4"} | :::                               |
+| ighter-62ba79b45bc71864935921-4"} |                                |
 | 4                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.cray                        | 9b45bc71864935921-3 .crayon-line} |
+| 
 | on-num line="urvanov-syntax-highl | [from ]{.crayon-e}[matplotlib     |
 | ighter-62ba79b45bc71864935921-5"} | ]{.crayon-e}[import               |
 | 5                                 | ]{.crayon-e}[pyplot]{.crayon-i}   |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
+| 
 | ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc71864935921-4 . |
 | ighter-62ba79b45bc71864935921-6"} | crayon-line .crayon-striped-line} |
 | 6                                 | [\# load dataset]{.crayon-p}      |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {                             |
+| 
 | on-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
 | ighter-62ba79b45bc71864935921-7"} | 9b45bc71864935921-5 .crayon-line} |
 | 7                                 | [(]{.crayon-sy}[t                 |
-| :::                               | rainX]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | rainX]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[trainy]{.crayon-     |
-| ::: {.crayon-num .crayon-strip    | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
+| 
 | ed-num line="urvanov-syntax-highl | ]{.crayon-h}[(]{.crayon-sy}[      |
 | ighter-62ba79b45bc71864935921-8"} | testX]{.crayon-v}[,]{.crayon-sy}[ |
 | 8                                 | ]{.crayon-h}[                     |
-| :::                               | testy]{.crayon-v}[)]{.crayon-sy}[ |
+|                                | testy]{.crayon-v}[)]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.cray                        | ]{.crayon-h}[load\_data]{.crayon  |
+| 
 | on-num line="urvanov-syntax-highl | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| ighter-62ba79b45bc71864935921-9"} | :::                               |
+| ighter-62ba79b45bc71864935921-9"} |                                |
 | 9                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
+|                                | 
 |                                   | ighter-62ba79b45bc71864935921-6 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [\# summarize loaded              |
 | ghter-62ba79b45bc71864935921-10"} | dataset]{.crayon-p}               |
-| 10                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayo                       | #urvanov-syntax-highlighter-62ba7 |
+| 10                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | n-num line="urvanov-syntax-highli | 9b45bc71864935921-7 .crayon-line} |
 | ghter-62ba79b45bc71864935921-11"} | [print]{.                         |
 | 11                                | crayon-e}[(]{.crayon-sy}[\'Train: |
-| :::                               | X=%s, y=%s\']{.crayon-s}[         |
+|                                | X=%s, y=%s\']{.crayon-s}[         |
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[(]{.crayon-sy}[t     |
+| 
 | d-num line="urvanov-syntax-highli | rainX]{.crayon-v}[.]{.crayon-sy}[ |
 | ghter-62ba79b45bc71864935921-12"} | shape]{.crayon-v}[,]{.crayon-sy}[ |
 | 12                                | ]{.crayon-h}[trainy]{.crayon      |
-| :::                               | -v}[.]{.crayon-sy}[shape]{.crayon |
+|                                | -v}[.]{.crayon-sy}[shape]{.crayon |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc71864935921-13"} | ::: {#urvanov-syntax-highl        |
+| ghter-62ba79b45bc71864935921-13"} | 
 | 13                                | ighter-62ba79b45bc71864935921-8 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [print]{                          |
-| ::: {.crayon-num .crayon-stripe   | .crayon-e}[(]{.crayon-sy}[\'Test: |
+| 
 | d-num line="urvanov-syntax-highli | X=%s, y=%s\']{.crayon-s}[         |
 | ghter-62ba79b45bc71864935921-14"} | ]{.crayon-h}[%]{.crayon-o}[       |
 | 14                                | ]{.crayon-h}[(]{.crayon-sy}[      |
-| :::                               | testX]{.crayon-v}[.]{.crayon-sy}[ |
+|                                | testX]{.crayon-v}[.]{.crayon-sy}[ |
 |                                   | shape]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[testy]{.crayon       |
+| 
 | n-num line="urvanov-syntax-highli | -v}[.]{.crayon-sy}[shape]{.crayon |
 | ghter-62ba79b45bc71864935921-15"} | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-| 15                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-stripe   | #urvanov-syntax-highlighter-62ba7 |
+| 15                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | 9b45bc71864935921-9 .crayon-line} |
 | ghter-62ba79b45bc71864935921-16"} | [\# plot first few                |
 | 16                                | images]{.crayon-p}                |
-| :::                               | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                |                                |
+|                                |                                   |
+|                                   | 
 |                                   | ghter-62ba79b45bc71864935921-10 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [for]{.crayon-st}[                |
@@ -4323,16 +4234,16 @@ The example below loads the dataset and plots the first few images.
 |                                   | ]{.crayon-h}[range]{.cra          |
 |                                   | yon-e}[(]{.crayon-sy}[25]{.crayon |
 |                                   | -cn}[)]{.crayon-sy}[:]{.crayon-o} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc71864935921-11 .crayon-line} |
 |                                   | [ ]{.crayon-h}[\# define          |
 |                                   | subplot]{.crayon-p}               |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc71864935921-12 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [                                 |
@@ -4345,16 +4256,16 @@ The example below loads the dataset and plots the first few images.
 |                                   | ]{.c                              |
 |                                   | rayon-h}[i]{.crayon-v}[+]{.crayon |
 |                                   | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc71864935921-13 .crayon-line} |
 |                                   | [ ]{.crayon-h}[\# plot raw pixel  |
 |                                   | data]{.crayon-p}                  |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc71864935921-14 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [                                 |
@@ -4368,109 +4279,106 @@ The example below loads the dataset and plots the first few images.
 |                                   | .crayon-sy}[get\_cmap]{.crayon-e} |
 |                                   | [(]{.crayon-sy}[\'gray\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc71864935921-15 .crayon-line} |
 |                                   | [\# show the figure]{.crayon-p}   |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc71864935921-16 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [pyplot]{.crayo                   |
 |                                   | n-v}[.]{.crayon-sy}[show]{.crayon |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example loads the MNIST dataset, then summarizes the default
 train and test datasets.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc72732197266 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc72732197266-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc72732197266-1 .crayon-line} |
-| :::                               | Train: X=(60000, 28, 28),         |
+|                                | Train: X=(60000, 28, 28),         |
 |                                   | y=(60000,)                        |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc72732197266-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc72732197266-2"} | 
 | 2                                 | ighter-62ba79b45bc72732197266-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-| :::                               | Test: X=(10000, 28, 28),          |
+|                                | crayon-line .crayon-striped-line} |
+|                                | Test: X=(10000, 28, 28),          |
 |                                   | y=(10000,)                        |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 A plot is then created showing a grid of examples of handwritten images
 in the training dataset.
 
-::: {#attachment_9897 .wp-caption .aligncenter style="width: 1290px"}
+
 ![Plot of Handwritten Digits From the MNIST
-dataset](./Lab_2_files/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.webp){.size-full
+dataset](./images/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.webp){.size-full
 .wp-image-9897 width="1280" height="960"
 sizes="(max-width: 1280px) 100vw, 1280px"
 srcset="https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset.png 1280w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-300x225.png 300w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-1024x768.png 1024w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Handwritten-Digits-from-the-MNIST-dataset-768x576.png 768w"}
 
 Plot of Handwritten Digits From the MNIST dataset
-:::
+
 
 We can train a CNN model to classify the images in the MNIST dataset.
 
@@ -4493,313 +4401,310 @@ see the tutorial:
 The complete example of fitting and evaluating a CNN model on the MNIST
 dataset is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc73384173707 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc73384173707-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc73384173707-1 .crayon-line} |
-| :::                               | [\# example of a cnn for image    |
+|                                | [\# example of a cnn for image    |
 |                                   | classification]{.crayon-p}        |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc73384173707-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc73384173707-2"} | 
 | 2                                 | ighter-62ba79b45bc73384173707-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from ]{.crayon-e}[numpy          |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[asarray]{.crayon-e}  |
-| ighter-62ba79b45bc73384173707-3"} | :::                               |
+| ighter-62ba79b45bc73384173707-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc73384173707-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [from ]{.crayon-e}[numpy          |
 | ighter-62ba79b45bc73384173707-4"} | ]{.crayon-e}[import               |
 | 4                                 | ]{.crayon-e}[unique]{.crayon-e}   |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {#urvanov-syntax-highl        |
+| 
 | on-num line="urvanov-syntax-highl | ighter-62ba79b45bc73384173707-4 . |
 | ighter-62ba79b45bc73384173707-5"} | crayon-line .crayon-striped-line} |
 | 5                                 | [from ]{.crayon-e}[numpy          |
-| :::                               | ]{.crayon-e}[import               |
+|                                | ]{.crayon-e}[import               |
 |                                   | ]{.crayon-e}[argmax]{.crayon-e}   |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc73384173707-6"} | ::: {                             |
+| ighter-62ba79b45bc73384173707-6"} | 
 | 6                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc73384173707-5 .crayon-line} |
+|                                | 9b45bc73384173707-5 .crayon-line} |
 |                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow]{.        |
+| 
 | on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[keras]{. |
 | ighter-62ba79b45bc73384173707-7"} | crayon-v}[.]{.crayon-sy}[datasets |
 | 7                                 | ]{.crayon-v}[.]{.crayon-sy}[mnist |
-| :::                               | ]{.crayon-e}[import               |
+|                                | ]{.crayon-e}[import               |
 |                                   | ]{                                |
-| ::: {.crayon-num .crayon-strip    | .crayon-e}[load\_data]{.crayon-e} |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc73384173707-8"} |                                   |
-| 8                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc73384173707-6 . |
+| 8                                 | 
+|                                | ighter-62ba79b45bc73384173707-6 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc73384173707-9"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 9                                 | ]{.crayon-e}[import               |
-| :::                               | ]{                                |
+|                                | ]{                                |
 |                                   | .crayon-e}[Sequential]{.crayon-e} |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc73384173707-10"} | ::: {                             |
+| ghter-62ba79b45bc73384173707-10"} | 
 | 10                                | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc73384173707-7 .crayon-line} |
+|                                | 9b45bc73384173707-7 .crayon-line} |
 |                                   | [from                             |
-| ::: {.crayo                       | ]{.crayon-e}[tensorflow]          |
+| 
 | n-num line="urvanov-syntax-highli | {.crayon-v}[.]{.crayon-sy}[keras] |
 | ghter-62ba79b45bc73384173707-11"} | {.crayon-v}[.]{.crayon-sy}[layers |
 | 11                                | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Dense]{.crayon-e}    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highl        |
+|                                | ]{.crayon-e}[Dense]{.crayon-e}    |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc73384173707-12"} | ighter-62ba79b45bc73384173707-8 . |
 | 12                                | crayon-line .crayon-striped-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[tensorflow]          |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[keras] |
+| 
 | n-num line="urvanov-syntax-highli | {.crayon-v}[.]{.crayon-sy}[layers |
 | ghter-62ba79b45bc73384173707-13"} | ]{.crayon-e}[import               |
 | 13                                | ]{.crayon-e}[Conv2D]{.crayon-e}   |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {                             |
+| 
 | d-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
 | ghter-62ba79b45bc73384173707-14"} | 9b45bc73384173707-9 .crayon-line} |
 | 14                                | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
+|                                | ]{.crayon-e}[tensorflow]          |
 |                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[layers |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-e}[import               |
 | ghter-62ba79b45bc73384173707-15"} | ]                                 |
 | 15                                | {.crayon-e}[MaxPool2D]{.crayon-e} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#urvanov-syntax-highli       |
+| 
 | d-num line="urvanov-syntax-highli | ghter-62ba79b45bc73384173707-10 . |
 | ghter-62ba79b45bc73384173707-16"} | crayon-line .crayon-striped-line} |
 | 16                                | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
+|                                | ]{.crayon-e}[tensorflow]          |
 |                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[layers |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-e}[import               |
 | ghter-62ba79b45bc73384173707-17"} | ]{.crayon-e}[Flatten]{.crayon-e}  |
-| 17                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayon-num .crayon-stripe   | urvanov-syntax-highlighter-62ba79 |
+| 17                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | b45bc73384173707-11 .crayon-line} |
 | ghter-62ba79b45bc73384173707-18"} | [from                             |
 | 18                                | ]{.crayon-e}[tensorflow]          |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[keras] |
+|                                | {.crayon-v}[.]{.crayon-sy}[keras] |
 |                                   | {.crayon-v}[.]{.crayon-sy}[layers |
-| ::: {.crayo                       | ]{.crayon-e}[import               |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-e}[Dropout]{.crayon-i}  |
-| ghter-62ba79b45bc73384173707-19"} | :::                               |
+| ghter-62ba79b45bc73384173707-19"} |                                |
 | 19                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc73384173707-12 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [\# load dataset]{.crayon-p}      |
-| ghter-62ba79b45bc73384173707-20"} | :::                               |
+| ghter-62ba79b45bc73384173707-20"} |                                |
 | 20                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayo                       | b45bc73384173707-13 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [(]{.crayon-sy}[x\_               |
 | ghter-62ba79b45bc73384173707-21"} | train]{.crayon-v}[,]{.crayon-sy}[ |
 | 21                                | ]{.crayon-h}[y\_train]{.crayon-   |
-| :::                               | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
+|                                | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[(]{.crayon-sy}[x\    |
-| ::: {.crayon-num .crayon-stripe   | _test]{.crayon-v}[,]{.crayon-sy}[ |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[y\                   |
 | ghter-62ba79b45bc73384173707-22"} | _test]{.crayon-v}[)]{.crayon-sy}[ |
 | 22                                | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[load\_data]{.crayon  |
+|                                | ]{.crayon-h}[load\_data]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc73384173707-23"} | ::: {#urvanov-syntax-highli       |
+| ghter-62ba79b45bc73384173707-23"} | 
 | 23                                | ghter-62ba79b45bc73384173707-14 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [\# reshape data to have a single |
-| ::: {.crayon-num .crayon-stripe   | channel]{.crayon-p}               |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-24"} |                                   |
-| 24                                | ::: {#                            |
-| :::                               | urvanov-syntax-highlighter-62ba79 |
+| 24                                | 
+|                                | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-15 .crayon-line} |
-| ::: {.crayo                       | [x\_train]{.crayon-v}[            |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc73384173707-25"} | ]{.crayon-h}[x\_t                 |
 | 25                                | rain]{.crayon-v}[.]{.crayon-sy}[r |
-| :::                               | eshape]{.crayon-e}[(]{.crayon-sy} |
+|                                | eshape]{.crayon-e}[(]{.crayon-sy} |
 |                                   | [(]{.crayon-sy}[x\_train]{.crayon |
-| ::: {.crayon-num .crayon-stripe   | -v}[.]{.crayon-sy}[shape]{.crayon |
+| 
 | d-num line="urvanov-syntax-highli | -v}[\[]{.crayon-sy}[0]{.crayon-cn |
 | ghter-62ba79b45bc73384173707-26"} | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 | 26                                | ]{.crayon-h}[x\_train]{.crayon    |
-| :::                               | -v}[.]{.crayon-sy}[shape]{.crayon |
+|                                | -v}[.]{.crayon-sy}[shape]{.crayon |
 |                                   | -v}[\[]{.crayon-sy}[1]{.crayon-cn |
-| ::: {.crayo                       | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[x\_train]{.crayon    |
 | ghter-62ba79b45bc73384173707-27"} | -v}[.]{.crayon-sy}[shape]{.crayon |
 | 27                                | -v}[\[]{.crayon-sy}[2]{.crayon-cn |
-| :::                               | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
+|                                | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[1]{.crayon-          |
-| ::: {.crayon-num .crayon-stripe   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-28"} |                                   |
-| 28                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc73384173707-16 . |
+| 28                                | 
+|                                | ghter-62ba79b45bc73384173707-16 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayo                       | [x\_test]{.crayon-v}[             |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc73384173707-29"} | ]{.crayon-h}[x\                   |
 | 29                                | _test]{.crayon-v}[.]{.crayon-sy}[ |
-| :::                               | reshape]{.crayon-e}[(]{.crayon-sy |
+|                                | reshape]{.crayon-e}[(]{.crayon-sy |
 |                                   | }[(]{.crayon-sy}[x\_test]{.crayon |
-| ::: {.crayon-num .crayon-stripe   | -v}[.]{.crayon-sy}[shape]{.crayon |
+| 
 | d-num line="urvanov-syntax-highli | -v}[\[]{.crayon-sy}[0]{.crayon-cn |
 | ghter-62ba79b45bc73384173707-30"} | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 | 30                                | ]{.crayon-h}[x\_test]{.crayon     |
-| :::                               | -v}[.]{.crayon-sy}[shape]{.crayon |
+|                                | -v}[.]{.crayon-sy}[shape]{.crayon |
 |                                   | -v}[\[]{.crayon-sy}[1]{.crayon-cn |
-| ::: {.crayo                       | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[x\_test]{.crayon     |
 | ghter-62ba79b45bc73384173707-31"} | -v}[.]{.crayon-sy}[shape]{.crayon |
 | 31                                | -v}[\[]{.crayon-sy}[2]{.crayon-cn |
-| :::                               | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
+|                                | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[1]{.crayon-          |
-| ::: {.crayon-num .crayon-stripe   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-32"} |                                   |
-| 32                                | ::: {#                            |
-| :::                               | urvanov-syntax-highlighter-62ba79 |
+| 32                                | 
+|                                | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-17 .crayon-line} |
-| ::: {.crayo                       | [\# determine the shape of the    |
+| 
 | n-num line="urvanov-syntax-highli | input images]{.crayon-p}          |
-| ghter-62ba79b45bc73384173707-33"} | :::                               |
+| ghter-62ba79b45bc73384173707-33"} |                                |
 | 33                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc73384173707-18 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
+| 
 | d-num line="urvanov-syntax-highli | [in\_shape]{.crayon-v}[           |
 | ghter-62ba79b45bc73384173707-34"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 34                                | ]{.crayon-h}[x\_train]{.cray      |
-| :::                               | on-v}[.]{.crayon-sy}[shape]{.cray |
+|                                | on-v}[.]{.crayon-sy}[shape]{.cray |
 |                                   | on-v}[\[]{.crayon-sy}[1]{.crayon- |
-| ::: {.crayo                       | cn}[:]{.crayon-o}[\]]{.crayon-sy} |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-35"} |                                   |
-| 35                                | ::: {#                            |
-| :::                               | urvanov-syntax-highlighter-62ba79 |
+| 35                                | 
+|                                | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-19 .crayon-line} |
-| ::: {.crayon-num .crayon-stripe   | [\# determine the number of       |
+| 
 | d-num line="urvanov-syntax-highli | classes]{.crayon-p}               |
-| ghter-62ba79b45bc73384173707-36"} | :::                               |
+| ghter-62ba79b45bc73384173707-36"} |                                |
 | 36                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc73384173707-20 . |
-| ::: {.crayo                       | crayon-line .crayon-striped-line} |
+| 
 | n-num line="urvanov-syntax-highli | [n\_classes]{.crayon-v}[          |
 | ghter-62ba79b45bc73384173707-37"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 37                                | ]{.crayon-h}[len]{.crayon-e}[     |
-| :::                               | (]{.crayon-sy}[unique]{.crayon-e} |
+|                                | (]{.crayon-sy}[unique]{.crayon-e} |
 |                                   | [(]{.crayon-sy}[y\_train]{.crayon |
-| ::: {.crayon-num .crayon-stripe   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-38"} |                                   |
-| 38                                | ::: {#                            |
-| :::                               | urvanov-syntax-highlighter-62ba79 |
+| 38                                | 
+|                                | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-21 .crayon-line} |
-| ::: {.crayo                       | [prin                             |
+| 
 | n-num line="urvanov-syntax-highli | t]{.crayon-e}[(]{.crayon-sy}[in\_ |
 | ghter-62ba79b45bc73384173707-39"} | shape]{.crayon-v}[,]{.crayon-sy}[ |
 | 39                                | ]{.crayon-h}[n\_c                 |
-| :::                               | lasses]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | lasses]{.crayon-v}[)]{.crayon-sy} |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc73384173707-40"} | ghter-62ba79b45bc73384173707-22 . |
 | 40                                | crayon-line .crayon-striped-line} |
-| :::                               | [\# normalize pixel               |
+|                                | [\# normalize pixel               |
 |                                   | values]{.crayon-p}                |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc73384173707-41"} | ::: {#                            |
+| ghter-62ba79b45bc73384173707-41"} | 
 | 41                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc73384173707-23 .crayon-line} |
+|                                | b45bc73384173707-23 .crayon-line} |
 |                                   | [x\_train]{.crayon-v}[            |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[=]{.crayon-o}[       |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[x\_train]{           |
 | ghter-62ba79b45bc73384173707-42"} | .crayon-v}[.]{.crayon-sy}[astype] |
 | 42                                | {.crayon-e}[(]{.crayon-sy}[\'floa |
-| :::                               | t32\']{.crayon-s}[)]{.crayon-sy}[ |
+|                                | t32\']{.crayon-s}[)]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[/]{.crayon-o}[       |
-| ::: {.crayo                       | ]{.crayon-h}[255.0]{.crayon-cn}   |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc73384173707-43"} |                                   |
-| 43                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc73384173707-24 . |
-| :::                               | crayon-line .crayon-striped-line} |
+| 43                                | 
+|                                | ghter-62ba79b45bc73384173707-24 . |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [x\_test]{.crayon-v}[             |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[x\_test]{            |
@@ -4808,24 +4713,24 @@ dataset is listed below.
 |                                   | t32\']{.crayon-s}[)]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[/]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[255.0]{.crayon-cn}   |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-25 .crayon-line} |
 |                                   | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-26 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-27 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-s   |
@@ -4847,9 +4752,9 @@ dataset is listed below.
 |                                   | rayon-h}[input\_shape]{.crayon-v} |
 |                                   | [=]{.crayon-o}[in\_shape]{.crayon |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-28 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon                   |
@@ -4860,18 +4765,18 @@ dataset is listed below.
 |                                   | ]{.cra                            |
 |                                   | yon-h}[2]{.crayon-cn}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-29 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
 |                                   | sy}[add]{.crayon-e}[(]{.crayon-sy |
 |                                   | }[Flatten]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-30 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-s   |
@@ -4885,9 +4790,9 @@ dataset is listed below.
 |                                   | el\_initializer]{.crayon-v}[=]{.c |
 |                                   | rayon-o}[\'he\_uniform\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-31 .crayon-line} |
 |                                   | [model]{.crayo                    |
@@ -4895,9 +4800,9 @@ dataset is listed below.
 |                                   | e}[(]{.crayon-sy}[Dropout]{.crayo |
 |                                   | n-e}[(]{.crayon-sy}[0.5]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-32 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [mod                              |
@@ -4909,16 +4814,16 @@ dataset is listed below.
 |                                   | rayon-h}[activation]{.crayon-v}[= |
 |                                   | ]{.crayon-o}[\'softmax\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-33 .crayon-line} |
 |                                   | [\# define loss and               |
 |                                   | optimizer]{.crayon-p}             |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-34 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.                         |
@@ -4934,15 +4839,15 @@ dataset is listed below.
 |                                   | s]{.crayon-v}[=]{.crayon-o}[\[]{. |
 |                                   | crayon-sy}[\'accuracy\']{.crayon- |
 |                                   | s}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-35 .crayon-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-36 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [m                                |
@@ -4960,16 +4865,16 @@ dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-37 .crayon-line} |
 |                                   | [\# evaluate the                  |
 |                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-38 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [loss]{.crayon-v}[,]{.crayon-sy}[ |
@@ -4984,9 +4889,9 @@ dataset is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-39 .crayon-line} |
 |                                   | [print]{.cra                      |
@@ -4995,15 +4900,15 @@ dataset is listed below.
 |                                   | ]{.crayon-h}[%]{.crayon-o}[       |
 |                                   | ]{.crayon-                        |
 |                                   | h}[acc]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-40 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-41 .crayon-line} |
 |                                   | [image]{.crayon-v}[               |
@@ -5011,9 +4916,9 @@ dataset is listed below.
 |                                   | ]{.crayon-h}[x                    |
 |                                   | \_train]{.crayon-v}[\[]{.crayon-s |
 |                                   | y}[0]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc73384173707-42 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [yhat]{.crayon-v}[                |
@@ -5024,9 +4929,9 @@ dataset is listed below.
 |                                   | n-e}[(]{.crayon-sy}[\[]{.crayon-s |
 |                                   | y}[image]{.crayon-v}[\]]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc73384173707-43 .crayon-line} |
 |                                   | [print]{.cray                     |
@@ -5036,11 +4941,11 @@ dataset is listed below.
 |                                   | ]{.crayon-h}[argmax]{.crayo       |
 |                                   | n-e}[(]{.crayon-sy}[yhat]{.crayon |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example first reports the shape of the dataset, then fits
 the model and evaluates it on the test dataset. Finally, a prediction is
@@ -5063,82 +4968,79 @@ In this case, we can see that the model achieved a classification
 accuracy of about 98 percent on the test dataset. We can then see that
 the model predicted class 5 for the first image in the training set.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc74442103907 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc74442103907-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc74442103907-1 .crayon-line} |
-| :::                               | (28, 28, 1) 10                    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | (28, 28, 1) 10                    |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc74442103907-2"} | ighter-62ba79b45bc74442103907-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | Accuracy: 0.987                   |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | Accuracy: 0.987                   |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc74442103907-3"} | #urvanov-syntax-highlighter-62ba7 |
 | 3                                 | 9b45bc74442103907-3 .crayon-line} |
-| :::                               | Predicted: class=5                |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | Predicted: class=5                |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_17_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_7__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 ### 3.3 Develop Recurrent Neural Network Models
 
@@ -5179,151 +5081,145 @@ LSTM.
 
 For example, if the sequence was:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc76324934105 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc76324934105-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc76324934105-1 .crayon-line} |
-| :::                               | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10     |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10     |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Then the samples for training the model will look like:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc78399629000 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc78399629000-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc78399629000-1 .crayon-line} |
-| :::                               | Input Output                      |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | Input Output                      |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc78399629000-2"} | ighter-62ba79b45bc78399629000-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | 1, 2, 3, 4, 5 6                   |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | 1, 2, 3, 4, 5 6                   |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc78399629000-3"} | #urvanov-syntax-highlighter-62ba7 |
 | 3                                 | 9b45bc78399629000-3 .crayon-line} |
-| :::                               | 2, 3, 4, 5, 6 7                   |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | 2, 3, 4, 5, 6 7                   |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc78399629000-4"} | ighter-62ba79b45bc78399629000-4 . |
 | 4                                 | crayon-line .crayon-striped-line} |
-| :::                               | 3, 4, 5, 6, 7 8                   |
-|                                   | :::                               |
-| ::: {.cray                        |                                   |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+|                                | 3, 4, 5, 6, 7 8                   |
+|                                   |                                |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc78399629000-5"} | #urvanov-syntax-highlighter-62ba7 |
 | 5                                 | 9b45bc78399629000-5 .crayon-line} |
-| :::                               | \...                              |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | \...                              |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 We will use the last 12 months of data as the test dataset.
 
@@ -5340,385 +5236,382 @@ function. We will also evaluate the model using the mean absolute error
 The complete example of fitting and evaluating an LSTM for a univariate
 time series forecasting problem is listed below.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc79542115791 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc79542115791-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc79542115791-1 .crayon-line} |
-| :::                               | [\# lstm for time series          |
+|                                | [\# lstm for time series          |
 |                                   | forecasting]{.crayon-p}           |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc79542115791-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc79542115791-2"} | 
 | 2                                 | ighter-62ba79b45bc79542115791-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from ]{.crayon-e}[numpy          |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[sqrt]{.crayon-e}     |
-| ighter-62ba79b45bc79542115791-3"} | :::                               |
+| ighter-62ba79b45bc79542115791-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc79542115791-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | [from ]{.crayon-e}[numpy          |
 | ighter-62ba79b45bc79542115791-4"} | ]{.crayon-e}[import               |
 | 4                                 | ]{.crayon-e}[asarray]{.crayon-e}  |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {#urvanov-syntax-highl        |
+| 
 | on-num line="urvanov-syntax-highl | ighter-62ba79b45bc79542115791-4 . |
 | ighter-62ba79b45bc79542115791-5"} | crayon-line .crayon-striped-line} |
 | 5                                 | [from ]{.crayon-e}[pandas         |
-| :::                               | ]{.crayon-e}[import               |
+|                                | ]{.crayon-e}[import               |
 |                                   | ]                                 |
-| ::: {.crayon-num .crayon-strip    | {.crayon-e}[read\_csv]{.crayon-e} |
-| ed-num line="urvanov-syntax-highl | :::                               |
+| 
+| ed-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc79542115791-6"} |                                   |
-| 6                                 | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
+| 6                                 | 
+|                                | #urvanov-syntax-highlighter-62ba7 |
 |                                   | 9b45bc79542115791-5 .crayon-line} |
-| ::: {.cray                        | [from                             |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[tensorflow           |
 | ighter-62ba79b45bc79542115791-7"} | ]{.crayon-v}[.]{.crayon-sy}[keras |
 | 7                                 | ]{.crayon-e}[import               |
-| :::                               | ]{                                |
+|                                | ]{                                |
 |                                   | .crayon-e}[Sequential]{.crayon-e} |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc79542115791-8"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc79542115791-8"} | 
 | 8                                 | ighter-62ba79b45bc79542115791-6 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow]          |
+| 
 | on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[keras] |
 | ighter-62ba79b45bc79542115791-9"} | {.crayon-v}[.]{.crayon-sy}[layers |
 | 9                                 | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[Dense]{.crayon-e}    |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {                             |
+|                                | ]{.crayon-e}[Dense]{.crayon-e}    |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc79542115791-10"} | #urvanov-syntax-highlighter-62ba7 |
 | 10                                | 9b45bc79542115791-7 .crayon-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[tensorflow]          |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[keras] |
+| 
 | n-num line="urvanov-syntax-highli | {.crayon-v}[.]{.crayon-sy}[layers |
 | ghter-62ba79b45bc79542115791-11"} | ]{.crayon-e}[import               |
 | 11                                | ]{.crayon-e}[LSTM]{.crayon-i}     |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#urvanov-syntax-highl        |
+| 
 | d-num line="urvanov-syntax-highli | ighter-62ba79b45bc79542115791-8 . |
 | ghter-62ba79b45bc79542115791-12"} | crayon-line .crayon-striped-line} |
 | 12                                |                                   |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {                             |
+| 
 | n-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
 | ghter-62ba79b45bc79542115791-13"} | 9b45bc79542115791-9 .crayon-line} |
 | 13                                | [\# split a univariate sequence   |
-| :::                               | into samples]{.crayon-p}          |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | into samples]{.crayon-p}          |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc79542115791-14"} | ghter-62ba79b45bc79542115791-10 . |
 | 14                                | crayon-line .crayon-striped-line} |
-| :::                               | [def                              |
+|                                | [def                              |
 |                                   | ]{.crayon-e}[split\_sequen        |
-| ::: {.crayo                       | ce]{.crayon-e}[(]{.crayon-sy}[seq |
+| 
 | n-num line="urvanov-syntax-highli | uence]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc79542115791-15"} | ]{.crayon-h}[n\_steps]{.crayo     |
 | 15                                | n-v}[)]{.crayon-sy}[:]{.crayon-o} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#                            |
+| 
 | d-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc79542115791-16"} | b45bc79542115791-11 .crayon-line} |
 | 16                                | [                                 |
-| :::                               | ]{.crayon                         |
+|                                | ]{.crayon                         |
 |                                   | -h}[X]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[y]{.crayon-v}[       |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc79542115791-17"} | ]{.crayon                         |
 | 17                                | -h}[list]{.crayon-e}[(]{.crayon-s |
-| :::                               | y}[)]{.crayon-sy}[,]{.crayon-sy}[ |
+|                                | y}[)]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[list]{.crayon        |
-| ::: {.crayon-num .crayon-stripe   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| d-num line="urvanov-syntax-highli | :::                               |
+| 
+| d-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc79542115791-18"} |                                   |
-| 18                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc79542115791-12 . |
+| 18                                | 
+|                                | ghter-62ba79b45bc79542115791-12 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayo                       | [ ]{.crayon-h}[for]{.crayon-st}[  |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[i]{.crayon-i}[       |
 | ghter-62ba79b45bc79542115791-19"} | ]{.crayon-h}[in]{.crayon-st}[     |
 | 19                                | ]{.crayon                         |
-| :::                               | -h}[range]{.crayon-e}[(]{.crayon- |
+|                                | -h}[range]{.crayon-e}[(]{.crayon- |
 |                                   | sy}[len]{.crayon-e}[(]{.crayon-sy |
-| ::: {.crayon-num .crayon-stripe   | }[sequence]{.crayon-v}[)]{.crayon |
+| 
 | d-num line="urvanov-syntax-highli | -sy}[)]{.crayon-sy}[:]{.crayon-o} |
-| ghter-62ba79b45bc79542115791-20"} | :::                               |
+| ghter-62ba79b45bc79542115791-20"} |                                |
 | 20                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayo                       | b45bc79542115791-13 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [ ]{.crayon-h}[\# find the end of |
 | ghter-62ba79b45bc79542115791-21"} | this pattern]{.crayon-p}          |
-| 21                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc79542115791-14 . |
+| 21                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc79542115791-22"} | [                                 |
 | 22                                | ]{.crayon-h}[end\_ix]{.crayon-v}[ |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[i]{.crayon-v}[       |
-| ::: {.crayo                       | ]{.crayon-h}[+]{.crayon-o}[       |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[n                    |
 | ghter-62ba79b45bc79542115791-23"} | ]{.crayon-v}[\_]{.crayon-sy}steps |
-| 23                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayon-num .crayon-stripe   | urvanov-syntax-highlighter-62ba79 |
+| 23                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | b45bc79542115791-15 .crayon-line} |
 | ghter-62ba79b45bc79542115791-24"} | [ ]{.crayon-h}[\# check if we are |
 | 24                                | beyond the sequence]{.crayon-p}   |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#urvanov-syntax-highli       |
+| 
 | n-num line="urvanov-syntax-highli | ghter-62ba79b45bc79542115791-16 . |
 | ghter-62ba79b45bc79542115791-25"} | crayon-line .crayon-striped-line} |
 | 25                                | [ ]{.crayon-h}[if]{.crayon-st}[   |
-| :::                               | ]{.crayon-h}[end\_ix]{.crayon-v}[ |
+|                                | ]{.crayon-h}[end\_ix]{.crayon-v}[ |
 |                                   | ]{.crayon-h}[\>]{.crayon-o}[      |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[len]{.cray           |
+| 
 | d-num line="urvanov-syntax-highli | on-e}[(]{.crayon-sy}[sequence]{.c |
 | ghter-62ba79b45bc79542115791-26"} | rayon-v}[)]{.crayon-sy}[-]{.crayo |
 | 26                                | n-o}[1]{.crayon-cn}[:]{.crayon-o} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#                            |
+| 
 | n-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc79542115791-27"} | b45bc79542115791-17 .crayon-line} |
 | 27                                | [ ]{.crayon-h}[break]{.crayon-st} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#urvanov-syntax-highli       |
+| 
 | d-num line="urvanov-syntax-highli | ghter-62ba79b45bc79542115791-18 . |
 | ghter-62ba79b45bc79542115791-28"} | crayon-line .crayon-striped-line} |
 | 28                                | [ ]{.crayon-h}[\# gather input    |
-| :::                               | and output parts of the           |
+|                                | and output parts of the           |
 |                                   | pattern]{.crayon-p}               |
-| ::: {.crayo                       | :::                               |
+| 
 | n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc79542115791-29"} | ::: {#                            |
+| ghter-62ba79b45bc79542115791-29"} | 
 | 29                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc79542115791-19 .crayon-line} |
+|                                | b45bc79542115791-19 .crayon-line} |
 |                                   | [                                 |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[s                    |
+| 
 | d-num line="urvanov-syntax-highli | eq\_x]{.crayon-v}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc79542115791-30"} | ]{.crayon-h}[seq\_y]{.crayon-v}[  |
 | 30                                | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[sequence]{.crayon    |
+|                                | ]{.crayon-h}[sequence]{.crayon    |
 |                                   | -v}[\[]{.crayon-sy}[i]{.crayon-v} |
-| ::: {.crayo                       | [:]{.crayon-o}[end\_ix]{.crayon-v |
+| 
 | n-num line="urvanov-syntax-highli | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc79542115791-31"} | ]{.crayon-h}[sequen               |
 | 31                                | ce]{.crayon-v}[\[]{.crayon-sy}[en |
-| :::                               | d\_ix]{.crayon-v}[\]]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | d\_ix]{.crayon-v}[\]]{.crayon-sy} |
+|                                   |                                |
+| 
+| d-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc79542115791-32"} | ghter-62ba79b45bc79542115791-20 . |
 | 32                                | crayon-line .crayon-striped-line} |
-| :::                               | [                                 |
+|                                | [                                 |
 |                                   | ]{.crayon-                        |
-| ::: {.crayo                       | h}[X]{.crayon-v}[.]{.crayon-sy}[a |
+| 
 | n-num line="urvanov-syntax-highli | ppend]{.crayon-e}[(]{.crayon-sy}[ |
 | ghter-62ba79b45bc79542115791-33"} | seq\_x]{.crayon-v}[)]{.crayon-sy} |
-| 33                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayon-num .crayon-stripe   | urvanov-syntax-highlighter-62ba79 |
+| 33                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | b45bc79542115791-21 .crayon-line} |
 | ghter-62ba79b45bc79542115791-34"} | [                                 |
 | 34                                | ]{.crayon-                        |
-| :::                               | h}[y]{.crayon-v}[.]{.crayon-sy}[a |
+|                                | h}[y]{.crayon-v}[.]{.crayon-sy}[a |
 |                                   | ppend]{.crayon-e}[(]{.crayon-sy}[ |
-| ::: {.crayo                       | seq\_y]{.crayon-v}[)]{.crayon-sy} |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc79542115791-35"} |                                   |
-| 35                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc79542115791-22 . |
+| 35                                | 
+|                                | ghter-62ba79b45bc79542115791-22 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayon-num .crayon-stripe   | [                                 |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[return]{.crayon-st}[ |
 | ghter-62ba79b45bc79542115791-36"} | ]{.crayon-h}[asarray]{.cra        |
 | 36                                | yon-e}[(]{.crayon-sy}[X]{.crayon- |
-| :::                               | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
+|                                | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-                        |
-| ::: {.crayo                       | h}[asarray]{.crayon-e}[(]{.crayon |
+| 
 | n-num line="urvanov-syntax-highli | -sy}[y]{.crayon-v}[)]{.crayon-sy} |
-| ghter-62ba79b45bc79542115791-37"} | :::                               |
+| ghter-62ba79b45bc79542115791-37"} |                                |
 | 37                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayon-num .crayon-stripe   | b45bc79542115791-23 .crayon-line} |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc79542115791-38"} | :::                               |
+| ghter-62ba79b45bc79542115791-38"} |                                |
 | 38                                |                                   |
-| :::                               | ::: {#urvanov-syntax-highli       |
+|                                | 
 |                                   | ghter-62ba79b45bc79542115791-24 . |
-| ::: {.crayo                       | crayon-line .crayon-striped-line} |
+| 
 | n-num line="urvanov-syntax-highli | [\# load the dataset]{.crayon-p}  |
-| ghter-62ba79b45bc79542115791-39"} | :::                               |
+| ghter-62ba79b45bc79542115791-39"} |                                |
 | 39                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayon-num .crayon-stripe   | b45bc79542115791-25 .crayon-line} |
+| 
 | d-num line="urvanov-syntax-highli | [path]{.crayon-v}[                |
 | ghter-62ba79b45bc79542115791-40"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 40                                | ]{.crayon-h                       |
-| :::                               | }[\'https://raw.githubusercontent |
+|                                | }[\'https://raw.githubusercontent |
 |                                   | .com/jbrownlee/Datasets/master/mo |
-| ::: {.crayo                       | nthly-car-sales.csv\']{.crayon-s} |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc79542115791-41"} |                                   |
-| 41                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc79542115791-26 . |
+| 41                                | 
+|                                | ghter-62ba79b45bc79542115791-26 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayon-num .crayon-stripe   | [df]{.crayon-v}[                  |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
 | ghter-62ba79b45bc79542115791-42"} | ]{.crayon-h}[rea                  |
 | 42                                | d\_csv]{.crayon-e}[(]{.crayon-sy} |
-| :::                               | [path]{.crayon-v}[,]{.crayon-sy}[ |
+|                                | [path]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-                        |
-| ::: {.crayo                       | h}[header]{.crayon-v}[=]{.crayon- |
+| 
 | n-num line="urvanov-syntax-highli | o}[0]{.crayon-cn}[,]{.crayon-sy}[ |
 | ghter-62ba79b45bc79542115791-43"} | ]{.crayon-h}[i                    |
 | 43                                | ndex\_col]{.crayon-v}[=]{.crayon- |
-| :::                               | o}[0]{.crayon-cn}[,]{.crayon-sy}[ |
+|                                | o}[0]{.crayon-cn}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}                      |
-| ::: {.crayon-num .crayon-stripe   | [squeeze]{.crayon-v}[=]{.crayon-o |
+| 
 | d-num line="urvanov-syntax-highli | }[True]{.crayon-t}[)]{.crayon-sy} |
-| ghter-62ba79b45bc79542115791-44"} | :::                               |
+| ghter-62ba79b45bc79542115791-44"} |                                |
 | 44                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayo                       | b45bc79542115791-27 .crayon-line} |
+| 
 | n-num line="urvanov-syntax-highli | [\# retrieve the                  |
 | ghter-62ba79b45bc79542115791-45"} | values]{.crayon-p}                |
-| 45                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc79542115791-28 . |
+| 45                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc79542115791-46"} | [values]{.crayon-v}[              |
 | 46                                | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.crayon-h}[df]{                 |
+|                                | ]{.crayon-h}[df]{                 |
 |                                   | .crayon-v}[.]{.crayon-sy}[values] |
-| ::: {.crayo                       | {.crayon-v}[.]{.crayon-sy}[astype |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-e}[(]{.crayon-sy}[\'flo |
 | ghter-62ba79b45bc79542115791-47"} | at32\']{.crayon-s}[)]{.crayon-sy} |
-| 47                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#                            |
-| ::: {.crayon-num .crayon-stripe   | urvanov-syntax-highlighter-62ba79 |
+| 47                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | b45bc79542115791-29 .crayon-line} |
 | ghter-62ba79b45bc79542115791-48"} | [\# specify the window            |
 | 48                                | size]{.crayon-p}                  |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#urvanov-syntax-highli       |
+| 
 | n-num line="urvanov-syntax-highli | ghter-62ba79b45bc79542115791-30 . |
 | ghter-62ba79b45bc79542115791-49"} | crayon-line .crayon-striped-line} |
 | 49                                | [n\_steps]{.crayon-v}[            |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[5]{.crayon-cn}       |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc79542115791-50"} | ::: {#                            |
+| ghter-62ba79b45bc79542115791-50"} | 
 | 50                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc79542115791-31 .crayon-line} |
+|                                | b45bc79542115791-31 .crayon-line} |
 |                                   | [\# split into                    |
-| ::: {.crayo                       | samples]{.crayon-p}               |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc79542115791-51"} |                                   |
-| 51                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc79542115791-32 . |
+| 51                                | 
+|                                | ghter-62ba79b45bc79542115791-32 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayon-num .crayon-stripe   | [X]{.crayon-v}[,]{.crayon-sy}[    |
+| 
 | d-num line="urvanov-syntax-highli | ]{.crayon-h}[y]{.crayon-v}[       |
 | ghter-62ba79b45bc79542115791-52"} | ]{.crayon-h}[=]{.crayon-o}[       |
 | 52                                | ]{.crayon-h}[split\_sequ          |
-| :::                               | ence]{.crayon-e}[(]{.crayon-sy}[v |
+|                                | ence]{.crayon-e}[(]{.crayon-sy}[v |
 |                                   | alues]{.crayon-v}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[n\                   |
+| 
 | n-num line="urvanov-syntax-highli | _steps]{.crayon-v}[)]{.crayon-sy} |
-| ghter-62ba79b45bc79542115791-53"} | :::                               |
+| ghter-62ba79b45bc79542115791-53"} |                                |
 | 53                                |                                   |
-| :::                               | ::: {#                            |
+|                                | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayon-num .crayon-stripe   | b45bc79542115791-33 .crayon-line} |
+| 
 | d-num line="urvanov-syntax-highli | [\# reshape into \[samples,       |
 | ghter-62ba79b45bc79542115791-54"} | timesteps, features\]]{.crayon-p} |
-| 54                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayo                       | ghter-62ba79b45bc79542115791-34 . |
+| 54                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | n-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc79542115791-55"} | [X]{.crayon-v}[                   |
 | 55                                | ]{.crayon-h}[=]{.crayon-o}[       |
-| :::                               | ]{.                               |
-| :::                               | crayon-h}[X]{.crayon-v}[.]{.crayo |
+|                                | ]{.                               |
+|                                | crayon-h}[X]{.crayon-v}[.]{.crayo |
 |                                   | n-sy}[reshape]{.crayon-e}[(]{.cra |
 |                                   | yon-sy}[(]{.crayon-sy}[X]{.crayon |
 |                                   | -v}[.]{.crayon-sy}[shape]{.crayon |
@@ -5730,24 +5623,24 @@ time series forecasting problem is listed below.
 |                                   | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[1]{.crayon-          |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-35 .crayon-line} |
 |                                   | [\# split into                    |
 |                                   | train/test]{.crayon-p}            |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-36 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [n\_test]{.crayon-v}[             |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[12]{.crayon-cn}      |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-37 .crayon-line} |
 |                                   | [X\_                              |
@@ -5774,9 +5667,9 @@ time series forecasting problem is listed below.
 |                                   | on-h}[y]{.crayon-v}[\[]{.crayon-s |
 |                                   | y}[-]{.crayon-o}[n\_test]{.crayon |
 |                                   | -v}[:]{.crayon-o}[\]]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-38 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [pri                              |
@@ -5792,24 +5685,24 @@ time series forecasting problem is listed below.
 |                                   | ]{.crayon-h}[y                    |
 |                                   | \_test]{.crayon-v}[.]{.crayon-sy} |
 |                                   | [shape]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-39 .crayon-line} |
 |                                   | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-40 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[               |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
 |                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-41 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -5828,9 +5721,9 @@ time series forecasting problem is listed below.
 |                                   | sy}[n\_steps]{.crayon-v}[,]{.cray |
 |                                   | on-sy}[1]{.crayon-cn}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-42 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -5844,9 +5737,9 @@ time series forecasting problem is listed below.
 |                                   | nel\_initializer]{.crayon-v}[=]{. |
 |                                   | crayon-o}[\'he\_normal\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-43 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
@@ -5860,9 +5753,9 @@ time series forecasting problem is listed below.
 |                                   | nel\_initializer]{.crayon-v}[=]{. |
 |                                   | crayon-o}[\'he\_normal\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-44 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.c                        |
@@ -5870,15 +5763,15 @@ time series forecasting problem is listed below.
 |                                   | yon-e}[(]{.crayon-sy}[Dense]{.cra |
 |                                   | yon-e}[(]{.crayon-sy}[1]{.crayon- |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-45 .crayon-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-46 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [model]{.                         |
@@ -5893,15 +5786,15 @@ time series forecasting problem is listed below.
 |                                   | etrics]{.crayon-v}[=]{.crayon-o}[ |
 |                                   | \[]{.crayon-sy}[\'mae\']{.crayon- |
 |                                   | s}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-47 .crayon-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-48 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [m                                |
@@ -5925,16 +5818,16 @@ time series forecasting problem is listed below.
 |                                   | _test]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[y\_test]{.crayon     |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-49 .crayon-line} |
 |                                   | [\# evaluate the                  |
 |                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-50 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [mse]{.crayon-v}[,]{.crayon-sy}[  |
@@ -5949,9 +5842,9 @@ time series forecasting problem is listed below.
 |                                   | ]{.crayon-                        |
 |                                   | h}[verbose]{.crayon-v}[=]{.crayon |
 |                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-51 .crayon-line} |
 |                                   | [print]                           |
@@ -5966,15 +5859,15 @@ time series forecasting problem is listed below.
 |                                   | v}[)]{.crayon-sy}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[mae]{.crayon         |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-52 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-53 .crayon-line} |
 |                                   | [row]{.crayon-v}[                 |
@@ -5998,9 +5891,9 @@ time series forecasting problem is listed below.
 |                                   | steps]{.crayon-v}[,]{.crayon-sy}[ |
 |                                   | ]{.crayon-h}[1]{.crayon-          |
 |                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc79542115791-54 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [yhat]{.crayon-v}[                |
@@ -6009,9 +5902,9 @@ time series forecasting problem is listed below.
 |                                   | [model]{.crayon-v}[.]{.crayon-sy} |
 |                                   | [predict]{.crayon-e}[(]{.crayon-s |
 |                                   | y}[row]{.crayon-v}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc79542115791-55 .crayon-line} |
 |                                   | [print]{.cray                     |
@@ -6021,11 +5914,11 @@ time series forecasting problem is listed below.
 |                                   | ]{.crayo                          |
 |                                   | n-h}[(]{.crayon-sy}[yhat]{.crayon |
 |                                   | -v}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 Running the example first reports the shape of the dataset, then fits
 the model and evaluates it on the test dataset. Finally, a prediction is
@@ -6047,78 +5940,75 @@ In this case, the model achieved an MAE of about 2,800 and predicted the
 next value in the sequence from the test set as 13,199, where the
 expected value is 14,577 (pretty close).
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc7b227284552 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc7b227284552-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc7b227284552-1 .crayon-line} |
-| :::                               | (91, 5, 1) (12, 5, 1) (91,) (12,) |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | (91, 5, 1) (12, 5, 1) (91,) (12,) |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc7b227284552-2"} | ighter-62ba79b45bc7b227284552-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | MSE: 12755421.000, RMSE:          |
+|                                | MSE: 12755421.000, RMSE:          |
 |                                   | 3571.473, MAE: 2856.084           |
-| ::: {.cray                        | :::                               |
+| 
 | on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc7b227284552-3"} | ::: {                             |
+| ighter-62ba79b45bc7b227284552-3"} | 
 | 3                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc7b227284552-3 .crayon-line} |
-| :::                               | Predicted: 13199.325              |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                | 9b45bc7b227284552-3 .crayon-line} |
+|                                | Predicted: 13199.325              |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 **Note**: it is good practice to scale and make the series stationary
 the data prior to fitting the model. I recommend this as an extension in
@@ -6128,10 +6018,10 @@ data for modeling, see the tutorial:
 -   [4 Common Machine Learning Data Transforms for Time Series
     Forecasting](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
 
-::: {#AdThrive_Content_18_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_8__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 4. How to Use Advanced Model Features
 -------------------------------------
@@ -6163,168 +6053,48 @@ on your model.
 The example below defines a small model with three layers and then
 summarizes the structure.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc7c371412445 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc7c371412445-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc7c371412445-1 .crayon-line} |
-| :::                               | [\# example of summarizing a      |
-|                                   | model]{.crayon-p}                 |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc7c371412445-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc7c371412445-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow           |
-| on-num line="urvanov-syntax-highl | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| ighter-62ba79b45bc7c371412445-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{                                |
-| :::                               | .crayon-e}[Sequential]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc7c371412445-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc7c371412445-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow]          |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[keras] |
-| on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[layers |
-| ighter-62ba79b45bc7c371412445-5"} | ]{.crayon-e}[import               |
-| 5                                 | ]{.crayon-e}[Dense]{.crayon-i}    |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc7c371412445-4 . |
-| ighter-62ba79b45bc7c371412445-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [\# define model]{.crayon-p}      |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.cray                        | ::: {                             |
-| on-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
-| ighter-62ba79b45bc7c371412445-7"} | 9b45bc7c371412445-5 .crayon-line} |
-| 7                                 | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[Sequential]{.crayon  |
-| ::: {.crayon-num .crayon-strip    | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| ed-num line="urvanov-syntax-highl | :::                               |
-| ighter-62ba79b45bc7c371412445-8"} |                                   |
-| 8                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc7c371412445-6 . |
-|                                   | crayon-line .crayon-striped-line} |
-| ::: {.cray                        | [model]{.crayon-v}[.]{.crayon-    |
-| on-num line="urvanov-syntax-highl | sy}[add]{.crayon-e}[(]{.crayon-sy |
-| ighter-62ba79b45bc7c371412445-9"} | }[Dense]{.crayon-e}[(]{.crayon-sy |
-| 9                                 | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-| ::: {.crayon-num .crayon-stripe   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-| d-num line="urvanov-syntax-highli | ]{                                |
-| ghter-62ba79b45bc7c371412445-10"} | .crayon-h}[kernel\_initializer]{. |
-| 10                                | crayon-v}[=]{.crayon-o}[\'he\_nor |
-| :::                               | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon                         |
-|                                   | -h}[input\_shape]{.crayon-v}[=]{. |
-|                                   | crayon-o}[(]{.crayon-sy}[8]{.cray |
-|                                   | on-cn}[,]{.crayon-sy}[)]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {                             |
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc7c371412445-7 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[8]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[ker                  |
-|                                   | nel\_initializer]{.crayon-v}[=]{. |
-|                                   | crayon-o}[\'he\_normal\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc7c371412445-8 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.c                              |
-|                                   | rayon-h}[activation]{.crayon-v}[= |
-|                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {                             |
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc7c371412445-9 .crayon-line} |
-|                                   | [\# summarize the                 |
-|                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc7c371412445-10 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{.crayon-v                 |
-|                                   | }[.]{.crayon-sy}[summary]{.crayon |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Running the example prints a summary of each layer, as well as a total
 summary.
@@ -6332,170 +6102,167 @@ summary.
 This is an invaluable diagnostic for checking the output shapes and
 number of parameters (weights) in your model.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc7e143323947 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc7e143323947-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc7e143323947-1 .crayon-line} |
-| :::                               | Model: \"sequential\"             |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
+|                                | Model: \"sequential\"             |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc7e143323947-2"} | ighter-62ba79b45bc7e143323947-2 . |
 | 2                                 | crayon-line .crayon-striped-line} |
-| :::                               | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\   |
+|                                | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\   |
 |                                   | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| ::: {.cray                        | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ |
+| 
 | on-num line="urvanov-syntax-highl | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| ighter-62ba79b45bc7e143323947-3"} | :::                               |
+| ighter-62ba79b45bc7e143323947-3"} |                                |
 | 3                                 |                                   |
-| :::                               | ::: {                             |
+|                                | 
 |                                   | #urvanov-syntax-highlighter-62ba7 |
-| ::: {.crayon-num .crayon-strip    | 9b45bc7e143323947-3 .crayon-line} |
+| 
 | ed-num line="urvanov-syntax-highl | Layer (type)                      |
 | ighter-62ba79b45bc7e143323947-4"} | Output Shape              Param   |
 | 4                                 | \#                                |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {#urvanov-syntax-highl        |
+| 
 | on-num line="urvanov-syntax-highl | ighter-62ba79b45bc7e143323947-4 . |
 | ighter-62ba79b45bc7e143323947-5"} | crayon-line .crayon-striped-line} |
 | 5                                 | ================================  |
-| :::                               | ================================= |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
+|                                | ================================= |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc7e143323947-6"} | #urvanov-syntax-highlighter-62ba7 |
 | 6                                 | 9b45bc7e143323947-5 .crayon-line} |
-| :::                               | dense                             |
+|                                | dense                             |
 |                                   | (Dense)                (None,     |
-| ::: {.cray                        | 10)                90             |
-| on-num line="urvanov-syntax-highl | :::                               |
+| 
+| on-num line="urvanov-syntax-highl |                                |
 | ighter-62ba79b45bc7e143323947-7"} |                                   |
-| 7                                 | ::: {#urvanov-syntax-highl        |
-| :::                               | ighter-62ba79b45bc7e143323947-6 . |
+| 7                                 | 
+|                                | ighter-62ba79b45bc7e143323947-6 . |
 |                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayon-num .crayon-strip    | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\   |
+| 
 | ed-num line="urvanov-syntax-highl | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
 | ighter-62ba79b45bc7e143323947-8"} | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ |
 | 8                                 | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.cray                        | ::: {                             |
+| 
 | on-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
 | ighter-62ba79b45bc7e143323947-9"} | 9b45bc7e143323947-7 .crayon-line} |
 | 9                                 | dense\_1                          |
-| :::                               | (Dense)              (None,       |
+|                                | (Dense)              (None,       |
 |                                   | 8)                 88             |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc7e143323947-10"} | ::: {#urvanov-syntax-highl        |
+| ghter-62ba79b45bc7e143323947-10"} | 
 | 10                                | ighter-62ba79b45bc7e143323947-8 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\   |
-| ::: {.crayo                       | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
+| 
 | n-num line="urvanov-syntax-highli | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ |
 | ghter-62ba79b45bc7e143323947-11"} | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| 11                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-stripe   | #urvanov-syntax-highlighter-62ba7 |
+| 11                                |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | 9b45bc7e143323947-9 .crayon-line} |
 | ghter-62ba79b45bc7e143323947-12"} | dense\_2                          |
 | 12                                | (Dense)              (None,       |
-| :::                               | 1)                 9              |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
+|                                | 1)                 9              |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc7e143323947-13"} | ghter-62ba79b45bc7e143323947-10 . |
 | 13                                | crayon-line .crayon-striped-line} |
-| :::                               | ================================  |
+|                                | ================================  |
 |                                   | ================================= |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
+| 
 | d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc7e143323947-14"} | ::: {#                            |
+| ghter-62ba79b45bc7e143323947-14"} | 
 | 14                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc7e143323947-11 .crayon-line} |
-| :::                               | Total params: 187                 |
-|                                   | :::                               |
+|                                | b45bc7e143323947-11 .crayon-line} |
+|                                | Total params: 187                 |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc7e143323947-12 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | Trainable params: 187             |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc7e143323947-13 .crayon-line} |
 |                                   | Non-trainable params: 0           |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc7e143323947-14 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\   |
 |                                   | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
 |                                   | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ |
 |                                   | _\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_19_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_9__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
 
 #### Model Architecture Plot
 
@@ -6509,204 +6276,56 @@ The example below creates a small three-layer model and saves a plot of
 the model architecture to '*model.png*' that includes input and output
 shapes.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc7f158043143 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc7f158043143-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc7f158043143-1 .crayon-line} |
-| :::                               | [\# example of plotting a         |
-|                                   | model]{.crayon-p}                 |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc7f158043143-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc7f158043143-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[tensorflow           |
-| on-num line="urvanov-syntax-highl | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| ighter-62ba79b45bc7f158043143-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{                                |
-| :::                               | .crayon-e}[Sequential]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc7f158043143-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc7f158043143-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow]          |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[keras] |
-| on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[layers |
-| ighter-62ba79b45bc7f158043143-5"} | ]{.crayon-e}[import               |
-| 5                                 | ]{.crayon-e}[Dense]{.crayon-e}    |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc7f158043143-4 . |
-| ighter-62ba79b45bc7f158043143-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow           |
-|                                   | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[utils |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc7f158043143-7"} | ]{.crayon-e}[plot                 |
-| 7                                 | ]{.crayon-v}[\_]{.crayon-sy}model |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {                             |
-| ed-num line="urvanov-syntax-highl | #urvanov-syntax-highlighter-62ba7 |
-| ighter-62ba79b45bc7f158043143-8"} | 9b45bc7f158043143-5 .crayon-line} |
-| 8                                 | [\# define model]{.crayon-p}      |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.cray                        | ::: {#urvanov-syntax-highl        |
-| on-num line="urvanov-syntax-highl | ighter-62ba79b45bc7f158043143-6 . |
-| ighter-62ba79b45bc7f158043143-9"} | crayon-line .crayon-striped-line} |
-| 9                                 | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[Sequential]{.crayon  |
-| ::: {.crayon-num .crayon-stripe   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| d-num line="urvanov-syntax-highli | :::                               |
-| ghter-62ba79b45bc7f158043143-10"} |                                   |
-| 10                                | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc7f158043143-7 .crayon-line} |
-| ::: {.crayo                       | [model]{.crayon-v}[.]{.crayon-    |
-| n-num line="urvanov-syntax-highli | sy}[add]{.crayon-e}[(]{.crayon-sy |
-| ghter-62ba79b45bc7f158043143-11"} | }[Dense]{.crayon-e}[(]{.crayon-sy |
-| 11                                | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[activat              |
-| :::                               | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{                                |
-|                                   | .crayon-h}[kernel\_initializer]{. |
-|                                   | crayon-v}[=]{.crayon-o}[\'he\_nor |
-|                                   | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon                         |
-|                                   | -h}[input\_shape]{.crayon-v}[=]{. |
-|                                   | crayon-o}[(]{.crayon-sy}[8]{.cray |
-|                                   | on-cn}[,]{.crayon-sy}[)]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc7f158043143-8 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[8]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[ker                  |
-|                                   | nel\_initializer]{.crayon-v}[=]{. |
-|                                   | crayon-o}[\'he\_normal\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {                             |
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc7f158043143-9 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.c                              |
-|                                   | rayon-h}[activation]{.crayon-v}[= |
-|                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc7f158043143-10 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# summarize the                 |
-|                                   | model]{.crayon-p}                 |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc7f158043143-11 .crayon-line} |
-|                                   | [plot\_                           |
-|                                   | model]{.crayon-e}[(]{.crayon-sy}[ |
-|                                   | model]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[\'model.             |
-|                                   | png\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[show                 |
-|                                   | \_shapes]{.crayon-v}[=]{.crayon-o |
-|                                   | }[True]{.crayon-t}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Running the example creates a plot of the model showing a box for each
 layer with shape information, and arrows that connect the layers,
 showing the flow of data through the network.
 
-::: {#attachment_9898 .wp-caption .aligncenter style="width: 374px"}
+
 ![Plot of Neural Network
-Architecture](./Lab_2_files/Plot-of-Neural-Network-Architecture.jpg){.size-full
-.wp-image-9898 width="364" height="405"
-sizes="(max-width: 364px) 100vw, 364px"
-srcset="https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Neural-Network-Architecture.jpg 364w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Plot-of-Neural-Network-Architecture-270x300.png 270w"}
+Architecture](./images/Plot-of-Neural-Network-Architecture.jpg)
 
 Plot of Neural Network Architecture
-:::
 
-::: {#AdThrive_Content_20_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_10__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
 
 ### 4.2 How to Plot Model Learning Curves
 
@@ -6753,354 +6372,7 @@ evaluate the model during training and the [cross-entropy
 loss](https://machinelearningmastery.com/cross-entropy-for-machine-learning/)
 on the train and validation datasets are then graphed using a line plot.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc80326529161 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
-
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
-
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
-
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc80326529161-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc80326529161-1 .crayon-line} |
-| :::                               | [\# example of plotting learning  |
-|                                   | curves]{.crayon-p}                |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc80326529161-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc80326529161-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
-| on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
-| ighter-62ba79b45bc80326529161-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc80326529161-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc80326529161-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc80326529161-5"} | ]{                                |
-| 5                                 | .crayon-e}[Sequential]{.crayon-e} |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc80326529161-4 . |
-| ighter-62ba79b45bc80326529161-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
-|                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[layers |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc80326529161-7"} | ]{.crayon-e}[Dense]{.crayon-e}    |
-| 7                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
-| ed-num line="urvanov-syntax-highl | 9b45bc80326529161-5 .crayon-line} |
-| ighter-62ba79b45bc80326529161-8"} | [from                             |
-| 8                                 | ]{.crayon-e}[tensorflow]{.cr      |
-| :::                               | ayon-v}[.]{.crayon-sy}[keras]{.cr |
-|                                   | ayon-v}[.]{.crayon-sy}[optimizers |
-| ::: {.cray                        | ]{.crayon-e}[import               |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[SGD]{.crayon-e}      |
-| ighter-62ba79b45bc80326529161-9"} | :::                               |
-| 9                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc80326529161-6 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
-| d-num line="urvanov-syntax-highli | [from ]{.crayon-e}[matplotlib     |
-| ghter-62ba79b45bc80326529161-10"} | ]{.crayon-e}[import               |
-| 10                                | ]{.crayon-e}[pyplot]{.crayon-i}   |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayo                       | ::: {                             |
-| n-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
-| ghter-62ba79b45bc80326529161-11"} | 9b45bc80326529161-7 .crayon-line} |
-| 11                                | [\# create the                    |
-| :::                               | dataset]{.crayon-p}               |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highl        |
-| ghter-62ba79b45bc80326529161-12"} | ighter-62ba79b45bc80326529161-8 . |
-| 12                                | crayon-line .crayon-striped-line} |
-| :::                               | [X]{.crayon-v}[,]{.crayon-sy}[    |
-|                                   | ]{.crayon-h}[y]{.crayon-v}[       |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
-| n-num line="urvanov-syntax-highli | ]{.crayon-h}[make\_classificatio  |
-| ghter-62ba79b45bc80326529161-13"} | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
-| 13                                | amples]{.crayon-v}[=]{.crayon-o}[ |
-| :::                               | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[n                    |
-| ::: {.crayon-num .crayon-stripe   | \_classes]{.crayon-v}[=]{.crayon- |
-| d-num line="urvanov-syntax-highli | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
-| ghter-62ba79b45bc80326529161-14"} | ]{.crayon-h}[ran                  |
-| 14                                | dom\_state]{.crayon-v}[=]{.crayon |
-| :::                               | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {                             |
-| ghter-62ba79b45bc80326529161-15"} | #urvanov-syntax-highlighter-62ba7 |
-| 15                                | 9b45bc80326529161-9 .crayon-line} |
-| :::                               | [\# determine the number of input |
-|                                   | features]{.crayon-p}              |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc80326529161-16"} | ::: {#urvanov-syntax-highli       |
-| 16                                | ghter-62ba79b45bc80326529161-10 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [n\_features]{.crayon-v}[         |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
-| n-num line="urvanov-syntax-highli | ]{.cray                           |
-| ghter-62ba79b45bc80326529161-17"} | on-h}[X]{.crayon-v}[.]{.crayon-sy |
-| 17                                | }[shape]{.crayon-v}[\[]{.crayon-s |
-| :::                               | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#                            |
-| ghter-62ba79b45bc80326529161-18"} | urvanov-syntax-highlighter-62ba79 |
-| 18                                | b45bc80326529161-11 .crayon-line} |
-| :::                               | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
-| ghter-62ba79b45bc80326529161-19"} | ghter-62ba79b45bc80326529161-12 . |
-| 19                                | crayon-line .crayon-striped-line} |
-| :::                               | [model]{.crayon-v}[               |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[Sequential]{.crayon  |
-| d-num line="urvanov-syntax-highli | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| ghter-62ba79b45bc80326529161-20"} | :::                               |
-| 20                                |                                   |
-| :::                               | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-| ::: {.crayo                       | b45bc80326529161-13 .crayon-line} |
-| n-num line="urvanov-syntax-highli | [model]{.crayon-v}[.]{.crayon-    |
-| ghter-62ba79b45bc80326529161-21"} | sy}[add]{.crayon-e}[(]{.crayon-sy |
-| 21                                | }[Dense]{.crayon-e}[(]{.crayon-sy |
-| :::                               | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-| ::: {.crayon-num .crayon-stripe   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-| d-num line="urvanov-syntax-highli | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-| ghter-62ba79b45bc80326529161-22"} | ]{                                |
-| 22                                | .crayon-h}[kernel\_initializer]{. |
-| :::                               | crayon-v}[=]{.crayon-o}[\'he\_nor |
-|                                   | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[input                |
-| n-num line="urvanov-syntax-highli | \_shape]{.crayon-v}[=]{.crayon-o} |
-| ghter-62ba79b45bc80326529161-23"} | [(]{.crayon-sy}[n\_features]{.cra |
-| 23                                | yon-v}[,]{.crayon-sy}[)]{.crayon- |
-| :::                               | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
-| ghter-62ba79b45bc80326529161-24"} | ghter-62ba79b45bc80326529161-14 . |
-| 24                                | crayon-line .crayon-striped-line} |
-| :::                               | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-| ::: {.crayo                       | y}[Dense]{.crayon-e}[(]{.crayon-s |
-| n-num line="urvanov-syntax-highli | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-| ghter-62ba79b45bc80326529161-25"} | ]{.c                              |
-| 25                                | rayon-h}[activation]{.crayon-v}[= |
-| :::                               | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc80326529161-26"} | ::: {#                            |
-| 26                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc80326529161-15 .crayon-line} |
-|                                   | [\# compile the model]{.crayon-p} |
-| ::: {.crayo                       | :::                               |
-| n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc80326529161-27"} | ::: {#urvanov-syntax-highli       |
-| 27                                | ghter-62ba79b45bc80326529161-16 . |
-| :::                               | crayon-line .crayon-striped-line} |
-| :::                               | [sgd]{.crayon-v}[                 |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[SGD]{.c              |
-|                                   | rayon-e}[(]{.crayon-sy}[learning\ |
-|                                   | _rate]{.crayon-v}[=]{.crayon-o}[0 |
-|                                   | .001]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[                     |
-|                                   | momentum]{.crayon-v}[=]{.crayon-o |
-|                                   | }[0.8]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-17 .crayon-line} |
-|                                   | [mod                              |
-|                                   | el]{.crayon-v}[.]{.crayon-sy}[com |
-|                                   | pile]{.crayon-e}[(]{.crayon-sy}[o |
-|                                   | ptimizer]{.crayon-v}[=]{.crayon-o |
-|                                   | }[sgd]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[loss]{.crayon-v}     |
-|                                   | [=]{.crayon-o}[\'binary\_crossent |
-|                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc80326529161-18 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-19 .crayon-line} |
-|                                   | [history]{.crayon-v}[             |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.cray                           |
-|                                   | on-h}[model]{.crayon-v}[.]{.crayo |
-|                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon                         |
-|                                   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}                      |
-|                                   | [epochs]{.crayon-v}[=]{.crayon-o} |
-|                                   | [100]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[bat                  |
-|                                   | ch\_size]{.crayon-v}[=]{.crayon-o |
-|                                   | }[32]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h                       |
-|                                   | }[verbose]{.crayon-v}[=]{.crayon- |
-|                                   | o}[0]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[validatio            |
-|                                   | n\_split]{.crayon-v}[=]{.crayon-o |
-|                                   | }[0.3]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc80326529161-20 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# plot learning                 |
-|                                   | curves]{.crayon-p}                |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-21 .crayon-line} |
-|                                   | [pyplot]{.cr                      |
-|                                   | ayon-v}[.]{.crayon-sy}[title]{.cr |
-|                                   | ayon-e}[(]{.crayon-sy}[\'Learning |
-|                                   | Cu                                |
-|                                   | rves\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc80326529161-22 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [pyplo                            |
-|                                   | t]{.crayon-v}[.]{.crayon-sy}[xlab |
-|                                   | el]{.crayon-e}[(]{.crayon-sy}[\'E |
-|                                   | poch\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-23 .crayon-line} |
-|                                   | [pyplot]{.                        |
-|                                   | crayon-v}[.]{.crayon-sy}[ylabel]{ |
-|                                   | .crayon-e}[(]{.crayon-sy}[\'Cross |
-|                                   | Ent                               |
-|                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc80326529161-24 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [pyplot]{.crayon-v}[.]{.c         |
-|                                   | rayon-sy}[plot]{.crayon-e}[(]{.cr |
-|                                   | ayon-sy}[history]{.crayon-v}[.]{. |
-|                                   | crayon-sy}[history]{.crayon-v}[\[ |
-|                                   | ]{.crayon-sy}[\'loss\']{.crayon-s |
-|                                   | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[la                   |
-|                                   | bel]{.crayon-v}[=]{.crayon-o}[\'t |
-|                                   | rain\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-25 .crayon-line} |
-|                                   | [pyplot]{.crayon-v}[.]{.crayon    |
-|                                   | -sy}[plot]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[history]{.crayon-v}[.]{.crayo |
-|                                   | n-sy}[history]{.crayon-v}[\[]{.cr |
-|                                   | ayon-sy}[\'val\_loss\']{.crayon-s |
-|                                   | }[\]]{.crayon-sy}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[                     |
-|                                   | label]{.crayon-v}[=]{.crayon-o}[\ |
-|                                   | 'val\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc80326529161-26 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [pyplot]{.crayon-                 |
-|                                   | v}[.]{.crayon-sy}[legend]{.crayon |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc80326529161-27 .crayon-line} |
-|                                   | [pyplot]{.crayo                   |
-|                                   | n-v}[.]{.crayon-sy}[show]{.crayon |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
 
 Running the example fits the model on the dataset. At the end of the
 run, the *history* object is returned and used as the basis for creating
@@ -7110,20 +6382,10 @@ The cross-entropy loss for the training dataset is accessed via the
 '*loss*' key and the loss on the validation dataset is accessed via the
 '*val\_loss*' key on the history attribute of the history object.
 
-::: {#attachment_9899 .wp-caption .aligncenter style="width: 1290px"}
-![Learning Curves of Cross-Entropy Loss for a Deep Learning
-Model](./Lab_2_files/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model.webp){.size-full
-.wp-image-9899 width="1280" height="960"
-sizes="(max-width: 1280px) 100vw, 1280px"
-srcset="https://machinelearningmastery.com/wp-content/uploads/2019/12/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model.png 1280w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model-300x225.png 300w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model-1024x768.png 1024w, https://machinelearningmastery.com/wp-content/uploads/2019/12/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model-768x576.png 768w"}
 
-Learning Curves of Cross-Entropy Loss for a Deep Learning Model
-:::
+![](./images/Learning-Curves-of-Cross-Entropy-Loss-for-a-Deep-Learning-Model.webp)
 
-::: {#AdThrive_Content_21_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_11__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
 
 ### 4.3 How to Save and Load Your Model
 
@@ -7142,345 +6404,106 @@ such, you must ensure that the [h5py library](https://www.h5py.org/) is
 installed on your workstation. This can be achieved using *pip*; for
 example:
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc82104271837 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc82104271837-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc82104271837-1 .crayon-line} |
-| :::                               | pip install h5py                  |
-| :::                               | :::                               |
-|                                   | :::                               |
+|                                | pip install h5py                  |
+|                                |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 The example below fits a simple model on a synthetic binary
 classification problem and then saves the model file.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc8a893956531 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8a893956531-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc8a893956531-1 .crayon-line} |
-| :::                               | [\# example of saving a fit       |
-|                                   | model]{.crayon-p}                 |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc8a893956531-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc8a893956531-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
-| on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
-| ighter-62ba79b45bc8a893956531-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8a893956531-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc8a893956531-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc8a893956531-5"} | ]{                                |
-| 5                                 | .crayon-e}[Sequential]{.crayon-e} |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc8a893956531-4 . |
-| ighter-62ba79b45bc8a893956531-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
-|                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[layers |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc8a893956531-7"} | ]{.crayon-e}[Dense]{.crayon-e}    |
-| 7                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
-| ed-num line="urvanov-syntax-highl | 9b45bc8a893956531-5 .crayon-line} |
-| ighter-62ba79b45bc8a893956531-8"} | [from                             |
-| 8                                 | ]{.crayon-e}[tensorflow]{.cr      |
-| :::                               | ayon-v}[.]{.crayon-sy}[keras]{.cr |
-|                                   | ayon-v}[.]{.crayon-sy}[optimizers |
-| ::: {.cray                        | ]{.crayon-e}[import               |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[SGD]{.crayon-i}      |
-| ighter-62ba79b45bc8a893956531-9"} | :::                               |
-| 9                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc8a893956531-6 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
-| d-num line="urvanov-syntax-highli | [\# create the                    |
-| ghter-62ba79b45bc8a893956531-10"} | dataset]{.crayon-p}               |
-| 10                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayo                       | #urvanov-syntax-highlighter-62ba7 |
-| n-num line="urvanov-syntax-highli | 9b45bc8a893956531-7 .crayon-line} |
-| ghter-62ba79b45bc8a893956531-11"} | [X]{.crayon-v}[,]{.crayon-sy}[    |
-| 11                                | ]{.crayon-h}[y]{.crayon-v}[       |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[make\_classificatio  |
-| ::: {.crayon-num .crayon-stripe   | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
-| d-num line="urvanov-syntax-highli | amples]{.crayon-v}[=]{.crayon-o}[ |
-| ghter-62ba79b45bc8a893956531-12"} | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-| 12                                | ]{.crayon-h}[n\                   |
-| :::                               | _features]{.crayon-v}[=]{.crayon- |
-|                                   | o}[4]{.crayon-cn}[,]{.crayon-sy}[ |
-| ::: {.crayo                       | ]{.crayon-h}[n                    |
-| n-num line="urvanov-syntax-highli | \_classes]{.crayon-v}[=]{.crayon- |
-| ghter-62ba79b45bc8a893956531-13"} | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
-| 13                                | ]{.crayon-h}[ran                  |
-| :::                               | dom\_state]{.crayon-v}[=]{.crayon |
-|                                   | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc8a893956531-14"} | ::: {#urvanov-syntax-highl        |
-| 14                                | ighter-62ba79b45bc8a893956531-8 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [\# determine the number of input |
-| ::: {.crayo                       | features]{.crayon-p}              |
-| n-num line="urvanov-syntax-highli | :::                               |
-| ghter-62ba79b45bc8a893956531-15"} |                                   |
-| 15                                | ::: {                             |
-| :::                               | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc8a893956531-9 .crayon-line} |
-| ::: {.crayon-num .crayon-stripe   | [n\_features]{.crayon-v}[         |
-| d-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
-| ghter-62ba79b45bc8a893956531-16"} | ]{.cray                           |
-| 16                                | on-h}[X]{.crayon-v}[.]{.crayon-sy |
-| :::                               | }[shape]{.crayon-v}[\[]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| ::: {.crayo                       | :::                               |
-| n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc8a893956531-17"} | ::: {#urvanov-syntax-highli       |
-| 17                                | ghter-62ba79b45bc8a893956531-10 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [\# define model]{.crayon-p}      |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc8a893956531-18"} | ::: {#                            |
-| 18                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc8a893956531-11 .crayon-line} |
-|                                   | [model]{.crayon-v}[               |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
-| n-num line="urvanov-syntax-highli | ]{.crayon-h}[Sequential]{.crayon  |
-| ghter-62ba79b45bc8a893956531-19"} | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| 19                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-| ::: {.crayon-num .crayon-stripe   | ghter-62ba79b45bc8a893956531-12 . |
-| d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
-| ghter-62ba79b45bc8a893956531-20"} | [model]{.crayon-v}[.]{.crayon-    |
-| 20                                | sy}[add]{.crayon-e}[(]{.crayon-sy |
-| :::                               | }[Dense]{.crayon-e}[(]{.crayon-sy |
-| :::                               | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{                                |
-|                                   | .crayon-h}[kernel\_initializer]{. |
-|                                   | crayon-v}[=]{.crayon-o}[\'he\_nor |
-|                                   | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[input                |
-|                                   | \_shape]{.crayon-v}[=]{.crayon-o} |
-|                                   | [(]{.crayon-sy}[n\_features]{.cra |
-|                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8a893956531-13 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.c                              |
-|                                   | rayon-h}[activation]{.crayon-v}[= |
-|                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8a893956531-14 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8a893956531-15 .crayon-line} |
-|                                   | [sgd]{.crayon-v}[                 |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[SGD]{.c              |
-|                                   | rayon-e}[(]{.crayon-sy}[learning\ |
-|                                   | _rate]{.crayon-v}[=]{.crayon-o}[0 |
-|                                   | .001]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[                     |
-|                                   | momentum]{.crayon-v}[=]{.crayon-o |
-|                                   | }[0.8]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8a893956531-16 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [mod                              |
-|                                   | el]{.crayon-v}[.]{.crayon-sy}[com |
-|                                   | pile]{.crayon-e}[(]{.crayon-sy}[o |
-|                                   | ptimizer]{.crayon-v}[=]{.crayon-o |
-|                                   | }[sgd]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[loss]{.crayon-v}     |
-|                                   | [=]{.crayon-o}[\'binary\_crossent |
-|                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8a893956531-17 .crayon-line} |
-|                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8a893956531-18 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{.crayon-v}[.]{.crayo      |
-|                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon                         |
-|                                   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}                      |
-|                                   | [epochs]{.crayon-v}[=]{.crayon-o} |
-|                                   | [100]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[bat                  |
-|                                   | ch\_size]{.crayon-v}[=]{.crayon-o |
-|                                   | }[32]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h                       |
-|                                   | }[verbose]{.crayon-v}[=]{.crayon- |
-|                                   | o}[0]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[validatio            |
-|                                   | n\_split]{.crayon-v}[=]{.crayon-o |
-|                                   | }[0.3]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8a893956531-19 .crayon-line} |
-|                                   | [\# save model to                 |
-|                                   | file]{.crayon-p}                  |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8a893956531-20 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model                            |
-|                                   | ]{.crayon-v}[.]{.crayon-sy}[save] |
-|                                   | {.crayon-e}[(]{.crayon-sy}[\'mode |
-|                                   | l.h5\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Running the example fits the model and saves it to file with the name
 '*model.h5*'.
@@ -7490,248 +6513,87 @@ training it, or do whatever we wish with it.
 
 The example below loads the model and uses it to make a prediction.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc8b767963806 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8b767963806-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc8b767963806-1 .crayon-line} |
-| :::                               | [\# example of loading a saved    |
-|                                   | model]{.crayon-p}                 |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc8b767963806-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc8b767963806-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
-| on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
-| ighter-62ba79b45bc8b767963806-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8b767963806-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc8b767963806-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow]          |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[keras] |
-| on-num line="urvanov-syntax-highl | {.crayon-v}[.]{.crayon-sy}[models |
-| ighter-62ba79b45bc8b767963806-5"} | ]{.crayon-e}[import               |
-| 5                                 | ]{.crayon-e}[load                 |
-| :::                               | ]{.crayon-v}[\_]{.crayon-sy}model |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {#urvanov-syntax-highl        |
-| ighter-62ba79b45bc8b767963806-6"} | ighter-62ba79b45bc8b767963806-4 . |
-| 6                                 | crayon-line .crayon-striped-line} |
-| :::                               | [\# create the                    |
-|                                   | dataset]{.crayon-p}               |
-| ::: {.cray                        | :::                               |
-| on-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc8b767963806-7"} | ::: {                             |
-| 7                                 | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc8b767963806-5 .crayon-line} |
-|                                   | [X]{.crayon-v}[,]{.crayon-sy}[    |
-| ::: {.crayon-num .crayon-strip    | ]{.crayon-h}[y]{.crayon-v}[       |
-| ed-num line="urvanov-syntax-highl | ]{.crayon-h}[=]{.crayon-o}[       |
-| ighter-62ba79b45bc8b767963806-8"} | ]{.crayon-h}[make\_classificatio  |
-| 8                                 | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
-| :::                               | amples]{.crayon-v}[=]{.crayon-o}[ |
-|                                   | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-| ::: {.cray                        | ]{.crayon-h}[n\                   |
-| on-num line="urvanov-syntax-highl | _features]{.crayon-v}[=]{.crayon- |
-| ighter-62ba79b45bc8b767963806-9"} | o}[4]{.crayon-cn}[,]{.crayon-sy}[ |
-| 9                                 | ]{.crayon-h}[n                    |
-| :::                               | \_classes]{.crayon-v}[=]{.crayon- |
-|                                   | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[ran                  |
-| d-num line="urvanov-syntax-highli | dom\_state]{.crayon-v}[=]{.crayon |
-| ghter-62ba79b45bc8b767963806-10"} | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-| 10                                | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.crayo                       | ighter-62ba79b45bc8b767963806-6 . |
-| n-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
-| ghter-62ba79b45bc8b767963806-11"} | [\# load the model from           |
-| 11                                | file]{.crayon-p}                  |
-| :::                               | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc8b767963806-7 .crayon-line} |
-|                                   | [model]{.crayon-v}[               |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[load\_model]         |
-|                                   | {.crayon-e}[(]{.crayon-sy}[\'mode |
-|                                   | l.h5\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc8b767963806-8 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# make a prediction]{.crayon-p} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {                             |
-|                                   | #urvanov-syntax-highlighter-62ba7 |
-|                                   | 9b45bc8b767963806-9 .crayon-line} |
-|                                   | [row]{.crayon-v}[                 |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{                                |
-|                                   | .crayon-h}[\[]{.crayon-sy}[1.9151 |
-|                                   | 8414]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[1.1499               |
-|                                   | 5454]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[-]{.crayon-o}[1.5284 |
-|                                   | 7073]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[0.7943               |
-|                                   | 0654]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8b767963806-10 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [yhat]{.crayon-v}[                |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h                       |
-|                                   | }[model]{.crayon-v}[.]{.crayon-sy |
-|                                   | }[predict]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[\[]{.crayon-sy}[row]{.crayon- |
-|                                   | v}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8b767963806-11 .crayon-line} |
-|                                   | [print]{.cray                     |
-|                                   | on-e}[(]{.crayon-sy}[\'Predicted: |
-|                                   | %.3f\']{.crayon-s}[               |
-|                                   | ]{.crayon-h}[%]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[yhat]{.crayo         |
-|                                   | n-v}[\[]{.crayon-sy}[0]{.crayon-c |
-|                                   | n}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Running the example loads the image from file, then uses it to make a
 prediction on a new row of data and prints the result.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc8c093001068 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code" style="display: none;"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8c093001068-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc8c093001068-1 .crayon-line} |
-| :::                               | Predicted: 0.831                  |
-| :::                               | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_22_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_12__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 5. How to Get Better Model Performance
 --------------------------------------
@@ -7781,269 +6643,48 @@ binary classification problem.
 A dropout layer with 50 percent dropout is inserted between the first
 hidden layer and the output layer.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc8d231625104 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8d231625104-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc8d231625104-1 .crayon-line} |
-| :::                               | [\# example of using              |
-|                                   | dropout]{.crayon-p}               |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc8d231625104-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc8d231625104-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
-| on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
-| ighter-62ba79b45bc8d231625104-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc8d231625104-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc8d231625104-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc8d231625104-5"} | ]{                                |
-| 5                                 | .crayon-e}[Sequential]{.crayon-e} |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc8d231625104-4 . |
-| ighter-62ba79b45bc8d231625104-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
-|                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[layers |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc8d231625104-7"} | ]{.crayon-e}[Dense]{.crayon-e}    |
-| 7                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
-| ed-num line="urvanov-syntax-highl | 9b45bc8d231625104-5 .crayon-line} |
-| ighter-62ba79b45bc8d231625104-8"} | [from                             |
-| 8                                 | ]{.crayon-e}[tensorflow]          |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[keras] |
-|                                   | {.crayon-v}[.]{.crayon-sy}[layers |
-| ::: {.cray                        | ]{.crayon-e}[import               |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[Dropout]{.crayon-e}  |
-| ighter-62ba79b45bc8d231625104-9"} | :::                               |
-| 9                                 |                                   |
-| :::                               | ::: {#urvanov-syntax-highl        |
-|                                   | ighter-62ba79b45bc8d231625104-6 . |
-| ::: {.crayon-num .crayon-stripe   | crayon-line .crayon-striped-line} |
-| d-num line="urvanov-syntax-highli | [from ]{.crayon-e}[matplotlib     |
-| ghter-62ba79b45bc8d231625104-10"} | ]{.crayon-e}[import               |
-| 10                                | ]{.crayon-e}[pyplot]{.crayon-i}   |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayo                       | ::: {                             |
-| n-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
-| ghter-62ba79b45bc8d231625104-11"} | 9b45bc8d231625104-7 .crayon-line} |
-| 11                                | [\# create the                    |
-| :::                               | dataset]{.crayon-p}               |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highl        |
-| ghter-62ba79b45bc8d231625104-12"} | ighter-62ba79b45bc8d231625104-8 . |
-| 12                                | crayon-line .crayon-striped-line} |
-| :::                               | [X]{.crayon-v}[,]{.crayon-sy}[    |
-|                                   | ]{.crayon-h}[y]{.crayon-v}[       |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
-| n-num line="urvanov-syntax-highli | ]{.crayon-h}[make\_classificatio  |
-| ghter-62ba79b45bc8d231625104-13"} | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
-| 13                                | amples]{.crayon-v}[=]{.crayon-o}[ |
-| :::                               | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[n                    |
-| ::: {.crayon-num .crayon-stripe   | \_classes]{.crayon-v}[=]{.crayon- |
-| d-num line="urvanov-syntax-highli | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
-| ghter-62ba79b45bc8d231625104-14"} | ]{.crayon-h}[ran                  |
-| 14                                | dom\_state]{.crayon-v}[=]{.crayon |
-| :::                               | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {                             |
-| ghter-62ba79b45bc8d231625104-15"} | #urvanov-syntax-highlighter-62ba7 |
-| 15                                | 9b45bc8d231625104-9 .crayon-line} |
-| :::                               | [\# determine the number of input |
-|                                   | features]{.crayon-p}              |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc8d231625104-16"} | ::: {#urvanov-syntax-highli       |
-| 16                                | ghter-62ba79b45bc8d231625104-10 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [n\_features]{.crayon-v}[         |
-| ::: {.crayo                       | ]{.crayon-h}[=]{.crayon-o}[       |
-| n-num line="urvanov-syntax-highli | ]{.cray                           |
-| ghter-62ba79b45bc8d231625104-17"} | on-h}[X]{.crayon-v}[.]{.crayon-sy |
-| 17                                | }[shape]{.crayon-v}[\[]{.crayon-s |
-| :::                               | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-stripe   |                                   |
-| d-num line="urvanov-syntax-highli | ::: {#                            |
-| ghter-62ba79b45bc8d231625104-18"} | urvanov-syntax-highlighter-62ba79 |
-| 18                                | b45bc8d231625104-11 .crayon-line} |
-| :::                               | [\# define model]{.crayon-p}      |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {#urvanov-syntax-highli       |
-| ghter-62ba79b45bc8d231625104-19"} | ghter-62ba79b45bc8d231625104-12 . |
-| 19                                | crayon-line .crayon-striped-line} |
-| :::                               | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[Sequential]{.crayon  |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8d231625104-13 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon-    |
-|                                   | sy}[add]{.crayon-e}[(]{.crayon-sy |
-|                                   | }[Dense]{.crayon-e}[(]{.crayon-sy |
-|                                   | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{                                |
-|                                   | .crayon-h}[kernel\_initializer]{. |
-|                                   | crayon-v}[=]{.crayon-o}[\'he\_nor |
-|                                   | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[input                |
-|                                   | \_shape]{.crayon-v}[=]{.crayon-o} |
-|                                   | [(]{.crayon-sy}[n\_features]{.cra |
-|                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8d231625104-14 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{.crayo                    |
-|                                   | n-v}[.]{.crayon-sy}[add]{.crayon- |
-|                                   | e}[(]{.crayon-sy}[Dropout]{.crayo |
-|                                   | n-e}[(]{.crayon-sy}[0.5]{.crayon- |
-|                                   | cn}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8d231625104-15 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.c                              |
-|                                   | rayon-h}[activation]{.crayon-v}[= |
-|                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8d231625104-16 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8d231625104-17 .crayon-line} |
-|                                   | [model]{.                         |
-|                                   | crayon-v}[.]{.crayon-sy}[compile] |
-|                                   | {.crayon-e}[(]{.crayon-sy}[optimi |
-|                                   | zer]{.crayon-v}[=]{.crayon-o}[\'a |
-|                                   | dam\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[loss]{.crayon-v}     |
-|                                   | [=]{.crayon-o}[\'binary\_crossent |
-|                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc8d231625104-18 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc8d231625104-19 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayo      |
-|                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon                         |
-|                                   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}                      |
-|                                   | [epochs]{.crayon-v}[=]{.crayon-o} |
-|                                   | [100]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[bat                  |
-|                                   | ch\_size]{.crayon-v}[=]{.crayon-o |
-|                                   | }[32]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-                        |
-|                                   | h}[verbose]{.crayon-v}[=]{.crayon |
-|                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
 
-::: {#AdThrive_Content_23_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_13__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 5.2 How to Accelerate Training With Batch Normalization
 
@@ -8075,265 +6716,47 @@ The example below defines a small MLP network for a binary
 classification prediction problem with a batch normalization layer
 between the first hidden layer and the output layer.
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc91007503125 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
-+-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc91007503125-1"} | #urvanov-syntax-highlighter-62ba7 |
-| 1                                 | 9b45bc91007503125-1 .crayon-line} |
-| :::                               | [\# example of using batch        |
-|                                   | normalization]{.crayon-p}         |
-| ::: {.crayon-num .crayon-strip    | :::                               |
-| ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc91007503125-2"} | ::: {#urvanov-syntax-highl        |
-| 2                                 | ighter-62ba79b45bc91007503125-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
-| on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
-| ighter-62ba79b45bc91007503125-3"} | ]{.crayon-e}[import               |
-| 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
-| ighter-62ba79b45bc91007503125-4"} | #urvanov-syntax-highlighter-62ba7 |
-| 4                                 | 9b45bc91007503125-3 .crayon-line} |
-| :::                               | [from                             |
-|                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc91007503125-5"} | ]{                                |
-| 5                                 | .crayon-e}[Sequential]{.crayon-e} |
-| :::                               | :::                               |
-|                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
-| ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc91007503125-4 . |
-| ighter-62ba79b45bc91007503125-6"} | crayon-line .crayon-striped-line} |
-| 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
-|                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[layers |
-| on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
-| ighter-62ba79b45bc91007503125-7"} | ]{.crayon-e}[Dense]{.crayon-e}    |
-| 7                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
-| ed-num line="urvanov-syntax-highl | 9b45bc91007503125-5 .crayon-line} |
-| ighter-62ba79b45bc91007503125-8"} | [from                             |
-| 8                                 | ]{.crayon-e}[tensorflow]          |
-| :::                               | {.crayon-v}[.]{.crayon-sy}[keras] |
-|                                   | {.crayon-v}[.]{.crayon-sy}[layers |
-| ::: {.cray                        | ]{.crayon-e}[import               |
-| on-num line="urvanov-syntax-highl | ]{.crayon-                        |
-| ighter-62ba79b45bc91007503125-9"} | e}[BatchNormalization]{.crayon-e} |
-| 9                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.crayon-num .crayon-stripe   | ighter-62ba79b45bc91007503125-6 . |
-| d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
-| ghter-62ba79b45bc91007503125-10"} | [from ]{.crayon-e}[matplotlib     |
-| 10                                | ]{.crayon-e}[import               |
-| :::                               | ]{.crayon-e}[pyplot]{.crayon-i}   |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {                             |
-| ghter-62ba79b45bc91007503125-11"} | #urvanov-syntax-highlighter-62ba7 |
-| 11                                | 9b45bc91007503125-7 .crayon-line} |
-| :::                               | [\# create the                    |
-|                                   | dataset]{.crayon-p}               |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc91007503125-12"} | ::: {#urvanov-syntax-highl        |
-| 12                                | ighter-62ba79b45bc91007503125-8 . |
-| :::                               | crayon-line .crayon-striped-line} |
-|                                   | [X]{.crayon-v}[,]{.crayon-sy}[    |
-| ::: {.crayo                       | ]{.crayon-h}[y]{.crayon-v}[       |
-| n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
-| ghter-62ba79b45bc91007503125-13"} | ]{.crayon-h}[make\_classificatio  |
-| 13                                | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
-| :::                               | amples]{.crayon-v}[=]{.crayon-o}[ |
-|                                   | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[n                    |
-| d-num line="urvanov-syntax-highli | \_classes]{.crayon-v}[=]{.crayon- |
-| ghter-62ba79b45bc91007503125-14"} | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
-| 14                                | ]{.crayon-h}[ran                  |
-| :::                               | dom\_state]{.crayon-v}[=]{.crayon |
-|                                   | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-| ::: {.crayo                       | :::                               |
-| n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc91007503125-15"} | ::: {                             |
-| 15                                | #urvanov-syntax-highlighter-62ba7 |
-| :::                               | 9b45bc91007503125-9 .crayon-line} |
-|                                   | [\# determine the number of input |
-| ::: {.crayon-num .crayon-stripe   | features]{.crayon-p}              |
-| d-num line="urvanov-syntax-highli | :::                               |
-| ghter-62ba79b45bc91007503125-16"} |                                   |
-| 16                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc91007503125-10 . |
-|                                   | crayon-line .crayon-striped-line} |
-| ::: {.crayo                       | [n\_features]{.crayon-v}[         |
-| n-num line="urvanov-syntax-highli | ]{.crayon-h}[=]{.crayon-o}[       |
-| ghter-62ba79b45bc91007503125-17"} | ]{.cray                           |
-| 17                                | on-h}[X]{.crayon-v}[.]{.crayon-sy |
-| :::                               | }[shape]{.crayon-v}[\[]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| ::: {.crayon-num .crayon-stripe   | :::                               |
-| d-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc91007503125-18"} | ::: {#                            |
-| 18                                | urvanov-syntax-highlighter-62ba79 |
-| :::                               | b45bc91007503125-11 .crayon-line} |
-|                                   | [\# define model]{.crayon-p}      |
-| ::: {.crayo                       | :::                               |
-| n-num line="urvanov-syntax-highli |                                   |
-| ghter-62ba79b45bc91007503125-19"} | ::: {#urvanov-syntax-highli       |
-| 19                                | ghter-62ba79b45bc91007503125-12 . |
-| :::                               | crayon-line .crayon-striped-line} |
-| :::                               | [model]{.crayon-v}[               |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[Sequential]{.crayon  |
-|                                   | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc91007503125-13 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon-    |
-|                                   | sy}[add]{.crayon-e}[(]{.crayon-sy |
-|                                   | }[Dense]{.crayon-e}[(]{.crayon-sy |
-|                                   | }[10]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[activat              |
-|                                   | ion]{.crayon-v}[=]{.crayon-o}[\'r |
-|                                   | elu\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{                                |
-|                                   | .crayon-h}[kernel\_initializer]{. |
-|                                   | crayon-v}[=]{.crayon-o}[\'he\_nor |
-|                                   | mal\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[input                |
-|                                   | \_shape]{.crayon-v}[=]{.crayon-o} |
-|                                   | [(]{.crayon-sy}[n\_features]{.cra |
-|                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc91007503125-14 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [model]{                          |
-|                                   | .crayon-v}[.]{.crayon-sy}[add]{.c |
-|                                   | rayon-e}[(]{.crayon-sy}[BatchNorm |
-|                                   | alization]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc91007503125-15 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayon     |
-|                                   | -sy}[add]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[Dense]{.crayon-e}[(]{.crayon-s |
-|                                   | y}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.c                              |
-|                                   | rayon-h}[activation]{.crayon-v}[= |
-|                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
-|                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc91007503125-16 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc91007503125-17 .crayon-line} |
-|                                   | [model]{.                         |
-|                                   | crayon-v}[.]{.crayon-sy}[compile] |
-|                                   | {.crayon-e}[(]{.crayon-sy}[optimi |
-|                                   | zer]{.crayon-v}[=]{.crayon-o}[\'a |
-|                                   | dam\']{.crayon-s}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[loss]{.crayon-v}     |
-|                                   | [=]{.crayon-o}[\'binary\_crossent |
-|                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
-|                                   | ghter-62ba79b45bc91007503125-18 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
-|                                   |                                   |
-|                                   | ::: {#                            |
-|                                   | urvanov-syntax-highlighter-62ba79 |
-|                                   | b45bc91007503125-19 .crayon-line} |
-|                                   | [model]{.crayon-v}[.]{.crayo      |
-|                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon                         |
-|                                   | -h}[y]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}                      |
-|                                   | [epochs]{.crayon-v}[=]{.crayon-o} |
-|                                   | [100]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[bat                  |
-|                                   | ch\_size]{.crayon-v}[=]{.crayon-o |
-|                                   | }[32]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-                        |
-|                                   | h}[verbose]{.crayon-v}[=]{.crayon |
-|                                   | -o}[0]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
-+-----------------------------------+-----------------------------------+
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Also, tf.keras has a range of other normalization layers you might like
 to explore; see:
@@ -8341,10 +6764,6 @@ to explore; see:
 -   [tf.keras Normalization Layers
     Guide](https://www.tensorflow.org/addons/tutorials/layers_normalizations).
 
-::: {#AdThrive_Content_24_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_14__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
 
 ### 5.3 How to Halt Training at the Right Time With Early Stopping
 
@@ -8394,169 +6813,166 @@ The example below demonstrates a small neural network on a synthetic
 binary classification problem that uses early stopping to halt training
 as soon as the model starts overfitting (after about 50 epochs).
 
-::: {#urvanov-syntax-highlighter-62ba79b45bc93712100225 .urvanov-syntax-highlighter-syntax .crayon-theme-classic .urvanov-syntax-highlighter-font-monaco .urvanov-syntax-highlighter-os-pc .print-yes .notranslate settings=" minimize scroll-mouseover disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;"}
-::: {.crayon-toolbar settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"}
-[]{.crayon-title}
 
-::: {.crayon-tools style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"}
-::: {.crayon-button .urvanov-syntax-highlighter-nums-button .crayon-pressed title="Toggle Line Numbers"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-plain-button title="Toggle Plain Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-wrap-button title="Toggle Line Wrap"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-expand-button title="Expand Code"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-copy-button title="Copy"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
 
-::: {.crayon-button .urvanov-syntax-highlighter-popup-button title="Open Code In New Window"}
-::: {.urvanov-syntax-highlighter-button-icon style="background-size: 48px 128px; background-image: url(\"https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/css/images/toolbar/buttons@2x.png\");"}
-:::
-:::
-:::
-:::
 
-::: {.crayon-info style="min-height: 16.8px !important; line-height: 16.8px !important;"}
-:::
 
-::: {.urvanov-syntax-highlighter-plain-wrap}
-:::
 
-::: {.urvanov-syntax-highlighter-main style="position: relative; z-index: 1; overflow: hidden;"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +-----------------------------------+-----------------------------------+
-| ::: {.urvanov                     | ::: {.crayon-pr                   |
+| 
 | -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
 | style="font-size: 12px !important | nt; line-height: 15px !important; |
 | ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| ::: {.cray                        | -webkit-tab-size:4; tab-size:4;"} |
-| on-num line="urvanov-syntax-highl | ::: {                             |
+| 
+| on-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc93712100225-1"} | #urvanov-syntax-highlighter-62ba7 |
 | 1                                 | 9b45bc93712100225-1 .crayon-line} |
-| :::                               | [\# example of using early        |
+|                                | [\# example of using early        |
 |                                   | stopping]{.crayon-p}              |
-| ::: {.crayon-num .crayon-strip    | :::                               |
+| 
 | ed-num line="urvanov-syntax-highl |                                   |
-| ighter-62ba79b45bc93712100225-2"} | ::: {#urvanov-syntax-highl        |
+| ighter-62ba79b45bc93712100225-2"} | 
 | 2                                 | ighter-62ba79b45bc93712100225-2 . |
-| :::                               | crayon-line .crayon-striped-line} |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [from                             |
-| ::: {.cray                        | ]{.crayon-e}[sklearn]{.           |
+| 
 | on-num line="urvanov-syntax-highl | crayon-v}[.]{.crayon-sy}[datasets |
 | ighter-62ba79b45bc93712100225-3"} | ]{.crayon-e}[import               |
 | 3                                 | ]{.crayon-e}                      |
-| :::                               | [make\_classification]{.crayon-e} |
-|                                   | :::                               |
-| ::: {.crayon-num .crayon-strip    |                                   |
-| ed-num line="urvanov-syntax-highl | ::: {                             |
+|                                | [make\_classification]{.crayon-e} |
+|                                   |                                |
+| 
+| ed-num line="urvanov-syntax-highl | 
 | ighter-62ba79b45bc93712100225-4"} | #urvanov-syntax-highlighter-62ba7 |
 | 4                                 | 9b45bc93712100225-3 .crayon-line} |
-| :::                               | [from                             |
+|                                | [from                             |
 |                                   | ]{.crayon-e}[tensorflow           |
-| ::: {.cray                        | ]{.crayon-v}[.]{.crayon-sy}[keras |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
 | ighter-62ba79b45bc93712100225-5"} | ]{                                |
 | 5                                 | .crayon-e}[Sequential]{.crayon-e} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-strip    | ::: {#urvanov-syntax-highl        |
+| 
 | ed-num line="urvanov-syntax-highl | ighter-62ba79b45bc93712100225-4 . |
 | ighter-62ba79b45bc93712100225-6"} | crayon-line .crayon-striped-line} |
 | 6                                 | [from                             |
-| :::                               | ]{.crayon-e}[tensorflow]          |
+|                                | ]{.crayon-e}[tensorflow]          |
 |                                   | {.crayon-v}[.]{.crayon-sy}[keras] |
-| ::: {.cray                        | {.crayon-v}[.]{.crayon-sy}[layers |
+| 
 | on-num line="urvanov-syntax-highl | ]{.crayon-e}[import               |
 | ighter-62ba79b45bc93712100225-7"} | ]{.crayon-e}[Dense]{.crayon-e}    |
-| 7                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {                             |
-| ::: {.crayon-num .crayon-strip    | #urvanov-syntax-highlighter-62ba7 |
+| 7                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | ed-num line="urvanov-syntax-highl | 9b45bc93712100225-5 .crayon-line} |
 | ighter-62ba79b45bc93712100225-8"} | [from                             |
 | 8                                 | ]{.crayon-e}[tensorflow]{.c       |
-| :::                               | rayon-v}[.]{.crayon-sy}[keras]{.c |
+|                                | rayon-v}[.]{.crayon-sy}[keras]{.c |
 |                                   | rayon-v}[.]{.crayon-sy}[callbacks |
-| ::: {.cray                        | ]{.crayon-e}[import               |
+| 
 | on-num line="urvanov-syntax-highl | ]{.cr                             |
 | ighter-62ba79b45bc93712100225-9"} | ayon-e}[EarlyStopping]{.crayon-i} |
-| 9                                 | :::                               |
-| :::                               |                                   |
-|                                   | ::: {#urvanov-syntax-highl        |
-| ::: {.crayon-num .crayon-stripe   | ighter-62ba79b45bc93712100225-6 . |
+| 9                                 |                                |
+|                                |                                   |
+|                                   | 
+| 
 | d-num line="urvanov-syntax-highli | crayon-line .crayon-striped-line} |
 | ghter-62ba79b45bc93712100225-10"} | [\# create the                    |
 | 10                                | dataset]{.crayon-p}               |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {                             |
+| 
 | n-num line="urvanov-syntax-highli | #urvanov-syntax-highlighter-62ba7 |
 | ghter-62ba79b45bc93712100225-11"} | 9b45bc93712100225-7 .crayon-line} |
 | 11                                | [X]{.crayon-v}[,]{.crayon-sy}[    |
-| :::                               | ]{.crayon-h}[y]{.crayon-v}[       |
+|                                | ]{.crayon-h}[y]{.crayon-v}[       |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.crayon-h}[make\_classificatio  |
+| 
 | d-num line="urvanov-syntax-highli | n]{.crayon-e}[(]{.crayon-sy}[n\_s |
 | ghter-62ba79b45bc93712100225-12"} | amples]{.crayon-v}[=]{.crayon-o}[ |
 | 12                                | 1000]{.crayon-cn}[,]{.crayon-sy}[ |
-| :::                               | ]{.crayon-h}[n                    |
+|                                | ]{.crayon-h}[n                    |
 |                                   | \_classes]{.crayon-v}[=]{.crayon- |
-| ::: {.crayo                       | o}[2]{.crayon-cn}[,]{.crayon-sy}[ |
+| 
 | n-num line="urvanov-syntax-highli | ]{.crayon-h}[ran                  |
 | ghter-62ba79b45bc93712100225-13"} | dom\_state]{.crayon-v}[=]{.crayon |
 | 13                                | -o}[1]{.crayon-cn}[)]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#urvanov-syntax-highl        |
+| 
 | d-num line="urvanov-syntax-highli | ighter-62ba79b45bc93712100225-8 . |
 | ghter-62ba79b45bc93712100225-14"} | crayon-line .crayon-striped-line} |
 | 14                                | [\# determine the number of input |
-| :::                               | features]{.crayon-p}              |
-|                                   | :::                               |
-| ::: {.crayo                       |                                   |
-| n-num line="urvanov-syntax-highli | ::: {                             |
+|                                | features]{.crayon-p}              |
+|                                   |                                |
+| 
+| n-num line="urvanov-syntax-highli | 
 | ghter-62ba79b45bc93712100225-15"} | #urvanov-syntax-highlighter-62ba7 |
 | 15                                | 9b45bc93712100225-9 .crayon-line} |
-| :::                               | [n\_features]{.crayon-v}[         |
+|                                | [n\_features]{.crayon-v}[         |
 |                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| ::: {.crayon-num .crayon-stripe   | ]{.cray                           |
+| 
 | d-num line="urvanov-syntax-highli | on-h}[X]{.crayon-v}[.]{.crayon-sy |
 | ghter-62ba79b45bc93712100225-16"} | }[shape]{.crayon-v}[\[]{.crayon-s |
 | 16                                | y}[1]{.crayon-cn}[\]]{.crayon-sy} |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayo                       | ::: {#urvanov-syntax-highli       |
+| 
 | n-num line="urvanov-syntax-highli | ghter-62ba79b45bc93712100225-10 . |
 | ghter-62ba79b45bc93712100225-17"} | crayon-line .crayon-striped-line} |
 | 17                                | [\# define model]{.crayon-p}      |
-| :::                               | :::                               |
+|                                |                                |
 |                                   |                                   |
-| ::: {.crayon-num .crayon-stripe   | ::: {#                            |
+| 
 | d-num line="urvanov-syntax-highli | urvanov-syntax-highlighter-62ba79 |
 | ghter-62ba79b45bc93712100225-18"} | b45bc93712100225-11 .crayon-line} |
 | 18                                | [model]{.crayon-v}[               |
-| :::                               | ]{.crayon-h}[=]{.crayon-o}[       |
+|                                | ]{.crayon-h}[=]{.crayon-o}[       |
 |                                   | ]{.crayon-h}[Sequential]{.crayon  |
-| ::: {.crayo                       | -e}[(]{.crayon-sy}[)]{.crayon-sy} |
-| n-num line="urvanov-syntax-highli | :::                               |
+| 
+| n-num line="urvanov-syntax-highli |                                |
 | ghter-62ba79b45bc93712100225-19"} |                                   |
-| 19                                | ::: {#urvanov-syntax-highli       |
-| :::                               | ghter-62ba79b45bc93712100225-12 . |
-| :::                               | crayon-line .crayon-striped-line} |
+| 19                                | 
+|                                | ghter-62ba79b45bc93712100225-12 . |
+|                                | crayon-line .crayon-striped-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon-    |
 |                                   | sy}[add]{.crayon-e}[(]{.crayon-sy |
 |                                   | }[Dense]{.crayon-e}[(]{.crayon-sy |
@@ -8573,9 +6989,9 @@ as soon as the model starts overfitting (after about 50 epochs).
 |                                   | [(]{.crayon-sy}[n\_features]{.cra |
 |                                   | yon-v}[,]{.crayon-sy}[)]{.crayon- |
 |                                   | sy}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc93712100225-13 .crayon-line} |
 |                                   | [model]{.crayon-v}[.]{.crayon     |
@@ -8586,15 +7002,15 @@ as soon as the model starts overfitting (after about 50 epochs).
 |                                   | rayon-h}[activation]{.crayon-v}[= |
 |                                   | ]{.crayon-o}[\'sigmoid\']{.crayon |
 |                                   | -s}[)]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc93712100225-14 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# compile the model]{.crayon-p} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc93712100225-15 .crayon-line} |
 |                                   | [model]{.                         |
@@ -8605,16 +7021,16 @@ as soon as the model starts overfitting (after about 50 epochs).
 |                                   | ]{.crayon-h}[loss]{.crayon-v}     |
 |                                   | [=]{.crayon-o}[\'binary\_crossent |
 |                                   | ropy\']{.crayon-s}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc93712100225-16 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# configure early               |
 |                                   | stopping]{.crayon-p}              |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc93712100225-17 .crayon-line} |
 |                                   | [es]{.crayon-v}[                  |
@@ -8626,15 +7042,15 @@ as soon as the model starts overfitting (after about 50 epochs).
 |                                   | ]{.crayon-h                       |
 |                                   | }[patience]{.crayon-v}[=]{.crayon |
 |                                   | -o}[5]{.crayon-cn}[)]{.crayon-sy} |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#urvanov-syntax-highli       |
+|                                   | 
 |                                   | ghter-62ba79b45bc93712100225-18 . |
 |                                   | crayon-line .crayon-striped-line} |
 |                                   | [\# fit the model]{.crayon-p}     |
-|                                   | :::                               |
+|                                   |                                |
 |                                   |                                   |
-|                                   | ::: {#                            |
+|                                   | 
 |                                   | urvanov-syntax-highlighter-62ba79 |
 |                                   | b45bc93712100225-19 .crayon-line} |
 |                                   | [history]{.crayon-v}[             |
@@ -8661,11 +7077,11 @@ as soon as the model starts overfitting (after about 50 epochs).
 |                                   | }[callbacks]{.crayon-v}[=]{.crayo |
 |                                   | n-o}[\[]{.crayon-sy}[es]{.crayon- |
 |                                   | v}[\]]{.crayon-sy}[)]{.crayon-sy} |
-|                                   | :::                               |
-|                                   | :::                               |
+|                                   |                                |
+|                                   |                                |
 +-----------------------------------+-----------------------------------+
-:::
-:::
+
+
 
 The tf.keras API provides a number of callbacks that you might like to
 explore; you can learn more here:
@@ -8673,10 +7089,10 @@ explore; you can learn more here:
 -   [tf.keras
     Callbacks](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/)
 
-::: {#AdThrive_Content_25_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_15__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 Further Reading
 ---------------
@@ -8724,10 +7140,10 @@ go deeper.
 -   [Normalization Layers
     Guide](https://www.tensorflow.org/addons/tutorials/layers_normalizations).
 
-::: {#AdThrive_Content_26_desktop .adthrive-ad .adthrive-content .adthrive-content-1 .adthrive-ad-cls style="min-height: 250px;"}
-::: {#google_ads_iframe_/18190176,22523581566/AdThrive_Content/5d4c8ca4693e634b2e5d98cf_16__container__ style="border: 0pt none; width: 728px; height: 0px;"}
-:::
-:::
+
+
+
+
 
 ### APIs
 

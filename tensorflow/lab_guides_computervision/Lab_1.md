@@ -1,25 +1,12 @@
 
-TensorFlow for Computer Vision --- Does a More Complex Architecture Guarantee a Better Model? {#tensorflow-for-computer-vision-does-a-more-complex-architecture-guarantee-a-better-model .post-title}
+TensorFlow for Computer Vision --- Does a More Complex Architecture Guarantee a Better Model?
 =============================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision --- Does a More Complex Architecture
-Guarantee a Better
-Model?](./Lab_1_files/Thumbnail_43-2.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### Your model architecture is probably fine. It's the data quality that sucks. {#your-model-architecture-is-probably-fine-it%E2%80%99s-the-data-quality-that-sucks}
 
-You saw in the [previous
-article](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)
+#### Your model architecture is probably fine. It's the data quality that sucks.
+
+You saw in the previous lab
 how to train a basic image classifier with convolutional networks. We
 got around 75% accuracy without breaking a sweat --- only by using two
 convolutional and two pooling layers, followed by a fully-connected
@@ -30,13 +17,10 @@ the model become too complex, and what happens then? These are the
 questions you'll find answers to in today's article. We'll add multiple
 convolution blocks to see how much can our dogs vs. cats dataset handle.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -49,7 +33,7 @@ from Kaggle. It's licensed under the Creative Commons License, which
 means you can use it for free:
 
 ![*Image 1 --- Dogs vs. Cats dataset (image
-by author)*](./Lab_1_files/1_IGVDaWnmtVm1XhImCEPedg.png){.kg-image}
+by author)*](./images/1_IGVDaWnmtVm1XhImCEPedg.png)
 
 The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
@@ -58,7 +42,7 @@ not structured for deep learning out of the box. You can follow my
 previous article to create a proper directory structure, and split it
 into train, test, and validation sets:
 
-![](./Lab_1_files/favicon.png){.kg-bookmark-icon}
+
 
 You should also delete the *train/cat/666.jpg* and *train/dog/11702.jpg*
 images as they're corrupted, and your model will fail to train with
@@ -131,14 +115,14 @@ valid_data = valid_datagen.flow_from_directory(
 Here's the output you should see:
 
 ![*Image 2 --- Number of images in training and validation
-folders*](./Lab_1_files/1_27M1ePkQWAgYdMaAnlaapA.png){.kg-image}
+folders*](./images/1_27M1ePkQWAgYdMaAnlaapA.png)
 
 That's all we need --- let's crack the first model!
 
 ### Does Adding Layers to a TensorFlow Model Make Any Difference?
 
 Writing convolutional models from scratch is always a tricky task. [Grid
-searching](https://betterdatascience.com/find-optimal-neural-network-architecture-with-tensorflow/)
+searching]
 the optimal architecture isn't feasible, as convolutional models take a
 long time to train, and there are too many moving parts to check. In
 reality, you're far more likely to use *transfer learning*. That's a
@@ -148,9 +132,9 @@ Today, it's all about understanding why going big with the model
 architecture isn't worth it. We got 75% accuracy with somewhat of a
 simple model, so that's the baseline we have to outperform:
 
-![](./Lab_1_files/favicon.png){.kg-bookmark-icon}
 
-### Model 1 --- Two convolutional blocks {#model-1-%E2%80%94-two-convolutional-blocks}
+
+### Model 1 --- Two convolutional blocks
 
 We'll declare the first model to somewhat resemble the VGG
 architecture --- two convolutional layers followed by a pooling layer.
@@ -193,13 +177,13 @@ model_1_history = model_1.fit(
 Here are the training results after 10 epochs:
 
 ![*Image 3 --- Training log of the first model (image
-by author)*](./Lab_1_files/1_2iYCv3ZFAqJEiVwUBDwO5w.png){.kg-image}
+by author)*](./images/1_2iYCv3ZFAqJEiVwUBDwO5w.png)
 
 It looks like we didn't outperform the baseline, as the validation
 accuracy is still around 75%. What will happen if we add yet another
 convolutional block?
 
-### Model 2 --- Three convolutional blocks {#model-2-%E2%80%94-three-convolutional-blocks}
+### Model 2 --- Three convolutional blocks
 
 We'll keep the model architecture identical, the only difference being
 an additional convolutional block with 128 filters:
@@ -239,14 +223,14 @@ model_2_history = model_2.fit(
 Here's the log:
 
 ![*Image 4 --- Training log of the second model (image
-by author)*](./Lab_1_files/1_7sH2tUMvjvPLErrIpESJfA.png){.kg-image}
+by author)*](./images/1_7sH2tUMvjvPLErrIpESJfA.png)
 
 Yikes. The model is completely stuck. You could play around with the
 batch size and learning rate, but you likely won't get far. The first
 architecture worked better on our dataset, so let's try tweaking it a
 bit.
 
-### Model 3 --- Two convolutional blocks with a dropout {#model-3-%E2%80%94-two-convolutional-blocks-with-a-dropout}
+### Model 3 --- Two convolutional blocks with a dropout
 
 The architecture of the third model is identical to the first one, the
 only difference is an additional fully-connected layer and a dropout
@@ -285,11 +269,10 @@ model_3_history = model_3.fit(
 Here is the training log:
 
 ![*Image 5 --- Training log of the third model (image
-by author)*](./Lab_1_files/1_GP7kzkGGwTblyXxvo7C4pw.png){.kg-image}
+by author)*](./images/1_GP7kzkGGwTblyXxvo7C4pw.png)
 
 Horrible, we're below 70% now!. That's what happens when you focus on
-the wrong thing. The simple architecture from the [previous
-article](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)
+the wrong thing. The simple architecture from the previous lab
 was completely fine. It's the problem of data quality that limits the
 predictive power of your model.
 

@@ -1,21 +1,11 @@
 
 
-TensorFlow for Computer Vision--- Top 3 Prerequisites for Deep Learning Projects {#tensorflow-for-computer-vision-top-3-prerequisites-for-deep-learning-projects .post-title}
+TensorFlow for Computer Vision--- Top 3 Prerequisites for Deep Learning Projects
 ================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision--- Top 3 Prerequisites for Deep
-Learning Projects](./Lab_1_files/thumbnail_43-7.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
+
+
 #### Want to train a neural network for image classification? Make sure to do this first
 
 Recognizing objects in images is an effortless task for humans. For
@@ -31,17 +21,14 @@ train/test/validation split, and data visualization. Stay tuned for more
 deep learning articles, as I plan to cover pretty much everything
 related to computer vision in the upcoming weeks and months.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
-Introduction to image data and dataset we'll use {#introduction-to-image-data-and-dataset-we%E2%80%99ll-use}
+Introduction to image data and dataset we'll use
 ------------------------------------------------
 
 Image data is significantly different from tabular data. Tabular data is
@@ -79,9 +66,7 @@ from Kaggle, which you can download and use for free. It's licensed
 under the Creative Commons License, which means you can use it for free:
 
 ![Image 1 --- Dogs. vs. Cats dataset (image by
-author)](./Lab_1_files/1-7.png){.kg-image width="2000" height="1138"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-7.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-7.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-7.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-7.png 2400w"}
+author)](./images/1-7.png)
 
 It's a fairly large dataset --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). The dataset should be
@@ -91,7 +76,7 @@ Download it if you're following along, and extract the `PetImages`
 folder somewhere on your machine. Here's how it should look like:
 
 ![Image 2 --- Source image directory structure (image by
-author)](./Lab_1_files/2-7.png){.kg-image width="508" height="442"}
+author)](./images/2-7.png)
 
 It's not structured optimally, so you'll learn how to fix that in the
 following section.
@@ -175,7 +160,7 @@ setup_folder_structure()
 ```
 
 ![Image 3 --- Directory tree representation (image by
-author)](./Lab_1_files/3-8.png){.kg-image width="340" height="346"}
+author)](./images/3-8.png)
 
 And that's it --- we can split the data next.
 
@@ -271,9 +256,7 @@ train_test_validation_split(
 ```
 
 ![Image 4 --- Train/test/validation split (1) (image by
-author)](./Lab_1_files/4-7.png){.kg-image width="1158" height="298"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-7.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-7.png 1000w, https://betterdatascience.com/content/images/2021/12/4-7.png 1158w"}
+author)](./images/4-7.png)
 
 It's not exactly a perfect 80:10:10 split, but it's close enough. Let's
 do the same for the *good boys*:
@@ -288,9 +271,7 @@ train_test_validation_split(
 ```
 
 ![Image 5 --- Train/test/validation split (2) (image by
-author)](./Lab_1_files/5-8.png){.kg-image width="1160" height="300"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-8.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5-8.png 1000w, https://betterdatascience.com/content/images/2021/12/5-8.png 1160w"}
+author)](./images/5-8.png)
 
 You now have the images separated into three subsets, so you're pretty
 much ready to start training models. We won't do that today. What we
@@ -345,9 +326,7 @@ plot_random_sample(img_dir=pathlib.Path().cwd().joinpath('data/train/cat'))
 ```
 
 ![Image 6 --- Random subset of cat images (image by
-author)](./Lab_1_files/6-6.png){.kg-image width="2000" height="700"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6-6.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/6-6.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/6-6.png 2400w"}
+author)](./images/6-6.png)
 
 Neat. The images differ significantly in size, and neural networks don't
 like that. You'll see how to change the size in the following article.
@@ -358,9 +337,7 @@ plot_random_sample(img_dir=pathlib.Path().cwd().joinpath('data/validation/dog'))
 ```
 
 ![Image 7 --- Random subset of dog images (image by
-author)](./Lab_1_files/7-5.png){.kg-image width="2000" height="703"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-5.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-5.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/7-5.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/7-5.png 2400w"}
+author)](./images/7-5.png)
 
 The function works as expected. You will get ten different images every
 time you re-run the cell, so keep that in mind. You are welcome to

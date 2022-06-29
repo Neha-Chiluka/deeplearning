@@ -1,26 +1,14 @@
 
 
-TensorFlow for Computer Vision - How To Increase Model Accuracy With Data Augmentation {#tensorflow-for-computer-vision---how-to-increase-model-accuracy-with-data-augmentation .post-title}
+TensorFlow for Computer Vision - How To Increase Model Accuracy With Data Augmentation
 ======================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision - How To Increase Model Accuracy With
-Data Augmentation](./Lab_2_files/Thumbnail_43-7.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
 **Small dataset? No problem - expand it with data augmentation and
 increase the model's predictive power.**
 
 [Last
-week](https://betterdatascience.com/does-a-more-complex-architecture-guarantee-a-better-model/),
+week],
 you saw that more complex models don't increase the predictive power. In
 fact, we ended up with an even worse image classifier! What can you do
 to bring the accuracy up? Well, a couple of things, but **data
@@ -31,17 +19,14 @@ does to an image dataset, why it improves predictive performance, and
 how to use it on custom datasets. So without much ado, let's dive
 straight in!
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).\
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).\
 
 ------------------------------------------------------------------------
 
-Getting Started - Data and Library Imports {#getting-starteddata-and-library-imports}
+Getting Started - Data and Library Imports
 ------------------------------------------
 
 We'll use the [Dogs vs. Cats
@@ -50,7 +35,7 @@ from Kaggle. It's licensed under the Creative Commons License, which
 means you can use it for free:
 
 ![*Image 1 --- Dogs vs. Cats dataset (image by
-author)*](./Lab_2_files/Untitled.png){.kg-image}
+author)*](./images/Untitled.png)
 
 The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
@@ -59,7 +44,7 @@ not structured for deep learning out of the box. You can follow my
 previous article to create a proper directory structure, and split it
 into train, test, and validation sets:
 
-![](./Lab_2_files/favicon.png){.kg-bookmark-icon}
+
 
 You should also delete the *train/cat/666.jpg* and *train/dog/11702.jpg*
 images as they're corrupted, and your model will fail to train with
@@ -91,10 +76,7 @@ img = np.array(img)
 plot_image(img=img)
 ```
 
-![*Image 2 - A sample image from the training set (image by
-author)*](./Lab_2_files/2-1.jpg){.kg-image width="1563" height="1448"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-1.jpg 1000w, https://betterdatascience.com/content/images/2021/12/2-1.jpg 1563w"}
+![](./images/2-1.jpg)
 
 That's all we need to get started with data augmentation, so let's do
 that next.
@@ -132,9 +114,7 @@ plot_image(img=res)
 ```
 
 ![*Image 3 - Cat image after resizing and rescaling (image by
-author)*](./Lab_2_files/3.jpg){.kg-image width="1527" height="1500"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3.jpg 1000w, https://betterdatascience.com/content/images/2021/12/3.jpg 1527w"}
+author)*](./images/3.jpg)
 
 Nothing much happened here, but you can verify the transformation was
 applied by comparing the axis ticks on *Image 2* and *Image 3*. You can
@@ -158,9 +138,7 @@ plot_image(img=res)
 ```
 
 ![*Image 4 - Cat image after flipping and rotating (image by
-author)*](./Lab_2_files/4-1.jpg){.kg-image width="1563" height="1448"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-1.jpg 1000w, https://betterdatascience.com/content/images/2021/12/4-1.jpg 1563w"}
+author)*](./images/4-1.jpg)
 
 It's still the same image, but definitely with more variety added to it.
 We'll spice things up even more with zooming and translating. A
@@ -182,10 +160,7 @@ res = augmentation(img)
 plot_image(img=res)
 ```
 
-![*Image 5 - Cat image after flipping, rotating, zooming, and
-translating (image by author)*](./Lab_2_files/5.jpg){.kg-image
-width="1563" height="1448" sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/5.jpg 1000w, https://betterdatascience.com/content/images/2021/12/5.jpg 1563w"}
+![](./images/5.jpg)
 
 The images are getting weirder as we add more transformations, but we
 still have no problem classifying them as a cat. The transformations
@@ -203,15 +178,13 @@ for i in range(9):
 ```
 
 ![*Image 6 - 9 random transformations applied to the same image (image
-by author)*](./Lab_2_files/6-1.jpg){.kg-image width="2000" height="1928"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/6-1.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/6-1.jpg 1600w, https://betterdatascience.com/content/images/2021/12/6-1.jpg 2385w"}
+by author)*](./images/6-1.jpg)
 
 Some of them make sense, while others don't - but the image itself isn't
 more difficult to classify. Next, let's see how to handle data
 augmentation with TensorFlow's `ImageDataGenerator`.
 
-Data Augmentation with TensorFlow's ImageDataGenerator {#data-augmentation-with-tensorflow%E2%80%99s-imagedatagenerator}
+Data Augmentation with TensorFlow's ImageDataGenerator
 ------------------------------------------------------
 
 You now know what individual transformations do to an image, but it
@@ -267,9 +240,7 @@ first_batch = train_data.next()
 first_batch[0].shape, first_batch[1].shape
 ```
 
-![*Image 7 - Shape of the first batch (image by
-author)*](./Lab_2_files/7-7.png){.kg-image width="614" height="86"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-7.png 600w, https://betterdatascience.com/content/images/2021/12/7-7.png 614w"}
+![](./images/7-7.png)
 
 In a nutshell, we have 64 images, each being 224 pixels wide, 224 pixels
 tall, and with 3 color channels. The second element represents the
@@ -298,9 +269,7 @@ visualize_batch(batch=first_batch)
 ```
 
 ![*Image 8 - A single batch of 64 images (image by
-author)*](./Lab_2_files/8-2.jpg){.kg-image width="2000" height="2006"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8-2.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8-2.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8-2.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/8-2.jpg 2400w"}
+author)*](./images/8-2.jpg)
 
 We definitely have some weird ones, but overall, data augmentation is
 doing a decent job by adding variety to our dataset. As a final step,
@@ -326,14 +295,14 @@ valid_data = valid_datagen.flow_from_directory(
 
 That's all we need to train the model. Fingers crossed it outperforms
 the [previous
-one](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)!
+one]!
 
-Model Training - Can Data Augmentation with TensorFlow Improve Accuracy? {#model-trainingcan-data-augmentation-with-tensorflow-improve-accuracy}
+Model Training - Can Data Augmentation with TensorFlow Improve Accuracy?
 ------------------------------------------------------------------------
 
 We'll use the same model architecture we used when first training an
 [image
-classifier](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)
+classifier]
 with convolutional networks. It achieved around 75% accuracy on the
 validation set. Data augmentation should hopefully kick things up a
 notch.
@@ -370,9 +339,7 @@ CPU, hence the long training time. My RTX 3060Ti usually goes over an
 epoch in 22 seconds.
 
 ![*Image 9 - Model training results (image by
-author)*](./Lab_2_files/9-6.png){.kg-image width="1431" height="466"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9-6.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9-6.png 1000w, https://betterdatascience.com/content/images/2021/12/9-6.png 1431w"}
+author)*](./images/9-6.png)
 
 Data augmentation increased the validation accuracy by almost 3%! It's
 definitely a step in the right direction, but we can improve it even

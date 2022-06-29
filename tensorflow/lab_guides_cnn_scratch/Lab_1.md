@@ -1,25 +1,13 @@
 
 
-TensorFlow for Computer Vision --- How to Implement Convolutions From Scratch in Python {#tensorflow-for-computer-vision-how-to-implement-convolutions-from-scratch-in-python .post-title}
+TensorFlow for Computer Vision --- How to Implement Convolutions From Scratch in Python
 =======================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision --- How to Implement Convolutions From
-Scratch in Python](./Lab_1_files/thumbnail_43-10.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### You'll need 10 minutes to implement convolutions with padding in Numpy {#you%E2%80%99ll-need-10-minutes-to-implement-convolutions-with-padding-in-numpy}
+#### You'll need 10 minutes to implement convolutions with padding in Numpy
 
 Convolutional networks are fun. You saw [last
-week](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)
+week]
 how they improve model performance when compared to vanilla artificial
 neural networks. But what a convolution actually does to an image?
 That's what you'll learn today.
@@ -32,13 +20,10 @@ convolutional layers.
 It's a lot of work, and we're doing everything from scratch. Let's dive
 in.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -67,25 +52,17 @@ image and a 3x3 filter. The filter slides (convolves) over every 3x3 set
 of pixels in the image, and calculates an element-wise multiplication.
 The multiplication results are then summed:
 
-![Image 1 --- Convolution operation (1) (image by
-author)](./Lab_1_files/1-2.PNG){.kg-image width="2000" height="447"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-2.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-2.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-2.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-2.PNG 2400w"}
+![](./images/1-2.PNG)
 
 The process is repeated for every set of 3x3 pixels. Here's the
 calculation for the following set:
 
 ![Image 2 --- Convolution operation (2) (image by
-author)](./Lab_1_files/2-2.PNG){.kg-image width="2000" height="441"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-2.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/2-2.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/2-2.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/2-2.PNG 2400w"}
+author)](./images/2-2.PNG)
 
 It goes on and on until the final set of 3x3 pixels is reached:
 
-![Image 3 --- Convolution operation (3) (image by
-author)](./Lab_1_files/3-2.PNG){.kg-image width="2000" height="441"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-2.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-2.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/3-2.PNG 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/3-2.PNG 2400w"}
+![](./images/3-2.PNG)
 
 And that's a convolution in a nutshell! Convolutional layers are useful
 for finding the optimal filter matrices, but a convolution in itself
@@ -99,11 +76,7 @@ Dataset and Image Loading
 We'll use the [Dogs vs. Cats
 dataset](https://www.kaggle.com/pybear/cats-vs-dogs?select=PetImages)
 from Kaggle for the rest of the article. It's licensed under the
-Creative Commons License, which means you can use it for free. One of
-the [previous
-articles](https://betterdatascience.com/top-3-prerequisites-for-deep-learning-projects/)
-described how to preprocess it, so make sure to copy the code if you
-want to follow along on identical images.
+Creative Commons License, which means you can use it for free. 
 
 That's not a requirement, since you can apply convolution to any image.
 Seriously, download any image from the web, it will serve you just fine
@@ -146,9 +119,7 @@ plot_image(img=img)
 ```
 
 ![Image 4 --- Random cat image from the training set (image by
-author)](./Lab_1_files/4.jpg){.kg-image width="1527" height="1503"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4.jpg 1000w, https://betterdatascience.com/content/images/2021/12/4.jpg 1527w"}
+author)](./images/4.jpg)
 
 And that takes care of the boring stuff. We'll apply all convolutional
 filters to the image above. But first, let's declare a couple of filter
@@ -231,9 +202,7 @@ Here's a result from a couple of tests:
 -   Image size: 224, filter size: 5
 
 ![Image 5 --- Calculating target image size with different filter sizes
-(image by author)](./Lab_1_files/5-2.PNG){.kg-image width="828"
-height="310" sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-2.PNG 600w, https://betterdatascience.com/content/images/2021/12/5-2.PNG 828w"}
+(image by author)](./images/5-2.PNG)
 
 Works as advertised. Let's work on a convolution function next. Here's
 what a 3x3 filter does to a single 3x3 image subset:
@@ -246,8 +215,7 @@ what a 3x3 filter does to a single 3x3 image subset:
 Here's an implementation in code for a single 3x3 pixel subset:
 
 ![Image 6 --- Convolution on a single 3x3 image subset (image by
-author)](./Lab_1_files/6-2.PNG){.kg-image width="616" height="629"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-2.PNG 600w, https://betterdatascience.com/content/images/2021/12/6-2.PNG 616w"}
+author)](./images/6-2.PNG)
 
 That was easy, but how can you apply the logic to an entire image? Well,
 easily. The `convolve()` function calculates the target size and creates
@@ -293,9 +261,7 @@ img_sharpened
 ```
 
 ![Image 7 --- Sharpened image in a matrix representation (image by
-author)](./Lab_1_files/7-3.PNG){.kg-image width="805" height="290"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-3.PNG 600w, https://betterdatascience.com/content/images/2021/12/7-3.PNG 805w"}
+author)](./images/7-3.PNG)
 
 You can use the `plot_two_images()` function to visualize our cat image
 before and after the transformation:
@@ -308,9 +274,7 @@ plot_two_images(
 ```
 
 ![Image 8 --- Cat image before and after sharpening (image by
-author)](./Lab_1_files/8-1.jpg){.kg-image width="2000" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8-1.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8-1.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/8-1.jpg 2400w"}
+author)](./images/8-1.jpg)
 
 The colors are a bit off since values in the right image don't range
 between 0 and 255. It's not a big issue, but you can "fix" it by
@@ -328,10 +292,7 @@ plot_two_images(
 )
 ```
 
-![Image 9 --- Cat image before and after sharpening (2) (image by
-author)](./Lab_1_files/9.jpg){.kg-image width="2000" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/9.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/9.jpg 2400w"}
+![](./images/9.jpg)
 
 The image on the right definitely looks sharpened, no arguing there.
 Let's see what **blurring** does next:
@@ -345,9 +306,7 @@ plot_two_images(
 ```
 
 ![Image 10 --- Cat image before and after blurring (image by
-author)](./Lab_1_files/10-1.jpg){.kg-image width="2000" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/10-1.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/10-1.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/10-1.jpg 2400w"}
+author)](./images/10-1.jpg)
 
 The blurring filter matrix doesn't have negative values, so the coloring
 is identical. Once again, there's no debate --- the blurring filter
@@ -364,9 +323,7 @@ plot_two_images(
 ```
 
 ![Image 11 --- Cat image before and after outlining (image by
-author)](./Lab_1_files/11.jpg){.kg-image width="2000" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/11.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/11.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/11.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/11.jpg 2400w"}
+author)](./images/11.jpg)
 
 It also suffers from the coloring problem, as values in the matrix are
 mostly negative. Use `negative_to_zero()` to get a clearer idea:
@@ -379,9 +336,7 @@ plot_two_images(
 ```
 
 ![Image 12- Cat image before and after outlining (2) (image by
-author)](./Lab_1_files/12-1.jpg){.kg-image width="2000" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/12-1.jpg 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/12-1.jpg 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/12-1.jpg 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/12-1.jpg 2400w"}
+author)](./images/12-1.jpg)
 
 You know what the only problem is? The convolved images are of shape
 222x222 pixels. What if you want to keep the original size of 224x224
@@ -408,15 +363,13 @@ code. The following image shows you what happens to image X as the
 filter K is applied to it. Basically, it goes from 5x5 to 3x3 (Y):
 
 ![Image 13 --- Applying convolution to an image without padding (image
-by author)](./Lab_1_files/image-1.png){.kg-image width="1200"
-height="478" sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/image-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/image-1.png 1000w, https://betterdatascience.com/content/images/2021/12/image-1.png 1200w"}
+by author)](./images/image-1.png)
 
 Adding a pixel-wide padding results in an input image (X) of 7x7 pixels,
 and the resulting image (Y) of 5x5 pixels:
 
 ![Image 14 --- Applying convolution to an image with padding (image
-by author)](./Lab_1_files/1_eV_3jPpqMrqgmMm_faTw2A.jpeg){.kg-image}
+by author)](./images/1_eV_3jPpqMrqgmMm_faTw2A.jpeg)
 
 The Y in the second image has the same number of pixels as X in the
 first image, which is exactly what we want. Convolution operation has to
@@ -440,7 +393,7 @@ def get_padding_width_per_side(kernel_size: int) -> int:
 Here are a couple of examples for kernel sizes 3 and 5:
 
 ![Image 15 --- Calculating padding for different kernel sizes (image
-by author)](./Lab_1_files/1_zSmgjQ4PUePtWA6myPvL_w.png){.kg-image}
+by author)](./images/1_zSmgjQ4PUePtWA6myPvL_w.png)
 
 There isn't much to it. We'll now write a function that adds padding to
 the image. First, the function declares a matrix of zeros with a shape
@@ -478,7 +431,7 @@ plot_image(img_with_padding_3x3)
 ```
 
 ![Image 16 --- Image with a pixel-wide padding (image
-by author)](./Lab_1_files/1_7EbgAzd7wzoIdNrENGQi1w.jpeg){.kg-image}
+by author)](./images/1_7EbgAzd7wzoIdNrENGQi1w.jpeg)
 
 You can see the black border if you zoom in close enough. If you're
 wondering, this image has a shape of 226x226 pixels. Here's how it looks
@@ -489,7 +442,7 @@ img_with_padding_3x3
 ```
 
 ![Image 17 --- Single-pixel padded image as a matrix (image
-by author)](./Lab_1_files/1_y1HWzJXHuGMZtEWMgf5BdQ.png){.kg-image}
+by author)](./images/1_y1HWzJXHuGMZtEWMgf5BdQ.png)
 
 You can see the original image surrounded with zeros, which is what we
 wanted. Let's see if the same holds true for the 5x5 kernel:
@@ -505,7 +458,7 @@ plot_image(img_with_padding_5x5)
 ```
 
 ![Image 18 --- Image with a two-pixel-wide padding (image
-by author)](./Lab_1_files/1_EOo61bwcef45TVgypnmpVQ.jpeg){.kg-image}
+by author)](./images/1_EOo61bwcef45TVgypnmpVQ.jpeg)
 
 Now you can definitely see the black border on this 228x228 image. Let's
 see how it looks when printed as a matrix:
@@ -515,7 +468,7 @@ img_with_padding_5x5
 ```
 
 ![Image 19 --- Two-pixel padded image as a matrix (image
-by author)](./Lab_1_files/1_9HzQfWUZMbRTNTCYKF8JLQ.png){.kg-image}
+by author)](./images/1_9HzQfWUZMbRTNTCYKF8JLQ.png)
 
 It looks how it should --- two pixel padding on all sides. Let's apply a
 sharpening filter to our single-pixel-padded image to see if there are
@@ -533,7 +486,7 @@ plot_two_images(
 
 ![Image 20 --- Padded image before and after applying the sharpening
 filter (image by
-author)](./Lab_1_files/1_SEE9_Bs1gZe1iHl2l16CGQ.jpeg){.kg-image}
+author)](./images/1_SEE9_Bs1gZe1iHl2l16CGQ.jpeg)
 
 Works without any issues. The convolved image has a shape of 224x224
 pixels, which is exactly what we wanted.

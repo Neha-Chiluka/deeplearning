@@ -1,134 +1,131 @@
 
 
-TensorBoard Tutorial in Keras for Beginner {#tensorboard-tutorial-in-keras-for-beginner-1 .entry-title}
+TensorBoard Tutorial in Keras for Beginner
 ==========================================
 
-::: {.td-module-meta-info}
-::: {.td-post-author-name}
-::: {.td-author-by}
+
+
+
 By
-:::
+
 
 [Saurabh
 Vaishya](https://machinelearningknowledge.ai/author/saurabh_vaishya/)
 
-::: {.td-author-line}
+
 \-
-:::
-:::
+
+
 
 [July 31, 2021]{.td-post-date}
-:::
-:::
 
-::: {.td-post-sharing-top}
-::: {#td_social_sharing_article_top .td-post-sharing .td-ps-bg .td-ps-notext .td-post-sharing-style1}
-::: {.td-post-sharing-visible}
-::: {.td-social-sharing-button .td-social-sharing-button-js .td-social-handler .td-social-share-text style="transition: opacity 0.2s ease 0s; opacity: 1;"}
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
+
+
+
+
+
+
 Share
-:::
-:::
+
+
 
 [](https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmachinelearningknowledge.ai%2Ftensorboard-tutorial-in-keras-for-beginner%2F "Facebook"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-facebook}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 Facebook
-:::
+
 
 [](https://twitter.com/intent/tweet?text=TensorBoard+Tutorial+in+Keras+for+Beginner&url=https%3A%2F%2Fmachinelearningknowledge.ai%2Ftensorboard-tutorial-in-keras-for-beginner%2F&via=MLK+-+Machine+Learning+Knowledge "Twitter"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-twitter}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 Twitter
-:::
+
 
 [](https://www.linkedin.com/shareArticle?mini=true&url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&title=TensorBoard+Tutorial+in+Keras+for+Beginner "Linkedin"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-linkedin}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 Linkedin
-:::
+
 
 [](https://api.whatsapp.com/send?text=TensorBoard+Tutorial+in+Keras+for+Beginner%20%0A%0A%20https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/ "WhatsApp"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-whatsapp}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 WhatsApp
-:::
+
 
 [](https://pinterest.com/pin/create/button/?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&media=https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg&description=In%20this%20article,%20we%20will%20go%20through%20the%20tutorial%20for%20TensorBoard%20in%20Keras%20along%20with%20an%20example%20for%20beginners. "Pinterest"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-pinterest}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 Pinterest
-:::
+
 
 [](https://telegram.me/share/url?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&text=TensorBoard+Tutorial+in+Keras+for+Beginner "Telegram"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-telegram}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 Telegram
-:::
+
 
 [](https://reddit.com/submit?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&title=TensorBoard+Tutorial+in+Keras+for+Beginner "ReddIt"){.td-social-sharing-button
 .td-social-sharing-button-js .td-social-network .td-social-reddit}
 
-::: {.td-social-but-icon}
-:::
 
-::: {.td-social-but-text}
+
+
+
 ReddIt
-:::
-:::
 
-::: {.td-social-sharing-hidden style="display: none;"}
+
+
+
 
 [](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/# "More"){.td-social-sharing-button
 .td-social-handler .td-social-expand-tabs}
 
-::: {.td-social-but-icon}
-:::
-:::
-:::
-:::
 
-::: {.td-post-content .tagdiv-type}
-::: {.td-post-featured-image}
+
+
+
+
 [![TensorBoard Tutorial in Keras for
 Beginner](Lab_3_files/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg "TensorBoard Tutorial in Keras for Beginner"){.entry-thumb
 width="696"
 height="522"}](https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg){.td-modal-image}
-:::
 
-::: {.td-a-rec .td-a-rec-id-content_top .td-rec-hide-on-m .td-rec-hide-on-tl .td-rec-hide-on-tp .td-rec-hide-on-p .tdi_20 .td_block_template_1}
-::: {.td-all-devices}
-:::
-:::
 
-::: {#toc_container .toc_black .no_bullets}
+
+
+
+
+
+
 Contents
 [\[[hide](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#)\]]{.toc_toggle}
 
@@ -169,7 +166,7 @@ Contents
         TensorBoard](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#x_Comparing_Different_Models_in_TensorBoard)
 -   [[4]{.toc_number .toc_depth_1}
     Conclusion](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Conclusion)
-:::
+
 
 [Introduction]{#Introduction}
 -----------------------------
@@ -197,8 +194,8 @@ style="position: relative; z-index: 0; display: inline-block; padding: 0px; min-
 .box-3 .box-3133 .adtester-container .adtester-container-133
 ez-name="machinelearningknowledge_ai-box-3" style=""}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-box-3_0__container__ style="border: 0pt none; width: 468px; height: 0px;"}
-:::
+
+
 
 Some of the [useful](https://www.tensorflow.org/tensorboard) things you
 can do with TensorBoard includes --
@@ -222,14 +219,14 @@ data preprocessing and neural network building process. To understand
 more details about working with MNIST handwritten digit dataset you can
 check below tutorial --
 
-::: {.td-a-rec .td-a-rec-id-content_inline .td-rec-hide-on-m .td-rec-hide-on-tl .td-rec-hide-on-tp .td-rec-hide-on-p .tdi_19 .td_block_template_1}
+
 [Ad]{.td-adspot-title}
 
-::: {.td-all-devices}
+
 [![Deep Learning Specialization on
 Coursera](Lab_3_files/show)](https://click.linksynergy.com/fs-bin/click?id=Sasvam4jCyc&offerid=467035.416&subid=0&type=4)
-:::
-:::
+
+
 
 -   **Also Read --** [[Tensorflow.js Tutorial with MNIST Handwritten
     Digit
@@ -248,8 +245,8 @@ style=""}]{.ezoic-ad .medrectangle-3 .medrectangle-3134
 .adtester-container .adtester-container-134 .ezoic-ad-adaptive
 ez-name="machinelearningknowledge_ai-medrectangle-3"}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-medrectangle-3_0__container__ style="border: 0pt none; width: 250px; height: 0px;"}
-:::
+
+
 
 [[]{#div-gpt-ad-machinelearningknowledge_ai-medrectangle-3-0_1 .ezoic-ad
 ezaw="290" ezah="250"
@@ -258,14 +255,14 @@ style="position: relative; z-index: 0; display: inline-block; padding: 0px; min-
 .adtester-container-134
 ez-name="machinelearningknowledge_ai-medrectangle-3" style=""}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-medrectangle-3_1__container__ style="border: 0pt none; width: 250px; height: 0px;"}
-:::
+
+
 
 You can install TensorBoard by using pip as shown below --
 
     pip install tensorboard
 
-### [**ii) Starting TensorBoard**]{#ii_Starting_TensorBoard} {#starting-tensorboard}
+### [**ii) Starting TensorBoard**]{#ii_Starting_TensorBoard}
 
 The first thing we need to do is start the TensorBoard service. To do
 this you need to run below in the command prompt. --logdir parameter
@@ -287,33 +284,30 @@ In Jupyer notebook, you can issue the following command in the cell
 
     %tensorboard --logdir logs
 
-### [**iii) Loading Libraries**]{#iii_Loading_Libraries} {#iii-loading-libraries style="text-align:left" align="center"}
+### [**iii) Loading Libraries**]{#iii_Loading_Libraries}
 
 We will quickly import the required libraries for our example. (Do note
 these libraries have nothing to do with TensorBoard but are needed for
 building the neural network of our example.)
 
-::: {.jp-Cell .jp-CodeCell .jp-Notebook-cell .jp-mod-noOutputs}
-::: {.jp-Cell-inputWrapper}
-::: {.jp-InputArea .jp-Cell-inputArea}
-::: {.jp-CodeMirrorEditor .jp-Editor .jp-InputArea-editor data-type="inline"}
-::: {.CodeMirror .cm-s-jupyter}
-::: {.highlight .hl-ipython3}
+
+
+
+
+
+
     import tensorflow as tf
     from tensorflow import keras
     import matplotlib.pyplot as plt
     %matplotlib inline
     import numpy as np
-:::
-:::
-:::
-:::
-:::
-:::
 
-::: {.jp-Cell .jp-CodeCell .jp-Notebook-cell .jp-mod-noOutputs}
-::: {.jp-Cell-inputWrapper}
-::: {.jp-InputArea .jp-Cell-inputArea}
+
+
+
+
+
+
 ### [**iv) Loading MNIST Dataset**]{#iv_Loading_MNIST_Dataset}
 
 Now we will load the MNIST dataset that comes as part of the Keras
@@ -324,9 +318,9 @@ dataset.
     plt.matshow(X_train[0])
 
 Output:
-:::
-:::
-:::
+
+
+
 
 ### [**v) Preprocessing**]{#v_Preprocessing}
 
@@ -339,34 +333,31 @@ style="position: relative; z-index: 0; display: inline-block; padding: 0px; widt
 .adtester-container-135
 ez-name="machinelearningknowledge_ai-medrectangle-4" style=""}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-medrectangle-4_0__container__ style="border: 0pt none; width: 250px; height: 0px;"}
-:::
 
-::: {.cell .border-box-sizing .code_cell .rendered}
-::: {.input}
-::: {.prompt .input_prompt}
+
+
+
+
+
 In \[8\]:
-:::
 
-::: {.inner_cell}
-::: {.input_area}
-::: {.highlight .hl-ipython3}
+
+
+
+
     X_train = X_train / 255 
     X_test = X_test / 255
 
     X_train_flattened = X_train.reshape(len(X_train), 28*28) 
     X_test_flattened = X_test.reshape(len(X_test), 28*28)
-:::
-:::
-:::
-:::
-:::
 
-::: {.cell .border-box-sizing .code_cell .rendered}
-::: {.output_wrapper}
-::: {.output}
-::: {.output_area}
-::: {.output_text .output_subarea .output_execute_result}
+
+
+
+
+
+
+
 ### [**xi) Create and Compile the Model**]{#xi_Create_and_Compile_the_Model}
 
 Now we create and compile a simple neural network model consisting of
@@ -374,11 +365,8 @@ just one input layer, one hidden layer of 100
 [neurons](https://machinelearningknowledge.ai/glossary/artificial-neuron/){.glossaryLink
 .cmtt_Deep .Learning}, and one output layer. All other configurations
 are standard.
-:::
-:::
-:::
-:::
-:::
+
+
 
     model = keras.Sequential([
         keras.layers.Flatten(input_shape=(28, 28)),
@@ -436,8 +424,8 @@ style="position: relative; z-index: 0; display: inline-block; padding: 0px; widt
 .box-4 .box-4136 .adtester-container .adtester-container-136
 ez-name="machinelearningknowledge_ai-box-4" style=""}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-box-4_0__container__ style="border: 0pt none; width: 250px; height: 0px;"}
-:::
+
+
 
 Let us see the visualizations available in our example.
 
@@ -523,8 +511,8 @@ style="position: relative; z-index: 0; display: inline-block; padding: 0px; min-
 .leader-1 .leader-1139 .adtester-container .adtester-container-139
 ez-name="machinelearningknowledge_ai-leader-1" style=""}
 
-::: {#google_ads_iframe_/1254144,22605027691/machinelearningknowledge_ai-leader-1_0__container__ style="border: 0pt none; width: 300px; height: 0px;"}
-:::
+
+
 
 ![](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-5-1.png){.alignnone
 .size-full .wp-image-6487 .ezlazyloaded width="1899" height="879"

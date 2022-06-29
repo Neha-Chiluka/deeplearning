@@ -1,23 +1,10 @@
 
 
-TensorFlow for Computer Vision --- How to Train Image Classifier with Artificial Neural Networks {#tensorflow-for-computer-vision-how-to-train-image-classifier-with-artificial-neural-networks .post-title}
+TensorFlow for Computer Vision --- How to Train Image Classifier with Artificial Neural Networks
 ================================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision --- How to Train Image Classifier with
-Artificial Neural
-Networks](./Lab_2_files/thumbnail_43-8.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### Image classification without convolutions? Here's why it's a bad idea {#image-classification-without-convolutions-here%E2%80%99s-why-it%E2%80%99s-a-bad-idea}
+#### Image classification without convolutions? Here's why it's a bad idea
 
 Artificial neural networks aren't designed for image classification. But
 how terrible can they be? That's what we'll find out today. We'll train
@@ -31,13 +18,10 @@ you'll lose the patterns which make images recognizable by flattening
 them. Still, it's fun and doable, and will give you insight into
 everything wrong with this approach.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -49,9 +33,7 @@ from Kaggle. It's licensed under the Creative Commons License, which
 means you can use it for free:
 
 ![Image 1 --- Dogs vs. Cats dataset (image by
-author)](./Lab_2_files/1-8.png){.kg-image width="2000" height="1076"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-8.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-8.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-8.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-8.png 2400w"}
+author)](./images/1-8.png)
 
 The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
@@ -61,7 +43,6 @@ The only problem is --- it's not structured properly for deep learning
 out of the box. You can follow my previous article to create a proper
 directory structure, and split it into train, test, and validation sets:
 
-![](./Lab_2_files/favicon.png){.kg-bookmark-icon}
 
 ### Downsize, grayscale, and flatten images
 
@@ -103,7 +84,7 @@ display(src_img)
 ```
 
 ![Image 2 --- Example cat image (image by
-author)](./Lab_2_files/2.PNG){.kg-image width="589" height="543"}
+author)](./images/2.PNG)
 
 The image is 281 pixels wide, 300 pixels tall, and has three color
 channels (`np.array(src_img).shape `). In total, it has 252,900 pixels,
@@ -121,7 +102,7 @@ display(gray_img)
 ```
 
 ![Image 3 --- Grayscale cat image (image by
-author)](./Lab_2_files/3.PNG){.kg-image width="579" height="543"}
+author)](./images/3.PNG)
 
 It's still a cat, obviously, so the color doesn't play a big role in
 this dataset. The grayscaled image is 281 pixels wide and 300 pixels
@@ -129,9 +110,7 @@ tall, but has a single color channel. It means we went from 252,900 to
 84,300 pixels. Still a lot, but definitely a step in the right
 direction.
 
-As discussed in the [previous
-article](https://betterdatascience.com/top-3-prerequisites-for-deep-learning-projects/),
-the images in the dataset don't have identical sizes. It's a problem for
+The images in the dataset don't have identical sizes. It's a problem for
 a neural network model, as it expects the same number of input features
 every time. We can resize every image to the same width and height. This
 is where we introduce downsizing, to reduce the number of input features
@@ -146,7 +125,7 @@ display(gray_resized_img)
 ```
 
 ![Image 4 --- Resized cat image (image by
-author)](./Lab_2_files/4.PNG){.kg-image width="197" height="195"}
+author)](./images/4.PNG)
 
 The image is somewhat small and blurry, sure, but it's still a cat.
 We're down to 9,216 features, in case you're keeping track. We've
@@ -160,8 +139,7 @@ np.ravel(gray_resized_img)
 ```
 
 ![Image 5 --- Flattened cat image (image by
-author)](./Lab_2_files/5.PNG){.kg-image width="685" height="60"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5.PNG 600w, https://betterdatascience.com/content/images/2021/12/5.PNG 685w"}
+author)](./images/5.PNG)
 
 That's how a computer sees a cat --- it's just an array of 9216 pixels,
 ranging from 0 to 255. Here's the problem --- a neural network prefers a
@@ -174,9 +152,7 @@ img_final
 ```
 
 ![Image 6 --- Flattened and scaled cat image (image by
-author)](./Lab_2_files/6.PNG){.kg-image width="970" height="72"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6.PNG 600w, https://betterdatascience.com/content/images/2021/12/6.PNG 970w"}
+author)](./images/6.PNG)
 
 As the last step, we'll write a `process_image()` function that applies
 all the above transformations to a single image:
@@ -199,7 +175,7 @@ Image.fromarray(np.uint8(tst_img * 255).reshape((96, 96)))
 ```
 
 ![Image 7 --- Transformed dog image (image by
-author)](./Lab_2_files/7.PNG){.kg-image width="198" height="198"}
+author)](./images/7.PNG)
 
 And that's it --- the function works as advertised. Let's apply it to
 the entire dataset next.
@@ -268,9 +244,7 @@ with open('valid_set.pkl', 'wb') as f:
 Here's how the `train_set` looks like:
 
 ![Image 8 --- Head of the training set (image by
-author)](./Lab_2_files/8.PNG){.kg-image width="2000" height="280"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/8.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/8.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/8.PNG 1600w, https://betterdatascience.com/content/images/2021/12/8.PNG 2289w"}
+author)](./images/8.PNG)
 
 The datasets contain all cat images followed by all dog images. That's
 not ideal for training and validation sets, as the neural network will
@@ -285,9 +259,7 @@ valid_set = shuffle(valid_set).reset_index(drop=True)
 Here's how it looks like now:
 
 ![Image 9 --- Head of the shuffled training set (image by
-author)](./Lab_2_files/9.PNG){.kg-image width="2000" height="286"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/9.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/9.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/9.PNG 1600w, https://betterdatascience.com/content/images/2021/12/9.PNG 2289w"}
+author)](./images/9.PNG)
 
 Almost there. The next step is to separate the features from the target,
 just as you normally would do on any tabular dataset. We'll do the split
@@ -314,8 +286,7 @@ y_train.factorize()
 ```
 
 ![Image 10 --- Factorize function applied to y\_train (image by
-author)](./Lab_2_files/10.PNG){.kg-image width="633" height="80"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/10.PNG 600w, https://betterdatascience.com/content/images/2021/12/10.PNG 633w"}
+author)](./images/10.PNG)
 
 The labels got converted into integers --- 0 for cats and 1 for dogs.
 You can use the `to_categorical()` function from TensorFlow and pass in
@@ -331,7 +302,7 @@ y_test = tf.keras.utils.to_categorical(y_test.factorize()[0], num_classes=2)
 As a result, `y_train` now looks like this:
 
 ![Image 11 --- Target variable in a categorical format (image by
-author)](./Lab_2_files/11.PNG){.kg-image width="451" height="177"}
+author)](./images/11.PNG)
 
 Think of it in terms of probability --- the first image has a 100%
 chance of being a cat, and a 0% chance of being a dog. These are true
@@ -382,10 +353,7 @@ history = model.fit(
 
 Here are the results I got after 100 epochs:
 
-![Image 12 --- ANN results after 100 epochs (image by
-author)](./Lab_2_files/12.PNG){.kg-image width="1777" height="324"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/12.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/12.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/12.PNG 1600w, https://betterdatascience.com/content/images/2021/12/12.PNG 1777w"}
+![](./images/12.PNG)
 
 A 60% accuracy is just a tad better from guessing, but nothing to write
 home about. Still, let's inspect what happened to the metrics during the
@@ -402,10 +370,7 @@ plt.xlabel('Epoch', size=14)
 plt.legend();
 ```
 
-![Image 13 --- Training loss vs. validation loss (image by
-author)](./Lab_2_files/13.PNG){.kg-image width="1957" height="954"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/13.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/13.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/13.PNG 1600w, https://betterdatascience.com/content/images/2021/12/13.PNG 1957w"}
+![](./images/13.PNG)
 
 The model is learning the training data well, but fails to generalize.
 The validation loss continues to increase as we train the model for more
@@ -422,9 +387,7 @@ plt.legend();
 ```
 
 ![Image 14 --- Training accuracy vs. validation accuracy (image by
-author)](./Lab_2_files/14.PNG){.kg-image width="1983" height="955"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/14.PNG 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/14.PNG 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/14.PNG 1600w, https://betterdatascience.com/content/images/2021/12/14.PNG 1983w"}
+author)](./images/14.PNG)
 
 Similar picture. The validation accuracy plateaus around 60%, while the
 model overfits on the training data.

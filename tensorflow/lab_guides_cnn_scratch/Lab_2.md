@@ -1,25 +1,14 @@
 
 
-TensorFlow for Computer Vision --- How to Implement Pooling From Scratch in Python {#tensorflow-for-computer-vision-how-to-implement-pooling-from-scratch-in-python .post-title}
+TensorFlow for Computer Vision --- How to Implement Pooling From Scratch in Python
 ==================================================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision --- How to Implement Pooling From
-Scratch in Python](./Lab_2_files/Thumbnail_43-1.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
-#### You'll need 10 minutes to implement pooling with strides in Python and Numpy {#you%E2%80%99ll-need-10-minutes-to-implement-pooling-with-strides-in-python-and-numpy}
+
+#### You'll need 10 minutes to implement pooling with strides in Python and Numpy
 
 The [previous TensorFlow
-article](https://betterdatascience.com/implement-convolutions-from-scratch-in-python/)
+article]
 showed you how to write convolutions from scratch in Numpy. Now it's
 time to discuss pooling, a downscaling operation that usually follows a
 convolutional layer. You want to know a secret? It's not rocket science
@@ -34,10 +23,7 @@ layer to see if we did anything wrong. Spoiler alert: we didn't.
 The code you'll see today isn't optimized for speed, but instead for
 maximum readability and ease of understanding.
 
-Don't feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
 
 ------------------------------------------------------------------------
 
@@ -74,7 +60,7 @@ size of 2x2 and the stride size of 1:
 
 ![*Image 1 --- Max Pooling with the region size of 2x2 and the stride
 size of 1 (image
-by author)*](./Lab_2_files/1_On_4gpxgmRkmLiPQ9J9D6A.png){.kg-image}
+by author)*](./images/1_On_4gpxgmRkmLiPQ9J9D6A.png)
 
 A total of 9 pools was extracted from the input matrix, and only the
 largest value from each pool was kept. As a result, pooling reduced the
@@ -87,7 +73,7 @@ stride size of 2 pixels:
 
 ![*Image 2 --- Max Pooling with the region size of 2x2 and the stride
 size of 2 (image
-by author)*](./Lab_2_files/1_CvRPMIrEZzRD6WZFWwzO6g.png){.kg-image}
+by author)*](./images/1_CvRPMIrEZzRD6WZFWwzO6g.png)
 
 Much better --- we now had only four pools to work with, and we got rid
 of half the pixels in height and width.
@@ -114,7 +100,7 @@ conv_output
 ```
 
 ![*Image 3 --- Dummy convolutional output matrix (image
-by author)*](./Lab_2_files/1_32sgIFRQOvcyv9_Rr_3ttA.png){.kg-image}
+by author)*](./images/1_32sgIFRQOvcyv9_Rr_3ttA.png)
 
 To make things easier to follow, I'll split this section into two parts.
 The first one shows you how to extract pools from a matrix.
@@ -159,7 +145,7 @@ for i in np.arange(conv_output.shape[0], step=stride):
 
 ![*Image 4 --- Extracted pools with a pool size of 2x2 and stride size
 of 2 (image
-by author)*](./Lab_2_files/1_-0JezdfENgXBMelzsCIvfA.png){.kg-image}
+by author)*](./images/1_-0JezdfENgXBMelzsCIvfA.png)
 
 Easy, right? There are four pools in total, just as we had in the
 previous section. Let's see what happens if we reduce the stride size to
@@ -179,7 +165,7 @@ for i in np.arange(conv_output.shape[0], step=stride):
 
 ![*Image 5 --- Extracted pools with a pool size of 2x2 and stride size
 of 1 (image
-by author)*](./Lab_2_files/1_BZHE88aecLOIUWi0t6Psag.png){.kg-image}
+by author)*](./images/1_BZHE88aecLOIUWi0t6Psag.png)
 
 We have nine pools here, as expected. Our pooling logic works! Let's
 wrap it into a single function next:
@@ -214,7 +200,7 @@ test_pools
 ```
 
 ![*Image 6 --- Testing the get\_pools() function (image
-by author)*](./Lab_2_files/1__HES3TPVIxvl9k8cHiu6XA.png){.kg-image}
+by author)*](./images/1__HES3TPVIxvl9k8cHiu6XA.png)
 
 It's confirmed --- our function works as expected. The question
 remains --- how can we implement the max pooling algorithm now?
@@ -265,7 +251,7 @@ max_pooling(pools=test_pools)
 ```
 
 ![*Image 7 --- Max pooling results (image
-by author)*](./Lab_2_files/1_NNH3yM3TJW0WL6wUCdNJrQ.png){.kg-image}
+by author)*](./images/1_NNH3yM3TJW0WL6wUCdNJrQ.png)
 
 Works like a charm! Let's test our functions on a real image next to see
 if anything breaks.
@@ -294,11 +280,7 @@ def plot_two_images(img1: np.array, img2: np.array):
 We'll use the [Dogs vs. Cats
 dataset](https://www.kaggle.com/pybear/cats-vs-dogs?select=PetImages)
 from Kaggle for the rest of the article. It's licensed under the
-Creative Commons License, which means you can use it for free. One of
-the [previous
-articles](https://betterdatascience.com/top-3-prerequisites-for-deep-learning-projects/)
-described how to preprocess it, so make sure to copy the code if you
-want to follow along on identical images.
+Creative Commons License, which means you can use it for free.
 
 That's not a requirement, since you can apply pooling to any image.
 Seriously, download any image from the web, it will serve you just fine
@@ -319,7 +301,7 @@ plot_image(img=img)
 ```
 
 ![*Image 8 --- Random cat image from the training set (image
-by author)*](./Lab_2_files/1_YDYWjQLvfignMkTR98FOgQ.jpeg){.kg-image}
+by author)*](./images/1_YDYWjQLvfignMkTR98FOgQ.jpeg)
 
 We can now extract individual pools. Remember to convert the image to a
 Numpy array first. We'll keep the pool size and stride size parameters
@@ -331,12 +313,12 @@ cat_img_pools
 ```
 
 ![*Image 9 --- Individual pools extracted from the cat image (image
-by author)*](./Lab_2_files/1_jwpHM2jCDDQgmECdURDX8Q.png){.kg-image}
+by author)*](./images/1_jwpHM2jCDDQgmECdURDX8Q.png)
 
 Let's see how many pools there are in total:
 
 ![*Image 10 --- Number of individual pools and
-their shape*](./Lab_2_files/1_02dx1PoZTH4aEq_NY3Qi9g.png){.kg-image}
+their shape*](./images/1_02dx1PoZTH4aEq_NY3Qi9g.png)
 
 We have 12,544 pools in total, each being a small 2x2 matrix. The shape
 makes sense, as the square root of 12,544 is 112. Put simply, our cat
@@ -350,13 +332,13 @@ cat_max_pooled
 ```
 
 ![*Image 11 --- Cat image in a matrix format after max pooling (image
-by author)*](./Lab_2_files/1_fG31asgfIEwXLc874Aijcg.png){.kg-image}
+by author)*](./images/1_fG31asgfIEwXLc874Aijcg.png)
 
 We'll display the pooled image in a bit, but let's verify the shape is
 indeed 112x112 pixels first:
 
 ![*Image 12 --- Shape of the pooled cat image (image
-by author)*](./Lab_2_files/1_KKE_xgLqWytudNqLpeAIBw.png){.kg-image}
+by author)*](./images/1_KKE_xgLqWytudNqLpeAIBw.png)
 
 Everything looks right, so let's display the cat images before and after
 pooling side by side:
@@ -366,7 +348,7 @@ plot_two_images(img1=img, img2=cat_max_pooled)
 ```
 
 ![*Image 13 --- Cat image before and after max pooling (image
-by author)*](./Lab_2_files/1_uFMq6yLkVfeBttalm29Bpw.jpeg){.kg-image}
+by author)*](./images/1_uFMq6yLkVfeBttalm29Bpw.jpeg)
 
 Keep in mind that the image on the right is displayed in the same size
 as the image on the left, even though it's smaller. Check the X and Y
@@ -381,7 +363,7 @@ training time.
 There's still one question left to answer --- **how do we know we did
 everything correctly?** That's what the following section answers.
 
-Verification --- Max Pooling With TensorFlow {#verification-%E2%80%94-max-pooling-with-tensorflow}
+Verification --- Max Pooling With TensorFlow
 --------------------------------------------
 
 You can apply TensorFlow's max pooling layer directly to an image
@@ -408,7 +390,7 @@ cat_arr.shape
 ```
 
 ![*Image 14 --- TensorFlow approved image shape (image
-by author)*](./Lab_2_files/1_GHJe0nWfjtOrO07sNQsC8w.png){.kg-image}
+by author)*](./images/1_GHJe0nWfjtOrO07sNQsC8w.png)
 
 And now comes the fun part --- you can use TensorFlow's `predict()`
 function without training the model first. Just pass in a single image
@@ -421,7 +403,7 @@ output
 
 ![*Image 15 --- Cat image after applying Max pooling with TensorFlow
 (image
-by author)*](./Lab_2_files/1_49vMvpmcFG_svIaoRtZZsQ.png){.kg-image}
+by author)*](./images/1_49vMvpmcFG_svIaoRtZZsQ.png)
 
 The matrix looks familiar, but let's not jump to conclusions. You can
 use the `array_equal()` function from Numpy to test if all elements from
@@ -433,7 +415,7 @@ np.array_equal(cat_max_pooled, output)
 ```
 
 ![*Image 16 --- Checking for array equality (image
-by author)*](./Lab_2_files/1_N8nlD5JccN6iWL1Sr9RAEQ.png){.kg-image}
+by author)*](./images/1_N8nlD5JccN6iWL1Sr9RAEQ.png)
 
 Who would tell --- Pooling isn't a black box after all. The outputs are
 identical, which means our from-scratch implementation is fully
@@ -446,7 +428,7 @@ Conclusion
 ----------
 
 You now know how to implement
-[convolutions](https://betterdatascience.com/implement-convolutions-from-scratch-in-python/)
+[convolutions]
 and pooling from scratch in Python and Numpy. It's a big achievement,
 but it doesn't mean you should write your deep learning framework from
 scratch. TensorFlow is highly optimized, and our from-scratch

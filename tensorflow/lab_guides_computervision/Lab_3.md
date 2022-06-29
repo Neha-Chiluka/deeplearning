@@ -1,25 +1,14 @@
 
 
-TensorFlow for Computer Vision - Transfer Learning Made Easy {#tensorflow-for-computer-vision---transfer-learning-made-easy .post-title}
+TensorFlow for Computer Vision - Transfer Learning Made Easy
 ============================================================
-:::
 
-::: {.image-box}
-![TensorFlow for Computer Vision - Transfer Learning Made
-Easy](./Lab_3_files/Thumbnail_43-8.jpg){.post-image}
-:::
-:::
-:::
-:::
 
-::: {.container}
-::: {.row}
-::: {.col .col-8 .push-2 .col-d-10 .col-m-12 .push-d-1 .push-m-0}
-::: {.post__content}
+
 **90+% accuracy? Made possible with Transfer Learning.**
 
 [Last
-week](https://betterdatascience.com/tensorflow-for-computer-vision-how-to-increase-model-accuracy-with-data-augmentation/),
+week],
 you\'ve seen how data augmentation can squeeze an extra couple of
 percent accuracy from your TensorFlow models. We only scratched the
 surface compared to what you\'ll see today. We\'ll finally get above 90%
@@ -31,11 +20,11 @@ will remain unchanged.
 
 Don\'t feel like reading? Watch my video instead:
 
-::: {.fluid-width-video-wrapper style="padding-top: 56.5%;"}
-:::
+
+
 
 You can download the source code on
-[GitHub](https://github.com/better-data-science/TensorFlow).
+[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -52,7 +41,7 @@ scratch, you take an existing neural network model that has been trained
 by someone really smart on an enormous dataset with far superior
 hardware than you have at home. These networks can have hundreds of
 layers, unlike our [2-block
-CNN](https://betterdatascience.com/train-image-classifier-with-convolutional-neural-networks/)
+CNN]
 implemented weeks ago.
 
 Long story short - the deeper you go into the network, the more
@@ -66,7 +55,7 @@ The entire transfer learning process boils down to 3 steps:
 2.  **Cut the head of the model** - Exclude the last few layers of a
     pretrained model and replace them with your own. For example, our
     [dogs vs. cats
-    dataset](https://betterdatascience.com/top-3-prerequisites-for-deep-learning-projects/)
+    dataset]
     has two classes, and the final classification layer needs to
     resemble that.
 3.  **Fine-tune the final layers** - Train the network on your dataset
@@ -78,7 +67,7 @@ get drastically better results with less data. Our custom 2-block
 architecture gave only 76% accuracy on the validation set. Transfer
 learning will skyrocket it to above 90%.
 
-Getting Started - Library and Dataset Imports {#getting-startedlibrary-and-dataset-imports}
+Getting Started - Library and Dataset Imports
 ---------------------------------------------
 
 We'll use the [Dogs vs. Cats
@@ -87,9 +76,7 @@ from Kaggle. It's licensed under the Creative Commons License, which
 means you can use it for free:
 
 ![*Image 1 --- Dogs vs. Cats dataset (image by
-author)*](./Lab_3_files/1-min-1.png){.kg-image width="2000"
-height="1159" sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/1-min-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/1-min-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/1-min-1.png 1600w, https://betterdatascience.com/content/images/size/w2400/2021/12/1-min-1.png 2400w"}
+author)*](./images/1-min-1.png)
 
 The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
@@ -98,7 +85,7 @@ not structured for deep learning out of the box. You can follow my
 previous article to create a proper directory structure, and split it
 into train, test, and validation sets:
 
-![](./Lab_3_files/favicon.png){.kg-bookmark-icon}
+
 
 You should also delete the *train/cat/666.jpg* and *train/dog/11702.jpg*
 images as they're corrupted, and your model will fail to train with
@@ -122,7 +109,7 @@ import tensorflow as tf
 We\'ll have to load training and validation data from different
 directories throughout the article. The best practice is to declare a
 function for loading the images and [data
-augmentation](https://betterdatascience.com/tensorflow-for-computer-vision-how-to-increase-model-accuracy-with-data-augmentation/):
+augmentation]:
 
 ``` {.language-python}
 def init_data(train_dir: str, valid_dir: str) -> tuple:
@@ -170,8 +157,7 @@ train_data, valid_data = init_data(
 Here\'s the output you should see:
 
 ![Image 2 - Number of training and validation images (image by
-author)](./Lab_3_files/2-min-1.png){.kg-image width="706" height="88"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/2-min-1.png 600w, https://betterdatascience.com/content/images/2021/12/2-min-1.png 706w"}
+author)](./images/2-min-1.png)
 
 Is 20K training images an overkill for transfer learning? Probably, but
 let\'s see how accurate of a model can we get.
@@ -249,9 +235,7 @@ vgg_hist = vgg_model.fit(
 Here\'s the output after training the model for 10 epochs:
 
 ![Image 3 - VGG16 model on 20K training images after 10 epochs (image by
-author)](./Lab_3_files/3-min-1.png){.kg-image width="2000" height="685"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/3-min-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/3-min-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/3-min-1.png 1600w, https://betterdatascience.com/content/images/2021/12/3-min-1.png 2130w"}
+author)](./images/3-min-1.png)
 
 Now that\'s something to write home about - 93% validation accuracy
 without even thinking about the mode architecture. The real beauty of
@@ -297,9 +281,7 @@ Here\'s the command you can use to print the directory structure:
 ```
 
 ![Image 4 - Directory structure (image by
-author)](./Lab_3_files/4-min-1.png){.kg-image width="1580" height="294"
-sizes="(min-width: 720px) 720px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/4-min-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/4-min-1.png 1000w, https://betterdatascience.com/content/images/2021/12/4-min-1.png 1580w"}
+author)](./images/4-min-1.png)
 
 Copy a sample of the images to the new folder. The `copy_sample()`
 function takes `n` images from the `src_folder` and copies them to the
@@ -352,8 +334,7 @@ copy_sample(
 Use the following commands to print the number of images in each folder:
 
 ![Image 5 - Number of training and validation images per class (image by
-author)](./Lab_3_files/5-min-1.png){.kg-image width="656" height="506"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/5-min-1.png 600w, https://betterdatascience.com/content/images/2021/12/5-min-1.png 656w"}
+author)](./images/5-min-1.png)
 
 Finally, call `init_data()` function to load images from the new source:
 
@@ -365,9 +346,7 @@ train_data, valid_data = init_data(
 ```
 
 ![Image 6 - Number of training and validation images in the smaller
-subset (image by author)](./Lab_3_files/6-min-1.png){.kg-image
-width="666" height="80"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/6-min-1.png 600w, https://betterdatascience.com/content/images/2021/12/6-min-1.png 666w"}
+subset (image by author)](./images/6-min-1.png)
 
 There are 1000 training images in total. It will be interesting to see
 if we can get a decent model out of a dataset this small. We\'ll keep
@@ -388,9 +367,7 @@ vgg_hist = vgg_model.fit(
 ```
 
 ![Image 7 - Training results of the last 10 epochs (image by
-author)](./Lab_3_files/7-min-1.png){.kg-image width="2000" height="670"
-sizes="(min-width: 1200px) 1200px"
-srcset="https://betterdatascience.com/content/images/size/w600/2021/12/7-min-1.png 600w, https://betterdatascience.com/content/images/size/w1000/2021/12/7-min-1.png 1000w, https://betterdatascience.com/content/images/size/w1600/2021/12/7-min-1.png 1600w, https://betterdatascience.com/content/images/2021/12/7-min-1.png 2066w"}
+author)](./images/7-min-1.png)
 
 And would you look at that - we got roughly the same validation accuracy
 as with the model trained on 20K images, which is amazing.
