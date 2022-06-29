@@ -10,7 +10,7 @@ Artificial neural networks aren't designed for image classification. But
 how terrible can they be? That's what we'll find out today. We'll train
 an image classification model on 20,000 images using only `Dense`
 layers. So no convolutions and other fancy stuff, we'll save them for
-upcoming articles.
+upcoming labs.
 
 It goes without saying, but you really shouldn't use vanilla Artificial
 neural networks to classify images. Images are two-dimensional, and
@@ -40,7 +40,7 @@ classes (12,500 dog images and 12,500 cat images). It should be big
 enough to train a decent image classifier, but not with ANNs.
 
 The only problem is --- it's not structured properly for deep learning
-out of the box. You can follow my previous article to create a proper
+out of the box. You can follow my previous lab to create a proper
 directory structure, and split it into train, test, and validation sets:
 
 
@@ -407,7 +407,4 @@ with artificial neural networks, and why you shouldn't do it. It's like
 climbing a mountain in flip-flops --- maybe you can do it, but it's
 better not to.
 
-You learn how the convolutional neural networks work in the following
-article, and you'll see the improvement they bring. I'll release that
-article on Friday, so stay tuned.
-
+You learn how the convolutional neural networks work in the following lab, and you'll see the improvement they bring.

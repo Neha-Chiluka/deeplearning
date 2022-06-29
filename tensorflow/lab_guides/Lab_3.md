@@ -348,7 +348,3 @@ an excellent trade-off for the amount of time it took. Moreover, it's
 only the first of many optimizations you can do to a neural network
 model, and it's one less hyperparameter you need to worry about.
 
-Stay tuned to learn how to optimize a neural network
-architecture --- the post will be up in a couple of days. Thanks for
-reading!
-

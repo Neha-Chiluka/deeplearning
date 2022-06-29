@@ -41,7 +41,7 @@ The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
 enough to train a decent image classifier. The only problem is --- it's
 not structured for deep learning out of the box. You can follow my
-previous article to create a proper directory structure, and split it
+previous lab to create a proper directory structure, and split it
 into train, test, and validation sets:
 
 
@@ -344,7 +344,7 @@ author)*](./images/9-6.png)
 Data augmentation increased the validation accuracy by almost 3%! It's
 definitely a step in the right direction, but we can improve it even
 further. How? With **transfer learning**. You'll learn all about it in
-the following article.\
+the following lab.\
 
 ------------------------------------------------------------------------
 

@@ -7123,10 +7123,6 @@ go deeper.
     Neural
     Networks](https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/)
 
-### Books
-
--   [Deep Learning](https://amzn.to/2Y8JuBv), 2016.
-
 ### Guides
 
 -   [Install TensorFlow 2 Guide](https://www.tensorflow.org/install).

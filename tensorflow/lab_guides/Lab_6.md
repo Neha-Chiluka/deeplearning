@@ -421,7 +421,7 @@ scheduler* callbacks.
 Before you go all-in with writing custom callbacks from scratch, make
 sure the functionality you need isn't already built into TensorFlow. 
 
-Stay tuned for the upcoming labs, as we're starting a deep dive and
+We're starting a deep dive and
 computer vision and convolutional neural networks with TensorFlow from
 the following lab.
 

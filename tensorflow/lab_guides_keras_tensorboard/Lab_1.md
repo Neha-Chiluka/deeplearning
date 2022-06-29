@@ -22,11 +22,6 @@ After reading this post you will know:
 -   How to define your own hyperparameter tuning experiments on your own
     projects.
 
-**Kick-start your project** with my new book [Deep Learning With
-Python](https://machinelearningmastery.com/deep-learning-with-python/),
-including *step-by-step tutorials* and the *Python source code* files
-for all examples.
-
 Let's get started.
 
 -   **Update Nov/2016**: Fixed minor issue in displaying grid search

@@ -93,7 +93,7 @@ author)](./images/4-1.PNG)
 Simple, isn't it? You don't have to take the maximum value. Another
 common type of pooling is *Average Pooling*, and it does what the name
 suggests. Max Pooling is used more often, so we'll stick to it
-throughout the article.
+throughout the lab.
 
 To summarize, max pooling reduces the number of parameters by keeping
 only the pixels with the highest values (most activated ones) and
@@ -101,7 +101,7 @@ disregarding everything else.
 
 You now know the basics behind these two operations, so let's implement
 them next. We'll dive much deeper into how convolutions and pooling work
-in the following article.
+in the following lab.
 
 Dataset Used and Data Preprocessing
 -----------------------------------
@@ -118,7 +118,7 @@ The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
 enough to train a decent image classifier. The only problem is --- it's
 not structured for deep learning out of the box. You can follow my
-previous article to create a proper directory structure, and split it
+previous lab to create a proper directory structure, and split it
 into train, test, and validation sets:
 
 
@@ -325,7 +325,7 @@ models:
     know how many convolutional layers you'll need, nor what's the ideal
     number of features and the kernel size.
 -   **Convolutional layers are usually followed by a Pooling
-    layer **--- As discussed earlier in the article.
+    layer **--- As discussed earlier in the lab.
 -   **Flatten layer** --- It should follow the last Convolution/Pooling
     layer.
 -   **Dense layers** --- Add it as you normally would. Dense layers are

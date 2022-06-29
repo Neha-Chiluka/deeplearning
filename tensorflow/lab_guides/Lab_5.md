@@ -318,7 +318,4 @@ are built-in callback functions. You've learned four of them today, and
 for the rest, please visit the [official
 documentation.](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks)
 
-Stay tuned if you want to learn more about custom callbacks, and also
-stay tuned for the upcoming convolutional neural network labs. I'll
-cover everything you need to know to get hired as a machine learning
-engineer.
+

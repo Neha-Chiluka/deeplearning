@@ -8,7 +8,7 @@ TensorFlow for Computer Vision --- How to Implement Pooling From Scratch in 
 #### You'll need 10 minutes to implement pooling with strides in Python and Numpy
 
 The [previous TensorFlow
-article]
+lab]
 showed you how to write convolutions from scratch in Numpy. Now it's
 time to discuss pooling, a downscaling operation that usually follows a
 convolutional layer. You want to know a secret? It's not rocket science
@@ -279,7 +279,7 @@ def plot_two_images(img1: np.array, img2: np.array):
 
 We'll use the [Dogs vs. Cats
 dataset](https://www.kaggle.com/pybear/cats-vs-dogs?select=PetImages)
-from Kaggle for the rest of the article. It's licensed under the
+from Kaggle for the rest of the lab. It's licensed under the
 Creative Commons License, which means you can use it for free.
 
 That's not a requirement, since you can apply pooling to any image.
@@ -440,6 +440,6 @@ Don't bother with from-scratch implementations in real-world projects.
 These are here to get a better understanding of relatively easy
 concepts.
 
-Stay tuned for the next article in which we'll implement a more robust
+In the next lab, we'll implement a more robust
 and accurate image classifier with TensorFlow.
 

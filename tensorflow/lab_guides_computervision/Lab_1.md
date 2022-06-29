@@ -14,7 +14,7 @@ layer.
 
 Is that the best we can do? Is it worth it to add more layers? When does
 the model become too complex, and what happens then? These are the
-questions you'll find answers to in today's article. We'll add multiple
+questions you'll find answers to in today's lab. We'll add multiple
 convolution blocks to see how much can our dogs vs. cats dataset handle.
 
 
@@ -39,7 +39,7 @@ The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
 enough to train a decent image classifier. The only problem is --- it's
 not structured for deep learning out of the box. You can follow my
-previous article to create a proper directory structure, and split it
+previous lab to create a proper directory structure, and split it
 into train, test, and validation sets:
 
 
@@ -53,7 +53,7 @@ Let's see how to load in the images with TensorFlow next.
 ### How to Load Image Data with TensorFlow
 
 The models you'll see today will have more layers than the ones in the
-previous articles. For readability sake, we'll import individual classes
+previous labs. For readability sake, we'll import individual classes
 from TensorFlow. Make sure to have a system with a GPU if you're
 following along, or at least use [Google
 Colab](https://towardsdatascience.com/google-colab-how-does-it-compare-to-a-gpu-enabled-laptop-851c1e0a2ca9).
@@ -289,7 +289,7 @@ but it's likely a wild goose chase.
 You should shift the focus to improving the dataset quality. Sure, there
 are 20K training images, but we can still add variety to it. That's
 where **data augmentation** comes in handy, and you'll learn all about
-it in the following article. After that, you'll take your models to new
+it in the following lab. After that, you'll take your models to new
 heights with **transfer learning**, which will make hand-tuning
 convolutional models look like a dumb thing to do.
 

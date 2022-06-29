@@ -17,9 +17,7 @@ network*!
 Today you'll dip your toes into everything deep learning has to offer
 regarding image data. We'll go over the basic image data preparation for
 deep learning --- including creating a directory structure,
-train/test/validation split, and data visualization. Stay tuned for more
-deep learning articles, as I plan to cover pretty much everything
-related to computer vision in the upcoming weeks and months.
+train/test/validation split, and data visualization.
 
 
 
@@ -55,7 +53,7 @@ patterns. A row of 224 pixels means nothing, but 50 rows of 224 pixels
 could contain a dog's head somewhere in the middle. It's a combination
 of both height and width that makes patterns recognizable.
 
-We'll dive much deeper in the following articles, but this alone should
+We'll dive much deeper in the following labs, but this alone should
 make you appreciate the complexity of image data and the power of your
 brain to detect patterns from it.
 
@@ -329,7 +327,7 @@ plot_random_sample(img_dir=pathlib.Path().cwd().joinpath('data/train/cat'))
 author)](./images/6-6.png)
 
 Neat. The images differ significantly in size, and neural networks don't
-like that. You'll see how to change the size in the following article.
+like that. You'll see how to change the size in the following lab.
 Let's do the same for dogs:
 
 ``` {.language-python}
@@ -352,9 +350,7 @@ Conclusion
 And there you have it --- basic data preparation and visualization for
 image classification. You now have everything needed to start training
 image classification models. We'll do that in the following
-article --- but with regular feed-forward neural networks first. It's
+lab --- but with regular feed-forward neural networks first. It's
 not a way to go for many reasons, and it's important for you to learn
 why.
-
-Stay tuned for that article, and for many, many upcoming ones.
 

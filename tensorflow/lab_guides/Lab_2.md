@@ -385,4 +385,4 @@ down to experimentation.
 
 The following lab will cover optimization --- you'll learn how to
 find the optimal learning rate and neural network architecture
-automatically, so stay tuned if you want to learn more.
+automatically.

@@ -5,173 +5,10 @@ TensorBoard Tutorial in Keras for Beginner
 
 
 
-
-By
-
-
-[Saurabh
-Vaishya](https://machinelearningknowledge.ai/author/saurabh_vaishya/)
-
-
-\-
-
-
-
-[July 31, 2021]{.td-post-date}
-
-
-
-
-
-
-
-
-
-
-
-Share
-
-
-
-[](https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmachinelearningknowledge.ai%2Ftensorboard-tutorial-in-keras-for-beginner%2F "Facebook"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-facebook}
-
-
-
-
-
-Facebook
-
-
-[](https://twitter.com/intent/tweet?text=TensorBoard+Tutorial+in+Keras+for+Beginner&url=https%3A%2F%2Fmachinelearningknowledge.ai%2Ftensorboard-tutorial-in-keras-for-beginner%2F&via=MLK+-+Machine+Learning+Knowledge "Twitter"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-twitter}
-
-
-
-
-
-Twitter
-
-
-[](https://www.linkedin.com/shareArticle?mini=true&url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&title=TensorBoard+Tutorial+in+Keras+for+Beginner "Linkedin"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-linkedin}
-
-
-
-
-
-Linkedin
-
-
-[](https://api.whatsapp.com/send?text=TensorBoard+Tutorial+in+Keras+for+Beginner%20%0A%0A%20https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/ "WhatsApp"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-whatsapp}
-
-
-
-
-
-WhatsApp
-
-
-[](https://pinterest.com/pin/create/button/?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&media=https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg&description=In%20this%20article,%20we%20will%20go%20through%20the%20tutorial%20for%20TensorBoard%20in%20Keras%20along%20with%20an%20example%20for%20beginners. "Pinterest"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-pinterest}
-
-
-
-
-
-Pinterest
-
-
-[](https://telegram.me/share/url?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&text=TensorBoard+Tutorial+in+Keras+for+Beginner "Telegram"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-telegram}
-
-
-
-
-
-Telegram
-
-
-[](https://reddit.com/submit?url=https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/&title=TensorBoard+Tutorial+in+Keras+for+Beginner "ReddIt"){.td-social-sharing-button
-.td-social-sharing-button-js .td-social-network .td-social-reddit}
-
-
-
-
-
-ReddIt
-
-
-
-
-
-[](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/# "More"){.td-social-sharing-button
-.td-social-handler .td-social-expand-tabs}
-
-
-
-
-
-
-[![TensorBoard Tutorial in Keras for
-Beginner](Lab_3_files/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg "TensorBoard Tutorial in Keras for Beginner"){.entry-thumb
-width="696"
-height="522"}](https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-in-Keras-for-Beginner.jpg){.td-modal-image}
-
-
-
-
-
-
-
-
-Contents
-[\[[hide](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#)\]]{.toc_toggle}
-
--   [[1]{.toc_number .toc_depth_1}
-    Introduction](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Introduction)
--   [[2]{.toc_number .toc_depth_1} What is
-    TensorBoard?](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#What_is_TensorBoard)
--   [[3]{.toc_number .toc_depth_1} TensorBoard Tutorial
-    (Keras)](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#TensorBoard_Tutorial_Keras)
-    -   [[3.1]{.toc_number .toc_depth_2} i) Install
-        TensorBoard](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#i_Install_TensorBoard)
-    -   [[3.2]{.toc_number .toc_depth_2} ii) Starting
-        TensorBoard](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#ii_Starting_TensorBoard)
-    -   [[3.3]{.toc_number .toc_depth_2} iii) Loading
-        Libraries](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#iii_Loading_Libraries)
-    -   [[3.4]{.toc_number .toc_depth_2} iv) Loading MNIST
-        Dataset](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#iv_Loading_MNIST_Dataset)
-    -   [[3.5]{.toc_number .toc_depth_2} v)
-        Preprocessing](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#v_Preprocessing)
-    -   [[3.6]{.toc_number .toc_depth_2} xi) Create and Compile the
-        Model](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#xi_Create_and_Compile_the_Model)
-    -   [[3.7]{.toc_number .toc_depth_2} vii) Creating Callback
-        Object](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#vii_Creating_Callback_Object)
-    -   [[3.8]{.toc_number .toc_depth_2} viii) Training
-        Model](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#viii_Training_Model)
-    -   [[3.9]{.toc_number .toc_depth_2} ix) Visualization Model in
-        Tensorboard](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#ix_Visualization_Model_in_Tensorboard)
-        -   [[3.9.1]{.toc_number .toc_depth_3}
-            Scalars](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Scalars)
-        -   [[3.9.2]{.toc_number .toc_depth_3}
-            Graph](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Graph)
-        -   [[3.9.3]{.toc_number .toc_depth_3}
-            Distribution](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Distribution)
-        -   [[3.9.4]{.toc_number .toc_depth_3}
-            Histograms](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Histograms)
-    -   [[3.10]{.toc_number .toc_depth_2} x) Comparing Different Models
-        in
-        TensorBoard](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#x_Comparing_Different_Models_in_TensorBoard)
--   [[4]{.toc_number .toc_depth_1}
-    Conclusion](https://machinelearningknowledge.ai/tensorboard-tutorial-in-keras-for-beginner/#Conclusion)
-
-
 [Introduction]{#Introduction}
 -----------------------------
 
-In this article, we will go through the tutorial for TensorBoard which
+In this lab, we will go through the tutorial for TensorBoard which
 is a visualization tool to understand various metrics of your [neural
 network](https://machinelearningknowledge.ai/glossary/artificial-neural-network/){.glossaryLink
 .cmtt_Deep .Learning} model and the training process. We will first
@@ -220,11 +57,9 @@ more details about working with MNIST handwritten digit dataset you can
 check below tutorial --
 
 
-[Ad]{.td-adspot-title}
-
 
 [![Deep Learning Specialization on
-Coursera](Lab_3_files/show)](https://click.linksynergy.com/fs-bin/click?id=Sasvam4jCyc&offerid=467035.416&subid=0&type=4)
+Coursera](./images/show)](https://click.linksynergy.com/fs-bin/click?id=Sasvam4jCyc&offerid=467035.416&subid=0&type=4)
 
 
 
@@ -435,7 +270,7 @@ It shows visualizations for accuracy and loss in each epoch during the
 training process. And when you hover the graph it shows more information
 like value, step, time.
 
-![TensorBoard-Tutorial-Example-Visualization-1](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-1.png){.alignnone
+![TensorBoard-Tutorial-Example-Visualization-1](./images/TensorBoard-Tutorial-Example-Visualization-1.png){.alignnone
 .size-full .wp-image-6480 .ezlazyloaded width="1875" height="896"
 sizes="(max-width: 1875px) 100vw, 1875px"
 srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1.png?ezimgfmt=ng:webp/ngcb1 1875w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-300x143.png?ezimgfmt=ng:webp/ngcb1 300w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-1024x489.png?ezimgfmt=ng:webp/ngcb1 1024w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-768x367.png?ezimgfmt=ng:webp/ngcb1 768w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-1536x734.png?ezimgfmt=ng:webp/ngcb1 1536w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-696x333.png?ezimgfmt=ng:webp/ngcb1 696w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-1068x510.png?ezimgfmt=ng:webp/ngcb1 1068w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-1-879x420.png?ezimgfmt=ng:webp/ngcb1 879w"}
@@ -446,7 +281,7 @@ The neural network model is essentially computational graphs in
 TensorFlow Keras and it can be visualized in this section.
 
 ![TensorBoard Tutorial Example
-Visualization-2](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-2.png){.alignnone
+Visualization-2](./images/TensorBoard-Tutorial-Example-Visualization-2.png){.alignnone
 .size-full .wp-image-6482 .ezlazyloaded width="1897" height="886"
 sizes="(max-width: 1897px) 100vw, 1897px"
 srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2.png?ezimgfmt=ng:webp/ngcb1 1897w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-300x140.png?ezimgfmt=ng:webp/ngcb1 300w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-1024x478.png?ezimgfmt=ng:webp/ngcb1 1024w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-768x359.png?ezimgfmt=ng:webp/ngcb1 768w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-1536x717.png?ezimgfmt=ng:webp/ngcb1 1536w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-696x325.png?ezimgfmt=ng:webp/ngcb1 696w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-1068x499.png?ezimgfmt=ng:webp/ngcb1 1068w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-2-899x420.png?ezimgfmt=ng:webp/ngcb1 899w"}
@@ -457,7 +292,7 @@ This section shows the change of weights and biases over the time period
 of training.
 
 ![TensorBoard Tutorial Example
-Visualization-3](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-3.png){.alignnone
+Visualization-3](./images/TensorBoard-Tutorial-Example-Visualization-3.png){.alignnone
 .size-full .wp-image-6483 .ezlazyloaded width="1898" height="875"
 sizes="(max-width: 1898px) 100vw, 1898px"
 srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3.png?ezimgfmt=ng:webp/ngcb1 1898w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-300x138.png?ezimgfmt=ng:webp/ngcb1 300w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-1024x472.png?ezimgfmt=ng:webp/ngcb1 1024w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-768x354.png?ezimgfmt=ng:webp/ngcb1 768w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-1536x708.png?ezimgfmt=ng:webp/ngcb1 1536w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-696x321.png?ezimgfmt=ng:webp/ngcb1 696w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-1068x492.png?ezimgfmt=ng:webp/ngcb1 1068w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-3-911x420.png?ezimgfmt=ng:webp/ngcb1 911w"}
@@ -470,7 +305,7 @@ This also shows the distribution of weights and bias over time in a 3D
 format.
 
 ![TensorBoard Tutorial Example Visualization
-4](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-4.png){.alignnone
+4](./images/TensorBoard-Tutorial-Example-Visualization-4.png){.alignnone
 .size-full .wp-image-6484 .ezlazyloaded width="1894" height="877"
 sizes="(max-width: 1894px) 100vw, 1894px"
 srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4.png?ezimgfmt=ng:webp/ngcb1 1894w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-300x139.png?ezimgfmt=ng:webp/ngcb1 300w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-1024x474.png?ezimgfmt=ng:webp/ngcb1 1024w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-768x356.png?ezimgfmt=ng:webp/ngcb1 768w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-1536x711.png?ezimgfmt=ng:webp/ngcb1 1536w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-696x322.png?ezimgfmt=ng:webp/ngcb1 696w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-1068x495.png?ezimgfmt=ng:webp/ngcb1 1068w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-4-907x420.png?ezimgfmt=ng:webp/ngcb1 907w"}
@@ -514,7 +349,7 @@ ez-name="machinelearningknowledge_ai-leader-1" style=""}
 
 
 
-![](Lab_3_files/TensorBoard-Tutorial-Example-Visualization-5-1.png){.alignnone
+![](./images/TensorBoard-Tutorial-Example-Visualization-5-1.png){.alignnone
 .size-full .wp-image-6487 .ezlazyloaded width="1899" height="879"
 sizes="(max-width: 1899px) 100vw, 1899px"
 srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1.png?ezimgfmt=ng:webp/ngcb1 1899w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-300x139.png?ezimgfmt=ng:webp/ngcb1 300w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-1024x474.png?ezimgfmt=ng:webp/ngcb1 1024w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-768x355.png?ezimgfmt=ng:webp/ngcb1 768w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-1536x711.png?ezimgfmt=ng:webp/ngcb1 1536w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-696x322.png?ezimgfmt=ng:webp/ngcb1 696w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-1068x494.png?ezimgfmt=ng:webp/ngcb1 1068w,https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoard-Tutorial-Example-Visualization-5-1-907x420.png?ezimgfmt=ng:webp/ngcb1 907w"}
@@ -522,7 +357,7 @@ srcset="https://machinelearningknowledge.ai/wp-content/uploads/2021/07/TensorBoa
 [Conclusion]{#Conclusion}
 -------------------------
 
-Hope you found this article quite useful where we gave a small
+Hope you found this lab quite useful where we gave a small
 introductory tutorial on TensorBoard for beginners. We understood how to
 install and start the TensorBoard dashboard, along with various
 visualizations with the help of an example in Keras.

@@ -7,9 +7,7 @@ TensorFlow for Computer Vision - Transfer Learning Made Easy
 
 **90+% accuracy? Made possible with Transfer Learning.**
 
-[Last
-week],
-you\'ve seen how data augmentation can squeeze an extra couple of
+You\'ve seen how data augmentation can squeeze an extra couple of
 percent accuracy from your TensorFlow models. We only scratched the
 surface compared to what you\'ll see today. We\'ll finally get above 90%
 accuracy on the validation set with a pretty straightforward approach.
@@ -82,7 +80,7 @@ The dataset is fairly large --- 25,000 images distributed evenly between
 classes (12,500 dog images and 12,500 cat images). It should be big
 enough to train a decent image classifier. The only problem is --- it's
 not structured for deep learning out of the box. You can follow my
-previous article to create a proper directory structure, and split it
+previous lab to create a proper directory structure, and split it
 into train, test, and validation sets:
 
 
@@ -107,7 +105,7 @@ import tensorflow as tf
 ```
 
 We\'ll have to load training and validation data from different
-directories throughout the article. The best practice is to declare a
+directories throughout the lab. The best practice is to declare a
 function for loading the images and [data
 augmentation]:
 

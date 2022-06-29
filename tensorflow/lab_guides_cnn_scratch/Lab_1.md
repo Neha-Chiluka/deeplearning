@@ -75,7 +75,7 @@ Dataset and Image Loading
 
 We'll use the [Dogs vs. Cats
 dataset](https://www.kaggle.com/pybear/cats-vs-dogs?select=PetImages)
-from Kaggle for the rest of the article. It's licensed under the
+from Kaggle for the rest of the lab. It's licensed under the
 Creative Commons License, which means you can use it for free. 
 
 That's not a requirement, since you can apply convolution to any image.
@@ -506,6 +506,6 @@ and addition. There's nothing fancy going on.
 
 We could complicate things further by introducing **strides** --- but
 these are common to both convolutions and pooling. I'll leave them for
-the following article, which covers pooling --- a downsizing operation
+the following lab, which covers pooling --- a downsizing operation
 that commonly follows a convolutional layer.
 

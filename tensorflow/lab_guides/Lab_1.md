@@ -437,5 +437,5 @@ optimizer, add dropout layers, and much more. The possibilities are
 almost endless, so it all boils down to experimentation.
 
 The following lab will cover how to build a classification model
-using TensorFlow, so stay tuned if you want to learn more.
+using TensorFlow.
 
