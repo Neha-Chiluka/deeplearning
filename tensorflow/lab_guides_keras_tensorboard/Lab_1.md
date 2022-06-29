@@ -134,101 +134,11 @@ Below is an example of defining a simple grid search:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+-----------------------------------+-----------------------------------+
-| 
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| 
-| on-num line="urvanov-syntax-highl | 
-| ighter-62ba5047ba96c247214931-1"} | #urvanov-syntax-highlighter-62ba5 |
-| 1                                 | 047ba96c247214931-1 .crayon-line} |
-|                                | [param\_grid]{.crayon-v}[         |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-| 
-| ed-num line="urvanov-syntax-highl | rayon-h}[dict]{.crayon-e}[(]{.cra |
-| ighter-62ba5047ba96c247214931-2"} | yon-sy}[epochs]{.crayon-v}[=]{.cr |
-| 2                                 | ayon-o}[\[]{.crayon-sy}[10]{.cray |
-|                                | on-cn}[,]{.crayon-sy}[20]{.crayon |
-|                                   | -cn}[,]{.crayon-sy}[30]{.crayon-c |
-| 
-| on-num line="urvanov-syntax-highl |                                |
-| ighter-62ba5047ba96c247214931-3"} |                                   |
-| 3                                 | 
-|                                | ighter-62ba5047ba96c247214931-2 . |
-|                                | crayon-line .crayon-striped-line} |
-|                                   | [grid]{.crayon-v}[                |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.crayon-h}[GridSearch           |
-|                                   | CV]{.crayon-e}[(]{.crayon-sy}[est |
-|                                   | imator]{.crayon-v}[=]{.crayon-o}[ |
-|                                   | model]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[param\_grid          |
-|                                   | ]{.crayon-v}[=]{.crayon-o}[param\ |
-|                                   | _grid]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayon-h}[n\_jobs]{.cr         |
-|                                   | ayon-v}[=]{.crayon-o}[-]{.crayon- |
-|                                   | o}[1]{.crayon-cn}[,]{.crayon-sy}[ |
-|                                   | ]{.cr                             |
-|                                   | ayon-h}[cv]{.crayon-v}[=]{.crayon |
-|                                   | -o}[3]{.crayon-cn}[)]{.crayon-sy} |
-|                                   |                                |
-|                                   |                                   |
-|                                   | 
-|                                   | #urvanov-syntax-highlighter-62ba5 |
-|                                   | 047ba96c247214931-3 .crayon-line} |
-|                                   | [grid\_result]{.crayon-v}[        |
-|                                   | ]{.crayon-h}[=]{.crayon-o}[       |
-|                                   | ]{.cra                            |
-|                                   | yon-h}[grid]{.crayon-v}[.]{.crayo |
-|                                   | n-sy}[fit]{.crayon-e}[(]{.crayon- |
-|                                   | sy}[X]{.crayon-v}[,]{.crayon-sy}[ |
-|                                   | ]{.crayo                          |
-|                                   | n-h}[Y]{.crayon-v}[)]{.crayon-sy} |
-|                                   |                                |
-|                                   |                                |
-+-----------------------------------+-----------------------------------+
-
-
+```
+param_grid = dict(epochs=[10,20,30])
+grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=-1, cv=3)
+grid_result = grid.fit(X, Y)
+```
 
 Once completed, you can access the outcome of the grid search in the
 result object returned from **grid.fit()**. The **best\_score\_** member
@@ -238,12 +148,6 @@ parameters that achieved the best results.
 
 You can learn more about the [GridSearchCV class in the scikit-learn API
 documentation](http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV).
-
-
-
-
-[AD]{style="display:block;background:rgba(255, 255, 255, 0.7);height:fit-content;width:fit-content;top:0;left:0;color:#444;font-size:10px;font-weight:bold;font-family:sans-serif;line-height:normal;text-decoration:none;margin:0px;padding:6px;border-radius:0 0 5px 0;"}
-
 
 
 
@@ -276,70 +180,11 @@ All examples are configured to use parallelism (**n\_jobs=-1**).
 If you get an error like the one below:
 
 
+```
+INFO (theano.gof.compilelock): Waiting for existing lock by process '55614' (I am process '55613')
+INFO (theano.gof.compilelock): To manually release the lock, delete .
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+-----------------------------------+-----------------------------------+
-| 
-| -syntax-highlighter-nums-content  | e style="font-size: 12px !importa |
-| style="font-size: 12px !important | nt; line-height: 15px !important; |
-| ; line-height: 15px !important;"} |  -moz-tab-size:4; -o-tab-size:4;  |
-| 
-| on-num line="urvanov-syntax-highl | 
-| ighter-62ba5047ba96d764054602-1"} | #urvanov-syntax-highlighter-62ba5 |
-| 1                                 | 047ba96d764054602-1 .crayon-line} |
-|                                | INFO (theano.gof.compilelock):    |
-|                                   | Waiting for existing lock by      |
-| 
-| ed-num line="urvanov-syntax-highl | \'55613\')                        |
-| ighter-62ba5047ba96d764054602-2"} |                                |
-| 2                                 |                                   |
-|                                | 
-|                                | ighter-62ba5047ba96d764054602-2 . |
-|                                   | crayon-line .crayon-striped-line} |
-|                                   | INFO (theano.gof.compilelock): To |
-|                                   | manually release the lock, delete |
-|                                   | \...                              |
-|                                   |                                |
-|                                   |                                |
-+-----------------------------------+-----------------------------------+
 
 
 

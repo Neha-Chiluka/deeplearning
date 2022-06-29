@@ -55,8 +55,7 @@ Let's see how to load in the images with TensorFlow next.
 The models you'll see today will have more layers than the ones in the
 previous labs. For readability sake, we'll import individual classes
 from TensorFlow. Make sure to have a system with a GPU if you're
-following along, or at least use [Google
-Colab](https://towardsdatascience.com/google-colab-how-does-it-compare-to-a-gpu-enabled-laptop-851c1e0a2ca9).
+following along, or at least use Google Colab.
 
 Let's get the library imports out of the way:
 

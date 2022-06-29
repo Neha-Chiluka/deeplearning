@@ -286,13 +286,12 @@ history_optimized = model_optimized.fit(
 )
 ```
 
-We got 76% accuracy with the default learning rate in the [previous lab](https://towardsdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes-fd2b7cfba86),
+We got 76% accuracy with the default learning rate in the previous lab,
 so it'll be interesting to see if learning rate optimization can
 increase it. The reported accuracy on the train set looks too good to be
 true, so it's likely our model is overfitting:
 
-![Image 9 --- Optimized model training log (image by
-author)](./images/9-3.png)
+![](./images/9-3.png)
 
 It won't matter too much if we've managed to increase the performance on
 the test set, but you could save yourself some time by training the

@@ -106,9 +106,8 @@ import matplotlib.pyplot as plt
 ```
 
 Next, we'll declare a couple of variables. We'll use the `pathlib`
-module for path management. I've found it [much more
-user-friendly](https://towardsdatascience.com/still-using-the-os-module-in-python-this-alternative-is-remarkably-better-7d728ce22fb7)
-than the `os` module. Declare variables for the root data directory, and
+module for path management. I've found it much more
+user-friendly than the `os` module. Declare variables for the root data directory, and
 for each of the three subfolders. Finally, the last three variables
 represent the ratio of data for each subset:
 
