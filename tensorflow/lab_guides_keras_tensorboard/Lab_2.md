@@ -643,9 +643,9 @@ The dataset will be downloaded automatically using
 here.
 
 -   [Ionosphere Dataset
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/ionosphere.csv).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/ionosphere.csv).
 -   [Ionosphere Dataset Description
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/ionosphere.names).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/ionosphere.names).
 
 We will use a
 [LabelEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
@@ -670,7 +670,7 @@ from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
 # load the dataset
-path = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/ionosphere.csv'
+path = 'https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/ionosphere.csv'
 df = read_csv(path, header=None)
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -711,8 +711,6 @@ given the stochastic nature of the algorithm or evaluation procedure, or
 differences in numerical precision. Consider running the example a few
 times and compare the average outcome.
 
-**What results did you get?** Can you change the model to do better?\
-Post your findings to the comments below.
 
 In this case, we can see that the model achieved a classification
 accuracy of about 94 percent and then predicted a probability of 0.9
@@ -736,9 +734,9 @@ The dataset will be downloaded automatically using Pandas, but you can
 learn more about it here.
 
 -   [Iris Dataset
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/iris.csv).
 -   [Iris Dataset Description
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.names).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/iris.names).
 
 Given that it is a multiclass classification, the model must have one
 node for each class in the output layer and use the softmax activation
@@ -758,7 +756,7 @@ from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
 # load the dataset
-path = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv'
+path = 'https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/iris.csv'
 df = read_csv(path, header=None)
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -823,9 +821,9 @@ The dataset will be downloaded automatically using Pandas, but you can
 learn more about it here.
 
 -   [Boston Housing Dataset
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.csv).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/housing.csv).
 -   [Boston Housing Dataset Description
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.names).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/housing.names).
 
 This is a regression problem that involves predicting a single numerical
 value. As such, the output layer has a single node and uses the default
@@ -846,7 +844,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
 # load the dataset
-path = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.csv'
+path = 'https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/housing.csv'
 df = read_csv(path, header=None)
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -1061,9 +1059,9 @@ The dataset will be downloaded automatically using Pandas, but you can
 learn more about it here.
 
 -   [Car Sales Dataset
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-car-sales.csv).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/monthly-car-sales.csv).
 -   [Car Sales Dataset Description
-    (csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-car-sales.names).
+    (csv)](https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/monthly-car-sales.names).
 
 We will frame the problem to take a window of the last five months of
 data to predict the current month's data.
@@ -1131,7 +1129,7 @@ def split_sequence(sequence, n_steps):
 	return asarray(X), asarray(y)
 
 # load the dataset
-path = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-car-sales.csv'
+path = 'https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/monthly-car-sales.csv'
 df = read_csv(path, header=0, index_col=0, squeeze=True)
 # retrieve the values
 values = df.values.astype('float32')
