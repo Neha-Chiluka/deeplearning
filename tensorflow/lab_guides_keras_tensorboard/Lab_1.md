@@ -397,7 +397,7 @@ def create_model(learn_rate=0.01, momentum=0):
 seed = 7
 numpy.random.seed(seed)
 # load dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+dataset = numpy.loadtxt("https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/pima-indians-diabetes.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
@@ -505,7 +505,7 @@ def create_model(init_mode='uniform'):
 seed = 7
 numpy.random.seed(seed)
 # load dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+dataset = numpy.loadtxt("https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/pima-indians-diabetes.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
@@ -588,7 +588,7 @@ def create_model(activation='relu'):
 seed = 7
 numpy.random.seed(seed)
 # load dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+dataset = numpy.loadtxt("https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/pima-indians-diabetes.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
@@ -680,7 +680,7 @@ def create_model(dropout_rate=0.0, weight_constraint=0):
 seed = 7
 numpy.random.seed(seed)
 # load dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+dataset = numpy.loadtxt("https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/pima-indians-diabetes.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
@@ -810,7 +810,7 @@ def create_model(neurons=1):
 seed = 7
 numpy.random.seed(seed)
 # load dataset
-dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+dataset = numpy.loadtxt("https://raw.githubusercontent.com/fenago/deeplearning/main/tensorflow/data/pima-indians-diabetes.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
