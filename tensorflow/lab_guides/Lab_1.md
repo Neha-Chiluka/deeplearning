@@ -8,53 +8,48 @@ Regression Modelling with TensorFlow Made Easy --- Train Your First Model in
 
 #### From data gathering and preparation to model training and evaluation --- Source code included. 
 
-Deep learning is kind of a big deal these days. Heck, it's even a
-requirement for most data science jobs, even entry-level ones. There's
-no better introductory lecture than regression. You already know the
-concepts from basic statistics and machine learning, and now it's time
-to bring neural networks into the mix.
 
-This lab will show you how. By the end, you'll have a fully
-functional model for predicting housing prices which you can attach to
-your portfolio --- after some modifications, preferred.
-
-
-
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
-Dataset used
+Task 1: Google Collab Our Coding Tool:
 ------------
+Open google Collab open and be ready! 
 
-Let's keep things simple today and stick with a well-known [Housing
-prices dataset](https://www.kaggle.com/shree1992/housedata):
+1. Open Google Collab - https://colab.research.google.com/
 
-![Image 1 --- Housing prices dataset from Kaggle (image by
-author)](./images/1-1.png)
+2. Click on file and select "New Notebook in Drive" option ( It might ask you to sign in with a acccount)
 
-It has a bunch of features that are initially unusable with the neural
-network model, so you'll have to spend some time dealing with them.
-Download the dataset, extract the ZIP file, and place the CSV dataset
-somewhere safe.
+3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
-Then activate the virtual environment that has TensorFlow 2+ installed
-and launch JupyterLab. You're free to use any other IDE, but all the
-screenshots below will be from Jupyter.
 
-Dataset exploration and preparation
+
+Task 2: Dataset exploration and preparation
 -----------------------------------
 
-The first step is to import Numpy and Pandas, and then to import the
-dataset. The following snippet does that and also prints a random couple
+Let us keep things simple today and stick with a well-known **Housing
+prices** dataset
+
+Use the below link to read the file in google collab. We will be reading the csv file directly in the code. You dont have to download anything!
+
+Lets start with the below steps:
+
+1. Import Numpy and Pandas.
+2. Read the dataset. 
+3. df = pd.read_csv(file name)
+4. df.sample()
+
+ Use the dataset link in the below code - https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv
+
+The following snippet does that and also prints a random couple
 of rows:
 
-``` {.language-python}
-import numpy as np
+You can use the following code in the first cell .
+
+``` import numpy as np
 import pandas as pd
 
-df = pd.read_csv('data/data.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv')
 df.sample(5)
 ```
 
