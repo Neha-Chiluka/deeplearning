@@ -32,14 +32,14 @@ prices** dataset
 
 Use the below link to read the file in google collab. We will be reading the csv file directly in the code. You dont have to download anything!
 
+Use the dataset link - https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv
+
 Lets start with the below steps:
 
 1. Import Numpy and Pandas.
 2. Read the dataset. 
 3. df = pd.read_csv(file name)
 4. df.sample()
-
- Use the dataset link in the below code - https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv
 
 The following snippet does that and also prints a random couple
 of rows:
@@ -53,18 +53,23 @@ df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/re
 df.sample(5)
 ```
 
-Here's how the dataset looks like:
+**After you enter the code click on shift and enter to run the code or you can click on the play button**
+
+Here's how the dataset looks like after you run the code.
 
 ![Image 2 --- Housing prices dataset (image by
 author)](./images/2-1.png)
 
 You definitely can't pass it to a neural network in this format.
 
-### Deleting unnecessary columns
+### Task 3: Deleting unnecessary columns
 
 Since we want to avoid spending too much time preparing the data, it's
 best to drop most of the non-numeric features. Keep only the `city`
 column, as it's simple enough to encode:
+
+1. Drop the columns date, street , statezip and country using drop function.
+2. Use head function to view the updated data.
 
 ``` {.language-python}
 to_drop = ['date', 'street', 'statezip', 'country']
