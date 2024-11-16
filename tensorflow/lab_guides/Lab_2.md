@@ -1,5 +1,5 @@
 
-How to Train a Classification Model with TensorFlow in 10 Minutes 
+LAB 2 - How to Train a Classification Model with TensorFlow in 10 Minutes(Wine Quality Dataset) 
 =================================================================
 
 
@@ -20,8 +20,6 @@ installed to follow along.
 
 ------------------------------------------------------------------------
 
-Dataset used
-------------
 ### Task 1: Google Collab Our Coding Tool:
 
 Open google Collab open and be ready! 
@@ -39,7 +37,7 @@ Data preparation and exploration
 
 Let us keep things simple today and stick with a well-known **Wine Quality** dataset
 
-**Question 1:**
+**Question :**
 Load the dataset from the given URL and display a random sample of 5 rows.
 
 **Solution:**
@@ -68,6 +66,20 @@ It's mostly clean, but there's still some work to do.
 
 ### Basic preparation
 
+### Task 3: Handle Missing Values in the Dataset
+
+In this task, you’ll clean the dataset by removing rows with missing values. The dataset contains some missing values, but they aren't significant, as there are 6497 rows in total.
+
+**Questions:**
+
+1. Check for missing values in the dataset.
+
+2. Remove rows with missing values using the dropna() function.
+
+Write the code to remove the rows with missing values and ensure the dataset is clean for analysis
+
+**Solution:**
+
 The dataset has some missing values, but the number isn't significant,
 as there are 6497 rows in total:
 
@@ -77,6 +89,18 @@ author)](./images/3-2.png)
 Run the following code to get rid of them:
 
     df = df.dropna()
+
+**Task 4: Convert Categorical Feature to Binary**
+
+In this task, you will convert the categorical type feature into a binary feature called is_white_wine. The type feature can either be white (which should be represented as 1) or red (which should be represented as 0). Afterward, you'll drop the original type column.
+
+**Questions:**
+
+1. Create a new column is_white_wine where the value is 1 if the type is white and 0 if it is red.
+
+2. Drop the original type column from the DataFrame.
+
+**Solution:**
 
 The only non-numerical feature is `type`. It can be either *white* (4870
 rows) or *red* (1593) rows. The following snippet converts this feature
@@ -92,7 +116,22 @@ df.drop('type', axis=1, inplace=True)
 All features are numeric now, and there's only one thing left to
 do --- make the target variable (`quality`) binary.
 
-### Converting to a binary classification problem
+## Converting to a binary classification problem
+
+
+### Task 5: Convert Target Variable to Binary Classification
+
+In this task, you will convert the quality column into a binary classification target. Wines with a quality grade of 6 or higher will be classified as good (1), and wines with a grade lower than 6 will be classified as bad (0).
+
+**Questions:**
+
+1. Create a new column is_good_wine that assigns a value of 1 for wines with a quality of 6 or higher, and 0 for wines with a quality below 6.
+
+2. Drop the original quality column from the dataset.
+
+Write the code to perform these transformations and prepare the dataset for a binary classification task.
+
+**Solution:**
 
 The wines are graded from 3 to 9, assuming higher is better. Here are
 the value counts:
@@ -122,7 +161,21 @@ You now have 4091 good wines and 2372 bad wines. The classes are
 imbalanced, but we can work with that. Let's split the dataset into
 training and testing sets next.
 
-### Train/test split
+## Train/Test split
+
+### Task 6: Split the Data into Training and Testing Sets
+
+In this task, you will split the dataset into training and testing sets. You will use an 80:20 split, with 80% of the data used for training and 20% for testing.
+
+**Questions:**
+
+1. Separate the features (X) from the target variable (y), where y is the is_good_wine column.
+
+2. Use train_test_split() from Scikit-Learn to split the data into training and testing sets. Set the test_size to 0.2 and use a random_state of 42 to ensure reproducibility.
+
+Write the code to perform the train/test split and check that you have 5170 rows in the training set and 1293 rows in the testing set.
+
+**Solution:**
 
 We'll stick to a standard 80:20 split. Here's the code:
 
@@ -143,7 +196,21 @@ You now have 5170 rows in the training set and 1293 rows in the testing
 set. It should be enough to train a somewhat decent neural network
 model. Let's scale the data before we start the training.
 
-### Data scaling
+## Data scaling
+
+### Task 7: Scale the Data and Prepare for Model Training
+
+In this task, you will scale the features of your dataset to ensure that the neural network can learn effectively. Features like sulphates and citric acid have values close to zero, while others like total sulfur dioxide are in much higher ranges. This discrepancy in feature scales can cause issues when training a neural network. Scaling the data to a standard range will help mitigate this problem.
+
+**Questions:**
+
+Use StandardScaler from Scikit-Learn to scale the features.
+
+1. Apply the scaler to the training set (X_train) using fit_transform() and to the testing set (X_test) using transform().
+
+2. Write the code to scale the data and check the transformed feature values.
+
+**Solution:**
 
 Features like `sulphates` and `citric acid` have values close to zero,
 while `total sulfur dioxide` is in hundreds. You'll confuse the neural
@@ -173,27 +240,32 @@ The value range is much tighter now, so a neural network should do a
 better job. Let's train the model and see if we can get something
 decent.
 
-Training a classification model with TensorFlow
------------------------------------------------
 
-You'll need to keep a couple of things in mind when training a binary
-classification model:
+## Defining a neural network architecture
 
--   **Output layer structure** --- You'll want to have one neuron
-    activated with a sigmoid function. This will output a probability
-    you can then assign to either a good wine (P \> 0.5) or a bad wine
-    (P \<= 0.5).
--   **Loss function** --- Binary cross-entropy is the one to go with.
-    Don't mistake it for categorical cross-entropy.
--   **Class balance** --- Are the classes in the target variable
-    balanced? In other words, do you have roughly the same number of
-    good and bad wines? If not, *accuracy* might not be the best
-    evaluation metric. We'll also use *precision* and *recall*.
+### Task 8: Define and Train a Neural Network Model
 
-Let's define a neural network architecture next, having the above three
-points in mind.
+In this task, you will define and train a neural network model for binary classification using TensorFlow. The architecture of the model is chosen randomly, but you are encouraged to experiment with it.
 
-### Defining a neural network architecture
+1.  Define a sequential neural network model with:
+
+- An input layer with 128 neurons and ReLU activation.
+
+- Two hidden layers with 256 neurons each, also using ReLU activation.
+
+- A final output layer with 1 neuron and a Sigmoid activation function to output probabilities.
+
+2. Compile the model with:
+
+- Loss function: Binary Cross-Entropy (for binary classification).
+
+- Optimizer: Adam optimizer with a learning rate of 0.03.
+
+- Metrics: Binary Accuracy, Precision, and Recall to evaluate the model performance during training.
+
+3. Train the model using the scaled training data (X_train_scaled and y_train), setting the number of epochs to 100.
+
+**Solution:**
 
 I've chosen this architecture entirely at random, so feel free to adjust
 it. The model goes from 12 input features to the first hidden layer of
@@ -238,7 +310,26 @@ We kept track of loss, accuracy, precision, and recall during training,
 and saved them to `history`. We can now visualize these metrics to get a
 sense of how the model is doing.
 
-### Visualizing model performance
+## Visualizing model performance
+
+### Task 9: Visualize Model Performance
+
+In this task, you will visualize the performance of your trained neural network model using various evaluation metrics: loss, accuracy, precision, and recall.
+
+1. Import Matplotlib and adjust the default plot styles to make the chart larger and cleaner.
+
+2. Plot the training performance for each of the following metrics:
+
+- Loss (should decrease over time)
+- Accuracy (should increase over time)
+- Precision (should increase over time)
+- Recall (should increase over time)
+
+3. Use the history object to extract the values for these metrics from the training process.
+
+Write the code to generate a plot showing how the metrics evolve over the 100 epochs.
+
+**Solution:**
 
 Let's start by importing Matplotlib and tweaking the default styles a
 bit. The following code snippet will make the plot larger and remove the
@@ -293,7 +384,25 @@ there's no sign of plateau.
 
 But are we overfitting? Let's answer that next.
 
-#### Making predictions
+## Making predictions
+
+### Task 10: Make Predictions and Convert to Classes
+
+In this task, you will use the trained model to make predictions on the test data and then convert the prediction probabilities into binary classes.
+
+**Questions:**
+
+1. Use the predict() function to generate prediction probabilities on the scaled test data (X_test_scaled).
+2. Convert the probabilities to binary classes using the following logic:
+
+- If the probability is greater than 0.5, assign the class 1 (good wine).
+- If the probability is less than or equal to 0.5, assign the class 0 (bad wine).
+
+3. Extract the first 20 predictions and display them.
+
+Write the code to implement the conversion of prediction probabilities to binary classes.
+
+**Solution:**
 
 You can now use the `predict()` function to get prediction probabilities
 on the scaled test data:
@@ -322,7 +431,27 @@ author)](./images/10-1.png)
 
 That's all we need --- let's evaluate the model next.
 
-### Model evaluation on test data
+## Model evaluation on test data
+
+### Task 11: Evaluate Model Performance on Test Data
+
+In this task, you will evaluate the model's performance on the test data by calculating key classification metrics.
+
+**Questions:**
+
+1. Confusion Matrix: Start by generating a confusion matrix using the confusion_matrix() function from Scikit-Learn.
+
+2. Accuracy, Precision, and Recall: Calculate and print the accuracy, precision, and recall on the test set using the appropriate functions from Scikit-Learn:
+
+3. Interpret the results:
+
+- Compare the values of accuracy, precision, and recall to see how well the model is performing on the test data.
+
+- Discuss whether the model is overfitting, based on the comparison between the training and test performance metrics.
+
+Write the code to generate and print the confusion matrix and these evaluation metrics.
+
+**Solution:**
 
 Let's start with the confusion matrix:
 
