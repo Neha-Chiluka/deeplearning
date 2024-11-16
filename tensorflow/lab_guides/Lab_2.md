@@ -1,9 +1,6 @@
 
-
 How to Train a Classification Model with TensorFlow in 10 Minutes 
 =================================================================
-
-
 
 
 #### From data gathering and preparation to model training and evaluation --- Source code included 
@@ -21,50 +18,48 @@ sitting. Let's start.
 You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
 installed to follow along.
 
-
-
-
-
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
-
 ------------------------------------------------------------------------
 
 Dataset used
 ------------
+### Task 1: Google Collab Our Coding Tool:
 
-Let's avoid unnecessary headaches and stick to simple datasets. The
-[wine quality
-dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
-Kaggle will be good enough for today:
+Open google Collab open and be ready! 
 
-![](./images/1-2.png)
+1. Open Google Collab - https://colab.research.google.com/
 
-The dataset is mostly clean, but isn't designed for binary
-classification by default (good/bad wine). Instead, the wines are rated
-on a scale. We'll address that later.
+2. Click on file and select "New Notebook in Drive" option ( It might ask you to sign in with a acccount)
 
-Download it and extract the CSV somewhere on your machine, and open up
-JupyterLab. You're free to use any other IDE, but all the screenshots
-below will be from Jupyter.
+3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
 Data preparation and exploration
 --------------------------------
-
-The first step is to import Numpy and Pandas, and then to import the
-dataset. The following snippet does that and also prints a random sample
-of five rows:
-
-``` {.language-python}
-import numpy as np
-import pandas as pd 
+### Task 2: Dataset exploration and preparation
 
 
-df = pd.read_csv('data/winequalityN.csv')
+Let us keep things simple today and stick with a well-known **Wine Quality** dataset
+
+**Question 1:**
+Load the dataset from the given URL and display a random sample of 5 rows.
+
+**Solution:**
+
+Use the below link to read the file in google collab. 
+
+Use the dataset link - https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv
+
+You can use the following code in the first cell .
+
+``` import numpy as np
+import pandas as pd
+
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/winequalityN.csv')
 df.sample(5)
 ```
 
-Here's how the dataset looks like:
+**After you enter the code click on shift and enter to run the code or you can click on the play button**.
+
+Here's how the dataset looks like after you run the code.
 
 ![Image 2 --- Wine quality dataset (image by
 author)](./images/2-2.png)
