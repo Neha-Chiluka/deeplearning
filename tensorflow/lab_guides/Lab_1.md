@@ -59,10 +59,10 @@ You definitely can't pass it to a neural network in this format.
 
 ### Task 3: Deleting unnecessary columns
 
-Question 3:
+**Question 3:**
 Remove the following unnecessary columns from the DataFrame: 'date', 'street', 'statezip', and 'country'. Keep only the relevant columns for analysis.
 
-Solution :
+**Solution :**
 Since we want to avoid spending too much time preparing the data, it's
 best to drop most of the non-numeric features. Keep only the `city`
 column, as it's simple enough to encode:
