@@ -86,7 +86,10 @@ You definitely could keep all columns and do some feature engineering
 with them. It would likely increase the performance of the model. But
 even this will be enough for what you need today.
 
+## Feature Engineering
+
 ###  Task 4: Perform Feature engineering
+
 **Question 4 :**
 
 1. Calculate the age of the house using the yr_built column.
@@ -185,6 +188,8 @@ author)](./images/6-1.png)
 
 Everything looks as it should, so let's continue.
 
+## Target variable visualization
+
 ### Task 6: Visualize the Distribution of the Target Variable
 
 You are working with a housing dataset and need to visualize the distribution of the target variable, price. Since the target variable is unlikely to be normally distributed, you should use a histogram to inspect the distribution.
@@ -282,6 +287,8 @@ There's still a bit of skew present, but let's declare it *good enough*.
 
 As the last step, let's convert the data into a format ready for machine
 learning.
+
+## Data preparation for ML
 
 ### Task 8: Prepare Data for Machine Learning
 
@@ -383,10 +390,26 @@ X_train = X_train.toarray()
 X_test = X_test.toarray()
 ```
 
-Let's finally train the model.
-
 Training a regression model with TensorFlow
 -------------------------------------------
+
+### Task 9: Build a Regression Model with TensorFlow
+
+In this task, you’ll start building a regression model using TensorFlow. First, you need to import the necessary libraries to set up the model.
+
+**Question:**
+
+Import the following libraries from TensorFlow:
+- tensorflow as tf
+- Sequential from tensorflow.keras
+- Dense from tensorflow.keras.layers
+- Adam from tensorflow.keras.optimizers
+- backend from tensorflow.keras
+
+Write the code to perform the imports and prepare for building a regression model.
+
+**Solution:**
+
 
 You'll now build a sequential model made of fully connected layers.
 There are many imports to do, so let's get that out of the way:
@@ -399,7 +422,25 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras import backend as K
 ```
 
-### Loss tracking
+## Loss Tracking
+
+### Task 10: Implement Custom Loss Metric - RMSE
+
+In this task, you'll define a custom loss function for tracking the model's performance in terms of Root Mean Squared Error (RMSE), which is more interpretable when working with housing prices. The default loss function may not suit your needs, so you’ll calculate the square root of the Mean Squared Error (MSE) to get back to the original units.
+
+**Question:**
+
+Write a function rmse() that calculates RMSE using Keras backend functions:
+
+- Use K.mean() to compute the mean of the squared differences.
+
+- Use K.square() to calculate the squared differences between predicted and true values.
+
+- Apply K.sqrt() to take the square root of the mean squared error.
+
+Write the code for the rmse() function.
+
+**Solution:**
 
 You're dealing with housing prices here, so the loss could be quite huge
 if you track it through, let's say, *mean squared error*. That metric
@@ -416,7 +457,28 @@ def rmse(y_true, y_pred):
     return K.sqrt(K.mean(K.square(y_pred - y_true)))
 ```
 
-#### Building a model
+## Building a model
+
+### Task 11: Build and Train a Regression Model with TensorFlow
+
+In this task, you will define a simple neural network regression model to predict housing prices. The model will consist of three hidden layers, and the final output layer will have a single node to predict the price.
+
+1. Build a Sequential model with the following architecture:
+
+- First hidden layer: 256 units with ReLU activation
+- Second hidden layer: 256 units with ReLU activation
+- Third hidden layer: 128 units with ReLU activation
+- Output layer: 1 unit (since you're predicting a single numerical value)
+
+2. Compile the model using the following parameters:
+
+- Loss function: rmse (Root Mean Squared Error, which you've defined earlier)
+- Optimizer: Adam
+- Metrics: rmse
+
+3. Train the model on the training data (X_train, y_train) for 100 epochs.
+
+**Solution:**
 
 And now you can finally declare a model. It will be a simple one, having
 just three hidden layers of 256, 256, and 128 units. Feel free to
@@ -459,7 +521,21 @@ The final RMSE value on the training set is just above 192000, which
 means that for an average house, the model is wrong in the price
 estimate by \$192000.
 
-### Making predictions
+## Making predictions
+
+### Task 12: Make Predictions and Convert to 1D Array
+
+In this task, you will make predictions on the test set (X_test) using the trained regression model, and then convert the predictions to a 1-dimensional array for further analysis.
+
+**Questions:**
+
+1. Use the model to make predictions on the test data (X_test).
+
+2. Convert the predictions from a 2D array to a 1D array using the ravel() function from Numpy.
+
+Write the code to make predictions and convert the result to a 1D array. Then, inspect the first 5 predictions
+
+**Solution:**
 
 You can make predictions on the test set:
 
@@ -487,7 +563,18 @@ Here are the results:
 ![Image 13 --- First 5 predictions as a 1D array (image by
 author)](./images/13.png)
 
-### Model evaluation
+## Model evaluation
+
+### Task 13: Evaluate the Model Using RMSE
+In this task, you'll evaluate the performance of your trained model by calculating the Root Mean Squared Error (RMSE) on the test set predictions.
+
+Questions:
+
+1. Use the custom rmse() function to evaluate the model's performance by comparing the true values (y_test) with the predicted values.
+
+2. Display the RMSE value to assess how well the model performs on the test set.
+
+**Solution:**
 
 And now let's evaluate the predictions on the test set by using RMSE:
 
