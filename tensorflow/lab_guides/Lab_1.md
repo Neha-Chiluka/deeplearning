@@ -30,19 +30,14 @@ Task 2: Dataset exploration and preparation
 Let us keep things simple today and stick with a well-known **Housing
 prices** dataset
 
-Use the below link to read the file in google collab. We will be reading the csv file directly in the code. You dont have to download anything!
+**Question 1:**
+Load the dataset from the given URL and display a random sample of 5 rows.
+
+**Solution:**
+
+Use the below link to read the file in google collab. 
 
 Use the dataset link - https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/data.csv
-
-Lets start with the below steps:
-
-1. Import Numpy and Pandas.
-2. Read the dataset. 
-3. df = pd.read_csv(file name)
-4. df.sample()
-
-The following snippet does that and also prints a random couple
-of rows:
 
 You can use the following code in the first cell .
 
@@ -53,7 +48,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/re
 df.sample(5)
 ```
 
-**After you enter the code click on shift and enter to run the code or you can click on the play button**
+**After you enter the code click on shift and enter to run the code or you can click on the play button**.
 
 Here's how the dataset looks like after you run the code.
 
@@ -64,6 +59,10 @@ You definitely can't pass it to a neural network in this format.
 
 ### Task 3: Deleting unnecessary columns
 
+Question 3:
+Remove the following unnecessary columns from the DataFrame: 'date', 'street', 'statezip', and 'country'. Keep only the relevant columns for analysis.
+
+Solution :
 Since we want to avoid spending too much time preparing the data, it's
 best to drop most of the non-numeric features. Keep only the `city`
 column, as it's simple enough to encode:
@@ -87,7 +86,22 @@ You definitely could keep all columns and do some feature engineering
 with them. It would likely increase the performance of the model. But
 even this will be enough for what you need today.
 
-### Feature engineering
+###  Task 4: Perform Feature engineering
+**Question 4 :**
+
+1. Calculate the age of the house using the yr_built column.
+
+2. Create a binary feature to indicate whether the house was renovated (yr_renovated is not 0).
+
+3. Create a feature to indicate whether the house was renovated in the last 10 years.
+
+4. Create a feature to indicate whether the house was renovated in the last 30 years.
+
+5. After creating these features, drop the original yr_built and yr_renovated columns.
+
+6. Write the code to complete these tasks using list comprehension, and display the first few rows of the modified DataFrame.
+
+**Solution:**
 
 Now you'll spend some time tweaking the dataset. The `yr_renovated`
 column sometimes has the value of 0. I assume that's because the house
@@ -119,7 +133,23 @@ Here's how the dataset looks now:
 ![Image 4 --- Dataset after feature engineering (1) (image by
 author)](./images/4-1.png)
 
-Let's handle the `city` column next. Many cities have only a couple of
+### Task 5: Remap City Values Based on Frequency.
+
+You are given a dataset where many cities have only a few houses listed. To reduce the number of unique city values, you need to create a function that will replace cities with fewer than 50 houses with the label 'Rare'. Apply this function to the city column and display a sample of 10 rows from the updated DataFrame.
+
+**Question 5 :**
+
+Write the code for the following steps:
+
+1. Define the remap_location() function.
+
+2. Apply the function to the city column to remap cities with fewer than 50 houses.
+
+3. Display a random sample of 10 rows from the modified DataFrame.
+
+**Solution:**
+
+Let's handle the `city` column. Many cities have only a couple of
 houses listed, so you can declare a function that will get rid of all
 city values that don't occur often. That's what the `remap_location()`
 function will do --- if there are less than 50 houses in that city, it's
@@ -155,7 +185,19 @@ author)](./images/6-1.png)
 
 Everything looks as it should, so let's continue.
 
-### Target variable visualization
+### Task 6: Visualize the Distribution of the Target Variable
+
+You are working with a housing dataset and need to visualize the distribution of the target variable, price. Since the target variable is unlikely to be normally distributed, you should use a histogram to inspect the distribution.
+
+**Question 6:**
+
+1. Import Matplotlib and set up the figure size and style for the plot.
+
+2. Plot a histogram of the price column using 100 bins.
+
+Write the code to complete these tasks and inspect the plot to understand the distribution of the price variable.
+
+**Solution:**
 
 Anytime you're dealing with prices, it's unlikely the target variable
 will be distributed normally. And this housing dataset is no exception.
@@ -176,6 +218,27 @@ Here's how it looks like:
 
 ![Image 7 --- Target variable histogram (1) (image by
 author)](./images/7-1.png)
+
+### Task 7: Handle Outliers in the Target Variable
+
+In this task, you'll deal with outliers in the price column by calculating Z-scores. The Z-score measures how many standard deviations a value is away from the mean. For a normal distribution, values beyond 3 standard deviations are considered outliers. In this case, you’ll remove these outliers and also handle houses listed for $0.
+
+**Question 7:**
+
+1. Calculate the Z-score for the price column and create a new column called price_z.
+
+2. Remove rows where the absolute value of the Z-score exceeds 3.
+
+3. Remove houses listed for $0.
+
+4. Drop the price_z column.
+
+5. Visualize the updated price distribution using a histogram.
+
+Write the code to perform these tasks and inspect the updated distribution of price.
+
+**Solution:**
+
 Outliers are definitely present, so let's handle them next. The pretty
 common thing to do is to calculate Z-scores. They let you know how many
 standard deviations a value is located from the mean. In the case of a
@@ -220,7 +283,25 @@ There's still a bit of skew present, but let's declare it *good enough*.
 As the last step, let's convert the data into a format ready for machine
 learning.
 
-### Data preparation for ML
+### Task 8: Prepare Data for Machine Learning
+
+In this task, you’ll prepare the dataset for machine learning by applying data scaling and one-hot encoding to the features. You’ll use Scikit-Learn’s make_column_transformer() to scale numerical features and encode categorical ones. Then, you’ll split the dataset into training and testing sets, apply the transformations, and convert the feature sets into a format suitable for TensorFlow.
+
+1. Use make_column_transformer() to:
+
+- Apply MinMaxScaler() to the numerical features: 'sqft_living', 'sqft_lot', 'sqft_above', 'sqft_basement', and 'house_age'.
+
+- Apply OneHotEncoder() to the categorical features: 'bedrooms', 'bathrooms', 'floors', 'view', and 'condition'.
+
+2. Split the dataset into features (X) and target (y), and then into training and testing sets. Use 80% of the data for training and 20% for testing.
+
+3. Fit and transform the training data, and apply the transformations to the test data.
+
+4. Convert the resulting sparse matrices into Numpy arrays using the toarray() method for both the training and testing feature sets.
+
+Write the code to perform these steps and prepare the dataset for training a machine learning model.
+
+**Solution:**
 
 A neural network likes to see only numerical data on the same scale. Our
 dataset isn't, and we also have some non-numerical data. That's where
