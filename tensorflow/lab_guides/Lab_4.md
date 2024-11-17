@@ -71,7 +71,7 @@ df.sample(5)
 author)](./images/2-4.png)
 
 ‌
-### Task - Data Preprocessing
+### Task 4 - Data Preprocessing
 
 #### Questions:
 
@@ -117,7 +117,7 @@ network architectures.
 
 How to approach optimizing neural network models?
 -------------------------------------------------
-### Task - Optimizing Neural Network Model Architecture
+### Task 5 - Optimizing Neural Network Model Architecture
 Define Network Architecture Parameters
 
 1. Set the following constants to define the architecture:
@@ -160,13 +160,15 @@ Here's what you'll see:‌
 ![Image 3 --- Node number possibilities (image by
 author)](./images/3-5.png)
 
-### Task - Generate Node Possibilities for Two Hidden Layers
+### Task 6 - Generate Node Possibilities for Two Hidden Layers
+
+#### Questions:
 
 1. Create two_layer_possibilities with two copies of node_options:
 2. Use itertools.product() to generate all possible combinations of nodes for the two layers:
 3. Print the result to verify all possible combinations.
 
-Solution:
+#### Solution:
 
 ‌Taking this logic to two hidden layers, you end up with the following
 possibilities:‌
@@ -222,7 +224,7 @@ don't think too much of it. Here's the output:‌
 ![Image 6 --- Number of nodes at each layer (image by
 author)](./images/6-4.png)
 
-### Task - Create and Inspect Neural Network Models
+### Task 7 - Create and Inspect Neural Network Models
 
 1. Create an empty list models to store the models.
 2. For each permutation in layer_node_permutations, initialize a new tf.keras.Sequential model.
@@ -241,10 +243,6 @@ row (`(12,)`). Then, we'll iterate over the items in a single
 permutation and add a `tf.keras.layers.Dense` layer to the model with
 the number of nodes set to the current value of the single permutation.
 Finally, we'll add a `tf.keras.layers.Dense` output layer.
-
-It's a good idea to set the name to the model, so it's easier to compare
-them later. We'll hardcode the input shape and the activation functions
-for no, and set these parts as dynamic in the next section.
 
 Here's the code:‌
 
@@ -275,17 +273,10 @@ models[0].summary()
 ![Image 7 --- Single model architecture (image by
 author)](./images/7-4.png)
 
-That's the logic we'll go with. There's a way to improve it, though, as
-it's not convenient to run dozens of notebook cells every time you want
-to run the optimization. It's also not the best idea to hardcode values
-for activation functions, input shape, and so on.
-
-For that reason, we'll declare a function for generating Sequential
-models next.
 
 Model generation function for optimizing neural networks
 --------------------------------------------------------
-### Task - Create Models with Dynamic Parameters
+### Task 8 - Create Models with Dynamic Parameters
 
 #### Questions:
 
@@ -364,9 +355,8 @@ writing yet another helper function.
 Model training function for optimizing neural networks
 ------------------------------------------------------
 
-### Task - Model Training for Optimization
+### Task 9 - Model Training for Optimization
 
-Define the optimize() Function
 
 1. Create optimize() to train models, evaluate performance metrics (accuracy, precision, recall, F1), and return results as a DataFrame.
 
@@ -449,7 +439,7 @@ And now, let's finally start the optimization.
 
 Running the optimization
 ------------------------
-### Task - Run Model Optimization and Analyze Results
+### Task 10 - Run Model Optimization and Analyze Results
 
 1. Start the optimization process by calling the optimize() function with all_models, X_train_scaled, y_train, X_test_scaled, and y_test.
 
@@ -487,7 +477,6 @@ optimization_results.sort_values(by='test_accuracy', ascending=False)
 
 ![Image 9 --- Model optimization results (image by
 author)](./images/9-5.png)
-
 
 
 ------------------------------------------------------------------------
