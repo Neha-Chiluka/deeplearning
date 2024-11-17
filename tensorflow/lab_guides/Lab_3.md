@@ -134,7 +134,7 @@ With that out of the way, let's see how to optimize the learning rate.
 
 How to optimize learning rate in TensorFlow
 -------------------------------------------
-### Task 3 - Optimizing the Learning Rate
+### Task 4 - Optimizing the Learning Rate
 
 In this task, you will explore how to optimize the learning rate in a model training process using TensorFlow.
 
@@ -152,7 +152,7 @@ import tensorflow as tf
 tf.random.set_seed(42)
 ```
 
-### Task 4 - Define and Train a Neural Network Model with Learning Rate Scheduler
+### Task 5 - Define and Train a Neural Network Model with Learning Rate Scheduler
 
 In this task, you will define a neural network model using TensorFlow, compile it, and train it with a learning rate schedule.
 
@@ -218,7 +218,7 @@ initial_history = initial_model.fit(
     ]
 )
 ```
-### Task 5 - Visualize Training Metrics: Loss, Accuracy, and Learning Rate
+### Task 6 - Visualize Training Metrics: Loss, Accuracy, and Learning Rate
 
 In this task, you will plot the training loss, accuracy, and learning rate for the initial_model over the 100 epochs.
 
@@ -287,7 +287,7 @@ Here's the chart:
 author)](./images/6.jpg)
 
 ## Plot Loss vs. Learning Rate
-### Task 6 - Analyze Learning Rate vs. Loss
+### Task 7 - Analyze Learning Rate vs. Loss
 
 **Question:**
 
@@ -328,19 +328,26 @@ Here's the chart:
 ![Image 7 --- Learning rate vs. loss (image by
 author)](./images/7.jpg)
 
-You'll generally want to select a learning rate that achieves the lowest
-loss, provided that the values around it aren't too volatile. Keep in
-mind that the X-axis is on a logarithmic scale. The optimal learning
-rate is around 0.007:
-
-![Image 8 --- Optimal learning rate (image by
-author)](./images/8.jpg)
-
-So let's train a model with a supposedly optimal learning rate and see
-if we can outperform the default one.
 
 Train a model with optimal learning rate
 ----------------------------------------
+### Task 8 - Train a Model with Optimal Learning Rate
+
+Define & Compile the Model
+
+1. Create a neural network with the following layers:
+- Dense layer (128 units, ReLU)
+- Dense layer (256 units, ReLU)
+- Dense layer (256 units, ReLU)
+- Output layer (1 unit, Sigmoid)
+- Use binary_crossentropy for the loss function.
+- Set the optimizer to Adam with a learning rate of 0.007.
+- Set the evaluation metric to BinaryAccuracy.
+- Train the Model
+
+2. Train the model for 100 epochs using X_train_scaled and y_train.
+
+**Solution:**
 
 With a learning rate of 0.007 in mind, let's write another neural
 network model. You won't need the LearningRateScheduler this time:
@@ -375,6 +382,19 @@ true, so it's likely our model is overfitting:
 
 ![](./images/9-3.png)
 
+
+## Visualize Accuracy vs. Loss
+
+### Task 9 - Monitor Training Progress (Accuracy vs. Loss)
+
+#### Questions:
+
+1. Use matplotlib to plot the loss and accuracy for each epoch during training.
+2. Plot the Loss and Accuracy
+3. Assess whether the model might be overfitting based on the accuracy and loss curves.
+
+#### Solution:
+
 It won't matter too much if we've managed to increase the performance on
 the test set, but you could save yourself some time by training the
 model for fewer epochs.
@@ -400,6 +420,20 @@ plt.legend()
 ![Image 10 --- Accuracy vs loss on the training set (image by
 author)](./images/10.jpg)
 
+### Make Predictions on the Test Set
+
+### Task 10 - Evaluate Model Predictions on the Test Set
+
+Questions:
+
+1. Use the trained model to predict outcomes for the test set
+2. Convert the predicted probabilities to binary classes (0 or 1) based on a threshold of 0.5
+3. Use accuracy_score() from sklearn.metrics to calculate the accuracy of the model on the test set:
+4. Use confusion_matrix() from sklearn.metrics to display the confusion matrix
+
+Solution:
+
+
 Let's finally calculate the predictions and evaluate them against the
 test set. Here's the code:
 
@@ -423,9 +457,5 @@ And here's the output:
 ![Image 11 --- Test set evaluation metrics (image by
 author)](./images/11-2.png)
 
-To summarize, optimizing the learning rate alone managed to increase the
-model accuracy by 3% on the test set. It might not sound huge, but it's
-an excellent trade-off for the amount of time it took. Moreover, it's
-only the first of many optimizations you can do to a neural network
-model, and it's one less hyperparameter you need to worry about.
+
 
