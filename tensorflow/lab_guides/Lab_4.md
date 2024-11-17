@@ -161,6 +161,7 @@ Here's what you'll see:‌
 author)](./images/3-5.png)
 
 ### Task - Generate Node Possibilities for Two Hidden Layers
+
 1. Create two_layer_possibilities with two copies of node_options:
 2. Use itertools.product() to generate all possible combinations of nodes for the two layers:
 3. Print the result to verify all possible combinations.
@@ -221,6 +222,19 @@ don't think too much of it. Here's the output:‌
 ![Image 6 --- Number of nodes at each layer (image by
 author)](./images/6-4.png)
 
+### Task - Create and Inspect Neural Network Models
+
+1. Create an empty list models to store the models.
+2. For each permutation in layer_node_permutations, initialize a new tf.keras.Sequential model.
+3. Add an InputLayer to the model with input shape (12,).
+4. Iterate over the nodes in the current permutation and add a Dense layer with the specified number of nodes and ReLU activation
+5. Add a final Dense output layer with 1 node and sigmoid activation.
+6. Set a dynamic name for the model based on the number of nodes in each hidden layer (e.g., dense64_dense128_).
+7. Append the created model to the models list.
+6. Use models[0].summary() to inspect the architecture of the first model in the list.
+
+#### Solution:
+
 We'll create a new `tf.keras.Sequential` model at each iteration and add
 a `tf.keras.layers.InputLayer` to it with a shape of a single training
 row (`(12,)`). Then, we'll iterate over the items in a single
@@ -271,6 +285,25 @@ models next.
 
 Model generation function for optimizing neural networks
 --------------------------------------------------------
+### Task - Create Models with Dynamic Parameters
+
+#### Questions:
+
+1. Implement get_models() to generate models with customizable layers, nodes, and activation functions.
+
+
+2. Use itertools.product() to create all possible combinations of nodes for each layer.
+
+
+3. Create models based on node permutations, adding layers and setting dynamic names.
+
+
+4. Call get_models() with parameters for 3 hidden layers, node range 64-256, and input shape (12,).
+
+
+5. Inspect the all_models list to check the generated models' architecture.
+
+#### Solution:
 
 The function accepts a lot of parameters but doesn't contain anything we
 didn't cover previously. It gives you the option to change the input
@@ -330,6 +363,22 @@ writing yet another helper function.
 
 Model training function for optimizing neural networks
 ------------------------------------------------------
+
+### Task - Model Training for Optimization
+
+Define the optimize() Function
+
+1. Create optimize() to train models, evaluate performance metrics (accuracy, precision, recall, F1), and return results as a DataFrame.
+
+2. Inside optimize(), compile each model, fit it on the training data, and make predictions on the test set.
+
+3. For each model, calculate accuracy, precision, recall, and F1 score using the test set predictions.
+
+4. Collect the evaluation metrics for all models and return them as a Pandas DataFrame.
+
+5. Call optimize() with the list of models, training, and testing data to get performance metrics.
+
+#### Solution:
 
 This one accepts the list of models, training and testing data, and
 optionally a number of epochs and the verbosity level. It's advised to
@@ -400,6 +449,14 @@ And now, let's finally start the optimization.
 
 Running the optimization
 ------------------------
+### Task - Run Model Optimization and Analyze Results
+
+1. Start the optimization process by calling the optimize() function with all_models, X_train_scaled, y_train, X_test_scaled, and y_test.
+
+2. Sort the optimization results by accuracy in descending order to identify the best-performing model:
+
+
+#### Solution:
 
 Keep in mind --- the optimization will take some time, as we're training
 64 models for 50 epochs. Here's how to start the process:‌
@@ -420,9 +477,6 @@ printed the following:‌
 ![Image 8 --- Optimization output (image by
 author)](./images/8-4.png)
 
-You're seeing this output because of the `print()` statement in the
-`optimize()` function. It's there to give you a sense of the progress.
-
 We now have a DataFrame we can sort either by accuracy, precision,
 recall, or F1. Here's how to sort it by accuracy in descending order, so
 the model with the highest value is displayed first:‌
@@ -434,35 +488,7 @@ optimization_results.sort_values(by='test_accuracy', ascending=False)
 ![Image 9 --- Model optimization results (image by
 author)](./images/9-5.png)
 
-It looks like the simplest model resulted in the best accuracy. You
-could also test the optimization for models with two and four hidden
-layers, or even more, but I'll leave that up to you. It's just a matter
-of calling the `get_models()` function and passing in different
-parameter values.
 
-And that's all I wanted to cover today. Let's wrap things up next.‌
 
 ------------------------------------------------------------------------
-
-Parting words
--------------
-
-Finding an optimal neural network architecture for your dataset boils
-down to one thing and one thing only --- experimentation. It's quite
-tedious to train and evaluate hundreds of models by hand, so the two
-functions you've seen today can save you some time. You still need to
-wait for the models to train, but the entire process is fast on this
-dataset.
-
-A good way to proceed from here is to pick an architecture you find best and [tune the learning rate].
-
-Things get a lot more complicated and the training times get longer if
-you're dealing with image data and convolutional layers. That's what the
-next lab will cover --- we'll start diving into computer vision and
-train a simple convolutional neural network. Don't worry, it won't be on
-the MNIST dataset.
-
-*How do you approach optimizing feed-forward neural networks? Is it
-something similar, or are you using a dedicated AutoML library?* Please
-let me know in the comment section below.‌
 
