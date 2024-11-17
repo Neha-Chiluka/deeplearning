@@ -1,5 +1,5 @@
 
-How to Optimize Learning Rate with TensorFlow --- It's Easier Than You Think 
+Lab 3 - How to Optimize Learning Rate with TensorFlow --- It's Easier Than You Think (Wine Quality Dataset)
 ============================================================================
 
 
@@ -22,15 +22,21 @@ installed to follow along.
 
 
 
-
-
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
-
 ------------------------------------------------------------------------
+### Task 2 -  Import and Preview the Wine Quality Dataset
 
-Dataset used and data preprocessing
------------------------------------
+In this task, you will import the wine quality dataset and preview a random sample of the data.
+
+Questions:
+
+1. Import necessary libraries (os, numpy, pandas, and warnings).
+Set environment variables to suppress TensorFlow logs and warnings.
+
+2. Load the dataset into a DataFrame using pd.read_csv().
+
+3. Print a random sample of 5 rows from the dataset using the sample() method to get an idea of how the data looks.
+
+Solution:
 
 I don't plan to spend much time here. We'll use the same dataset as in
 the [previous lab] --- the
@@ -63,21 +69,29 @@ Here's how the dataset looks like:
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-3.png)
 
+### Task 3: Data Preprocessing for Binary Classification
+
+In this task, you will preprocess the wine quality dataset to prepare it for binary classification. The dataset is initially rated on a scale, but we will convert it into a binary classification problem where wines are classified as "good" or "bad."
+
+1. Drop rows with missing values from the dataset since there are only a few missing values and we won't use imputation.
+
+2. The type column indicates whether a wine is white or red. You need to convert this categorical feature into a binary feature (is_white_wine), where:
+
+3. The quality column contains the wine rating on a scale from 3 to 9. You need to:
+
+- Declare wines with a quality of 6 or higher as "good" (1)
+- Declare wines with a quality lower than 6 as "bad" (0)
+- Drop the quality column after conversion.
+
+4. Train/Test Split: Split the dataset into training and testing sets using an 80:20 ratio. The target variable will be is_good_wine, and the remaining features will be used for the input.
+
+5. Use the StandardScaler to scale the features so that they are on the same scale. This is important because features like total sulfur dioxide and citric acid have different value ranges.
+
+**Solution:**
+
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
 on a scale. We'll address that now, with a bunch of other things:
-
--   **Delete missing values** --- There's only a handful of them so we
-    won't waste time on imputation.
--   **Handle categorical features** --- The only one is `type`,
-    indicating whether the wine is white or red.
--   **Convert to a binary classification task** --- We'll declare any
-    wine with a grade of 6 and above as *good*, and anything below as
-    *bad*.
--   **Train/test split** --- A classic 80:20 split.
--   **Scale the data** --- The scale between predictors differs
-    significantly, so we'll use the `StandardScaler` to bring the values
-    closer.
 
 Here's the entire data preprocessing code snippet:
 
@@ -120,14 +134,17 @@ With that out of the way, let's see how to optimize the learning rate.
 
 How to optimize learning rate in TensorFlow
 -------------------------------------------
+### Task 3 - Optimizing the Learning Rate
 
-Optimizing the learning rate is easy once you get the gist of it. The
-idea is to start small --- let's say with 0.001 and increase the value
-every epoch. You'll get terrible accuracy when training the model, but
-that's expected. Don't even mind it, as we're only interested in how the
-*loss* changes as we change the learning rate.
+In this task, you will explore how to optimize the learning rate in a model training process using TensorFlow.
 
-Let's start by importing TensorFlow and setting the seed so you can
+**Question:**
+
+1. Import the TensorFlow library and set the random seed to 42 to ensure reproducibility of results.
+
+**Solution:**
+
+Let us start by importing TensorFlow and setting the seed so you can
 reproduce the results:
 
 ``` {.language-python}
@@ -135,14 +152,37 @@ import tensorflow as tf
 tf.random.set_seed(42)
 ```
 
-We'll train the model for 100 epochs to test 100 different loss/learning
-rate combinations. Here's the range for the learning rate values:
+### Task 4 - Define and Train a Neural Network Model with Learning Rate Scheduler
 
-![Image 4 --- Range of learning rate values (image by
-author)](./images/4-3.png)
+In this task, you will define a neural network model using TensorFlow, compile it, and train it with a learning rate schedule.
 
-A learning rate of 0.001 is the default one for, let's say, Adam
-optimizer, and 2.15 is definitely too large.
+**Questions-**
+
+1. Create a sequential model using tf.keras.Sequential().
+- Add the following layers to the model:
+- A Dense layer with 128 units and ReLU activation function.
+- A Dense layer with 256 units and ReLU activation function.
+- A second Dense layer with 256 units and ReLU activation function.
+- A final Dense layer with 1 unit and Sigmoid activation function (since this is a binary classification task).
+
+2. Compile the model with binary_crossentropy as the loss function, Adam as the optimizer, and BinaryAccuracy as the evaluation metric.
+
+
+3. Use the LearningRateScheduler callback to adjust the learning rate during training.
+
+4. Define a lambda function to change the learning rate every epoch. 
+
+
+5. Train the model using the .fit() method, specifying the following parameters:
+
+- X_train_scaled: the scaled training data (input features).
+- y_train: the training labels (target values).
+- Set epochs=100 to run the training for 100 epochs.
+- Include the LearningRateScheduler callback to adjust the learning rate as specified.
+
+6. Use the .history attribute to access and analyze the loss and accuracy values for each epoch, and optionally plot these metrics to visualize training performance.
+
+**Solution**
 
 Next, let's define a neural network model architecture, compile the
 model, and train it. The only new thing here is the
@@ -178,7 +218,31 @@ initial_history = initial_model.fit(
     ]
 )
 ```
+### Task 5 - Visualize Training Metrics: Loss, Accuracy, and Learning Rate
 
+In this task, you will plot the training loss, accuracy, and learning rate for the initial_model over the 100 epochs.
+
+**Questions:**
+
+1. After training the model for 100 epochs, the initial_history object contains the loss, accuracy, and learning rate for each epoch.
+
+- Use matplotlib to plot the following metrics:
+
+- Loss: Shows how the model's error evolves over time.
+
+- Accuracy: Tracks how the model's accuracy changes during training.
+
+- Learning Rate: Displays the exponential adjustment in learning rate as specified by the LearningRateScheduler.
+
+**Solution:**
+
+Set the plot title as 'Evaluation Metrics' and adjust the font size.
+Label the x-axis as 'Epoch' and set the font size for the label.
+Add a legend to the plot to differentiate between loss, accuracy, and learning rate.
+Display the Plot
+
+After plotting the data, use plt.legend() to show the labels for each line (Loss, Accuracy, and Learning Rate).
+Display the plot to visualize the training process and how the loss, accuracy, and learning rate evolve over time.
 The training will start now and you'll see a decent accuracy
 immediately --- around 75% --- but it will drop after 50-something
 epochs because the learning rate became too large. After 100 epochs, the
@@ -221,6 +285,24 @@ Here's the chart:
 
 ![Image 6 --- Loss vs. accuracy vs. learning rate (image by
 author)](./images/6.jpg)
+
+## Plot Loss vs. Learning Rate
+### Task 6 - Analyze Learning Rate vs. Loss
+
+**Question:**
+
+Define learning rates: learning_rates = 1e-3 * (10 ** (np.arange(100) / 30)).
+Use plt.semilogx() to plot loss vs. learning rate on a logarithmic scale.
+
+
+1. Identify the learning rate with the minimum loss and minimal volatility.
+2. Determine Optimal Learning Rate
+4. Choose the learning rate around 0.007, where loss is lowest and stable.
+5. Compare with Default Learning Rate
+
+7. Train the model with the optimal learning rate and compare the performance to the default rate.
+
+**Solution:**
 
 The accuracy dipped significantly around epoch 50 and flattened for a
 while, before starting to dip further. The exact opposite happened to
