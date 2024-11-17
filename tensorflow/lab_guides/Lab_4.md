@@ -1,6 +1,5 @@
 
-
-How to Find Optimal Neural Network Architecture with TensorFlow --- The Easy Way 
+Lab 4 - How to Find Optimal Neural Network Architecture with TensorFlow --- The Easy Way 
 ================================================================================
 
 
@@ -22,8 +21,6 @@ network architectures given specific parameters and the other one for
 finding the optimal architecture.
 
 
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).‌
 
 ------------------------------------------------------------------------
 
@@ -32,12 +29,21 @@ Dataset used and data preprocessing
 
 I don't plan to spend much time here. We'll use the same dataset as in
 the [previous lab] --- the
-[wine quality
-dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
-Kaggle:‌
 
-![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./images/1-4.png)
+### Import Necessary Libraries & Dataset
+### Task 2 - Import and Preview the Wine Quality Dataset
+
+
+
+1. Import the following libraries:
+- os, numpy, pandas, tensorflow, itertools, warnings, and sklearn.metrics (for evaluation metrics like accuracy, precision, recall, and F1 score).
+2. Set the random seed for TensorFlow to ensure reproducibility:
+3. Suppress TensorFlow logging messages and warnings:
+4. Read the dataset from a CSV file (winequalityN.csv) using pandas.read_csv() and assign it to a DataFrame (df).
+5. Display a random sample of 5 rows from the DataFrame using df.sample(5) to understand the structure of the dataset.
+
+
+#### Solution:
 
 You can use the following code to import it to Python and print a random
 couple of rows:‌
@@ -60,29 +66,24 @@ df = pd.read_csv('data/winequalityN.csv')
 df.sample(5)
 ```
 
-We're ignoring the warnings and changing the default TensorFlow log
-level just so we don't get overwhelmed with the output.
-
-Here's how the dataset looks like:‌
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-4.png)
 
-‌The dataset is mostly clean, but isn't designed for binary
-classification by default (good/bad wine). Instead, the wines are rated
-on a scale. We'll address that now, with numerous other things:
+‌
+### Task - Data Preprocessing
 
--   ****Delete missing values**** --- There's only a handful of them, so
-    we won't waste time on imputation.
--   ****Handle categorical features**** --- The only one is `type`,
-    indicating whether the wine is white or red.
--   ****Convert to a binary classification task**** --- We'll declare
-    any wine with a grade of 6 and above as *good*, and anything below
-    as *bad*.
--   ****Train/test split**** --- A classic 80:20 split.
--   ****Scale the data**** --- The scale between predictors differs
-    significantly, so we'll use the `StandardScaler` to bring the values
-    closer.
+#### Questions:
+
+1. Drop rows with missing values from the DataFrame using df.dropna().
+2. Create a new column is_white_wine that is 1 if the wine type is "white" and 0 otherwise.
+3. Create another column is_good_wine that is 1 if the wine quality is greater than or equal to 6, and 0 otherwise.
+4. Drop the type and quality columns from the dataset using df.drop(), as they are no longer needed after feature engineering.
+5. Split the dataset into features (X) and target (y), where y is the is_good_wine column.
+6. Split the data into training and test sets using train_test_split(), with 80% for training and 20% for testing.
+7. Apply StandardScaler to scale the training and test features (X_train and X_test) so that they have a mean of 0 and a standard deviation of 1.
+
+#### Solution:
 
 Here's the entire data preprocessing code snippet:‌
 
@@ -116,6 +117,18 @@ network architectures.
 
 How to approach optimizing neural network models?
 -------------------------------------------------
+### Task - Optimizing Neural Network Model Architecture
+Define Network Architecture Parameters
+
+1. Set the following constants to define the architecture:
+- num_layers: Set to 3 (indicating 3 hidden layers).
+- min_nodes_per_layer: Set to 64 (minimum number of nodes per layer).
+- max_nodes_per_layer: Set to 256 (maximum number of nodes per layer).
+- node_step_size: Set to 64 (the step size between nodes).
+2. Create a list of possible node numbers per layer using the range() function. This list will contain values between min_nodes_per_layer and max_nodes_per_layer, with a step size of node_step_size.
+3. Print the node_options list to verify the possible values for the number of nodes in each hidden layer.
+
+#### Solution:
 
 The approach to finding the optimal neural network model will have some
 tweakable constants. Today's network will have 3 hidden layers, with a
@@ -146,6 +159,13 @@ Here's what you'll see:‌
 
 ![Image 3 --- Node number possibilities (image by
 author)](./images/3-5.png)
+
+### Task - Generate Node Possibilities for Two Hidden Layers
+1. Create two_layer_possibilities with two copies of node_options:
+2. Use itertools.product() to generate all possible combinations of nodes for the two layers:
+3. Print the result to verify all possible combinations.
+
+Solution:
 
 ‌Taking this logic to two hidden layers, you end up with the following
 possibilities:‌
