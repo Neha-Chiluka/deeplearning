@@ -1,46 +1,26 @@
 
 
-TensorFlow Callbacks --- How to Monitor Neural Network Training Like a Pro 
+Lab 5 - TensorFlow Callbacks --- How to Monitor Neural Network Training Like a Pro 
 ==========================================================================
 
 
-
-#### Top 4 TensorFlow callbacks to implement in your next deep learning project
-
-Training deep learning models can take days or weeks, but how long is
-long enough? Your model likely won't be learning after some point, and
-continuing the training session costs you both time and money.
-
-Picture this --- you're training a large image recognition model for
-many epochs, and hope to get a usable model. After a couple of dozens of
-epochs, the loss isn't decreasing, and the accuracy isn't increasing.
-Training for longer without tweaking the parameters first is, you've
-guessed it, a waste of time.
-
-Thankfully, there's a solution, and it's built into TensorFlow API. It's
-named *callbacks* and represents special functions executed **during**
-model training. You can use them to save models, save training logs,
-reduce the learning rate if the model is stuck, and much more.
-
-
-
-
-
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
-
 ------------------------------------------------------------------------
 
-Dataset used and data preprocessing
------------------------------------
+### Task 2 - Import Data and Preview Sample
 
-I don't plan to spend much dealing with data today. We'll use the same
-dataset as in the previous labs --- the [wine quality
-dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
-Kaggle:
+#### Questions:
 
-![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./images/1-5.png)
+1. Import os, numpy, pandas, and warnings to set up the environment for working with TensorFlow and suppress warnings.
+
+2. Set TF_CPP_MIN_LOG_LEVEL to '2' to suppress TensorFlow logs, keeping the output clean.
+
+3. Use warnings.filterwarnings('ignore') to suppress unnecessary warnings during execution.
+
+4. Load the wine quality dataset.
+5. Display a random sample of 5 rows from the dataset using the sample() method
+
+
+#### Solution:
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -65,21 +45,27 @@ Here's how the dataset looks like:
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-5.png)
 
+### Task 3 - Data Preprocessing for Model Training
+
+1. Remove rows with missing values using df.dropna().
+
+2. Add a new column is_white_wine with a value of 1 for white wines and 0 for red wines based on the type column.
+
+
+3. Add a new column is_good_wine with a value of 1 for wines with a quality score of 6 or higher, and 0 for lower-quality wines.
+
+4. Drop the type and quality columns from the DataFrame using df.drop().
+
+5. Split the dataset into features (X) and target (y) where X excludes the is_good_wine column, and y is the is_good_wine column.
+6. Use train_test_split() to split the data into training and testing sets (80% train, 20% test).
+
+7. Scale the features using StandardScaler. Fit and transform X_train and transform X_test with the scaler.
+
+#### Solution:
+
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
 on a scale. We'll address that now, with numerous other things:
-
--   **Delete missing values** --- There's only a handful of them, so we
-    won't waste time on imputation.
--   **Handle categorical features** --- The only one is `type`,
-    indicating whether the wine is white or red.
--   **Convert to a binary classification task** --- We'll declare any
-    wine with a grade of 6 and above as *good*, and anything below as
-    *bad*.
--   **Train/test split** --- A classic 80:20 split.
--   **Scale the data** --- The scale between predictors differs
-    significantly, so we'll use the `StandardScaler` to bring the values
-    closer.
 
 Here's the entire data preprocessing code snippet:
 
@@ -110,18 +96,18 @@ X_test_scaled = scaler.transform(X_test)
 With that out of the way, let's see how to approach declaring callbacks
 in TensorFlow.
 
-### Declaring callbacks with TensorFlow
-
-If you've read my previous lab on [optimizing the learning rate with TensorFlow],
-you already know how callbacks work. Basically, you'll include them in
-the `fit()` function. There's no one stopping you from declaring a list
-of callbacks beforehand, just to keep the training function extra clean.
-
-TensorFlow has a bunch of callbacks built-in. You can also write custom
-callback functions, but that's a topic for another time. I use only four
-built-in callbacks for most projects.
 
 ### ModelCheckpoint
+### Task 4 - Implement ModelCheckpoint Callback
+
+#### Questions:
+
+1. Create a ModelCheckpoint callback to monitor the val_accuracy during training. The model will be saved only if it outperforms the previous one based on validation accuracy.
+
+2. Save the model as an hdf5 file with the filename containing the epoch number and validation accuracy.
+
+
+#### Solution:
 
 You can use this one to save the model locally on the current epoch if
 it beats the performance obtained on the previous one. The performance
@@ -152,14 +138,21 @@ validation set.
 
 ### ReduceLROnPlateau
 
+### Task 5 - Implement ReduceLROnPlateau Callback
+
+#### Questions:
+
+1. Create a ReduceLROnPlateau callback to monitor val_loss during training. This callback will reduce the learning rate if validation loss does not improve for a specified number of epochs (patience).
+2. Set the factor to 0.1 to reduce the learning rate by a factor of 10, and set the patience to 10 epochs.
+3. Ensure the learning rate never goes below a minimum value using the min_lr argument.
+
+#### Solution:
+
 If a value of the evaluation metric doesn't change for several epochs,
 `ReduceLROnPlateau` reduces the learning rate. For example, if
 validation loss didn't decrease for 10 epochs, this callback tells
 TensorFlow to reduce the learning rate.
 
-The new learning rate is calculated as the old learning rate multiplied
-by a user-defined factor. So, if the old learning rate is 0.01, and the
-factor is 0.1, the new learning rate is 0.01 \* 0.1 = 0.001.
 
 Here's how to declare it:
 
@@ -179,6 +172,16 @@ learning rate by a factor of 0.1 if the validation loss didn't decrease
 in the last 10 epochs. The learning rate will never go below 0.00001.
 
 ### EarlyStopping
+### Task 1 - Implement EarlyStopping Callback
+
+
+1. Create an EarlyStopping callback to stop training if the validation accuracy doesn't improve by at least min_delta (0.001) over a specified number of epochs (patience=10).
+
+2. Monitor val_accuracy and set mode='max' to stop when the metric stops increasing.
+
+3. Add cb_earlystop to the callbacks argument in the fit() method to stop the training process when the validation accuracy plateaus.
+
+#### Solution:
 
 If a metric doesn't change by a minimum delta in a given number of
 epochs, the `EarlyStopping` callback kills the training process. For
@@ -200,6 +203,16 @@ cb_earlystop = tf.keras.callbacks.EarlyStopping(
 There's not much to it --- it's simple but extremely useful.
 
 ### CSVLogger
+### Task 6 - Implement CSVLogger Callback
+
+
+#### Questions:
+
+1. Create a CSVLogger callback to log training and validation metrics into a CSV file for later analysis.
+
+2. Add cb_csvlogger to the callbacks argument in the fit() method to store the training history into a CSV file, which includes metrics like loss, accuracy, precision, recall, etc.
+
+#### Solution:
 
 The `CSVLogger` callback captures model training history and dumps it
 into a CSV file. It's useful for analyzing the performance later, and
