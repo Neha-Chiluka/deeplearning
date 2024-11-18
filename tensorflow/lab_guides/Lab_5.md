@@ -172,7 +172,7 @@ learning rate by a factor of 0.1 if the validation loss didn't decrease
 in the last 10 epochs. The learning rate will never go below 0.00001.
 
 ### EarlyStopping
-### Task 1 - Implement EarlyStopping Callback
+### Task 6 - Implement EarlyStopping Callback
 
 
 1. Create an EarlyStopping callback to stop training if the validation accuracy doesn't improve by at least min_delta (0.001) over a specified number of epochs (patience=10).
@@ -203,8 +203,7 @@ cb_earlystop = tf.keras.callbacks.EarlyStopping(
 There's not much to it --- it's simple but extremely useful.
 
 ### CSVLogger
-### Task 6 - Implement CSVLogger Callback
-
+### Task 7 - Implement CSVLogger Callback
 
 #### Questions:
 
@@ -235,6 +234,18 @@ model with these callbacks next.
 
 Training a model with TensorFlow callbacks
 ------------------------------------------
+
+
+### Task 10: Model Definition and Compilation
+1. Define a neural network with 3 hidden layers (64 neurons, ReLU) and 1 output neuron (sigmoid).
+2. Compile the model with binary crossentropy loss, Adam optimizer, and BinaryAccuracy metric.
+3. Save the model when validation accuracy improves.
+4. Reduce learning rate if validation loss doesn't improve after 10 epochs.
+5. Stop training if validation accuracy doesn't improve by 0.001 for 10 epochs.
+6.  Log training history to a CSV file.
+7.  Train Model with Callbacks - Train the model for 1000 epochs.
+
+#### Solution:
 
 It's a common practice in deep learning to split the dataset into
 training, validation, and test set. We did a two-way split, so for
