@@ -1,6 +1,6 @@
 
 
-How to Write Custom TensorFlow Callbacks --- The Easy Way 
+Lab 6 - How to Write Custom TensorFlow Callbacks --- The Easy Way 
 =========================================================
 
 
@@ -27,16 +27,21 @@ You can download the source code on
 
 ------------------------------------------------------------------------
 
-### Dataset used and data preprocessing
+### Task 2 - Import Data and Preview Sample
 
-I don't plan to spend much dealing with data today. We'll use the same
-dataset as in the previous labs --- the [wine quality
-dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
-Kaggle. It's an open source dataset licensed under Database Contents
-License:
+#### Questions:
 
-![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./images/1-6.png)
+1. Import os, numpy, pandas, and warnings to set up the environment for working with TensorFlow and suppress warnings.
+
+2. Set TF_CPP_MIN_LOG_LEVEL to '2' to suppress TensorFlow logs, keeping the output clean.
+
+3. Use warnings.filterwarnings('ignore') to suppress unnecessary warnings during execution.
+
+4. Load the wine quality dataset.
+5. Display a random sample of 5 rows from the dataset using the sample() method
+
+
+#### Solution:
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -59,23 +64,29 @@ level just so we don't get overwhelmed with the output.
 Here's how the dataset looks like:
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
-author)](./images/2-6.png)
+author)](./images/2-5.png)
+
+### Task 3 - Data Preprocessing for Model Training
+
+1. Remove rows with missing values using df.dropna().
+
+2. Add a new column is_white_wine with a value of 1 for white wines and 0 for red wines based on the type column.
+
+
+3. Add a new column is_good_wine with a value of 1 for wines with a quality score of 6 or higher, and 0 for lower-quality wines.
+
+4. Drop the type and quality columns from the DataFrame using df.drop().
+
+5. Split the dataset into features (X) and target (y) where X excludes the is_good_wine column, and y is the is_good_wine column.
+6. Use train_test_split() to split the data into training and testing sets (80% train, 20% test).
+
+7. Scale the features using StandardScaler. Fit and transform X_train and transform X_test with the scaler.
+
+#### Solution:
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
 on a scale. We'll address that now, with numerous other things:
-
--   **Delete missing values** --- There's only a handful of them, so we
-    won't waste time on imputation.
--   **Handle categorical features** --- The only one is `type`,
-    indicating whether the wine is white or red.
--   **Convert to a binary classification task** --- We'll declare any
-    wine with a grade of 6 and above as *good*, and anything below as
-    *bad*.
--   **Train/test split** --- A classic 80:20 split.
--   **Scale the data** --- The scale between predictors differs
-    significantly, so we'll use the `StandardScaler` to bring the values
-    closer.
 
 Here's the entire data preprocessing code snippet:
 
@@ -104,11 +115,26 @@ X_test_scaled = scaler.transform(X_test)
 ```
 
 
+
 With that out of the way, let's see how to approach declaring callbacks
 in TensorFlow.
 
-Write a model training function
+model training function
 -------------------------------
+
+### Task 4 - Write a model training function
+
+#### Questions:
+
+1. Create a function build_and_train that accepts callbacks and num_epochs as parameters.
+2. Define a model inside the function with three hidden layers of 64 nodes each and a sigmoid output layer.
+3. Compile the model with binary_crossentropy loss, Adam optimizer, and BinaryAccuracy metric.
+4. Train the model using X_train_scaled and y_train, and use X_test_scaled and y_test for validation.
+5. Set the verbosity to 0 during training and pass the callbacks list to the fit function.
+6. Return the trained model after fitting.
+7. Call the build_and_train function with a list of callbacks and a chosen number of epochs.
+
+#### Solution:
 
 Let's make our lives somewhat easier by writing a function that builds,
 compiles, and trains the model. You can continue without it, but you'll
@@ -158,6 +184,25 @@ out of the way, let's write our first callback.
 
 Write a basic custom TensorFlow callback
 ----------------------------------------
+
+1. Create a custom callback class that extends tf.keras.callbacks.Callback. Define a constructor that initializes time_started and time_finished to None.
+
+
+2. In the custom callback class, implement the on_train_begin() method. This method should set time_started to the current time and print a message indicating when the training started.
+
+
+3. In the custom callback class, implement the on_train_end() method. This method should set time_finished to the current time, calculate the training duration, and print the final training and validation metrics (loss, accuracy).
+
+
+4. Use the custom callback by passing it to the callbacks parameter of the build_and_train() function and train the model for the default 5 epochs.
+
+
+5. Ensure the custom callback displays information about the start and end of training, including the duration, training loss, training accuracy, validation loss, and validation accuracy.
+
+
+6. Modify the custom callback to print the training and validation metrics at the end of each epoch, showing how the model's performance changes over time.
+
+#### Solution:
 
 Every custom TensorFlow callback class must extend the
 `tf.keras.callbacks.Callback` class. It gives you access to many class
@@ -223,6 +268,24 @@ It's a decent start, but we don't see what happens at each epoch. Let's
 change that next.
 
 ### Modify epoch behavior with custom TensorFlow callbacks
+
+
+1. Modify the custom callback class to include a new variable time_curr_epoch to track the start time of each epoch.
+
+
+2. In the custom callback class, implement the on_epoch_begin() method. This method should set the time_curr_epoch variable to the current time at the start of each epoch.
+
+
+3. Implement the on_epoch_end() method to calculate and print the epoch duration, as well as training loss, accuracy, validation loss, and validation accuracy for each epoch.
+
+
+4. Ensure that each epoch prints the epoch number, epoch runtime, training metrics (loss, accuracy), and validation metrics (loss, accuracy) using f-strings.
+
+
+5. Use the modified custom callback in the callbacks parameter of the build_and_train() function and train the model, verifying that the new epoch logs are printed at the end of each epoch.
+
+
+Solution:
 
 You can modify what happens at the start and end of each epoch in the
 same way. We'll print the epoch number, epoch duration, training loss
@@ -299,6 +362,27 @@ Neat, right? The story doesn't end here. Let's see how to visualize the
 model performance after the training completes next.
 
 ### Visualize model performance with custom TensorFlow callbacks
+
+#### Questions:
+
+1. 
+Modify the custom callback constructor to include variables for tracking the number of epochs and lists for storing training loss, accuracy, validation loss, and validation accuracy.
+
+2. 
+Create a private method _plot_model_performance() in the custom callback class. This method should generate two plots: one for training and validation loss, and another for training and validation accuracy over epochs.
+
+3. 
+In the on_epoch_end() method, increment the epoch counter and append the training and validation loss/accuracy values to the corresponding lists.
+
+4. 
+In the on_train_end() method, call the _plot_model_performance() function to generate the plots once the training is complete.
+
+5. 
+Train the model for 50 epochs using the build_and_train() function with the custom callback, and verify that performance metrics are printed at the end of each epoch, along with the generated plots at the end of training.
+
+#### Solution:
+
+
 
 Plotting training and validation metrics immediately tells you if the
 model is stuck or overfitting, and when it's the right time to stop the
