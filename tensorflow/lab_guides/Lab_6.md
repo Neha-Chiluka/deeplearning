@@ -1,9 +1,6 @@
 
-
 Lab 6 - How to Write Custom TensorFlow Callbacks --- The Easy Way 
 =========================================================
-
-
 
 #### Do you find built-in TensorFlow callbacks limiting? Here's a solution you've been looking for 
 
@@ -18,12 +15,6 @@ prints evaluation metrics on the test set after the training is
 complete, and also plots training loss vs. validation loss and training
 accuracy vs. validation accuracy at each epoch.
 
-
-
-
-
-You can download the source code on
-[GitHub](https://github.com/fenago/deeplearning/tree/main/tensorflow).
 
 ------------------------------------------------------------------------
 
@@ -182,24 +173,14 @@ def build_and_train(callbacks: list, num_epochs: int = 5) -> tf.keras.Sequential
 It should feel familiar if you know the basics of TensorFlow. With that
 out of the way, let's write our first callback.
 
-Write a basic custom TensorFlow callback
+### Task 5 - Write a basic custom TensorFlow callback
 ----------------------------------------
 
 1. Create a custom callback class that extends tf.keras.callbacks.Callback. Define a constructor that initializes time_started and time_finished to None.
-
-
 2. In the custom callback class, implement the on_train_begin() method. This method should set time_started to the current time and print a message indicating when the training started.
-
-
 3. In the custom callback class, implement the on_train_end() method. This method should set time_finished to the current time, calculate the training duration, and print the final training and validation metrics (loss, accuracy).
-
-
 4. Use the custom callback by passing it to the callbacks parameter of the build_and_train() function and train the model for the default 5 epochs.
-
-
 5. Ensure the custom callback displays information about the start and end of training, including the duration, training loss, training accuracy, validation loss, and validation accuracy.
-
-
 6. Modify the custom callback to print the training and validation metrics at the end of each epoch, showing how the model's performance changes over time.
 
 #### Solution:
@@ -267,7 +248,7 @@ author)](./images/3-7.png)
 It's a decent start, but we don't see what happens at each epoch. Let's
 change that next.
 
-### Modify epoch behavior with custom TensorFlow callbacks
+### Task 6 : Modify epoch behavior with custom TensorFlow callbacks
 
 
 1. Modify the custom callback class to include a new variable time_curr_epoch to track the start time of each epoch.
@@ -285,7 +266,7 @@ change that next.
 5. Use the modified custom callback in the callbacks parameter of the build_and_train() function and train the model, verifying that the new epoch logs are printed at the end of each epoch.
 
 
-Solution:
+#### Solution:
 
 You can modify what happens at the start and end of each epoch in the
 same way. We'll print the epoch number, epoch duration, training loss
@@ -361,7 +342,7 @@ author)](./images/4-6.png)
 Neat, right? The story doesn't end here. Let's see how to visualize the
 model performance after the training completes next.
 
-### Visualize model performance with custom TensorFlow callbacks
+### Task 7: Visualize model performance with custom TensorFlow callbacks
 
 #### Questions:
 
@@ -381,8 +362,6 @@ In the on_train_end() method, call the _plot_model_performance() function to gen
 Train the model for 50 epochs using the build_and_train() function with the custom callback, and verify that performance metrics are printed at the end of each epoch, along with the generated plots at the end of training.
 
 #### Solution:
-
-
 
 Plotting training and validation metrics immediately tells you if the
 model is stuck or overfitting, and when it's the right time to stop the
@@ -490,22 +469,4 @@ accuracy more or less plateaus at the same time.
 Still, it's one less thing you need to visualize manually.
 
 ------------------------------------------------------------------------
-
-Conclusion
-----------
-
-And there you have it --- the basics of custom callbacks with
-TensorFlow. We've covered only a fraction of available functions, so
-make sure to explore the [official
-documentation](https://www.tensorflow.org/guide/keras/custom_callback)
-for additional resources. It's really well-written, and you'll find
-examples on writing custom *early stopping* and *learning rate
-scheduler* callbacks.
-
-Before you go all-in with writing custom callbacks from scratch, make
-sure the functionality you need isn't already built into TensorFlow. 
-
-We're starting a deep dive and
-computer vision and convolutional neural networks with TensorFlow from
-the following lab.
 
