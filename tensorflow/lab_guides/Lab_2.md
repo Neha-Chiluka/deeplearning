@@ -24,10 +24,10 @@ Open google Collab open and be ready!
 
 Let us keep things simple today and stick with a well-known **Wine Quality** dataset
 
-**Question :**
+#### **Question :**
 Load the dataset from the given URL and display a random sample of 5 rows.
 
-**Solution:**
+#### **Solution:**
 
 Use the below link to read the file in google collab. 
 
@@ -81,6 +81,9 @@ author)](./images/3-2.png)
 Run the following code to get rid of them:
 
     df = df.dropna()
+
+------------
+
 
 ### **Task 4: Convert Categorical Feature to Binary**
 
@@ -152,6 +155,9 @@ author)](./images/5-2.png)
 You now have 4091 good wines and 2372 bad wines. The classes are
 imbalanced, but we can work with that. Let's split the dataset into
 training and testing sets next.
+
+------------
+
 
 ### Task 6: Split the Data into Training and Testing Sets (80:20)
 
@@ -239,7 +245,7 @@ X_test_scaled = scaler.transform(X_test)
 
 3. Train the model using the scaled training data (X_train_scaled and y_train), setting the number of epochs to 100.
 
-**Solution:**
+#### **Solution:**
 
 The model goes from 12 input features to the first hidden layer of
 128 neurons, followed by two additional hidden layers of 256 neurons.
@@ -275,12 +281,13 @@ history = model.fit(X_train_scaled, y_train, epochs=100)
 
 This will initiate the training process. It takes certain minutes to complete all the executions depending on your operating system!
 
-![Image 7 --- Model training (image by
-author)](./images/7-2.png)
+![7](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/7.png?raw=true "7")
 
 ------------
 
 ### Task 9: Visualize Model Performance
+
+#### Questions:
 
 1. Import Matplotlib and adjust the default plot styles to make the chart larger and cleaner.
 
@@ -295,7 +302,7 @@ author)](./images/7-2.png)
 
 Write the code to generate a plot showing how the metrics evolve over the 100 epochs.
 
-**Solution:**
+#### **Solution:**
 
 Let's start by importing Matplotlib and tweaking the default styles a
 bit. The following code snippet will make the plot larger and remove the
@@ -373,8 +380,7 @@ print(predictions)
 
 Here's how they look like:
 
-![Image 9 --- Prediction probabilities (image by
-author)](./images/9-2.png)
+![4](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/4.png?raw=true "4")
 
 You'll have to convert them to classes before evaluation. The logic is
 simple --- if the probability is greater than 0.5 we assign 1 (good
@@ -420,8 +426,7 @@ from sklearn.metrics import confusion_matrix
 print(confusion_matrix(y_test, prediction_classes))
 ```
 
-![Image 11 --- Confusion matrix (image by
-author)](./images/11-1.png)
+![5](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/5.png?raw=true "5")
 
 There are more false negatives (214) than false positives (99), so the
 recall value on the test set will be lower than precision.
@@ -438,7 +443,7 @@ print(f'Precision: {precision_score(y_test, prediction_classes):.2f}')
 print(f'Recall: {recall_score(y_test, prediction_classes):.2f}')
 ```
 
-![](./images/12-1.png)
+![6](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/6.png?raw=true "6")
 
 All values are somewhat lower when compared to train set evaluation:
 
