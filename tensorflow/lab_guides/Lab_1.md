@@ -52,11 +52,11 @@ author)](./images/2-1.png)
 
 ### Task 3: Deleting unnecessary columns
 
-**Question :**
+#### **Question :**
 
 1. Remove the following unnecessary columns from the DataFrame: 'date', 'street', 'statezip', and 'country'. Keep only the relevant columns for analysis.
 
-**Solution :**
+#### **Solution :**
 Since we want to avoid spending too much time preparing the data, it's
 best to drop most of the non-numeric features. Keep only the `city`
 column, as it's simple enough to encode:
@@ -74,11 +74,10 @@ Here's how it should look like now:
 ![Image 3 --- Dataset after removing most of the string columns (image
 by author)](./images/3-1.png)
 
-## Feature Engineering
 
 ###  Task 4: Perform Feature engineering
 
-**Question 4 :**
+#### **Question 4 :**
 
 1. Calculate the age of the house using the yr_built column.
 
@@ -92,7 +91,7 @@ by author)](./images/3-1.png)
 
 Write the code to complete these tasks using list comprehension, and display the first few rows of the modified DataFrame.
 
-**Solution:**
+#### **Solution:**
 
 The `yr_renovated` column sometimes has the value of 0. I assume that's because the house wasn't renovated. You will create a couple of features --- house age, was the house renovated or not, was it renovated in the last 10 years, and was it renovated in the last 30 years.
 
@@ -122,7 +121,7 @@ author)](./images/4-1.png)
 
 ### Task 5: Remap City Values Based on Frequency.
 
-**Question 5 :**
+#### **Questions :**
 
 Write the code for the following steps:
 
@@ -132,7 +131,7 @@ Write the code for the following steps:
 
 3. Display a random sample of 10 rows from the modified DataFrame.
 
-**Solution:**
+#### **Solution:**
 
 Let's handle the `city` column. Many cities have only a couple of
 houses listed, so you can declare a function that will get rid of all
@@ -166,7 +165,7 @@ Everything looks as it should, so let's continue.
 
 ### Task 6: Visualize the Distribution of the Target Variable.
 
-**Question 6:**
+#### **Questions:**
 
 1. Import Matplotlib and set up the figure size and style for the plot.
 
@@ -174,7 +173,7 @@ Everything looks as it should, so let's continue.
 
 Write the code to complete these tasks and inspect the plot to understand the distribution of the price variable.
 
-**Solution:**
+#### **Solution:**
 
 Anytime you're dealing with prices, it's unlikely the target variable
 will be distributed normally. And this housing dataset is no exception.
@@ -198,7 +197,7 @@ author)](./images/7-1.png)
 
 ### Task 7: Handle Outliers in the Target Variable
 
-**Question 7:**
+#### **Questions:**
 
 1. Calculate the Z-score for the price column and create a new column called price_z.
 
@@ -212,7 +211,7 @@ author)](./images/7-1.png)
 
 Write the code to perform these tasks and inspect the updated distribution of price.
 
-**Solution:**
+#### **Solution:**
 
 Outliers are definitely present, so let's handle them next. The pretty
 common thing to do is to calculate Z-scores. They let you know how many
@@ -349,14 +348,11 @@ X_train = X_train.toarray()
 X_test = X_test.toarray()
 ```
 
-Training a regression model with TensorFlow
--------------------------------------------
-
 ### Task 9: Build a Regression Model with TensorFlow
 
 In this task, you’ll start building a regression model using TensorFlow. First, you need to import the necessary libraries to set up the model.
 
-**Question:**
+#### **Question:**
 
 1. Import the following libraries from TensorFlow:
 - tensorflow as tf
@@ -367,7 +363,7 @@ In this task, you’ll start building a regression model using TensorFlow. First
 
 Write the code to perform the imports and prepare for building a regression model.
 
-**Solution:**
+#### **Solution:**
 
 
 You'll now build a sequential model made of fully connected layers.
@@ -382,7 +378,7 @@ from tensorflow.keras import backend as K
 
 ### Task 10: Implement Custom Loss Metric - RMSE
 
-**Questions:**
+#### **Questions:**
 
 1. Write a function rmse() that calculates RMSE using Keras backend functions:
 
@@ -394,7 +390,7 @@ from tensorflow.keras import backend as K
 
 2. Write the code for the rmse() function.
 
-**Solution:**
+#### **Solution:**
 
 You are dealing with housing prices here, so the loss could be quite huge
 if you track it through, let us say, *mean squared error*. That metric
@@ -495,8 +491,7 @@ predictions[:5]
 
 Here's how the first five predictions look like:
 
-![Image 12 --- First 5 predictions (image by
-author)](./images/12.png)
+![1](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/1.png?raw=true "1")
 
 You'll have to convert these to a 1-dimensional array if you want to
 calculate any metrics. You can use the `ravel()` function from Numpy to
@@ -509,10 +504,8 @@ predictions[:5]
 
 Here are the results:
 
-![Image 13 --- First 5 predictions as a 1D array (image by
-author)](./images/13.png)
+![2](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/2.png?raw=true "2")
 
-## Model evaluation
 
 ### Task 13: Evaluate the Model Using RMSE
 
