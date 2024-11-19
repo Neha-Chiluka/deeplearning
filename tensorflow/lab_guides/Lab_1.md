@@ -1,6 +1,6 @@
 
 
-Regression Modelling with TensorFlow Made Easy --- Train Your First Model in 10 Minutes 
+Lab 1 - Regression Modelling with TensorFlow Made Easy --- Train Your First Model in 10 Minutes 
 =======================================================================================
 
 
