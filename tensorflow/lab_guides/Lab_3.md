@@ -20,7 +20,16 @@ and your model might *skip* the optimal set of weights during training.
 You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
 installed to follow along.
 
+-----------------------------------------------------------------------------------------------------
+### Task 1: Google Collab Our Coding Tool:
 
+Open google Collab open and be ready! 
+
+1. Open Google Collab - https://colab.research.google.com/
+
+2. Click on file and select "New Notebook in Drive" option ( It might ask you to sign in with a acccount)
+
+3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
 ------------------------------------------------------------------------
 ### Task 2 -  Import and Preview the Wine Quality Dataset
