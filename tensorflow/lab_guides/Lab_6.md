@@ -18,6 +18,17 @@ accuracy vs. validation accuracy at each epoch.
 
 ------------------------------------------------------------------------
 
+### Task 1: Google Collab Our Coding Tool:
+
+Open google Collab open and be ready! 
+
+1. Open Google Collab - https://colab.research.google.com/
+
+2. Click on file and select "New Notebook in Drive" option ( It might ask you to sign in with a acccount)
+
+3. Then, you will be directed to a new notebook , were we will perform our tasks!
+
+---------------------------------------------------------------------------------
 ### Task 2 - Import Data and Preview Sample
 
 #### Questions:
