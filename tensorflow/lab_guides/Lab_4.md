@@ -24,16 +24,20 @@ finding the optimal architecture.
 
 ------------------------------------------------------------------------
 
-Dataset used and data preprocessing
------------------------------------
 
-I don't plan to spend much time here. We'll use the same dataset as in
-the [previous lab] --- the
+### Task 1: Google Collab Our Coding Tool:
 
+Open google Collab open and be ready! 
+
+1. Open Google Collab - https://colab.research.google.com/
+
+2. Click on file and select "New Notebook in Drive" option ( It might ask you to sign in with a acccount)
+
+3. Then, you will be directed to a new notebook , were we will perform our tasks!
+
+---------------------------------------------------------------------------------------------------------
 ### Import Necessary Libraries & Dataset
 ### Task 2 - Import and Preview the Wine Quality Dataset
-
-
 
 1. Import the following libraries:
 - os, numpy, pandas, tensorflow, itertools, warnings, and sklearn.metrics (for evaluation metrics like accuracy, precision, recall, and F1 score).
