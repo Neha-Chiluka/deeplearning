@@ -5,19 +5,6 @@ LAB 2 - How to Train a Classification Model with TensorFlow in 10 Minutes(Wine Q
 
 #### From data gathering and preparation to model training and evaluation --- Source code included 
 
-Deep learning is everywhere. From sales forecasting to segmenting skin
-diseases on image data --- there's nothing deep learning algorithms
-can't do, given quality data.
-
-If deep learning and TensorFlow are new to you, you're in the right
-place. This lab will show you the entire process of building a
-classification model on tabular data. You'll go from data gathering and
-preparation to training and evaluating neural network models in just one
-sitting. Let's start.
-
-You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
-installed to follow along.
-
 ------------------------------------------------------------------------
 
 ### Task 1: Google Collab Our Coding Tool:
@@ -30,7 +17,7 @@ Open google Collab open and be ready!
 
 3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
-Data preparation and exploration
+
 --------------------------------
 ### Task 2: Dataset exploration and preparation
 
@@ -64,13 +51,13 @@ author)](./images/2-2.png)
 
 It's mostly clean, but there's still some work to do.
 
-### Basic preparation
 
-### Task 3: Handle Missing Values in the Dataset
+------------
 
-In this task, you’ll clean the dataset by removing rows with missing values. The dataset contains some missing values, but they aren't significant, as there are 6497 rows in total.
+### Task 3: Handle Missing Values In The Dataset
 
-**Questions:**
+
+#### **Questions:**
 
 1. Check for missing values in the dataset.
 
@@ -78,10 +65,15 @@ In this task, you’ll clean the dataset by removing rows with missing values. T
 
 Write the code to remove the rows with missing values and ensure the dataset is clean for analysis
 
-**Solution:**
+#### **Solution:**
 
 The dataset has some missing values, but the number isn't significant,
 as there are 6497 rows in total:
+
+```python
+missing_values = df.isnull().sum()
+print(missing_values)
+```
 
 ![Image 3 --- Missing value counts (image by
 author)](./images/3-2.png)
@@ -90,17 +82,15 @@ Run the following code to get rid of them:
 
     df = df.dropna()
 
-**Task 4: Convert Categorical Feature to Binary**
+### **Task 4: Convert Categorical Feature to Binary**
 
-In this task, you will convert the categorical type feature into a binary feature called is_white_wine. The type feature can either be white (which should be represented as 1) or red (which should be represented as 0). Afterward, you'll drop the original type column.
-
-**Questions:**
+#### **Questions:**
 
 1. Create a new column is_white_wine where the value is 1 if the type is white and 0 if it is red.
 
 2. Drop the original type column from the DataFrame.
 
-**Solution:**
+#### **Solution:**
 
 The only non-numerical feature is `type`. It can be either *white* (4870
 rows) or *red* (1593) rows. The following snippet converts this feature
@@ -116,32 +106,34 @@ df.drop('type', axis=1, inplace=True)
 All features are numeric now, and there's only one thing left to
 do --- make the target variable (`quality`) binary.
 
-## Converting to a binary classification problem
-
+------------
 
 ### Task 5: Convert Target Variable to Binary Classification
 
-In this task, you will convert the quality column into a binary classification target. Wines with a quality grade of 6 or higher will be classified as good (1), and wines with a grade lower than 6 will be classified as bad (0).
+#### **Questions:**
 
-**Questions:**
+1. Get the Count of Wines by Quality Grade
+2. Create a new column is_good_wine that assigns a value of 1 for wines with a quality of 6 or higher, and 0 for wines with a quality below 6.
 
-1. Create a new column is_good_wine that assigns a value of 1 for wines with a quality of 6 or higher, and 0 for wines with a quality below 6.
-
-2. Drop the original quality column from the dataset.
+3. Drop the original quality column from the dataset.
 
 Write the code to perform these transformations and prepare the dataset for a binary classification task.
 
-**Solution:**
+#### **Solution:**
 
 The wines are graded from 3 to 9, assuming higher is better. Here are
 the value counts:
 
-![Image 4 --- Target variable value counts (image by
-author)](./images/4-2.png)
+```python
+# Get the count of wines by quality grade
+quality_counts = df['quality'].value_counts().sort_index(ascending=True)
+print(quality_counts)
+```
+![3](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/3.png?raw=true "3")
 
-To keep things extra simple, we'll convert it into a binary variable.
+To keep things extra simple, we will convert it into a binary variable.
 We'll classify any wine with a grade of 6 and above as *good* (1), and
-all other wines as *bad* (0). Here's the code:
+all other wines as *bad* (0).
 
 ``` {.language-python}
 df['is_good_wine'] = [
@@ -161,13 +153,9 @@ You now have 4091 good wines and 2372 bad wines. The classes are
 imbalanced, but we can work with that. Let's split the dataset into
 training and testing sets next.
 
-## Train/Test split
+### Task 6: Split the Data into Training and Testing Sets (80:20)
 
-### Task 6: Split the Data into Training and Testing Sets
-
-In this task, you will split the dataset into training and testing sets. You will use an 80:20 split, with 80% of the data used for training and 20% for testing.
-
-**Questions:**
+#### **Questions:**
 
 1. Separate the features (X) from the target variable (y), where y is the is_good_wine column.
 
@@ -175,7 +163,7 @@ In this task, you will split the dataset into training and testing sets. You wil
 
 Write the code to perform the train/test split and check that you have 5170 rows in the training set and 1293 rows in the testing set.
 
-**Solution:**
+#### **Solution:**
 
 We'll stick to a standard 80:20 split. Here's the code:
 
@@ -196,13 +184,13 @@ You now have 5170 rows in the training set and 1293 rows in the testing
 set. It should be enough to train a somewhat decent neural network
 model. Let's scale the data before we start the training.
 
-## Data scaling
+
+------------
 
 ### Task 7: Scale the Data and Prepare for Model Training
 
-In this task, you will scale the features of your dataset to ensure that the neural network can learn effectively. Features like sulphates and citric acid have values close to zero, while others like total sulfur dioxide are in much higher ranges. This discrepancy in feature scales can cause issues when training a neural network. Scaling the data to a standard range will help mitigate this problem.
 
-**Questions:**
+#### **Questions:**
 
 Use StandardScaler from Scikit-Learn to scale the features.
 
@@ -210,16 +198,13 @@ Use StandardScaler from Scikit-Learn to scale the features.
 
 2. Write the code to scale the data and check the transformed feature values.
 
-**Solution:**
+#### **Solution:**
 
 Features like `sulphates` and `citric acid` have values close to zero,
 while `total sulfur dioxide` is in hundreds. You'll confuse the neural
 network if you leave them as such, as it will think a feature on a
 higher scale is more important.
 
-That's where scaling comes into play. We'll use `StandardScaler` from
-Scikit-Learn to fit and transform the training data and to apply the
-transformation to the testing data:
 
 ``` {.language-python}
 from sklearn.preprocessing import StandardScaler
@@ -230,22 +215,11 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-Here's how the first three scaled rows look like:
-
-![Image 6 --- Scaled training set (image by
-author)](./images/6-2.png)
-
-
-The value range is much tighter now, so a neural network should do a
-better job. Let's train the model and see if we can get something
-decent.
-
-
-## Defining a neural network architecture
+------------
 
 ### Task 8: Define and Train a Neural Network Model
 
-In this task, you will define and train a neural network model for binary classification using TensorFlow. The architecture of the model is chosen randomly, but you are encouraged to experiment with it.
+#### Questions:
 
 1.  Define a sequential neural network model with:
 
@@ -257,25 +231,24 @@ In this task, you will define and train a neural network model for binary classi
 
 2. Compile the model with:
 
-- Loss function: Binary Cross-Entropy (for binary classification).
+- Binary Cross-Entropy (for binary classification).
 
-- Optimizer: Adam optimizer with a learning rate of 0.03.
+- Adam optimizer with a learning rate of 0.03.
 
-- Metrics: Binary Accuracy, Precision, and Recall to evaluate the model performance during training.
+- Binary Accuracy, Precision, and Recall to evaluate the model performance during training.
 
 3. Train the model using the scaled training data (X_train_scaled and y_train), setting the number of epochs to 100.
 
 **Solution:**
 
-I've chosen this architecture entirely at random, so feel free to adjust
-it. The model goes from 12 input features to the first hidden layer of
+The model goes from 12 input features to the first hidden layer of
 128 neurons, followed by two additional hidden layers of 256 neurons.
 There's a 1-neuron output layer at the end. Hidden layers use ReLU as
 the activation function, and the output layer uses Sigmoid.
 
 Here's the code:
 
-``` {.language-python}
+```python
 import tensorflow as tf
 tf.random.set_seed(42)
 
@@ -289,7 +262,7 @@ model = tf.keras.Sequential([
 
 model.compile(
     loss=tf.keras.losses.binary_crossentropy,
-    optimizer=tf.keras.optimizers.Adam(lr=0.03),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.03),
     metrics=[
         tf.keras.metrics.BinaryAccuracy(name='accuracy'),
         tf.keras.metrics.Precision(name='precision'),
@@ -300,21 +273,14 @@ model.compile(
 history = model.fit(X_train_scaled, y_train, epochs=100)
 ```
 
-This will initiate the training process. A single epoch takes around 1
-second on my machine (M1 MBP):
+This will initiate the training process. It takes certain minutes to complete all the executions depending on your operating system!
 
 ![Image 7 --- Model training (image by
 author)](./images/7-2.png)
 
-We kept track of loss, accuracy, precision, and recall during training,
-and saved them to `history`. We can now visualize these metrics to get a
-sense of how the model is doing.
-
-## Visualizing model performance
+------------
 
 ### Task 9: Visualize Model Performance
-
-In this task, you will visualize the performance of your trained neural network model using various evaluation metrics: loss, accuracy, precision, and recall.
 
 1. Import Matplotlib and adjust the default plot styles to make the chart larger and cleaner.
 
@@ -379,18 +345,12 @@ Accuracy, precision, and recall increase slightly as we train the model,
 while loss decreases. All have occasional spikes, which would hopefully
 wear off if you were to train the model longer.
 
-According to the chart, you could train the model for more epochs, as
-there's no sign of plateau.
+------------
 
-But are we overfitting? Let's answer that next.
-
-## Making predictions
 
 ### Task 10: Make Predictions and Convert to Classes
 
-In this task, you will use the trained model to make predictions on the test data and then convert the prediction probabilities into binary classes.
-
-**Questions:**
+#### **Questions:**
 
 1. Use the predict() function to generate prediction probabilities on the scaled test data (X_test_scaled).
 2. Convert the probabilities to binary classes using the following logic:
@@ -400,14 +360,16 @@ In this task, you will use the trained model to make predictions on the test dat
 
 3. Extract the first 20 predictions and display them.
 
-Write the code to implement the conversion of prediction probabilities to binary classes.
 
-**Solution:**
+#### **Solution:**
 
 You can now use the `predict()` function to get prediction probabilities
 on the scaled test data:
 
-    predictions = model.predict(X_test_scaled)
+   ```python
+predictions = model.predict(X_test_scaled)
+print(predictions)
+```
 
 Here's how they look like:
 
@@ -422,6 +384,7 @@ wine), and 0 (bad wine) otherwise:
 prediction_classes = [
     1 if prob > 0.5 else 0 for prob in np.ravel(predictions)
 ]
+prediction_classes
 ```
 
 Here's how the first 20 look like:
@@ -429,29 +392,25 @@ Here's how the first 20 look like:
 ![Image 10 --- Prediction classes (image by
 author)](./images/10-1.png)
 
-That's all we need --- let's evaluate the model next.
-
-## Model evaluation on test data
+------------
 
 ### Task 11: Evaluate Model Performance on Test Data
 
-In this task, you will evaluate the model's performance on the test data by calculating key classification metrics.
+#### **Questions:**
 
-**Questions:**
+1. Start by generating a confusion matrix using the confusion_matrix() function from Scikit-Learn.
 
-1. Confusion Matrix: Start by generating a confusion matrix using the confusion_matrix() function from Scikit-Learn.
-
-2. Accuracy, Precision, and Recall: Calculate and print the accuracy, precision, and recall on the test set using the appropriate functions from Scikit-Learn:
+2. Calculate and print the accuracy, precision, and recall on the test set using the appropriate functions from Scikit-Learn:
 
 3. Interpret the results:
 
 - Compare the values of accuracy, precision, and recall to see how well the model is performing on the test data.
 
-- Discuss whether the model is overfitting, based on the comparison between the training and test performance metrics.
+- Discuss whether the model is overfitting.
 
 Write the code to generate and print the confusion matrix and these evaluation metrics.
 
-**Solution:**
+#### **Solution:**
 
 Let's start with the confusion matrix:
 
@@ -483,30 +442,12 @@ print(f'Recall: {recall_score(y_test, prediction_classes):.2f}')
 
 All values are somewhat lower when compared to train set evaluation:
 
--   **Accuracy**: 0.82
--   **Precision**: 0.88
--   **Recall**: 0.83
+-   **Accuracy**: 0.78
+-   **Precision**: 0.85
+-   **Recall**: 0.79
 
 The model is overfitting slightly, but it's still decent work for a
 couple of minutes. We'll go over the optimization in the following
 lab.
 
 ------------------------------------------------------------------------
-
-Parting words
--------------
-
-And that does it --- you now know how to train a simple neural network
-for binary classification. The dataset we used today was relatively
-clean, and required almost zero preparation work. Don't get used to that
-feeling.
-
-There's a lot we can improve. For example, you could add additional
-layers to the network, increase the number of neurons, choose different
-activation functions, select a different optimizer, add dropout layers,
-and much more. The possibilities are almost endless, so it all boils
-down to experimentation.
-
-The following lab will cover optimization --- you'll learn how to
-find the optimal learning rate and neural network architecture
-automatically.
