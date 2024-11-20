@@ -4,17 +4,6 @@ Lab 6 - How to Write Custom TensorFlow Callbacks --- The Easy Way
 
 #### Do you find built-in TensorFlow callbacks limiting? Here's a solution you've been looking for 
 
-Do you find [built-in TensorFlow callbacks]
-limiting? You're in luck, as today you'll learn how to write custom
-TensorFlow callbacks from scratch! It might come in handy when you want
-to modify how the default callbacks work or if you want to do something
-crazy.
-
-Today you'll write a custom callback that redesigns the training loop,
-prints evaluation metrics on the test set after the training is
-complete, and also plots training loss vs. validation loss and training
-accuracy vs. validation accuracy at each epoch.
-
 
 ------------------------------------------------------------------------
 
@@ -56,7 +45,7 @@ import warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('data/winequalityN.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/winequalityN.csv')
 df.sample(5)
 ```
 
@@ -88,7 +77,7 @@ author)](./images/2-5.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
-on a scale. We'll address that now, with numerous other things:
+on a scale. 
 
 Here's the entire data preprocessing code snippet:
 
@@ -116,12 +105,6 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-
-
-With that out of the way, let's see how to approach declaring callbacks
-in TensorFlow.
-
-model training function
 -------------------------------
 
 ### Task 4 - Write a model training function
@@ -137,11 +120,6 @@ model training function
 7. Call the build_and_train function with a list of callbacks and a chosen number of epochs.
 
 #### Solution:
-
-Let's make our lives somewhat easier by writing a function that builds,
-compiles, and trains the model. You can continue without it, but you'll
-need to copy/paste the model training code several times, which isn't
-ideal.
 
 The function allows you to specify a list of callbacks and change the
 number of epochs the model will train for. The number of epochs is set
@@ -181,15 +159,14 @@ def build_and_train(callbacks: list, num_epochs: int = 5) -> tf.keras.Sequential
     return model
 ```
 
-It should feel familiar if you know the basics of TensorFlow. With that
-out of the way, let's write our first callback.
 
 ### Task 5 - Write a basic custom TensorFlow callback
 ----------------------------------------
+#### Questions:
 
-1. Create a custom callback class that extends tf.keras.callbacks.Callback. Define a constructor that initializes time_started and time_finished to None.
-2. In the custom callback class, implement the on_train_begin() method. This method should set time_started to the current time and print a message indicating when the training started.
-3. In the custom callback class, implement the on_train_end() method. This method should set time_finished to the current time, calculate the training duration, and print the final training and validation metrics (loss, accuracy).
+1. Create a custom callback class that extends tf.keras.callbacks.Callback. 
+2. In the custom callback class, implement the on_train_begin() method. 
+3. In the custom callback class, implement the on_train_end() method. 
 4. Use the custom callback by passing it to the callbacks parameter of the build_and_train() function and train the model for the default 5 epochs.
 5. Ensure the custom callback displays information about the start and end of training, including the duration, training loss, training accuracy, validation loss, and validation accuracy.
 6. Modify the custom callback to print the training and validation metrics at the end of each epoch, showing how the model's performance changes over time.
@@ -199,13 +176,8 @@ out of the way, let's write our first callback.
 Every custom TensorFlow callback class must extend the
 `tf.keras.callbacks.Callback` class. It gives you access to many class
 methods, but we'll only deal with two in this section. These are
-`on_train_begin()` and `on_train_end()`. TensorFlow\'s development team
-really nailed the function names, so there's no point in further
-explaining what they do.
+`on_train_begin()` and `on_train_end()`. 
 
-As with any Python class, you can declare a constructor. Ours will
-contain timestamps when the model started and finished training. We'll
-set both to `None` initially.
 
 The `on_train_begin()` function will set the current time to the start
 timestamp in the constructor and print the time when the training
@@ -241,8 +213,7 @@ class MyCallback(tf.keras.callbacks.Callback):
         print('\n'.join([tl, vl, ta, va]))
 ```
 
-Simple, right? Definitely, but it will be enough to start customizing
-the training log output. You can use the following code to train the
+You can use the following code to train the
 model for five epochs (default):
 
 ``` {.language-python}
@@ -256,14 +227,14 @@ Here's the output you'll see:
 ![Image 3 --- Custom TensorFlow callback v1 (image by
 author)](./images/3-7.png)
 
-It's a decent start, but we don't see what happens at each epoch. Let's
-change that next.
+
+------------
+
 
 ### Task 6 : Modify epoch behavior with custom TensorFlow callbacks
 
 
 1. Modify the custom callback class to include a new variable time_curr_epoch to track the start time of each epoch.
-
 
 2. In the custom callback class, implement the on_epoch_begin() method. This method should set the time_curr_epoch variable to the current time at the start of each epoch.
 
@@ -278,10 +249,6 @@ change that next.
 
 
 #### Solution:
-
-You can modify what happens at the start and end of each epoch in the
-same way. We'll print the epoch number, epoch duration, training loss
-and accuracy, and validation loss and accuracy.
 
 Let's start by adding an additional variable to the
 constructor --- `time_curr_epoch` --- it will get overriden each time a
@@ -350,34 +317,25 @@ Here's the output:
 ![Image 4 --- Custom TensorFlow callback v2 (image by
 author)](./images/4-6.png)
 
-Neat, right? The story doesn't end here. Let's see how to visualize the
-model performance after the training completes next.
+
+------------
+
 
 ### Task 7: Visualize model performance with custom TensorFlow callbacks
 
 #### Questions:
 
-1. 
-Modify the custom callback constructor to include variables for tracking the number of epochs and lists for storing training loss, accuracy, validation loss, and validation accuracy.
+1. Modify the custom callback constructor to include variables for tracking the number of epochs and lists for storing training loss, accuracy, validation loss, and validation accuracy.
 
-2. 
-Create a private method _plot_model_performance() in the custom callback class. This method should generate two plots: one for training and validation loss, and another for training and validation accuracy over epochs.
+2. Create a private method _plot_model_performance() in the custom callback class. 
 
-3. 
-In the on_epoch_end() method, increment the epoch counter and append the training and validation loss/accuracy values to the corresponding lists.
+3. In the on_epoch_end() method, increment the epoch counter and append the training and validation loss/accuracy values to the corresponding lists.
 
-4. 
-In the on_train_end() method, call the _plot_model_performance() function to generate the plots once the training is complete.
+4. In the on_train_end() method, call the _plot_model_performance() function to generate the plots once the training is complete.
 
-5. 
-Train the model for 50 epochs using the build_and_train() function with the custom callback, and verify that performance metrics are printed at the end of each epoch, along with the generated plots at the end of training.
+5. Train the model for 50 epochs using the build_and_train() function with the custom callback, and verify that performance metrics are printed at the end of each epoch, along with the generated plots at the end of training.
 
 #### Solution:
-
-Plotting training and validation metrics immediately tells you if the
-model is stuck or overfitting, and when it's the right time to stop the
-training. That's what we'll do now. We'll declare a helper function for
-visualizing model performance and then call it after training finishes.
 
 To start, add a couple of variables to the constructor. You'll need to
 track the number of epochs, loss, and accuracy --- both on training and
@@ -457,7 +415,7 @@ class MyCallback(tf.keras.callbacks.Callback):
         print(f"Epoch: {epoch:4} | Runtime: {epoch_dur:.3f}s | {train_metrics} | {valid_metrics}")
 ```
 
-And that's it! Let's test it now --- we'll train the model for 50
+Let's test it now --- we'll train the model for 50
 epochs, just so the charts have a bit more data to show:
 
 ``` {.language-python}
@@ -477,7 +435,6 @@ parameters for 50 epochs doesn't make sense. The validation loss starts
 to increase approximately after the 5th epoch, and the validation
 accuracy more or less plateaus at the same time.
 
-Still, it's one less thing you need to visualize manually.
 
 ------------------------------------------------------------------------
 
