@@ -2,28 +2,9 @@
 Lab 4 - How to Find Optimal Neural Network Architecture with TensorFlow --- The Easy Way 
 ================================================================================
 
-
-
 #### Your go-to guide for optimizing feed-forward neural network models on any dataset
 
-Deep learning boils down to experimentation. Training hundreds of models
-by hand is tedious and time-consuming. I'd rather do something else with
-my time, and I imagine the same holds for you.
-
-Picture this --- you want to find the optimal architecture for your deep
-neural network. Where do you start? How many layers? How many nodes per
-layer? What about the activation functions? There are just too many
-moving parts.
-
-You can automate this process to a degree, and this lab will show
-you how. After completing, you'll have one function for generating neural
-network architectures given specific parameters and the other one for
-finding the optimal architecture.
-
-
-
 ------------------------------------------------------------------------
-
 
 ### Task 1: Google Collab Our Coding Tool:
 
@@ -35,17 +16,17 @@ Open google Collab open and be ready!
 
 3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
----------------------------------------------------------------------------------------------------------
-### Import Necessary Libraries & Dataset
+-------------------------------------------------------------------------
 ### Task 2 - Import and Preview the Wine Quality Dataset
+
+#### Questions:
 
 1. Import the following libraries:
 - os, numpy, pandas, tensorflow, itertools, warnings, and sklearn.metrics (for evaluation metrics like accuracy, precision, recall, and F1 score).
 2. Set the random seed for TensorFlow to ensure reproducibility:
 3. Suppress TensorFlow logging messages and warnings:
-4. Read the dataset from a CSV file (winequalityN.csv) using pandas.read_csv() and assign it to a DataFrame (df).
+4. Read the dataset from a CSV file using pandas.read_csv() and assign it to a DataFrame (df).
 5. Display a random sample of 5 rows from the DataFrame using df.sample(5) to understand the structure of the dataset.
-
 
 #### Solution:
 
@@ -66,15 +47,17 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 warnings.filterwarnings('ignore')
 
 
-df = pd.read_csv('data/winequalityN.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/winequalityN.csv')
 df.sample(5)
 ```
-
 
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-4.png)
 
-‌
+
+
+------------
+
 ### Task 4 - Data Preprocessing
 
 #### Questions:
@@ -115,14 +98,11 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-
 With that out of the way, let's see how to approach optimizing neural
 network architectures.
 
-How to approach optimizing neural network models?
 -------------------------------------------------
 ### Task 5 - Optimizing Neural Network Model Architecture
-Define Network Architecture Parameters
 
 1. Set the following constants to define the architecture:
 - num_layers: Set to 3 (indicating 3 hidden layers).
@@ -156,6 +136,7 @@ node_options = list(range(
     min_nodes_per_layer, 
     max_nodes_per_layer + 1, 
     node_step_size
+	print(node_options)
 ))
 ```
 
@@ -163,6 +144,9 @@ Here's what you'll see:‌
 
 ![Image 3 --- Node number possibilities (image by
 author)](./images/3-5.png)
+
+------------
+
 
 ### Task 6 - Generate Node Possibilities for Two Hidden Layers
 
@@ -179,6 +163,7 @@ possibilities:‌
 
 ``` {.language-python}
 two_layer_possibilities = [node_options, node_options]
+print(two_layer_possibilities)
 ```
 
 Or visually:‌
@@ -206,9 +191,10 @@ calculate the permutations:‌
 ``` {.language-python}
 layer_possibilities = [node_options] * num_layers
 layer_node_permutations = list(itertools.product(*layer_possibilities))
+print(layer_node_permutations)
 ```
 
-It's a lot of options --- 64 in total. During optimization, we'll
+It's a lot of options --- 64 in total. During optimization, we will
 iterate over the permutations and then iterate again over the values of
 the individual permutation to get the node counts for each hidden layer.
 
@@ -227,6 +213,9 @@ don't think too much of it. Here's the output:‌
 
 ![Image 6 --- Number of nodes at each layer (image by
 author)](./images/6-4.png)
+
+------------
+
 
 ### Task 7 - Create and Inspect Neural Network Models
 
@@ -286,15 +275,11 @@ Model generation function for optimizing neural networks
 
 1. Implement get_models() to generate models with customizable layers, nodes, and activation functions.
 
-
 2. Use itertools.product() to create all possible combinations of nodes for each layer.
-
 
 3. Create models based on node permutations, adding layers and setting dynamic names.
 
-
 4. Call get_models() with parameters for 3 hidden layers, node range 64-256, and input shape (12,).
-
 
 5. Inspect the all_models list to check the generated models' architecture.
 
@@ -348,6 +333,7 @@ all_models = get_models(
     max_nodes_per_layer=256, 
     node_step_size=64, 
     input_shape=(12,)
+	print(all_models)
 )
 ```
 
@@ -356,7 +342,6 @@ Sequential models, each having a unique name and architecture. Training
 so many models will take time, so let's make things extra simple by
 writing yet another helper function.
 
-Model training function for optimizing neural networks
 ------------------------------------------------------
 
 ### Task 9 - Model Training for Optimization
@@ -441,13 +426,12 @@ def optimize(models: list,
 
 And now, let's finally start the optimization.
 
-Running the optimization
 ------------------------
 ### Task 10 - Run Model Optimization and Analyze Results
 
 1. Start the optimization process by calling the optimize() function with all_models, X_train_scaled, y_train, X_test_scaled, and y_test.
 
-2. Sort the optimization results by accuracy in descending order to identify the best-performing model:
+2. Sort the optimization results by accuracy in descending order to identify the best-performing model. 
 
 
 #### Solution:
@@ -465,8 +449,9 @@ optimization_results = optimize(
 )
 ```
 
-The optimization ran for 34 minutes on my machine (M1 MacBook Pro) and
-printed the following:‌
+The optimization takes couple of minutes depending upon the operating system, generally takes 20-30 minutes 
+
+It printed the following:‌
 
 ![Image 8 --- Optimization output (image by
 author)](./images/8-4.png)
