@@ -116,12 +116,6 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-And here's how the first couple of scaled rows look like:
-
-![Image 3 --- Scaled training set (image by
-author)](./images/3-3.png)
-
-
 -------------------------------------------
 ### Task 4 - Optimizing the Learning Rate
 
@@ -454,5 +448,4 @@ And here's the output:
 ![9](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/9.png?raw=true "9")
 
 ------------
-
 
