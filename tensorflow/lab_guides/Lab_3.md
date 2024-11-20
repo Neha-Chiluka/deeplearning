@@ -2,23 +2,8 @@
 Lab 3 - How to Optimize Learning Rate with TensorFlow --- It's Easier Than You Think (Wine Quality Dataset)
 ============================================================================
 
+#### Significantly improving your models does not take much time --- Here's how to get started 
 
-
-#### Significantly improving your models doesn't take much time --- Here's how to get started 
-
-Tuning neural network models is no joke. There are so many
-hyperparameters to tune, and tuning all of them at once using a grid
-search approach could take weeks, even months. *Learning rate* is a
-hyperparameter you can tune in a couple of minutes, provided you know
-how. This lab will teach you how.
-
-The learning rate controls how much the weights are updated according to
-the estimated error. Choose too small of a value and your model will
-train forever and likely get stuck. Opt for a too large learning rate
-and your model might *skip* the optimal set of weights during training.
-
-You'll need TensorFlow 2+, Numpy, Pandas, Matplotlib, and Scikit-Learn
-installed to follow along.
 
 -----------------------------------------------------------------------------------------------------
 ### Task 1: Google Collab Our Coding Tool:
@@ -36,7 +21,7 @@ Open google Collab open and be ready!
 
 In this task, you will import the wine quality dataset and preview a random sample of the data.
 
-Questions:
+#### Questions:
 
 1. Import necessary libraries (os, numpy, pandas, and warnings).
 Set environment variables to suppress TensorFlow logs and warnings.
@@ -45,15 +30,10 @@ Set environment variables to suppress TensorFlow logs and warnings.
 
 3. Print a random sample of 5 rows from the dataset using the sample() method to get an idea of how the data looks.
 
-Solution:
+#### Solution:
 
-I don't plan to spend much time here. We'll use the same dataset as in
-the [previous lab] --- the
-[wine quality dataset](https://www.kaggle.com/shelvigarg/wine-quality-dataset) from
-Kaggle:
+We will use the same dataset as in the [previous lab] i.e Winequality
 
-![Image 1 --- Wine quality dataset from Kaggle (image by
-author)](./images/1-3.png)
 
 You can use the following code to import it to Python and print a random
 couple of rows:
@@ -66,11 +46,11 @@ import warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('data/winequalityN.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/winequalityN.csv')
 df.sample(5)
 ```
 
-We're ignoring the warnings and changing the default TensorFlow log
+We are ignoring the warnings and changing the default TensorFlow log
 level just so we don't get overwhelmed with the output.
 
 Here's how the dataset looks like:
@@ -78,9 +58,12 @@ Here's how the dataset looks like:
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-3.png)
 
+------------
+
+
 ### Task 3: Data Preprocessing for Binary Classification
 
-In this task, you will preprocess the wine quality dataset to prepare it for binary classification. The dataset is initially rated on a scale, but we will convert it into a binary classification problem where wines are classified as "good" or "bad."
+#### Questions:
 
 1. Drop rows with missing values from the dataset since there are only a few missing values and we won't use imputation.
 
@@ -92,9 +75,9 @@ In this task, you will preprocess the wine quality dataset to prepare it for bin
 - Declare wines with a quality lower than 6 as "bad" (0)
 - Drop the quality column after conversion.
 
-4. Train/Test Split: Split the dataset into training and testing sets using an 80:20 ratio. The target variable will be is_good_wine, and the remaining features will be used for the input.
+4. Split the dataset into training and testing sets using an 80:20 ratio. 
 
-5. Use the StandardScaler to scale the features so that they are on the same scale. This is important because features like total sulfur dioxide and citric acid have different value ranges.
+5. Use the StandardScaler to scale the features so that they are on the same scale. 
 
 **Solution:**
 
@@ -139,9 +122,6 @@ And here's how the first couple of scaled rows look like:
 author)](./images/3-3.png)
 
 
-With that out of the way, let's see how to optimize the learning rate.
-
-How to optimize learning rate in TensorFlow
 -------------------------------------------
 ### Task 4 - Optimizing the Learning Rate
 
@@ -161,26 +141,24 @@ import tensorflow as tf
 tf.random.set_seed(42)
 ```
 
-### Task 5 - Define and Train a Neural Network Model with Learning Rate Scheduler
+------------
 
-In this task, you will define a neural network model using TensorFlow, compile it, and train it with a learning rate schedule.
+
+### Task 5 - Define and Train a Neural Network Model with Learning Rate Scheduler
 
 **Questions-**
 
 1. Create a sequential model using tf.keras.Sequential().
 - Add the following layers to the model:
-- A Dense layer with 128 units and ReLU activation function.
-- A Dense layer with 256 units and ReLU activation function.
+- A Dense layer with 128 units, 256 units and ReLU activation function.
 - A second Dense layer with 256 units and ReLU activation function.
 - A final Dense layer with 1 unit and Sigmoid activation function (since this is a binary classification task).
 
 2. Compile the model with binary_crossentropy as the loss function, Adam as the optimizer, and BinaryAccuracy as the evaluation metric.
 
-
 3. Use the LearningRateScheduler callback to adjust the learning rate during training.
 
 4. Define a lambda function to change the learning rate every epoch. 
-
 
 5. Train the model using the .fit() method, specifying the following parameters:
 
@@ -227,31 +205,34 @@ initial_history = initial_model.fit(
     ]
 )
 ```
-### Task 6 - Visualize Training Metrics: Loss, Accuracy, and Learning Rate
 
-In this task, you will plot the training loss, accuracy, and learning rate for the initial_model over the 100 epochs.
+------------
+
+
+### Task 6 - Visualize Training Metrics: Loss, Accuracy, and Learning Rate
 
 **Questions:**
 
 1. After training the model for 100 epochs, the initial_history object contains the loss, accuracy, and learning rate for each epoch.
 
-- Use matplotlib to plot the following metrics:
+- Use matplotlib to plot the following metrics
 
 - Loss: Shows how the model's error evolves over time.
 
 - Accuracy: Tracks how the model's accuracy changes during training.
 
-- Learning Rate: Displays the exponential adjustment in learning rate as specified by the LearningRateScheduler.
+- Displays the exponential adjustment in learning rate as specified by the LearningRateScheduler.
 
 **Solution:**
 
 Set the plot title as 'Evaluation Metrics' and adjust the font size.
 Label the x-axis as 'Epoch' and set the font size for the label.
 Add a legend to the plot to differentiate between loss, accuracy, and learning rate.
-Display the Plot
 
 After plotting the data, use plt.legend() to show the labels for each line (Loss, Accuracy, and Learning Rate).
+
 Display the plot to visualize the training process and how the loss, accuracy, and learning rate evolve over time.
+
 The training will start now and you'll see a decent accuracy
 immediately --- around 75% --- but it will drop after 50-something
 epochs because the learning rate became too large. After 100 epochs, the
@@ -260,29 +241,31 @@ epochs because the learning rate became too large. After 100 epochs, the
 ![Image 5 --- Initial model training log (image by
 author)](./images/5-3.png)
 
-The `initial_history` variable now has information on loss, accuracy,
-and learning rate. Let's plot all of them:
 
-``` {.language-python}
+```python
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 rcParams['figure.figsize'] = (18, 8)
 rcParams['axes.spines.top'] = False
-rcParams['axes.spines.right'] = False 
+rcParams['axes.spines.right'] = False
+
+# Extract learning rates from the scheduler function
+learning_rates = [1e-3 * 10 ** (epoch / 30) for epoch in range(100)]
+
 
 plt.plot(
-    np.arange(1, 101), 
-    initial_history.history['loss'], 
+    np.arange(1, 101),
+    initial_history.history['loss'],
     label='Loss', lw=3
 )
 plt.plot(
-    np.arange(1, 101), 
-    initial_history.history['accuracy'], 
+    np.arange(1, 101),
+    initial_history.history['accuracy'],
     label='Accuracy', lw=3
 )
 plt.plot(
-    np.arange(1, 101), 
-    initial_history.history['lr'], 
+    np.arange(1, 101),
+    learning_rates, 
     label='Learning rate', color='#000', lw=3, linestyle='--'
 )
 plt.title('Evaluation metrics', size=20)
@@ -295,20 +278,17 @@ Here's the chart:
 ![Image 6 --- Loss vs. accuracy vs. learning rate (image by
 author)](./images/6.jpg)
 
-## Plot Loss vs. Learning Rate
+
+------------
+
 ### Task 7 - Analyze Learning Rate vs. Loss
 
-**Question:**
-
-Define learning rates: learning_rates = 1e-3 * (10 ** (np.arange(100) / 30)).
-Use plt.semilogx() to plot loss vs. learning rate on a logarithmic scale.
-
+#### **Question:**
 
 1. Identify the learning rate with the minimum loss and minimal volatility.
 2. Determine Optimal Learning Rate
 4. Choose the learning rate around 0.007, where loss is lowest and stable.
 5. Compare with Default Learning Rate
-
 7. Train the model with the optimal learning rate and compare the performance to the default rate.
 
 **Solution:**
@@ -338,7 +318,6 @@ Here's the chart:
 author)](./images/7.jpg)
 
 
-Train a model with optimal learning rate
 ----------------------------------------
 ### Task 8 - Train a Model with Optimal Learning Rate
 
@@ -391,8 +370,8 @@ true, so it's likely our model is overfitting:
 
 ![](./images/9-3.png)
 
+------------
 
-## Visualize Accuracy vs. Loss
 
 ### Task 9 - Monitor Training Progress (Accuracy vs. Loss)
 
@@ -429,24 +408,31 @@ plt.legend()
 ![Image 10 --- Accuracy vs loss on the training set (image by
 author)](./images/10.jpg)
 
-### Make Predictions on the Test Set
+
+------------
+
+
 
 ### Task 10 - Evaluate Model Predictions on the Test Set
 
-Questions:
+#### Questions:
 
 1. Use the trained model to predict outcomes for the test set
 2. Convert the predicted probabilities to binary classes (0 or 1) based on a threshold of 0.5
 3. Use accuracy_score() from sklearn.metrics to calculate the accuracy of the model on the test set:
 4. Use confusion_matrix() from sklearn.metrics to display the confusion matrix
 
-Solution:
-
+#### Solution:
 
 Let's finally calculate the predictions and evaluate them against the
 test set. Here's the code:
 
-``` {.language-python}
+```python
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+
+predictions = model_optimized.predict(X_test_scaled)
+prediction_classes = [1 if prob > 0.5 else 0 for prob in np.ravel(predictions)]
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 
@@ -454,17 +440,19 @@ predictions = model_optimized.predict(X_test_scaled)
 prediction_classes = [1 if prob > 0.5 else 0 for prob in np.ravel(predictions)]
 
 
-print(f'Accuracy on the test set: 
-    {accuracy_score(y_test, prediction_classes):.2f}')
+print(f'Accuracy on the test set: {accuracy_score(y_test, prediction_classes):.2f}')
 print()
+print('Confusion matrix:')
+print(confusion_matrix(y_test, prediction_classes))
+
 print('Confusion matrix:')
 print(confusion_matrix(y_test, prediction_classes))
 ```
 
 And here's the output:
 
-![Image 11 --- Test set evaluation metrics (image by
-author)](./images/11-2.png)
+![9](https://github.com/Neha-Chiluka/deeplearning/blob/main/tensorflow/lab_guides/images%20dl/9.png?raw=true "9")
 
+------------
 
 
