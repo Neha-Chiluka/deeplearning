@@ -3,7 +3,6 @@
 Lab 5 - TensorFlow Callbacks --- How to Monitor Neural Network Training Like a Pro 
 ==========================================================================
 
-
 ------------------------------------------------------------------------
 
 ### Task 1: Google Collab Our Coding Tool:
@@ -16,7 +15,7 @@ Open google Collab open and be ready!
 
 3. Then, you will be directed to a new notebook , were we will perform our tasks!
 
-----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------
 ### Task 2 - Import Data and Preview Sample
 
 #### Questions:
@@ -44,7 +43,7 @@ import warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('data/winequalityN.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Neha-Chiluka/deeplearning/refs/heads/main/tensorflow/data/winequalityN.csv')
 df.sample(5)
 ```
 
@@ -56,8 +55,12 @@ Here's how the dataset looks like:
 ![Image 2 --- A random sample of the wine quality dataset (image by
 author)](./images/2-5.png)
 
-### Task 3 - Data Preprocessing for Model Training
+------------
 
+
+### Task 3 - Data Preprocessing for Model Training.
+
+#### Questions:
 1. Remove rows with missing values using df.dropna().
 
 2. Add a new column is_white_wine with a value of 1 for white wines and 0 for red wines based on the type column.
@@ -68,6 +71,7 @@ author)](./images/2-5.png)
 4. Drop the type and quality columns from the DataFrame using df.drop().
 
 5. Split the dataset into features (X) and target (y) where X excludes the is_good_wine column, and y is the is_good_wine column.
+
 6. Use train_test_split() to split the data into training and testing sets (80% train, 20% test).
 
 7. Scale the features using StandardScaler. Fit and transform X_train and transform X_test with the scaler.
@@ -76,7 +80,7 @@ author)](./images/2-5.png)
 
 The dataset is mostly clean, but isn't designed for binary
 classification by default (good/bad wine). Instead, the wines are rated
-on a scale. We'll address that now, with numerous other things:
+on a scale.
 
 Here's the entire data preprocessing code snippet:
 
@@ -108,12 +112,14 @@ With that out of the way, let's see how to approach declaring callbacks
 in TensorFlow.
 
 
-### ModelCheckpoint
+------------
+
+
 ### Task 4 - Implement ModelCheckpoint Callback
 
 #### Questions:
 
-1. Create a ModelCheckpoint callback to monitor the val_accuracy during training. The model will be saved only if it outperforms the previous one based on validation accuracy.
+1. Create a ModelCheckpoint callback to monitor the val_accuracy during training. 
 
 2. Save the model as an hdf5 file with the filename containing the epoch number and validation accuracy.
 
@@ -122,9 +128,7 @@ in TensorFlow.
 
 You can use this one to save the model locally on the current epoch if
 it beats the performance obtained on the previous one. The performance
-with any metric you want, such as loss, or accuracy. I recommend
-monitoring the performance on the validation set, as deep learning
-models tend to overfit the training data.
+with any metric you want, such as loss, or accuracy. 
 
 You can save the model either as a checkpoint folder or as an `hdf5`
 file. I recommend the latter, as it looks much cleaner on your file
@@ -134,8 +138,10 @@ epoch number and the value of the evaluation metric at that epoch.
 Here's how to declare `ModelCheckpoint` callback:
 
 ``` {.language-python}
+import tensorflow as tf
+
 cb_checkpoint = tf.keras.callbacks.ModelCheckpoint(
-    filepath='checkpoints/model-{epoch:02d}-{val_accuracy:.2f}.hdf5',
+    filepath='checkpoints/model-{epoch:02d}-{val_accuracy:.2f}.keras'
     monitor='val_accuracy',
     mode='max',
     save_best_only=True,
@@ -143,11 +149,7 @@ cb_checkpoint = tf.keras.callbacks.ModelCheckpoint(
 )
 ```
 
-In a nutshell, it will save the model on the current epoch only if it
-outperforms the one at the previous epoch, regarding the accuracy on the
-validation set.
-
-### ReduceLROnPlateau
+------------
 
 ### Task 5 - Implement ReduceLROnPlateau Callback
 
@@ -182,7 +184,10 @@ To summarize, the above declaration instructs TensorFlow to reduce the
 learning rate by a factor of 0.1 if the validation loss didn't decrease
 in the last 10 epochs. The learning rate will never go below 0.00001.
 
-### EarlyStopping
+
+------------
+
+
 ### Task 6 - Implement EarlyStopping Callback
 
 
@@ -213,7 +218,10 @@ cb_earlystop = tf.keras.callbacks.EarlyStopping(
 
 There's not much to it --- it's simple but extremely useful.
 
-### CSVLogger
+
+------------
+
+
 ### Task 7 - Implement CSVLogger Callback
 
 #### Questions:
@@ -240,12 +248,8 @@ cb_csvlogger = tf.keras.callbacks.CSVLogger(
 )
 ```
 
-Easy, right? Definitely, but the best is yet to come. Let's train the
-model with these callbacks next.
 
-Training a model with TensorFlow callbacks
 ------------------------------------------
-
 
 ### Task 10: Model Definition and Compilation
 1. Define a neural network with 3 hidden layers (64 neurons, ReLU) and 1 output neuron (sigmoid).
@@ -257,10 +261,6 @@ Training a model with TensorFlow callbacks
 7.  Train Model with Callbacks - Train the model for 1000 epochs.
 
 #### Solution:
-
-It's a common practice in deep learning to split the dataset into
-training, validation, and test set. We did a two-way split, so for
-simplicity's sake, we'll treat the test set as a validation set.
 
 We'll train the model for 1000 epochs --- a lot, but the `EarlyStopping`
 callback will kill the training process way before. You can specify the
@@ -306,16 +306,13 @@ The `EarlyStopping` callback will kill the training process around epoch
 ![Image 4 --- Finishing the training process (image by
 author)](./images/4-5.png)
 
-And that's it --- why waste time training for 965 epochs more if the
-model is already stuck here. It's maybe not a huge time saver for simple
-tabular models, but imagine training for hours or days unnecessarily on
-rented GPU machines.
 
 Yours `checkpoints/` folder should look similar to mine after the
 training finishes:
 
 ![Image 5 --- Checkpoints folder (image by
 author)](./images/5-6.png)
+
 You should always choose the one with the highest epoch number for
 further tweaks or evaluation. Don't let the accuracy of 0.80 on the last
 two models confuse you --- it's only rounded to two decimal places.
@@ -326,31 +323,24 @@ You can load the best model with TensorFlow's `load_model()` function:
 best_model = tf.keras.models.load_model('checkpoints/model-25-0.80.hdf5')
 ```
 
-And you can proceed with predictions and evaluations as you usually
-would --- no need to cover that today.
+Run the below code to download the training_log file.
+
+```python
+from google.colab import files
+files.download('training_log.csv')
+```
 
 If you wonder about the contents of the `training_log.csv`, here's how
 it looks on my machine:
 
+
 ![](./images/6-5.png)
+
 
 You can see how both loss and accuracy were tracked on training and
 validation sets, and how learning rate decreased over time thanks to the
 `ReduceLROnPlateau` callback. In short --- everything works as
 advertised.
 
-That's all I wanted to cover today. Let's wrap things up next.
 
 ------------------------------------------------------------------------
-
-Parting words
--------------
-
-Training deep learning models doesn't have to take so long. Pay
-attention to your evaluation metrics, and stop the training if the model
-isn't learning. You don't have to do that manually, of course, as there
-are built-in callback functions. You've learned four of them today, and
-for the rest, please visit the [official
-documentation.](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks)
-
-
